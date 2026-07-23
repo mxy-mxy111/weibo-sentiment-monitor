@@ -1,0 +1,1069 @@
+{
+  "meta": {
+    "generated_at": "2026-07-23T10:40:10",
+    "period_start": "2026-07-22T10:04:00",
+    "period_end": "2026-07-23T10:40:10",
+    "sources": [
+      "weibo m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)"
+    ],
+    "xiaohongshu_status": "本轮未纳入(需登录/风控，见看板说明)",
+    "schema_version": "1.0",
+    "note": "raw_posts 为去重后的原始采集帖(含 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。"
+  },
+  "kpi": {
+    "total_raw": 41,
+    "real_negative": 24,
+    "p0": 1,
+    "p1": 2,
+    "p2": 2,
+    "conclusion": "本轮P0 1 / P1 2 / P2 2：核心风险为《半熟恋人5》柳周剪辑争议叠加SVIP超点退款诉求持续发酵(会员收费+内容运营)；另需即时人工研判1条含自伤倾向的极端归因言论。"
+  },
+  "sentiment_events": [
+    {
+      "id": "EV-20260723-01",
+      "level": "P1",
+      "section": "会员收费",
+      "title": "《半熟恋人5》柳周CP剪辑争议叠加SVIP超点退款诉求持续发酵",
+      "summary": "多名自称腾讯视频SVIP付费用户就《半熟恋人5》维权：指节目长期用周佑凌&柳柳CP话题引流吸引充值，正片却大量删减二人镜头、碎片化剪辑制造对立；伴随'坚决不买超点''退钱，买SVIP不是来看边角料'等付费不满与退款诉求，24小时内同类发帖十余条。",
+      "post_count": 13,
+      "evidence": [
+        {
+          "author": "肉肉不爱吃肉了吗",
+          "followers": "402",
+          "permalink": "https://m.weibo.cn/detail/5323740351042359",
+          "published_at": "2026-07-23T07:14:33",
+          "likes": 0,
+          "reposts": 0
+        },
+        {
+          "author": "enfp双鱼",
+          "followers": "53",
+          "permalink": "https://m.weibo.cn/detail/5323738193330812",
+          "published_at": "2026-07-23T07:05:58",
+          "likes": 41,
+          "reposts": 1
+        },
+        {
+          "author": "面包当枕头",
+          "followers": "1",
+          "permalink": "https://m.weibo.cn/detail/5323764195920633",
+          "published_at": "2026-07-23T08:49:18",
+          "likes": 1,
+          "reposts": 0
+        },
+        {
+          "author": "拾柒-十七-17",
+          "followers": "131",
+          "permalink": "https://m.weibo.cn/detail/5323760624469716",
+          "published_at": "2026-07-23T08:35:06",
+          "likes": 1,
+          "reposts": 0
+        },
+        {
+          "author": "Y团子0919",
+          "followers": "94",
+          "permalink": "https://m.weibo.cn/detail/5323753288371817",
+          "published_at": "2026-07-23T08:05:57",
+          "likes": 32,
+          "reposts": 0
+        },
+        {
+          "author": "白梦妍的互联网亲戚",
+          "followers": "28",
+          "permalink": "https://m.weibo.cn/detail/5323747737207001",
+          "published_at": "2026-07-23T07:43:53",
+          "likes": 3,
+          "reposts": 0
+        },
+        {
+          "author": "受控阿",
+          "followers": "80",
+          "permalink": "https://m.weibo.cn/detail/5323743765204399",
+          "published_at": "2026-07-23T07:28:07",
+          "likes": 5,
+          "reposts": 0
+        },
+        {
+          "author": "窝不中",
+          "followers": "4",
+          "permalink": "https://m.weibo.cn/detail/5323729191045181",
+          "published_at": "2026-07-23T06:30:12",
+          "likes": 3,
+          "reposts": 1
+        }
+      ]
+    },
+    {
+      "id": "EV-20260723-02",
+      "level": "P1",
+      "section": "其他/监管竞品",
+      "title": "《五十公里桃花坞第六季》'用已故周涛拍真人秀'实名举报言论",
+      "summary": "用户以'实名举报'措辞发帖，称腾讯视频《五十公里桃花坞第六季》'用死人周涛拍真人秀节目、欺骗观众'，要求公开道歉；措辞激烈、带举报/道德争议属性，存在被放大传播风险(同一用户24h内重复发布3条)。",
+      "post_count": 3,
+      "evidence": [
+        {
+          "author": "城市里的蜂鸟",
+          "followers": "1",
+          "permalink": "https://m.weibo.cn/detail/5323743671091823",
+          "published_at": "2026-07-23T07:27:44",
+          "likes": 0,
+          "reposts": 0
+        },
+        {
+          "author": "城市里的蜂鸟",
+          "followers": "1",
+          "permalink": "https://m.weibo.cn/detail/5323743440404890",
+          "published_at": "2026-07-23T07:26:48",
+          "likes": 0,
+          "reposts": 0
+        },
+        {
+          "author": "城市里的蜂鸟",
+          "followers": "1",
+          "permalink": "https://m.weibo.cn/detail/5323743322702956",
+          "published_at": "2026-07-23T07:26:21",
+          "likes": 0,
+          "reposts": 0
+        }
+      ]
+    },
+    {
+      "id": "EV-20260723-03",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "《十日终焉》选角争议(擦边博主进组加戏)延续",
+      "summary": "书粉持续发帖反对'擦边博主'进组出演'余念安/白月光'，称影响青少年价值观、要求剧组出具官方声明或换人，态度延续此前组织化维权基调。",
+      "post_count": 4,
+      "evidence": [
+        {
+          "author": "行云亦停_",
+          "followers": "1",
+          "permalink": "https://m.weibo.cn/detail/5323501537853855",
+          "published_at": "2026-07-22T15:25:34",
+          "likes": 0,
+          "reposts": 0
+        },
+        {
+          "author": "色塑",
+          "followers": "148",
+          "permalink": "https://m.weibo.cn/detail/5323494168204456",
+          "published_at": "2026-07-22T14:56:18",
+          "likes": 0,
+          "reposts": 0
+        },
+        {
+          "author": "行云亦停_",
+          "followers": "1",
+          "permalink": "https://m.weibo.cn/detail/5323501537853855",
+          "published_at": "2026-07-22T15:25:34",
+          "likes": 0,
+          "reposts": 0
+        },
+        {
+          "author": "内鱼拜拜",
+          "followers": "89",
+          "permalink": "https://m.weibo.cn/detail/5323479379611558",
+          "published_at": "2026-07-22T13:57:32",
+          "likes": 0,
+          "reposts": 0
+        }
+      ]
+    },
+    {
+      "id": "EV-20260723-04",
+      "level": "P2",
+      "section": "技术功能",
+      "title": "广告体验与试看限制吐槽(《这一秒过火》等)",
+      "summary": "用户吐槽同为S+剧《这一秒过火》广告过多、观感割裂('广告钢钢的')；另有用户激烈吐槽'看1分钟广告只给试看3分钟'，反映广告密度与试看策略的体验不满。",
+      "post_count": 5,
+      "evidence": [
+        {
+          "author": "考夫大胖子",
+          "followers": "15",
+          "permalink": "https://m.weibo.cn/detail/5323565737972907",
+          "published_at": "2026-07-22T19:40:42",
+          "likes": 0,
+          "reposts": 0
+        },
+        {
+          "author": "Smultron_",
+          "followers": "23",
+          "permalink": "https://m.weibo.cn/detail/5323561661367266",
+          "published_at": "2026-07-22T19:24:30",
+          "likes": 0,
+          "reposts": 0
+        }
+      ]
+    },
+    {
+      "id": "EV-20260723-05",
+      "level": "P0",
+      "section": "其他/监管竞品",
+      "title": "含自伤/抑郁倾向的极端归因言论(需即时人工研判)",
+      "summary": "一名用户发帖称'被腾讯逼到走投无路、有严重抑郁、接下来想不开、绝对是腾讯逼的'，将极端情绪归因于账号被永久封停。虽粉丝量极低、传播面小，但含自伤倾向表述，按风险监测规则上报为P0，建议人工即时核实并做安抚/申诉引导，防止舆情与安全事件叠加。",
+      "post_count": 1,
+      "evidence": [
+        {
+          "author": "流凨苦贼危邻泡",
+          "followers": "1",
+          "permalink": "https://m.weibo.cn/detail/5323763352869091",
+          "published_at": "2026-07-23T08:45:57",
+          "likes": 0,
+          "reposts": 0
+        }
+      ]
+    }
+  ],
+  "raw_posts": [
+    {
+      "mid": "5323782428298427",
+      "platform": "weibo",
+      "author": "全球搞笑热",
+      "followers": "6.6万",
+      "verified": false,
+      "published_at": "2026-07-23T10:01:45",
+      "text": "芒果TV会员腾讯视频会员 qq音乐会员优酷 还有 夸克爱奇艺会员 , 微博会员svip年卡，心有多宽，人生的舞台就有多宽，如果不能打碎心中的壁垒，即使给你整个世界，你也找不到自由的感觉。",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323782428298427",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告"
+    },
+    {
+      "mid": "5323782392646369",
+      "platform": "weibo",
+      "author": "搞笑热力榜",
+      "followers": "5.9万",
+      "verified": false,
+      "published_at": "2026-07-23T10:01:36",
+      "text": "芒果TV会员腾讯视频会员 qq音乐会员优酷  , 微博会员svip年卡 生活不一定是一直美好的，但是那些挣扎可以让你变得更坚强，那些改变可以让你变得更有智慧。 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323782392646369",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告"
+    },
+    {
+      "mid": "5323782365384741",
+      "platform": "weibo",
+      "author": "破产姐妹拯救局",
+      "followers": "52.2万",
+      "verified": true,
+      "published_at": "2026-07-23T10:01:30",
+      "text": "朋友，跟你说一下我现在手头有QQ音乐绿钻年卡、网易云会员年卡、优酷会员年卡、芒果TV会员、腾讯视频会员年卡、酷狗音乐VIP，都是好东西。",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323782365384741",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告"
+    },
+    {
+      "mid": "5323782340218402",
+      "platform": "weibo",
+      "author": "妙影时光",
+      "followers": "30.5万",
+      "verified": false,
+      "published_at": "2026-07-23T10:01:24",
+      "text": "芒果TV会员腾讯视频会员 qq音乐会员优酷 还有 夸克爱奇艺会员 , 微博会员svip年卡。当你已经觉得自己非常努力时，须明白一不幸的事实，那就是不管你多努力，一定有人比你更努力，所以随时检讨自己努力的方向是否正确尤其重要，在错误的道路上越努力，结果越悲催。 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323782340218402",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告"
+    },
+    {
+      "mid": "5323782311911253",
+      "platform": "weibo",
+      "author": "困困想碎觉了",
+      "followers": "3515",
+      "verified": false,
+      "published_at": "2026-07-23T10:01:17",
+      "text": "腾讯视频会员  收ipad端 走🐟优先 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323782311911253",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323781573708209",
+      "platform": "weibo",
+      "author": "六月的双子orz",
+      "followers": "142",
+      "verified": false,
+      "published_at": "2026-07-23T09:58:21",
+      "text": "柳周cp  @腾讯视频半熟恋人  请正视柳周粉要求 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 2,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323781573708209",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323781134614553",
+      "platform": "weibo",
+      "author": "暖日奇谈",
+      "followers": "34.1万",
+      "verified": false,
+      "published_at": "2026-07-23T09:56:35",
+      "text": "芒果TV会员腾讯视频会员 qq音乐会员优酷 还有 夸克爱奇艺会员 , 微博会员svip年卡。只要你没有抛弃这世界，它就从来没有放弃过任何一个人，或许是有乌云遮挡了照耀你的阳光，请相信，那只是暂时的，属于你的光明并不遥远。",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323781134614553",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告"
+    },
+    {
+      "mid": "5323781000398434",
+      "platform": "weibo",
+      "author": "精选幸运酱",
+      "followers": "8万",
+      "verified": false,
+      "published_at": "2026-07-23T09:56:04",
+      "text": "微博会员（50）网易云会员（113）芒果TV会员（69）优酷（69）腾讯视频（113） 夸克会员 或许生活的最好形态，就是人走茶凉后，你仍知如何乐活。 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323781000398434",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告"
+    },
+    {
+      "mid": "5323779536586872",
+      "platform": "weibo",
+      "author": "一点困芽",
+      "followers": "250",
+      "verified": false,
+      "published_at": "2026-07-23T09:50:15",
+      "text": "腾讯视频  收腾讯vip或svip平板端会员一个月 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323779536586872",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323777325665512",
+      "platform": "weibo",
+      "author": "破产姐妹拯救局",
+      "followers": "52.2万",
+      "verified": true,
+      "published_at": "2026-07-23T09:41:28",
+      "text": "嘿，我这里有QQ音乐绿钻年卡、网易云会员年卡、优酷会员年卡、芒果TV会员、腾讯视频会员年卡、酷狗音乐VIP，你要哪个直接说。",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 9,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323777325665512",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告"
+    },
+    {
+      "mid": "5323777323828564",
+      "platform": "weibo",
+      "author": "__山眠枕月",
+      "followers": "554",
+      "verified": false,
+      "published_at": "2026-07-23T09:41:28",
+      "text": "会员共享 腾讯视频vip到8.11号过期，任意端5r ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 会员"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323777323828564",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323772635648174",
+      "platform": "weibo",
+      "author": "白菜省钱专家",
+      "followers": "810",
+      "verified": true,
+      "published_at": "2026-07-23T09:22:50",
+      "text": "《百花杀》《长相思第二季》《这一秒过火》，古装仙侠、都市甜剧轮番上线； 人气综艺不间断：《开始推理吧4》《半熟恋人5》《五十公里桃花坞6》，推理真人秀、恋综、户外综艺一期接一期； 国漫番剧同步热播：《仙逆》《斗破苍穹年番》《一念永恒》《斩神第二季》，热血玄幻动漫一次追够！ 不管下班放松...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323772635648174",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323772383990347",
+      "platform": "weibo",
+      "author": "白菜省钱专家",
+      "followers": "810",
+      "verified": true,
+      "published_at": "2026-07-23T09:21:50",
+      "text": "就几天，腾讯视频会员🔥活动来了！太给力了，需要的抓紧入‼️VIP会员12个月，158元，购买戳👉【连续包年】腾讯视频VIP会员年卡1年费腾讯VIP12个月 这一秒过火超级影视svip 12个月，268元，购买戳👉【限时加赠月卡】连续包年腾讯视频SVIP会员年卡极光TV支持电视端暑期宅家快乐源泉锁定腾讯视频🔥热播剧集持续更新：《百花杀》《长相思第二季》《这一秒过火》，古装仙侠、都 ...全文",
+      "reposts": 3,
+      "comments": 1,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323772383990347",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323770143444182",
+      "platform": "weibo",
+      "author": "星夏yyx369",
+      "followers": "50",
+      "verified": false,
+      "published_at": "2026-07-23T09:12:56",
+      "text": "半熟恋人节目组不认真对待 腾讯视频SVIP付费用户，针对《 半熟恋人5 》剪辑与宣传问题反馈： 节目组长期使用周佑凌&柳柳CP作为短视频、话题标题引流，但正片内二人同框互动时长持续偏少；大量篇幅给到其他嘉宾，存在“拿大热CP热度，却削减对应正片内容”的宣传不对等问题。 希望节目组正视付 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 2,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323770143444182",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323766889713136",
+      "platform": "weibo",
+      "author": "流媒体网官方微博",
+      "followers": "6914",
+      "verified": true,
+      "published_at": "2026-07-23T09:00:00",
+      "text": "【S+剧纷纷限免，长视频平台不再热衷“VIP付费”？】2026年，长视频平台的剧集排播运营逻辑，正在发生一次重要转向。限时免费观看、全集限免等运营方式频频出现，越来越多的新剧开始主动降低观看门槛。当会员仍然是长视频平台最重要的收入来源，平台为什么反而开始让更多用户免费看剧？📺 从“ ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323766889713136",
+      "filtered_as_noise": true,
+      "noise_reason": "官方/媒体号"
+    },
+    {
+      "mid": "5323764195920633",
+      "platform": "weibo",
+      "author": "面包当枕头",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-23T08:49:18",
+      "text": "#半熟恋人5柳周镜头少# 节目播出到现在，各平台数据已经证明热度最大的一直是柳柳和柳周cp。柳柳穿搭穿一套爆一套、柳周切片出圈，下沉观众才不断入场，加上柳柳腥风血雨的体质，两口子话题度讨论度几乎吸干本季大盘。可以说没有柳周的话，这一季半熟要多糊有多糊。节目组却因为策划拍摄时导演制片 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323764195920633",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323763352869091",
+      "platform": "weibo",
+      "author": "流凨苦贼危邻泡",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-23T08:45:57",
+      "text": "被腾讯逼到走头无路，本人有严重抑郁，接下来想不开，绝对腾讯逼的，用了11年的号永久封停，之前注册的一个微信号，好久没用，加一个好友还没有通过又被封，好吧，注册企业号，刚刚加一个人，又被封，腾讯把我逼人绝路腾讯视频微信 @腾讯微信团队 @腾讯客服 @腾讯客服  ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 维权"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323763352869091",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323760720676460",
+      "platform": "weibo",
+      "author": "用户8331918049",
+      "followers": "2",
+      "verified": false,
+      "published_at": "2026-07-23T08:35:29",
+      "text": "半熟恋人  能不能出个柳周纯享版，快进真的好麻烦@腾讯视频半熟恋人 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323760720676460",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323760624469716",
+      "platform": "weibo",
+      "author": "拾柒-十七-17",
+      "followers": "131",
+      "verified": false,
+      "published_at": "2026-07-23T08:35:06",
+      "text": "#半熟恋人5柳周镜头少#预告即正片的即视感，时长少得可怜，我为柳周充的svip ，结果就是被骗了。@腾讯视频半熟恋人 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323760624469716",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323753288371817",
+      "platform": "weibo",
+      "author": "Y团子0919",
+      "followers": "94",
+      "verified": false,
+      "published_at": "2026-07-23T08:05:57",
+      "text": "#半熟恋人5柳周镜头少#坚决不买超点，今天的加更不想看见🥚，谢谢。柳周cp @腾讯视频 @腾讯视频半熟恋人 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 32,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323753288371817",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323747737207001",
+      "platform": "weibo",
+      "author": "白梦妍的互联网亲戚",
+      "followers": "28",
+      "verified": false,
+      "published_at": "2026-07-23T07:43:53",
+      "text": "#半熟恋人5柳周镜头少# @腾讯视频半熟恋人 你们自己看看是不是在诈骗？用柳周做封面,从清理素材里把人家吧啦出来就一闪几下的镜头，如果不是大热，是不是准备柳柳一个镜头都没有了？谁愿意看你们拼好句的大女主啊？说重一点，她精神层面有点问题的，建议去看看心理医生。 ",
+      "reposts": 0,
+      "comments": 3,
+      "likes": 3,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323747737207001",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323743765204399",
+      "platform": "weibo",
+      "author": "受控阿",
+      "followers": "80",
+      "verified": false,
+      "published_at": "2026-07-23T07:28:07",
+      "text": "#半熟恋人5柳周镜头少#@腾讯视频半熟恋人 退钱！买svip不是来看边角料的 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 5,
+      "keywords": [
+        "腾讯视频 半熟恋人"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323743765204399",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323743671091823",
+      "platform": "weibo",
+      "author": "城市里的蜂鸟",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-23T07:27:44",
+      "text": "张慧雯 实名举报：腾讯视频《五十公里桃花坞第六季》用死人周涛拍真人秀节目，欺骗广大观众欺骗广大网友，要求公开向社会道歉。。（现在主要是不让老百姓讲话，找各种借口封多个平台帐号，有多少事情？有什么事？不敢抬上桌面讲？不能抬上桌面讲？）有一群人2025年9月份以后在网上发周涛的 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 维权"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323743671091823",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323743440404890",
+      "platform": "weibo",
+      "author": "城市里的蜂鸟",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-23T07:26:48",
+      "text": "张慧雯 实名举报：腾讯视频《五十公里桃花坞第六季》用死人周涛拍真人秀节目，欺骗广大观众欺骗广大网友，要求公开向社会道歉。。（现在主要是不让老百姓讲话，找各种借口封多个平台帐号，有多少事情？有什么事？不敢抬上桌面讲？不能抬上桌面讲？）有一群人2025年9月份以后在网上发周涛的 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 维权"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323743440404890",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323743322702956",
+      "platform": "weibo",
+      "author": "城市里的蜂鸟",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-23T07:26:21",
+      "text": "张慧雯 实名举报：腾讯视频《五十公里桃花坞第六季》用死人周涛拍真人秀节目，欺骗广大观众欺骗广大网友，要求公开向社会道歉。。（现在主要是不让老百姓讲话，找各种借口封多个平台帐号，有多少事情？有什么事？不敢抬上桌面讲？不能抬上桌面讲？）有一群人2025年9月份以后在网上发周涛的 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 维权"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323743322702956",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323740351042359",
+      "platform": "weibo",
+      "author": "肉肉不爱吃肉了吗",
+      "followers": "402",
+      "verified": false,
+      "published_at": "2026-07-23T07:14:33",
+      "text": "柳周cp  投诉对象：《半熟恋人第五季》节目组及播出平台本人作为付费充值会员，现就《半熟恋人5》相关违规行为正式提出投诉：1. 节目组长期利用柳周CP话题大肆宣传引流，以此吸引观众充值平台会员观看节目，却刻意实施恶意剪辑，大量削减柳周完整互动镜头，碎片化拼接素材刻意制造嘉宾对立 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 维权",
+        "腾讯视频 黑猫投诉"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323740351042359",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323738193330812",
+      "platform": "weibo",
+      "author": "enfp双鱼",
+      "followers": "53",
+      "verified": false,
+      "published_at": "2026-07-23T07:05:58",
+      "text": "柳周cp  投诉对象：《半熟恋人第五季》节目组及播出平台本人作为付费充值会员，现就《半熟恋人5》相关违规行为正式提出投诉：1. 节目组长期利用柳周CP话题大肆宣传引流，以此吸引观众充值平台会员观看节目，却刻意实施恶意剪辑，大量削减柳周完整互动镜头，碎片化拼接素材刻意制造嘉宾对立 ...全文",
+      "reposts": 1,
+      "comments": 12,
+      "likes": 41,
+      "keywords": [
+        "腾讯视频 维权",
+        "腾讯视频 黑猫投诉"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323738193330812",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323729191045181",
+      "platform": "weibo",
+      "author": "窝不中",
+      "followers": "4",
+      "verified": false,
+      "published_at": "2026-07-23T06:30:12",
+      "text": "柳周cp#半熟恋人5柳周镜头少# 本人是腾讯视频SVIP付费用户，现就《半熟恋人5》维权，平台长期用周佑凌&柳柳CP做短视频、话题引流，但正片里二人同框互动时长极少，镜头分给别嘉宾，宣传与实际内容严重不符。依据《消保法》第20条，平台不得作虚假误导宣传；依据第55条，我有权主张退一赔三最低 ...全文",
+      "reposts": 1,
+      "comments": 0,
+      "likes": 3,
+      "keywords": [
+        "腾讯视频 维权"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323729191045181",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323626804940251",
+      "platform": "weibo",
+      "author": "qiqihhhp---",
+      "followers": "5",
+      "verified": false,
+      "published_at": "2026-07-22T23:43:21",
+      "text": "#半熟恋人5柳周镜头少#  本人腾讯视频SVIP付费用户，现就《半熟恋人5》维权，平台长期用周佑凌&柳柳CP做视频引流，但正片里二人同框互动时长极少，镜头分给别嘉宾，宣传与实际内容严重不符。依据《消保法》第20条；依据第55条，我有权主张退一赔三最低500元的赔偿，现要求节目组均衡分配镜头@腾讯视频  ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 14,
+      "keywords": [
+        "腾讯视频 维权"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323626804940251",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323572300219659",
+      "platform": "weibo",
+      "author": "·瑶啊瑶·",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-22T20:06:46",
+      "text": "特别想问肥虾，“一开始”，是哪里的开始，什么时候。是粉丝去腾讯视频底下维权的时候，还是剧组发布声明的时候。如果是前者，既然前几天就知道网上信息是虚假的，为何不同步？粉丝在到处要说法的时候，有过制止吗？既然认为有人故意用错误信息来强化个人影响力，那你们是否采取相应措施，作为一个有 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 维权"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323572300219659",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323565737972907",
+      "platform": "weibo",
+      "author": "考夫大胖子",
+      "followers": "15",
+      "verified": false,
+      "published_at": "2026-07-22T19:40:42",
+      "text": "刚看完#白日提灯# 转头看#这一秒过火# ——同平台、同S+，差距却像IMAX转网大。广告倒是“钢钢的”。如果大家都这样拍，以后谁还愿意好好做剧？劣币驱逐良币，最后吃亏的还是我们这些认真看的人。@腾讯视频 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323565737972907",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323561661367266",
+      "platform": "weibo",
+      "author": "Smultron_",
+      "followers": "23",
+      "verified": false,
+      "published_at": "2026-07-22T19:24:30",
+      "text": "傻B腾讯视频 看nm1分钟广告，还只给试看3分钟 滚吧 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323561661367266",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323538661901464",
+      "platform": "weibo",
+      "author": "展会服务咨询",
+      "followers": "2",
+      "verified": false,
+      "published_at": "2026-07-22T17:53:06",
+      "text": "2026第十八届湖南茶业博览9月11—14日·湖南国际会展中心（芒果馆）【关于仁创】长沙仁创会展服务有限公司成立于2006年，致力于中部地区各领域高品质展会的组织、举办，与相关机构、行业协会、商会建立了长年战略合作关系。专业承办中西部地区长沙、武汉、南昌等省市的朝阳产业的巡回展览会，经过19 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323538661901464",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323515555481526",
+      "platform": "weibo",
+      "author": "种草小行星",
+      "followers": "389",
+      "verified": false,
+      "published_at": "2026-07-22T16:21:17",
+      "text": "开通腾讯视频会员，古装热剧《莫离》、现实向好剧《迷墙》抢先更新，不用苦苦等普通更新进度。下饭就看爆笑综艺《哈哈哈哈哈6》《五十公里桃花坞6》，休闲放松超合适；闲暇时间追《剑来第二季》《镖人2》这些高分国漫，剧情全程在线￼￼￼。 跳过冗长广告，热播剧、综艺、动漫一站式看完，宅家的快乐直...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323515555481526",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323506033366081",
+      "platform": "weibo",
+      "author": "种草小行星",
+      "followers": "389",
+      "verified": false,
+      "published_at": "2026-07-22T15:43:27",
+      "text": "蹲到了，腾讯视频会员🔥活动来了！太给力了，需要的抓紧入‼️VIP会员12个月年卡，158元，购买戳👉【连续包年】腾讯视频VIP会员年卡1年费腾讯VIP12个月 这一秒过火超级影视svip 12个月年啦，268元，购买戳👉【限时加赠月卡】连续包年腾讯视频SVIP会员年卡极光TV支持电视端开通腾讯视频会员，古装热剧《莫离》、现实向好剧《迷墙》抢先更新，不用苦苦等普通更新进度。下饭就看爆 ...全文",
+      "reposts": 3,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323506033366081",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323501537853855",
+      "platform": "weibo",
+      "author": "行云亦停_",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-22T15:25:34",
+      "text": "#十日终焉书粉发声#拒绝擦边博主进组加戏，严重影响青少年的价值观，违背社会公序良俗！🐧🍋剧组立即出具加盖公章的官方声明：1.辟谣王某某进组拍戏，1.承诺余念安角色留白不露脸。不辟谣不回应就默认强捧丑人加戏毁剧欺诈观众，观众有权拒绝云包场、剧宣、会员等，并在各个平台科普欺诈行为提醒 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323501537853855",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323494168204456",
+      "platform": "weibo",
+      "author": "色塑",
+      "followers": "148",
+      "verified": false,
+      "published_at": "2026-07-22T14:56:18",
+      "text": "如果剧方希望@剧集十日终焉 能够成为爆款，选角非常重要，一个擦边博主演白月光，很可能导致观众对剧的不满，最终导致弃剧（毕竟现在网络发达，观众好奇都会去搜一下余念安的扮演者），如果第一季没能成为爆款，那么第二和第三季就可能拉不到投资商，吸引不了广告商，连开拍都困难，最终导致这个ip白白 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323494168204456",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323479379611558",
+      "platform": "weibo",
+      "author": "内鱼拜拜",
+      "followers": "89",
+      "verified": false,
+      "published_at": "2026-07-22T13:57:32",
+      "text": "拒绝擦边博主进组加戏，影响青少年的价值观，违背社会公序良俗！剧组立即出具加盖公章的官方声明：1.辟谣王某某进组拍戏，1.承诺余念安角色留白不露脸。不辟谣不回应就默认强捧丑人加戏毁剧欺诈观众，观众有权拒绝云包场、剧宣等，并在各个平台科普欺诈行为提醒赞助商广告商谨慎！@腾讯视频 @柠萌影视",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 广告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323479379611558",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "mid": "5323448433773395",
+      "platform": "weibo",
+      "author": "奶爸聊闲",
+      "followers": "7.3万",
+      "verified": true,
+      "published_at": "2026-07-22T11:54:34",
+      "text": "我是来剪视频的，不是来逛商场的！ 剪映八年从良心工具沦为套娃收费软件，老用户被迫为卡顿和会员层层加码买单。#剪映 ##爱奇艺##套娃vip #全球创作者计划 #腾讯视频vip会员##微博新知##微博视频号迎新计划# 奶爸聊闲的微博视频 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 套娃收费"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323448433773395",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323528387953467",
+      "platform": "weibo",
+      "author": "苏露兔",
+      "followers": "111",
+      "verified": true,
+      "published_at": "2026-07-22T17:12:16",
+      "text": "张凌赫 都来打分//@予君以夜:所有人来打分，还有聚宝一下一星，点最新🍊低赞一星很容易掉//@偷掰一颗兔牙:所有人都来做！",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "这一秒过火 一星"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323528387953467",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    },
+    {
+      "mid": "5323525382212077",
+      "platform": "weibo",
+      "author": "没关系你说的都对呀",
+      "followers": "3.2万",
+      "verified": true,
+      "published_at": "2026-07-22T17:00:20",
+      "text": "所有人速来豆瓣打分维护这一秒过火，评论区全是颠倒黑白的恶评，比如刚开播就一星说自己看了八集，我们要守护秒火打分，新号4⭐️老号5⭐️，大家都摇人来‼️ ",
+      "reposts": 266,
+      "comments": 42,
+      "likes": 250,
+      "keywords": [
+        "这一秒过火 一星"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5323525382212077",
+      "filtered_as_noise": true,
+      "noise_reason": "促销/买卖/控评/无关噪音"
+    }
+  ],
+  "risk_history": [
+    {
+      "date": "2026-07-14",
+      "slot": "14:40（首次手动生成）",
+      "p0": 0,
+      "p1": 3,
+      "p2": 4,
+      "total": 12,
+      "highlight": "《百花杀》站内热度数据争议；\"云包场\"被质疑杀熟/验证复杂；黑猫投诉点名自动续费处理较差"
+    },
+    {
+      "date": "2026-07-15",
+      "slot": "11:05（手动刷新）",
+      "p0": 0,
+      "p1": 4,
+      "p2": 2,
+      "total": 8,
+      "highlight": "《百花杀》招商高开回落引发新一轮数据/招商争议；云包场代抢黄牛化；SVIP广告投放不一致遭质疑；黑猫投诉报告持续被引用维权"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "10:35（自动化定时刷新）",
+      "p0": 0,
+      "p1": 1,
+      "p2": 3,
+      "total": 8,
+      "highlight": "用户\"江南tt\"就腾讯视频\"套娃式\"收费24小时内连续4次发帖并@深圳12345/工信部维权，投诉升级明显；云包场代抢黄牛化与退费个案纠纷持续；《百花杀》\"裸播\"争议延续发酵；综艺《半熟恋人》嘉宾处理方式引发用户不满与举报言论"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "11:20（手动刷新）",
+      "p0": 0,
+      "p1": 1,
+      "p2": 3,
+      "total": 8,
+      "highlight": "用户\"江南tt\"投诉腾讯视频\"套娃式\"多层收费仍在持续，24小时窗口内已发帖4次并@深圳12345/工信部/新浪微博，维权未见平台响应；《百花杀》\"高热度裸播\"争议延续；云包场退费个案（\"腾讯视频能不能把我的云包场的钱吐出来了\"）；综艺《半熟恋人》嘉宾处理方式引发观众不满与投诉/举报言论"
+    },
+    {
+      "date": "2026-07-17",
+      "slot": "19:48（自动化定时刷新-18:00档）",
+      "p0": 0,
+      "p1": 2,
+      "p2": 5,
+      "total": 14,
+      "highlight": "新增风险点：用户\"劳拉LTTA20\"反映腾讯视频旗舰店购买VIP年卡仅3个月即无法登录，官方客服明确回复\"虚拟产品不退款\"，存在维权升级可能；用户\"江南tt\"套娃式多层收费投诉本轮未见新增发帖，此前3次维权诉求仍未获平台回应；另新增\"客服找不到人工入口/乱扣费\"个案投诉；云包场退费个案、《百花杀》裸播争议、综艺《半熟恋人》\"催氪\"及剪辑引导争议持续存在，整体舆情量级平稳"
+    },
+    {
+      "date": "2026-07-20",
+      "slot": "10:42（自动化定时刷新-10:00档）",
+      "p0": 0,
+      "p1": 0,
+      "p2": 4,
+      "total": 4,
+      "highlight": "本轮舆情量级为近期观测低点，全部为P2级个案：华为鸿蒙系统升级后腾讯视频WiFi环境卡顿投诉；新剧《这一秒过火》开播固屏广告时长过长遭吐槽\"吃相难看\"；《这一秒过火》云包场验证码环节导致连续3次抢票失败；QQ音乐豪华会员仍需看开屏广告、需再升级超级会员才能免除引发老用户不满并@腾讯视频。此前持续追踪的\"江南tt\"套娃式收费维权、\"劳拉LTTA20\"年费VIP退款争议本轮均无新增发帖，进展状态未知，建议人工核实历史工单处理结果"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "10:29（自动化定时刷新-10:00档）",
+      "p0": 0,
+      "p1": 1,
+      "p2": 4,
+      "total": 5,
+      "highlight": "新增P1级风险：两用户（疑似同一人小号）反映手机充电静置期间腾讯视频VIP会员被自动扣费开通，且未输入密码、未做人脸识别验证，对扣费流程安全性提出质疑；P2级新增4起个案：SVIP会员反映片头中插结尾广告密集\"svip是白开的吗\"、横屏跳转广告体验差、APP播放卡顿个案、SVIP用户反映剧集《莫离》电视端播放跳转异常仅能看到第8集。此前持续追踪的\"江南tt\"套娃式收费维权、\"劳拉LTTA20\"年费VIP退款争议本轮连续第3轮仍无新增发帖，进展持续未知，建议人工核实历史工单处理结果"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "15:15（手动刷新-四平台整合版）",
+      "p0": 0,
+      "p1": 2,
+      "p2": 3,
+      "total": 24,
+      "highlight": "本轮首次整合微博+黑猫投诉+豆瓣+小红书四平台真实数据。新增P1级风险：黑猫投诉官方受理账号24小时内新增19条真实投诉，高度集中在自动续费未告知+退款遭拒/客服踢皮球，反映会员收费问题已具备系统性特征；延续追踪P1：两用户反映免密自动扣费开通第三方会员的支付安全争议。P2级3起微博个案：SVIP广告密度过高、横屏跳转广告体验差、弱网播放卡顿。豆瓣（24条候选降频重试后核实）与小红书（扫码登录成功后53条候选详情页核实）本轮均未发现24小时窗口内新增有效负面，如实标注非编造。此前持续追踪的\"江南tt\"套娃式收费维权、\"劳拉LTTA20\"年费VIP退款争议本轮连续第4轮仍无新增发帖"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "16:40（手动刷新-内容剧综专项版）",
+      "p0": 0,
+      "p1": 4,
+      "p2": 5,
+      "total": 94,
+      "highlight": "本轮扩大统计口径：将腾讯视频在播剧集/综艺/电影/短剧相关的负面舆情一并纳入监测，不再要求内容必须提及\"腾讯视频\"服务本身。新增P1级内容运营事件2起：①《这一秒过火》开播即遭全网群嘲AI片头/短剧质感/磨皮滤镜，微博高热度吐槽（单条转发310/点赞1242），豆瓣同步出现\"两天两万多差评\"及疑似删评次生争议；②《半熟恋人5》剪辑/嘉宾处理方式引发8条\"恶心\"类强烈负面情绪。P2级新增《百花杀》剧情逻辑/悬浮/抠图持续吐槽、《十日终焉》选角争议延续。原有黑猫投诉19条集中投诉、会员免密扣费安全争议P1级风险维持不变"
+    },
+    {
+      "date": "2026-07-21",
+      "slot": "18:15（自动化定时刷新-18:00档）",
+      "p0": 0,
+      "p1": 3,
+      "p2": 6,
+      "total": 74,
+      "highlight": "本轮聚焦微博（通用+剧综专项）+小红书两平台真实采集（未采集黑猫投诉/豆瓣）。新增P1级会员收费事件：\"柳周cp\"粉丝群体针对《半熟恋人5》\"坚决抵制超点\"维权持续扩大，单条帖获转发161/评论562/赞4140，反映付费内容不满情绪显著升级；延续P1：《这一秒过火》开播口碑争议持续（24小时内负面吐槽超30条，两极分化仍存）、《半熟恋人5》\"恶心\"类强烈负面情绪持续（新增9条）。P2级6起：《十日终焉》选角争议延续、《依然的喜事》开播差评、SVIP退款个案、SVIP广告密度共性吐槽延续、综艺播放卡顿个案、《百花杀》剧情逻辑/悬浮持续吐槽。小红书53条候选详情页核实均为历史发布时间，本轮未发现24小时窗口内新增有效负面"
+    },
+    {
+      "date": "2026-07-22",
+      "slot": "10:14（自动化定时刷新-10:00档）",
+      "p0": 0,
+      "p1": 2,
+      "p2": 2,
+      "total": 22,
+      "highlight": "本轮监测周期2026-07-21 10:14～2026-07-22 10:14，聚焦微博采集（小红书本轮仍需登录未获数据）。P1级2起均为延续性内容运营争议且持续升级：《十日终焉》选角争议（网传王莫涵出演\"余念安\"）24小时内新增至少10条维权发帖，要求换人或AI换脸，态度趋于强硬；《半熟恋人5》\"柳周cp\"剪辑争议叠加SVIP退款诉求持续发酵，24小时内新增约10条同类发帖。P2级2起：陈都灵新剧《冬风吹又生》路透造型翻车引发粉丝集体维权；综艺播放卡顿个案。此前持续追踪的\"江南tt\"套娃式收费维权、\"劳拉LTTA20\"年费VIP退款争议本轮连续第5轮仍无新增发帖，进展持续未知，建议人工核实历史工单处理结果"
+    },
+    {
+      "date": "2026-07-22",
+      "slot": "10:28（手动刷新-补充采集）",
+      "p0": 0,
+      "p1": 3,
+      "p2": 4,
+      "total": 36,
+      "highlight": "本轮监测周期2026-07-21 10:15～2026-07-22 10:15，微博通用（100条窗口内）+剧综专项（125条窗口内）共225条原始帖文过滤后保留约36条真实用户负面发帖；小红书候选量异常骤降至31条（历史均值300+条），详情页核实均为历史发布时间，24小时窗口内暂无有效负面数据，候选量异常原因待排查（疑似登录会话部分失效或平台风控加强）。新增P1级焦点：《百花杀》\"删减\"争议爆发，女主权谋高光戏份被删近三成、副CP感情线预告与正片严重不符，7条以上高粉丝量博主发帖抵制；延续P1：《十日终焉》选角争议持续组织化升级，新增两条高热度转发帖（转发70/57，赞326/140）；延续P1：《半熟恋人5》\"柳周cp\"剪辑争议叠加SVIP超点退款诉求仍在持续，但同时出现\"售后甜蜜\"叙事，负面声量较上轮有所减弱。P2级4起：《这一秒过火》AI片头争议已获官方连夜整改并替换真人版，获多方媒体正面报道，态势明显缓解（延续-已缓解）；陈都灵新剧《冬风吹又生》造型争议延续；SVIP退款/会员广告体验个案；综艺播放卡顿个案。此前持续追踪的\"江南tt\"套娃式收费维权、\"劳拉LTTA20\"年费VIP退款争议本轮连续第6轮仍无新增发帖，进展持续未知"
+    }
+  ]
+}
