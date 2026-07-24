@@ -9,7 +9,7 @@
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮已登录采集并核实 44 条腾讯视频相关笔记；7天窗口内 4 条，过滤(会员买卖/竞品无关)后真实负面 3 条(其余 40 条为窗口外历史负面)",
+    "xiaohongshu_status": "本轮已登录采集并核实 44 条腾讯视频相关笔记；7天窗口内 4 条，过滤(会员买卖/竞品无关)后真实负面 4 条(其余 40 条为窗口外历史负面)",
     "platform_stats": {
       "weibo": {
         "total": 35,
@@ -21,7 +21,7 @@
       },
       "xiaohongshu": {
         "total": 4,
-        "real_negative": 3
+        "real_negative": 4
       },
       "heimao": {
         "total": 17,
@@ -33,7 +33,7 @@
   },
   "kpi": {
     "total_raw": 57,
-    "real_negative": 52,
+    "real_negative": 53,
     "p0": 0,
     "p1": 1,
     "p2": 0,
@@ -727,7 +727,7 @@
       "noise_reason": null
     },
     {
-      "id": "douban_274293669",
+      "id": "douban_269635493",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -754,8 +754,8 @@
       "likes": null,
       "keywords": "腾讯视频 崩了",
       "permalink": "https://www.xiaohongshu.com/explore/6a60d558000000000f011f54?xsec_token=ABN1U0M8_UxgfhXG72EbTZIqggJn4zbOOhGyCtIZPuDVo=&xsec_source=",
-      "filtered_as_noise": true,
-      "noise_reason": "会员买卖/代开/推广广告"
+      "filtered_as_noise": false,
+      "noise_reason": null
     },
     {
       "id": "6a5f554c000000000f01167d",
