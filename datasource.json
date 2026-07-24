@@ -9,7 +9,7 @@
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮已登录采集并核实 44 条，24h窗口内命中 1 条但经过滤均为会员买卖/推广或竞品无关，窗口内无有效负面",
+    "xiaohongshu_status": "本轮已登录采集并核实 44 条腾讯视频相关笔记；7天窗口内 4 条，过滤(会员买卖/竞品无关)后真实负面 3 条(其余 40 条为窗口外历史负面)",
     "platform_stats": {
       "weibo": {
         "total": 35,
@@ -17,11 +17,11 @@
       },
       "douban": {
         "total": 1,
-        "real_negative": 0
+        "real_negative": 1
       },
       "xiaohongshu": {
-        "total": 1,
-        "real_negative": 0
+        "total": 4,
+        "real_negative": 3
       },
       "heimao": {
         "total": 17,
@@ -32,8 +32,8 @@
     "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。"
   },
   "kpi": {
-    "total_raw": 54,
-    "real_negative": 48,
+    "total_raw": 57,
+    "real_negative": 52,
     "p0": 0,
     "p1": 1,
     "p2": 0,
@@ -727,7 +727,7 @@
       "noise_reason": null
     },
     {
-      "id": "douban_273631141",
+      "id": "douban_274293669",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -738,8 +738,8 @@
       "likes": null,
       "keywords": null,
       "permalink": null,
-      "filtered_as_noise": true,
-      "noise_reason": "未提及腾讯视频/无关组帖"
+      "filtered_as_noise": false,
+      "noise_reason": null
     },
     {
       "id": "6a60d558000000000f011f54",
@@ -756,6 +756,54 @@
       "permalink": "https://www.xiaohongshu.com/explore/6a60d558000000000f011f54?xsec_token=ABN1U0M8_UxgfhXG72EbTZIqggJn4zbOOhGyCtIZPuDVo=&xsec_source=",
       "filtered_as_noise": true,
       "noise_reason": "会员买卖/代开/推广广告"
+    },
+    {
+      "id": "6a5f554c000000000f01167d",
+      "platform": "xiaohongshu",
+      "author": null,
+      "followers": null,
+      "published_at": "2026-07-22T14:43:33",
+      "date_text": "2天前 江苏",
+      "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip",
+      "reposts": null,
+      "comments": null,
+      "likes": null,
+      "keywords": "腾讯视频 黑屏",
+      "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MPsWxQJLgEhkZBDX9qIqSY=&xsec_source=",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "id": "6a5f3ae3000000000402ae2d",
+      "platform": "xiaohongshu",
+      "author": null,
+      "followers": null,
+      "published_at": "2026-07-22T14:43:33",
+      "date_text": "2天前 河南",
+      "text": "腾讯视频自动续费成功退款 没有收到通知提醒就直接自动续费了，在小红书搜了维权教程结果投诉无果，发现简单快捷的方式，十分钟不到就成功退款了！！\np1：扣款截图\np2：按照小红书维权教程开始投诉\np3：腾讯客服投诉\np4：得到回复，拒绝退款\np5：持续投诉，已经没有任何回复了\n❗正确操作过程：\np6：打开腾讯视频app，个人中心-右上角设置-专属客服\np7：复制如下话术：根据2021年5月1号实施的《 网络交易监督管理办法 》法律明确说明自动续费需要在五日前已较为显著的方式提醒消费者，但是我没有收到任何显著的提醒你们那边就给我自动续费了，我不接受，这是违法的，我要退款！\np8-10：申请退款\np11-12：5分钟退款到账\n\t\n注意：腾讯视频退款渠道中，只有一次退款机会，请注意关闭自动续费#维护自己的权益 #退款也是原路退回 #腾讯视频自动续费 #自动续费",
+      "reposts": null,
+      "comments": null,
+      "likes": null,
+      "keywords": "腾讯视频 点不开",
+      "permalink": "https://www.xiaohongshu.com/explore/6a5f3ae3000000000402ae2d?xsec_token=ABgqeEvSp67VBbmdpHezmo4GDdf2FQy0ZNxlUx6JrjaIY=&xsec_source=",
+      "filtered_as_noise": false,
+      "noise_reason": null
+    },
+    {
+      "id": "6a5b4adb000000001101c41a",
+      "platform": "xiaohongshu",
+      "author": null,
+      "followers": null,
+      "published_at": "2026-07-19T14:43:33",
+      "date_text": "5天前 北京",
+      "text": "腾讯视频吃相不要太难看 @腾讯视频 开了VIP凭什么不能在两台设备同时观看？只有两台设备又不是8台🙄🙄🙄\n#不要脸能到什么程度",
+      "reposts": null,
+      "comments": null,
+      "likes": null,
+      "keywords": "腾讯视频 黑屏",
+      "permalink": "https://www.xiaohongshu.com/explore/6a5b4adb000000001101c41a?xsec_token=ABilLTK4S0PzNuLBPavYa2ILsjXXauyC1GmERnordpxpg=&xsec_source=",
+      "filtered_as_noise": false,
+      "noise_reason": null
     },
     {
       "id": "heimao_17400125999",
