@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generated_at": "2026-07-24T10:27:07",
-    "period_start": "2026-07-23T10:27:07",
-    "period_end": "2026-07-24T10:27:07",
+    "generated_at": "2026-07-24T10:55:00",
+    "period_start": "2026-07-23T10:55:00",
+    "period_end": "2026-07-24T10:55:00",
     "sources": [
       "微博 m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)",
       "豆瓣小组 公开讨论搜索",
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮已纳入，24h窗口内 4 条，过滤后真实负面 3 条(另核实窗口外历史负面 0 条)",
+    "xiaohongshu_status": "本轮已登录采集并核实 40 条腾讯视频相关笔记；24h窗口内 4 条，过滤(会员买卖/竞品无关)后真实负面 1 条(其余 36 条为窗口外历史负面)",
     "platform_stats": {
       "weibo": {
         "total": 87,
@@ -21,7 +21,7 @@
       },
       "xiaohongshu": {
         "total": 4,
-        "real_negative": 3
+        "real_negative": 1
       },
       "heimao": {
         "total": 16,
@@ -33,7 +33,7 @@
   },
   "kpi": {
     "total_raw": 107,
-    "real_negative": 101,
+    "real_negative": 99,
     "p0": 0,
     "p1": 2,
     "p2": 1,
@@ -1724,7 +1724,7 @@
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-24T04:27:07",
+      "published_at": "2026-07-24T04:55:00",
       "date_text": "6小时前 河北",
       "text": "优酷你就这样恶心我 优酷这个跳转尴尬，真是太恶心了，完全就是恶意广告，一直弹窗，点完成也没有用，现在互联网公司都活不起了吗",
       "reposts": null,
@@ -1732,15 +1732,15 @@
       "likes": null,
       "keywords": "腾讯视频 广告",
       "permalink": "https://www.xiaohongshu.com/explore/6a627910000000001c00c2ef?xsec_token=AB1tda8WWYgoCcuM74hEbkjOblHREsgE3s883eE7CQtsQ=&xsec_source=",
-      "filtered_as_noise": false,
-      "noise_reason": null
+      "filtered_as_noise": true,
+      "noise_reason": "非腾讯视频主体(竞品/无关)"
     },
     {
       "id": "6a60d558000000000f011f54",
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-23T10:27:07",
+      "published_at": "2026-07-23T10:55:00",
       "date_text": "1天前 河北",
       "text": "今天的腾讯卡的不是一星半点儿 第一次见前面好好的，最后一两分钟刷新不出来时长的\n\t\n腾讯云包场请善待我，我有空一定会刷剧提供热度的",
       "reposts": null,
@@ -1756,7 +1756,7 @@
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-23T10:27:07",
+      "published_at": "2026-07-23T10:55:00",
       "date_text": "编辑于 昨天 14:22 江西",
       "text": "一直转圈圈 WLAN和流量都试了 还换了不同的账号 重登了好几次 也是最新版本 就是打不开我服了\n@百度企业网盘小助手 @百度网盘 视频组件加载失败什么意思   #百度网盘",
       "reposts": null,
@@ -1764,15 +1764,15 @@
       "likes": null,
       "keywords": "腾讯视频 加载不出来",
       "permalink": "https://www.xiaohongshu.com/explore/6a61b297000000000e035704?xsec_token=ABNbxO9OVzYs_U_E8knGBH_TGp8eyH4Q6CBsE64U7-5vI=&xsec_source=",
-      "filtered_as_noise": false,
-      "noise_reason": null
+      "filtered_as_noise": true,
+      "noise_reason": "非腾讯视频主体(竞品/无关)"
     },
     {
       "id": "6a61c241000000000f03d141",
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-23T10:27:07",
+      "published_at": "2026-07-23T10:55:00",
       "date_text": "昨天 22:00 云南",
       "text": "出国后看不了腾讯视频怎么解决?",
       "reposts": null,
