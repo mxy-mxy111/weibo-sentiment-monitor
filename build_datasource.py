@@ -459,15 +459,10 @@ xhs_verified_ok = sum(1 for x in _xhs_verified_all if (not x.get("status")) or x
 xhs_out_window = max(xhs_verified_ok - xhs_in_window, 0)
 
 # 小红书状态：区分"登录失效未采集" / "采集核实成功但窗口内无新增" / "窗口内有真实负面"
-_xhs_win_label = "{}天".format(_XHS_WINDOW_HOURS // 24) if _XHS_WINDOW_HOURS % 24 == 0 else "{}h".format(_XHS_WINDOW_HOURS)
 if xhs_verified_ok == 0:
-    xhs_status = "本轮未纳入(登录态失效/风控，未采集到腾讯视频相关笔记)"
-elif xhs_in_window == 0:
-    xhs_status = "本轮已登录采集并核实 {} 条腾讯视频相关负面笔记，但发布时间均在{}窗口之外，故本轮窗口内无小红书新增负面".format(xhs_verified_ok, _xhs_win_label)
-elif xhs_real == 0:
-    xhs_status = "本轮已登录采集并核实 {} 条，{}窗口内命中 {} 条但经过滤均为会员买卖/推广或竞品无关，窗口内无有效负面".format(xhs_verified_ok, _xhs_win_label, xhs_in_window)
+    xhs_status = "本轮未纳入(登录态失效/风控)"
 else:
-    xhs_status = "本轮已登录采集并核实 {} 条腾讯视频相关笔记；{}窗口内 {} 条，过滤(会员买卖/竞品无关)后真实负面 {} 条(其余 {} 条为窗口外历史负面)".format(xhs_verified_ok, _xhs_win_label, xhs_in_window, xhs_real, xhs_out_window)
+    xhs_status = "本轮真实负面 {} 条".format(xhs_real)
 
 datasource = {
     "meta": {

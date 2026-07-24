@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>腾讯视频负面舆情监测报告（动态）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif; background:#f0f2f5; color:#2b2f36; line-height:1.6; }
+
+  .layout { display:flex; max-width:1280px; margin:0 auto; align-items:flex-start; }
+
+  /* 左侧索引导航 */
+  .toc { position:sticky; top:0; width:190px; flex-shrink:0; height:100vh; overflow-y:auto; padding:28px 12px 40px 20px; }
+  .toc-inner { background:#fff; border-radius:12px; padding:16px 14px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+  .toc-title { font-size:12px; color:#999; font-weight:600; padding:4px 8px 10px; letter-spacing:1px; }
+  .toc a { display:block; font-size:13px; color:#444; text-decoration:none; padding:9px 10px; border-radius:8px; margin-bottom:2px; transition:background .15s,color .15s; }
+  .toc a:hover { background:#eef2f8; color:#1976d2; }
+  .toc a.active { background:#e3f2fd; color:#1565c0; font-weight:600; }
+
+  .wrap { flex:1; max-width:1080px; margin:0 auto; padding:28px 20px 60px; min-width:0; }
+  header.title { background:linear-gradient(135deg,#0f1c3f 0%,#1a2f6b 60%,#0d3b8c 100%); color:#fff; border-radius:14px; padding:28px 32px; margin-bottom:20px; box-shadow:0 4px 16px rgba(0,0,0,.12); }
+  header.title h1 { font-size:22px; font-weight:700; }
+  header.title .sub { font-size:13px; color:#c7d2fe; margin-top:10px; display:flex; flex-direction:column; gap:5px; }
+  header.title .sub b { color:#fff; font-weight:600; }
+  .badge-row { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+  .badge { font-size:12px; padding:4px 12px; border-radius:20px; background:rgba(255,255,255,.15); }
+
+  .card { background:#fff; border-radius:12px; padding:22px 24px; margin-bottom:20px; box-shadow:0 1px 4px rgba(0,0,0,.06); scroll-margin-top:16px; }
+  .card h2 { font-size:16px; color:#0d1b3e; margin-bottom:16px; padding-left:10px; border-left:4px solid #1976d2; }
+  .card h3 { font-size:14px; color:#1a1a2e; margin:16px 0 8px; }
+
+  .summary-line { background:#fff3e0; border:1px solid #ffcc80; border-radius:8px; padding:14px 16px; margin-bottom:16px; display:flex; flex-direction:column; gap:10px; }
+  .summary-line .s-item { display:flex; gap:10px; align-items:flex-start; }
+  .summary-line .s-tag { flex-shrink:0; font-size:11px; font-weight:700; padding:3px 9px; border-radius:10px; white-space:nowrap; margin-top:1px; }
+  .summary-line .s-tag.s-p0 { background:#ffcdd2; color:#b71c1c; }
+  .summary-line .s-tag.s-p1 { background:#ffe0b2; color:#bf360c; }
+  .summary-line .s-tag.s-p2 { background:#c8e6c9; color:#1b5e20; }
+  .summary-line .s-tag.s-plat { background:#bbdefb; color:#0d47a1; }
+  .summary-line .s-text { font-size:14px; color:#333; line-height:1.55; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:6px; }
+  .kpi { background:#f7f9fc; border-radius:10px; padding:16px; text-align:center; border:1px solid #eef1f6; }
+  .kpi .num { font-size:26px; font-weight:800; }
+  .kpi .lab { font-size:12px; color:#888; margin-top:4px; }
+  .kpi.p0 .num { color:#c62828; } .kpi.p1 .num { color:#e65100; } .kpi.p2 .num { color:#2e7d32; } .kpi.total .num { color:#1976d2; }
+
+  .plat-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:#555; }
+  .plat-row span.tag { background:#eef2f8; padding:4px 10px; border-radius:6px; }
+  .plat-row span.tag.blocked { background:#fff3e0; color:#e65100; }
+  .plat-row span.tag.verified { background:#e8f5e9; color:#2e7d32; }
+
+  .event-block { border:1px solid #f0d7d7; background:#fff8f8; border-radius:10px; padding:16px 18px; margin-bottom:14px; }
+  .event-block h4 { color:#c62828; font-size:14px; margin-bottom:8px; }
+  .event-meta { font-size:12px; color:#777; margin-bottom:6px; }
+  .event-meta b { color:#333; }
+  .event-block .content-line { font-size:13px; margin:8px 0; }
+  .event-block a.link { color:#1976d2; text-decoration:none; font-weight:600; }
+  .risk-line { font-size:13px; color:#8d4a00; background:#fff3e0; padding:8px 10px; border-radius:6px; margin:8px 0; }
+  .action-list { font-size:13px; margin-top:6px; padding-left:18px; }
+  .action-list li { margin-bottom:4px; }
+
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th,td { padding:10px 10px; border-bottom:1px solid #f0f0f0; text-align:left; vertical-align:top; }
+  th { background:#fafbfc; color:#666; font-weight:600; }
+  .tag-sect { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; background:#e3f2fd; color:#1565c0; }
+
+  .p2-item { font-size:13px; padding:8px 0; border-bottom:1px dashed #eee; }
+  .p2-item:last-child { border-bottom:none; }
+  .p2-item a { color:#1976d2; text-decoration:none; margin-left:6px; }
+
+  .section-cols { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .no-data { color:#999; font-size:13px; padding:8px 0; }
+
+  .warn-box { background:#fffde7; border:1px solid #fff176; border-radius:8px; padding:12px 14px; margin-bottom:10px; font-size:13px; }
+  .warn-box b { color:#f57f17; }
+
+  .history-list { display:flex; flex-direction:column; gap:12px; }
+  .history-item { display:flex; flex-direction:column; gap:9px; border:1px solid #eef1f6; border-left:4px solid #d3dae3; border-radius:10px; padding:14px 16px; background:#fafbfc; transition:box-shadow .15s; }
+  .history-item:hover { box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .history-item.hi-high { border-left-color:#e53935; }
+  .history-item.hi-mid { border-left-color:#fb8c00; }
+  .history-item.hi-low { border-left-color:#43a047; }
+  .h-head { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding-bottom:8px; border-bottom:1px dashed #e6e9ef; }
+  .h-time-wrap { display:flex; align-items:baseline; gap:9px; flex-wrap:wrap; }
+  .history-item .h-date { font-size:13.5px; font-weight:700; color:#1a1a2e; }
+  .history-item .h-clock { font-size:12.5px; font-weight:700; color:#444; }
+  .history-item .h-tag { font-size:11px; color:#8a8f99; background:#eef1f6; padding:2px 9px; border-radius:8px; font-weight:500; }
+  .history-item .h-nums { flex-shrink:0; display:flex; gap:6px; }
+  .history-item .h-nums span { font-size:11px; padding:2px 9px; border-radius:10px; font-weight:700; }
+  .history-item .h-nums .hp0 { background:#ffebee; color:#c62828; }
+  .history-item .h-nums .hp1 { background:#fff3e0; color:#e65100; }
+  .history-item .h-nums .hp2 { background:#e8f5e9; color:#2e7d32; }
+  .history-item .h-desc { font-size:12.5px; color:#5c6270; line-height:1.8; }
+  .history-empty { color:#999; font-size:13px; padding:8px 0; }
+  .h-note { font-size:12px; color:#9096a3; line-height:1.6; }
+  .h-section-label { display:inline-block; font-size:11px; font-weight:700; padding:1px 9px; border-radius:8px; margin-bottom:5px; }
+  .h-section-label.p1 { background:#fff3e0; color:#e65100; }
+  .h-section-label.p2 { background:#e8f5e9; color:#2e7d32; }
+  .h-ul { margin:0; padding-left:19px; font-size:12.5px; color:#5c6270; line-height:1.75; }
+  .h-ul li { margin-bottom:2px; }
+  .h-ul li b { color:#3a3f4a; }
+  .history-legend { display:flex; gap:16px; flex-wrap:wrap; font-size:11.5px; color:#888; margin-bottom:12px; }
+  .history-legend span { display:flex; align-items:center; gap:5px; }
+  .history-legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+  .history-more { display:flex; flex-direction:column; gap:12px; margin-top:12px; }
+  .history-toggle { margin-top:12px; align-self:center; cursor:pointer; border:1px solid #d3dae3; background:#f5f7fa; color:#3a5a9c; font-size:12.5px; font-weight:600; padding:8px 20px; border-radius:20px; transition:all .15s; }
+  .history-toggle:hover { background:#eaeff7; border-color:#a9bde0; box-shadow:0 2px 6px rgba(58,90,156,.12); }
+
+  .plat-detail { background:#f7f9fc; border:1px solid #eef1f6; border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .plat-detail h4 { font-size:13.5px; color:#0d1b3e; margin-bottom:6px; }
+  .plat-detail p { font-size:12.5px; color:#666; }
+
+  footer { text-align:center; font-size:12px; color:#999; margin-top:20px; line-height:1.7; }
+
+  /* 动态加载状态 */
+  #loading { text-align:center; padding:60px 20px; color:#888; font-size:14px; }
+  #loading .spin { display:inline-block; width:22px; height:22px; border:3px solid #d7dee8; border-top-color:#1976d2; border-radius:50%; animation:sp .8s linear infinite; vertical-align:middle; margin-right:10px; }
+  @keyframes sp { to { transform:rotate(360deg); } }
+  #loadError { display:none; background:#fff3f3; border:1px solid #ffcdd2; color:#c62828; border-radius:10px; padding:16px 18px; font-size:13px; line-height:1.7; }
+  .src-note { font-size:11.5px; color:#9aa0ac; margin-top:8px; }
+  .ev-authors { font-size:12.5px; color:#555; margin-top:6px; line-height:1.9; }
+  .ev-authors a { color:#1976d2; text-decoration:none; }
+  .ev-authors .hot { color:#c62828; font-weight:700; }
+
+  @media (max-width: 900px) {
+    .toc { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- 左侧索引导航 -->
+  <nav class="toc">
+    <div class="toc-inner" id="tocInner">
+      <div class="toc-title">报告索引</div>
+      <a href="#sec-summary">一、核心水位</a>
+      <a href="#sec-p0">二、P0 高危事件</a>
+      <a href="#sec-p1">三、P1 重点关注</a>
+      <a href="#sec-p2">四、P2 长期跟踪</a>
+      <a href="#sec-modules">五、四大板块专项</a>
+      <a href="#sec-warn">六、风险前置预警</a>
+      <a href="#sec-history">七、过往风险回顾</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <div id="loading"><span class="spin"></span>正在加载最新舆情数据…</div>
+    <div id="loadError"></div>
+
+    <div id="app" style="display:none;">
+      <header class="title">
+        <h1 id="reportTitle">《腾讯视频负面舆情监测报告》</h1>
+        <div class="sub" id="reportSub"></div>
+        <div class="badge-row" id="reportBadges"></div>
+      </header>
+
+      <!-- 一、核心水位 -->
+      <div class="card" id="sec-summary">
+        <h2>一、核心水位（结论前置）</h2>
+        <div class="summary-line" id="summaryLine"></div>
+        <div class="kpi-grid" id="kpiGrid"></div>
+        <div class="plat-row" id="platRow"></div>
+      </div>
+
+      <!-- 二、P0 -->
+      <div class="card" id="sec-p0">
+        <h2>二、P0 高危事件</h2>
+        <div id="p0Body"></div>
+      </div>
+
+      <!-- 三、P1 -->
+      <div class="card" id="sec-p1">
+        <h2>三、P1 重点关注</h2>
+        <div id="p1Body"></div>
+      </div>
+
+      <!-- 四、P2 -->
+      <div class="card" id="sec-p2">
+        <h2>四、P2 长期跟踪</h2>
+        <div id="p2Body"></div>
+      </div>
+
+      <!-- 五、四大板块专项 -->
+      <div class="card" id="sec-modules">
+        <h2>五、四大板块专项</h2>
+        <div class="section-cols" id="modulesBody"></div>
+      </div>
+
+      <!-- 六、风险前置预警 -->
+      <div class="card" id="sec-warn">
+        <h2>六、风险前置预警</h2>
+        <div id="warnBody"></div>
+      </div>
+
+      <!-- 七、过往风险回顾 -->
+      <div class="card" id="sec-history">
+        <h2>七、过往风险回顾</h2>
+        <p style="font-size:12px;color:#999;margin-bottom:10px;">按每次采集刷新自动追加，时间倒序排列（最新在最上），展示各时段 P0/P1/P2 分级数量及核心风险简述，用于观察风险水位变化趋势。</p>
+        <div class="history-legend">
+          <span><i style="background:#e53935;"></i>高关注（含P0 或 P1≥3）</span>
+          <span><i style="background:#fb8c00;"></i>中关注（P1 1～2）</span>
+          <span><i style="background:#43a047;"></i>低关注（P1=0）</span>
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+
+      <footer id="reportFooter"></footer>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   动态数据看板：数据全部来自 datasource.json
+   优先读取 GitHub raw 公网地址，失败自动回退同目录本地文件。
+   视觉样式与静态版完全一致。
+   ============================================================ */
+var RAW_URL   = 'https://raw.githubusercontent.com/mxy-mxy111/weibo-sentiment-monitor/main/datasource.json';
+var LOCAL_URL = './datasource.json';
+
+function esc(s) {
+  if (s === null || s === undefined) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+function pad(n) { return (n < 10 ? '0' : '') + n; }
+function fmtDT(iso) {
+  if (!iso) return '';
+  var d = new Date(iso);
+  if (isNaN(d.getTime())) return esc(iso);
+  return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) +
+         ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+}
+function fmtDate(iso) {
+  if (!iso) return '';
+  var d = new Date(iso);
+  if (isNaN(d.getTime())) return esc(iso);
+  return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+}
+function fmtTime(iso) {
+  if (!iso) return '';
+  var d = new Date(iso);
+  if (isNaN(d.getTime())) return '';
+  return pad(d.getHours()) + ':' + pad(d.getMinutes());
+}
+function levelClass(lv) {
+  lv = (lv || '').toUpperCase();
+  if (lv === 'P0') return 's-p0';
+  if (lv === 'P1') return 's-p1';
+  return 's-p2';
+}
+
+/* 拉取数据：先 raw（带时间戳防缓存），失败回退本地 */
+function loadData() {
+  var bust = '?t=' + Date.now();
+  fetchJSON(RAW_URL + bust)
+    .then(function (d) { render(d, 'GitHub 公网 raw'); })
+    .catch(function () {
+      fetchJSON(LOCAL_URL + bust)
+        .then(function (d) { render(d, '本地 datasource.json'); })
+        .catch(function (e) { showError(e); });
+    });
+}
+function fetchJSON(url) {
+  return fetch(url, { cache: 'no-store' }).then(function (r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  });
+}
+function showError(e) {
+  document.getElementById('loading').style.display = 'none';
+  var box = document.getElementById('loadError');
+  box.style.display = 'block';
+  box.innerHTML = '数据加载失败：' + esc(e && e.message ? e.message : e) +
+    '<br>请确认 <code>datasource.json</code> 已推送到 GitHub，或与本页面放在同一目录，并通过 http(s) 服务打开本页面（不要用 file:// 直接双击打开）。';
+}
+
+/* ============ 渲染主流程 ============ */
+function render(d, srcLabel) {
+  d = d || {};
+  var meta = d.meta || {};
+  var kpi = d.kpi || {};
+  var events = d.sentiment_events || [];
+  var history = d.risk_history || [];
+
+  var p0 = events.filter(function (e) { return (e.level || '').toUpperCase() === 'P0'; });
+  var p1 = events.filter(function (e) { return (e.level || '').toUpperCase() === 'P1'; });
+  var p2 = events.filter(function (e) { return (e.level || '').toUpperCase() === 'P2'; });
+
+  renderHeader(meta, kpi, p0, p1, p2, srcLabel);
+  renderSummary(meta, kpi, events);
+  renderEventBlocks('p0Body', p0, '本时段无 P0 级事件。');
+  renderEventBlocks('p1Body', p1, '本时段无 P1 级事件。');
+  renderP2('p2Body', p2);
+  renderModules('modulesBody', events);
+  renderWarn('warnBody', p0.concat(p1));
+  renderHistory('historyList', history);
+  renderFooter(meta, srcLabel);
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.title = '腾讯视频负面舆情监测报告 · ' + fmtDT(meta.generated_at);
+  bindLinks();
+  bindTocScroll();
+}
+
+function renderHeader(meta, kpi, p0, p1, p2, srcLabel) {
+  document.getElementById('reportTitle').textContent =
+    '《腾讯视频负面舆情监测报告 · ' + fmtDT(meta.generated_at) + '》';
+
+  var sub = '';
+  sub += '<div><b>监测周期：</b>' + fmtDT(meta.period_start) + ' ～ ' + fmtDT(meta.period_end) + '</div>';
+  sub += '<div><b>数据来源：</b>' + esc((meta.sources || []).join('；')) + '</div>';
+  sub += '<div><b>统计口径：</b>按技术功能／内容运营／会员收费／其他监管竞品四大板块覆盖，剔除官方号、宣传号、粉丝控评、正向好评、广告推广等噪音，仅保留真实用户负面/风险发帖</div>';
+  document.getElementById('reportSub').innerHTML = sub;
+
+  var badges = '';
+  (meta.sources || []).forEach(function (s) {
+    badges += '<span class="badge">' + esc(s) + '</span>';
+  });
+  if (meta.xiaohongshu_status) {
+    badges += '<span class="badge blocked">小红书：' + esc(meta.xiaohongshu_status) + '</span>';
+  }
+  badges += '<span class="badge">P0：' + p0.length + ' ｜ P1：' + p1.length + ' ｜ P2：' + p2.length + '</span>';
+  document.getElementById('reportBadges').innerHTML = badges;
+}
+
+function renderSummary(meta, kpi, events) {
+  var html = '';
+  if (kpi.conclusion) {
+    html += '<div class="s-item"><span class="s-tag s-p0">结论</span><span class="s-text">' +
+            esc(kpi.conclusion) + '</span></div>';
+  }
+  events.forEach(function (e) {
+    var lv = (e.level || '').toUpperCase();
+    html += '<div class="s-item"><span class="s-tag ' + levelClass(lv) + '">' + esc(lv) +
+            '</span><span class="s-text"><b>[' + esc(e.section) + ']</b> ' + esc(e.title) +
+            (e.post_count ? '（' + e.post_count + '条相关发帖）' : '') + '</span></div>';
+  });
+  if (meta.xiaohongshu_status) {
+    html += '<div class="s-item"><span class="s-tag s-plat">小红书</span><span class="s-text">' +
+            esc(meta.xiaohongshu_status) + '</span></div>';
+  }
+  document.getElementById('summaryLine').innerHTML = html;
+
+  var grid = '';
+  grid += kpiCell('total', (kpi.real_negative != null ? kpi.real_negative : (kpi.total_raw || 0)), '真实负面发帖（条，过滤后）');
+  grid += kpiCell('p0', kpi.p0 != null ? kpi.p0 : 0, 'P0 高危（事件数）');
+  grid += kpiCell('p1', kpi.p1 != null ? kpi.p1 : 0, 'P1 中危（事件数）');
+  grid += kpiCell('p2', kpi.p2 != null ? kpi.p2 : 0, 'P2 低危（事件数）');
+  document.getElementById('kpiGrid').innerHTML = grid;
+
+  var plat = '';
+  var ps = meta.platform_stats || {};
+  var platNames = [['weibo', '微博'], ['heimao', '黑猫投诉'], ['douban', '豆瓣'], ['xiaohongshu', '小红书']];
+  platNames.forEach(function (it) {
+    var s = ps[it[0]];
+    if (s) {
+      plat += '<span class="tag verified">' + it[1] + '：真实负面 ' +
+              (s.real_negative != null ? s.real_negative : '—') + ' 条</span>';
+    }
+  });
+  plat += '<span class="tag">合计真实负面 ' + (kpi.real_negative != null ? kpi.real_negative : '—') + ' 条</span>';
+  document.getElementById('platRow').innerHTML = plat;
+}
+function kpiCell(cls, num, lab) {
+  return '<div class="kpi ' + cls + '"><div class="num">' + esc(num) +
+         '</div><div class="lab">' + esc(lab) + '</div></div>';
+}
+
+/* 事件块（P0 / P1 通用） */
+function renderEventBlocks(containerId, list, emptyText) {
+  var box = document.getElementById(containerId);
+  if (!list.length) {
+    box.innerHTML = '<div class="no-data">' + esc(emptyText) + '</div>';
+    return;
+  }
+  var html = '';
+  list.forEach(function (e) {
+    html += '<div class="event-block">';
+    html += '<h4>【' + esc(e.section) + '】' + esc(e.title) + '</h4>';
+    html += '<div class="event-meta">板块：<b>' + esc(e.section) + '</b> ｜ 分级：<b>' +
+            esc(e.level) + '</b>' + (e.post_count ? ' ｜ 相关发帖：<b>' + e.post_count + ' 条</b>' : '') +
+            (e.id ? ' ｜ 事件ID：' + esc(e.id) : '') + '</div>';
+    if (e.summary) html += '<div class="content-line">' + esc(e.summary) + '</div>';
+    html += renderEvidence(e.evidence);
+    html += '</div>';
+  });
+  box.innerHTML = html;
+}
+
+/* 证据（原文链接列表） */
+function renderEvidence(evidence) {
+  if (!evidence || !evidence.length) return '';
+  var html = '<div class="ev-authors"><b>代表性原文：</b><br>';
+  evidence.forEach(function (v) {
+    var hot = (Number(v.likes) >= 100 || Number(v.reposts) >= 50);
+    var metaBits = [];
+    if (v.followers) metaBits.push('粉丝' + esc(v.followers));
+    if (v.likes) metaBits.push('赞' + esc(v.likes));
+    if (v.reposts) metaBits.push('转' + esc(v.reposts));
+    if (v.published_at) metaBits.push(fmtDT(v.published_at));
+    html += '· <a class="link' + (hot ? ' hot' : '') + '" href="' + esc(v.permalink) +
+            '" target="_blank" rel="noopener noreferrer">' + esc(v.author || '匿名用户') + '</a>' +
+            (metaBits.length ? ' <span style="color:#999;">(' + metaBits.join('/') + ')</span>' : '') +
+            (hot ? ' <span class="hot">热帖</span>' : '') + '<br>';
+  });
+  html += '</div>';
+  return html;
+}
+
+/* P2 列表 */
+function renderP2(containerId, list) {
+  var box = document.getElementById(containerId);
+  if (!list.length) {
+    box.innerHTML = '<div class="no-data">本时段无 P2 级长期跟踪事项。</div>';
+    return;
+  }
+  var html = '';
+  list.forEach(function (e, i) {
+    var links = '';
+    (e.evidence || []).forEach(function (v, j) {
+      links += ' <a href="' + esc(v.permalink) + '" target="_blank" rel="noopener noreferrer">原文' +
+               (e.evidence.length > 1 ? (j + 1) : '') + '→</a>';
+    });
+    html += '<div class="p2-item">' + (i + 1) + '. 【' + esc(e.section) + '】<b>' + esc(e.title) + '</b>' +
+            (e.summary ? '：' + esc(e.summary) : '') + links + '</div>';
+  });
+  box.innerHTML = html;
+}
+
+/* 四大板块专项 */
+function renderModules(containerId, events) {
+  var groups = {
+    tech:   { name: '技术功能', items: [] },
+    content:{ name: '内容运营', items: [] },
+    member: { name: '会员收费', items: [] },
+    other:  { name: '其他｜监管/竞品/突发', items: [] }
+  };
+  events.forEach(function (e) {
+    var s = e.section || '';
+    var key = 'other';
+    if (s.indexOf('技术') >= 0) key = 'tech';
+    else if (s.indexOf('内容') >= 0) key = 'content';
+    else if (s.indexOf('会员') >= 0 || s.indexOf('收费') >= 0) key = 'member';
+    groups[key].items.push(e);
+  });
+  var order = ['tech', 'content', 'member', 'other'];
+  var html = '';
+  order.forEach(function (k) {
+    var g = groups[k];
+    html += '<div><h3>' + esc(g.name) + '</h3>';
+    if (!g.items.length) {
+      html += '<p class="no-data">本时段该板块未监测到达到分级标准的负面/风险事件。</p>';
+    } else {
+      html += '<ol style="font-size:13px;padding-left:18px;">';
+      g.items.forEach(function (e) {
+        html += '<li><b>' + esc(e.level) + '｜</b>' + esc(e.title) +
+                (e.post_count ? '（' + e.post_count + '条）' : '') + '</li>';
+      });
+      html += '</ol>';
+    }
+    html += '</div>';
+  });
+  document.getElementById(containerId).innerHTML = html;
+}
+
+/* 风险前置预警：由 P0 + P1 事件生成 */
+function renderWarn(containerId, list) {
+  var box = document.getElementById(containerId);
+  if (!list.length) {
+    box.innerHTML = '<div class="no-data">本时段无需前置预警的中高危风险。</div>';
+    return;
+  }
+  var html = '';
+  list.forEach(function (e, i) {
+    html += '<div class="warn-box"><b>预警' + (i + 1) + '（' + esc(e.level) + '·' + esc(e.section) +
+            '）：</b>' + esc(e.title) +
+            (e.summary ? '<br>' + esc(e.summary) : '') + '</div>';
+  });
+  box.innerHTML = html;
+}
+
+/* 过往风险回顾：倒序（最新在上），默认仅展示近三条，其余点击"更多内容"展开 */
+var HISTORY_PREVIEW = 3;
+function buildHistoryItem(h) {
+  var p0 = Number(h.p0) || 0, p1 = Number(h.p1) || 0, p2 = Number(h.p2) || 0;
+  var cls = 'hi-low';
+  if (p0 > 0 || p1 >= 3) cls = 'hi-high';
+  else if (p1 >= 1) cls = 'hi-mid';
+
+  var html = '<div class="history-item ' + cls + '">';
+  html += '<div class="h-head"><div class="h-time-wrap">' +
+          '<span class="h-date">' + esc(h.date) + '</span>' +
+          (h.slot ? '<span class="h-tag">' + esc(h.slot) + '</span>' : '') +
+          '</div><div class="h-nums">' +
+          '<span class="hp0">P0 ' + p0 + '</span>' +
+          '<span class="hp1">P1 ' + p1 + '</span>' +
+          '<span class="hp2">P2 ' + p2 + '</span></div></div>';
+  if (h.highlight) {
+    var bullets = String(h.highlight).split(/[；;]/).map(function (x) { return x.trim(); })
+                  .filter(function (x) { return x; });
+    if (bullets.length > 1) {
+      html += '<ul class="h-ul">';
+      bullets.forEach(function (b) { html += '<li>' + esc(b) + '</li>'; });
+      html += '</ul>';
+    } else {
+      html += '<div class="h-desc">' + esc(h.highlight) + '</div>';
+    }
+  }
+  if (h.total != null) {
+    html += '<div class="h-note">当轮过滤后真实负面/风险合计约 ' + esc(h.total) + ' 条。</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderHistory(containerId, history) {
+  var box = document.getElementById(containerId);
+  if (!history || !history.length) {
+    box.innerHTML = '<div class="history-empty">暂无历史记录。</div>';
+    return;
+  }
+  var list = history.slice().reverse();
+  var head = list.slice(0, HISTORY_PREVIEW);
+  var rest = list.slice(HISTORY_PREVIEW);
+
+  var html = '';
+  head.forEach(function (h) { html += buildHistoryItem(h); });
+
+  if (rest.length) {
+    html += '<div class="history-more" id="historyMore" style="display:none;">';
+    rest.forEach(function (h) { html += buildHistoryItem(h); });
+    html += '</div>';
+    html += '<button type="button" class="history-toggle" id="historyToggle" ' +
+            'onclick="toggleHistoryMore()">更多内容（展开其余 ' + rest.length + ' 条历史记录）▾</button>';
+  }
+  box.innerHTML = html;
+}
+
+function toggleHistoryMore() {
+  var more = document.getElementById('historyMore');
+  var btn  = document.getElementById('historyToggle');
+  if (!more || !btn) return;
+  var open = more.style.display !== 'none';
+  if (open) {
+    more.style.display = 'none';
+    btn.innerHTML = '更多内容（展开其余 ' + more.children.length + ' 条历史记录）▾';
+    var sec = document.getElementById('sec-history');
+    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    more.style.display = 'flex';
+    btn.innerHTML = '收起历史记录 ▴';
+  }
+}
+
+function renderFooter(meta, srcLabel) {
+  var f = '';
+  f += '<div>数据来源：' + esc((meta.sources || []).join('；')) + '；生成时间 ' + fmtDT(meta.generated_at) + '。</div>';
+  if (meta.note) f += '<div style="margin-top:4px;">' + esc(meta.note) + '</div>';
+  f += '<div class="src-note">本页为动态看板，数据实时读取自：' + esc(srcLabel) +
+       '（schema v' + esc(meta.schema_version || '1.0') + '）。所有原文链接可点击核验，不含编造内容。</div>';
+  document.getElementById('reportFooter').innerHTML = f;
+}
+
+/* 外链强制新窗口打开 */
+function bindLinks() {
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    a.setAttribute('rel', 'noopener noreferrer');
+    a.setAttribute('target', '_blank');
+    a.onclick = function (e) {
+      e.preventDefault();
+      window.open(a.href, '_blank', 'noopener,noreferrer');
+    };
+  });
+}
+
+/* 左侧索引滚动高亮 */
+function bindTocScroll() {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function onScroll() {
+    var y = window.scrollY + 100, activeIdx = 0;
+    sections.forEach(function (sec, i) { if (sec && sec.offsetTop <= y) activeIdx = i; });
+    links.forEach(function (a, i) { a.classList.toggle('active', i === activeIdx); });
+  }
+  window.removeEventListener('scroll', onScroll);
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+}
+
+loadData();
+</script>
+
+</body>
+</html>

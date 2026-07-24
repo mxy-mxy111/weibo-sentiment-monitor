@@ -9,7 +9,7 @@
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮已登录采集并核实 44 条腾讯视频相关笔记；7天窗口内 4 条，过滤(会员买卖/竞品无关)后真实负面 4 条(其余 40 条为窗口外历史负面)",
+    "xiaohongshu_status": "本轮真实负面 4 条",
     "platform_stats": {
       "weibo": {
         "total": 35,
@@ -727,7 +727,7 @@
       "noise_reason": null
     },
     {
-      "id": "douban_269635493",
+      "id": "douban_269425573",
       "platform": "douban",
       "author": null,
       "followers": null,
