@@ -1,31 +1,39 @@
 {
   "meta": {
-    "generated_at": "2026-07-27T09:03:14",
-    "period_start": "2026-07-26T09:03:14",
-    "period_end": "2026-07-27T09:03:14",
+    "generated_at": "2026-07-27T18:14:19",
+    "period_start": "2026-07-26T18:14:19",
+    "period_end": "2026-07-27T18:14:19",
     "sources": [
       "微博 m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)",
       "豆瓣小组 公开讨论搜索",
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮真实负面 4 条",
+    "xiaohongshu_status": "本轮去噪有效相关 4 条",
     "platform_stats": {
       "weibo": {
         "total": 40,
-        "real_negative": 40
+        "real_negative": 17,
+        "pos": 6,
+        "neu": 17
       },
       "douban": {
         "total": 1,
-        "real_negative": 1
+        "real_negative": 0,
+        "pos": 0,
+        "neu": 1
       },
       "xiaohongshu": {
         "total": 4,
-        "real_negative": 4
+        "real_negative": 4,
+        "pos": 0,
+        "neu": 0
       },
       "heimao": {
         "total": 16,
-        "real_negative": 16
+        "real_negative": 15,
+        "pos": 0,
+        "neu": 1
       }
     },
     "schema_version": "1.1",
@@ -40,7 +48,10 @@
       "heimao": 110
     },
     "total_raw": 61,
-    "real_negative": 61,
+    "real_negative": 36,
+    "pos": 6,
+    "neu": 19,
+    "neg": 36,
     "p0": 0,
     "p1": 1,
     "p2": 1,
@@ -136,7 +147,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325193557837179",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325192639545445",
@@ -155,7 +167,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325192639545445",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325073393129325",
@@ -173,7 +186,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325073393129325",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325072566850401",
@@ -191,7 +205,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325072566850401",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325055564453050",
@@ -210,7 +225,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325055564453050",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325045737981449",
@@ -228,7 +244,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325045737981449",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325027135981689",
@@ -246,7 +263,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325027135981689",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "pos"
     },
     {
       "id": "5324977953835593",
@@ -264,7 +282,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324977953835593",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5324951243458446",
@@ -283,7 +302,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324951243458446",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5324949969702511",
@@ -302,7 +322,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324949969702511",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5324925355429938",
@@ -320,7 +341,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324925355429938",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "pos"
     },
     {
       "id": "5324923113308847",
@@ -338,7 +360,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324923113308847",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5324915861620029",
@@ -356,7 +379,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324915861620029",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "pos"
     },
     {
       "id": "5324913587782023",
@@ -374,7 +398,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324913587782023",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5324911942829087",
@@ -392,7 +417,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324911942829087",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5324861120450483",
@@ -410,7 +436,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324861120450483",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325098860941018",
@@ -428,7 +455,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325098860941018",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325082239173150",
@@ -446,7 +474,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325082239173150",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325078725923245",
@@ -465,7 +494,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325078725923245",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325067604985046",
@@ -483,7 +513,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325067604985046",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "pos"
     },
     {
       "id": "5325066206187064",
@@ -502,7 +533,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325066206187064",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325065295236718",
@@ -520,7 +552,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325065295236718",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325055195091430",
@@ -538,7 +571,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325055195091430",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325054906730571",
@@ -556,7 +590,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325054906730571",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325050640077819",
@@ -574,7 +609,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325050640077819",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325037678628384",
@@ -592,7 +628,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325037678628384",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325036260957799",
@@ -610,7 +647,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325036260957799",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325034111632596",
@@ -628,7 +666,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325034111632596",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325031485474065",
@@ -646,7 +685,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325031485474065",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325025394827925",
@@ -664,7 +704,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325025394827925",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325016963222214",
@@ -682,7 +723,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325016963222214",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5325012237296969",
@@ -700,7 +742,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325012237296969",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325007398110938",
@@ -718,7 +761,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325007398110938",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5325004501682186",
@@ -737,7 +781,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325004501682186",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5324959710708799",
@@ -755,7 +800,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324959710708799",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5324915113989797",
@@ -773,7 +819,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324915113989797",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "pos"
     },
     {
       "id": "5324913449372610",
@@ -791,7 +838,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324913449372610",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "pos"
     },
     {
       "id": "5324900927801900",
@@ -809,7 +857,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324900927801900",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "5324880713089097",
@@ -827,7 +876,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324880713089097",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "5324860798795949",
@@ -845,10 +895,11 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5324860798795949",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
-      "id": "douban_273671077",
+      "id": "douban_273654693",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -860,14 +911,15 @@
       "keywords": null,
       "permalink": null,
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     },
     {
       "id": "6a60e19000000000100260f2",
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-23T09:03:14",
+      "published_at": "2026-07-23T18:14:19",
       "date_text": "4天前 广东",
       "text": "腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后面全都没有了只有被削减鸡肋的1080p，糊过b站盗版，吃相难看，我作为消费者本来就是为了画质才开的会员，结果现在会员比免费资源还糊？你还做什么生意？退钱吧 糊得要死看得我一肚子火。\n\t\n#画质 #腾讯视频 #画质差 #腾讯#追剧",
       "reposts": null,
@@ -876,14 +928,15 @@
       "keywords": "腾讯视频 加载不出来",
       "permalink": "https://www.xiaohongshu.com/explore/6a60e19000000000100260f2?xsec_token=ABN1U0M8_UxgfhXG72EbTZIllQEICn5vdngiP-SHy0dJg=&xsec_source=",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "6a5f554c000000000f01167d",
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-22T09:03:14",
+      "published_at": "2026-07-22T18:14:19",
       "date_text": "5天前 江苏",
       "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip",
       "reposts": null,
@@ -892,14 +945,15 @@
       "keywords": "腾讯视频 黑屏",
       "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "6a5f3ae3000000000402ae2d",
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-22T09:03:14",
+      "published_at": "2026-07-22T18:14:19",
       "date_text": "5天前 河南",
       "text": "腾讯视频自动续费成功退款 没有收到通知提醒就直接自动续费了，在小红书搜了维权教程结果投诉无果，发现简单快捷的方式，十分钟不到就成功退款了！！\np1：扣款截图\np2：按照小红书维权教程开始投诉\np3：腾讯客服投诉\np4：得到回复，拒绝退款\np5：持续投诉，已经没有任何回复了\n❗正确操作过程：\np6：打开腾讯视频app，个人中心-右上角设置-专属客服\np7：复制如下话术：根据2021年5月1号实施的《 网络交易监督管理办法 》法律明确说明自动续费需要在五日前已较为显著的方式提醒消费者，但是我没有收到任何显著的提醒你们那边就给我自动续费了，我不接受，这是违法的，我要退款！\np8-10：申请退款\np11-12：5分钟退款到账\n\t\n注意：腾讯视频退款渠道中，只有一次退款机会，请注意关闭自动续费#维护自己的权益 #退款也是原路退回 #腾讯视频自动续费 #自动续费",
       "reposts": null,
@@ -908,14 +962,15 @@
       "keywords": "腾讯视频 加载不出来",
       "permalink": "https://www.xiaohongshu.com/explore/6a5f3ae3000000000402ae2d?xsec_token=ABgqeEvSp67VBbmdpHezmo4OvToXLy28mQ4plIqzHKy_w=&xsec_source=",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "6a5cce53000000001c00c0ab",
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-20T09:03:14",
+      "published_at": "2026-07-20T18:14:19",
       "date_text": "7天前 山西",
       "text": "腾讯好恶心 又在剧集前加了广告，烦都烦死了",
       "reposts": null,
@@ -924,7 +979,8 @@
       "keywords": "腾讯视频 广告",
       "permalink": "https://www.xiaohongshu.com/explore/6a5cce53000000001c00c0ab?xsec_token=ABIW84XntO2eaTw4KGNV7mqd1iG8jm_Sq0i2e9GDnYdYM=&xsec_source=",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400208564",
@@ -939,7 +995,8 @@
       "keywords": "退款|自动续费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400208564/?sld=9357aa814f2591318cb10a03bbb99bd3",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400205579",
@@ -954,7 +1011,8 @@
       "keywords": "退款|申请退款/提现不到账,霸王条款",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400205579/?sld=db242d0272477d06552e5a87c99818f4",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400204319",
@@ -969,7 +1027,8 @@
       "keywords": "退款|自动续费,客服不处理/处理不当",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400204319/?sld=9896751c1e8bba1b8d1f7d49a2dc9d1c",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400204237",
@@ -984,7 +1043,8 @@
       "keywords": "退款|自动续费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400204237/?sld=2d741e0d453005690fd0b13bae2156fc",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400202821",
@@ -999,7 +1059,8 @@
       "keywords": "退款|自动续费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400202821/?sld=f73495a5c9c50538046eb4814e6297f5",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400202196",
@@ -1014,7 +1075,8 @@
       "keywords": "退款|自动续费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400202196/?sld=19d40f0711b40c033899c2a1d970352f",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400202156",
@@ -1029,7 +1091,8 @@
       "keywords": "改善服务|乱收费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400202156/?sld=abd3df7a0a51562f4710432b0814761a",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400199312",
@@ -1044,7 +1107,8 @@
       "keywords": "退款,改善服务|客服不处理/处理不当,申请退款/提现不到账,联系不到客服",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400199312/?sld=fad14662ddeeb7f1398a3c37d7363b5b",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400198787",
@@ -1059,7 +1123,8 @@
       "keywords": "退款|自动续费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400198787/?sld=737de85e6a3e3393720ae96de5d44250",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400197347",
@@ -1074,7 +1139,8 @@
       "keywords": "退款,作出处罚,解释,开发票|客服不处理/处理不当,乱收费,自动续费,强迫收费,联系不到客服,发票问题",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400197347/?sld=ad05fd796c95d7943f4708dd87fe6fbe",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400194606",
@@ -1089,7 +1155,8 @@
       "keywords": "退款|霸王条款,申请退款/提现不到账,客服不处理/处理不当,自动续费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400194606/?sld=7a513be37dabb52485c9b30ce340eb51",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400194376",
@@ -1104,7 +1171,8 @@
       "keywords": "退款|自动续费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400194376/?sld=e511960c2a70bbf722fac00a308b9abe",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400194333",
@@ -1119,7 +1187,8 @@
       "keywords": "退款,赔偿,解释,作出处罚,改善服务|申请退款/提现不到账,自动续费,联系不到客服,服务不到位/态度差",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400194333/?sld=887ffa3dd4bb6b3a033488f60e34c65e",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400191458",
@@ -1134,7 +1203,8 @@
       "keywords": "恢复账号|客服不处理/处理不当",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400191458/?sld=abf94622a2c2ad5769aa7abd73baa301",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400188067",
@@ -1149,7 +1219,8 @@
       "keywords": "退款,赔偿|强迫收费",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400188067/?sld=e04ac2d5c842ec1a95691c309e970d88",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400185393",
@@ -1164,7 +1235,8 @@
       "keywords": "解释,赔偿,改善服务|虚假/误导宣传,宣传广告续时长却无法观影",
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400185393/?sld=292a3cd27c8158a84b3286baa01e7901",
       "filtered_as_noise": false,
-      "noise_reason": null
+      "noise_reason": null,
+      "sentiment": "neu"
     }
   ],
   "risk_history": [
@@ -1278,11 +1350,14 @@
     },
     {
       "date": "2026-07-27",
-      "slot": "09:03（自动化定时刷新-09:00档）",
+      "slot": "17:24（每日自动整合）",
       "p0": 0,
       "p1": 1,
       "p2": 1,
-      "total": 61,
+      "pos": 6,
+      "neu": 19,
+      "neg": 36,
+      "total": 36,
       "highlight": "本轮 P0 0起｜P1 1起：会员收费—黑猫投诉集中反映自动续费未告知/退款遭拒（16条）｜P2 1起：技术功能—广告体验与试看限制吐槽（3条）。"
     }
   ]

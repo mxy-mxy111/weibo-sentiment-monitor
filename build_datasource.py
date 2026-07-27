@@ -35,6 +35,32 @@ try:
 except Exception:
     _TITLE_WORDS = []
 
+# 情感三分类词库（供 classify_sentiment 对每条原始帖做 pos / neu / neg 判定）
+try:
+    from keywords_config import (
+        NEG_SENTIMENT_WORDS as _NEG_W,
+        POSITIVE_WORDS as _POS_W,
+        NEUTRAL_WORDS as _NEU_W,
+    )
+except Exception:
+    _NEG_W, _POS_W, _NEU_W = [], [], []
+
+# ---- 情感三分类判定（pos / neu / neg）----
+# 规则：强负面词命中且无正面词 -> neg；正面词命中且无负面词 -> pos；
+#      正负皆命中 -> 以命中数量多者为准（负面优先，负面>=正面则 neg）；
+#      皆无 -> 中性（neu）。黑猫投诉本身即投诉，正文必含负面词，自然归 neg。
+def classify_sentiment(text):
+    t = text or ""
+    neg = sum(1 for w in _NEG_W if w in t)
+    pos = sum(1 for w in _POS_W if w in t)
+    if neg and not pos:
+        return "neg"
+    if pos and not neg:
+        return "pos"
+    if neg and pos:
+        return "neg" if neg >= pos else "pos"
+    return "neu"
+
 # ============================================================
 # 1. 载入四平台原始采集数据
 # ============================================================
@@ -291,6 +317,10 @@ for e in heimao_raw:
         "noise_reason": None,
     })
 
+# ---- 为每条原始帖打"情感三分类"标签（pos / neu / neg），供情感声量趋势使用 ----
+for _p in raw_posts:
+    _p["sentiment"] = classify_sentiment(_p.get("text"))
+
 # ============================================================
 # 4. 跨平台去重（重复内容删除）
 #    先按 id 去重，再按正文归一化指纹去重（保留信息更全者）
@@ -320,16 +350,19 @@ for p in raw_posts:
     deduped.append(p)
 raw_posts = deduped
 
-# 各平台计数
+# 各平台计数（含情感三分类细分：pos / neu / neg；real_negative = 真实负面 = neg）
 def plat_stats(platform):
     items = [r for r in raw_posts if r["platform"] == platform]
     real = [r for r in items if not r["filtered_as_noise"]]
-    return len(items), len(real)
+    pos = sum(1 for r in real if r.get("sentiment") == "pos")
+    neu = sum(1 for r in real if r.get("sentiment") == "neu")
+    neg = sum(1 for r in real if r.get("sentiment") == "neg")
+    return len(items), len(real), pos, neu, neg
 
-wb_total, wb_real = plat_stats("weibo")
-db_total, db_real = plat_stats("douban")
-xhs_total, xhs_real = plat_stats("xiaohongshu")
-hm_total, hm_real = plat_stats("heimao")
+wb_total, wb_real, wb_pos, wb_neu, wb_neg = plat_stats("weibo")
+db_total, db_real, db_pos, db_neu, db_neg = plat_stats("douban")
+xhs_total, xhs_real, xhs_pos, xhs_neu, xhs_neg = plat_stats("xiaohongshu")
+hm_total, hm_real, hm_pos, hm_neu, hm_neg = plat_stats("heimao")
 
 # ============================================================
 # 5. 归并分级事件（基于微博本轮真实帖，人工规则归并）
@@ -468,7 +501,13 @@ def _build_conclusion(p0, p1, p2, events, hm_real):
 p0 = sum(1 for e in sentiment_events if e["level"] == "P0")
 p1 = sum(1 for e in sentiment_events if e["level"] == "P1")
 p2 = sum(1 for e in sentiment_events if e["level"] == "P2")
-real_negative = sum(1 for r in raw_posts if not r["filtered_as_noise"])
+# 情感三分类汇总（仅统计去噪后的真实帖）
+pos_count = sum(1 for r in raw_posts if not r["filtered_as_noise"] and r.get("sentiment") == "pos")
+neu_count = sum(1 for r in raw_posts if not r["filtered_as_noise"] and r.get("sentiment") == "neu")
+neg_count = sum(1 for r in raw_posts if not r["filtered_as_noise"] and r.get("sentiment") == "neg")
+# 真实负面 = 去噪后判定为 neg 的帖（情感三分类口径下，"真实负面"即 neg 维度）
+real_negative = neg_count
+conclusion = _build_conclusion(p0, p1, p2, sentiment_events, hm_real)
 
 # ---- 过滤前总抓取量（各平台采集/解析出的原始条数：时间窗口过滤、噪音过滤、跨平台去重之前）----
 def _count(fn):
@@ -495,7 +534,42 @@ xhs_out_window = max(xhs_verified_ok - xhs_in_window, 0)
 if xhs_verified_ok == 0:
     xhs_status = "本轮未纳入(登录态失效/风控)"
 else:
-    xhs_status = "本轮真实负面 {} 条".format(xhs_real)
+    xhs_status = "本轮去噪有效相关 {} 条".format(xhs_real)
+
+# ============================================================
+# 6.5 每日自动整合进「过往风险回顾」(risk_history.json)
+#   规则(用户要求)：以后每天早上采集完毕后，把当轮结果整合进历史，长期沉淀。
+#   为杜绝此前"采集了却没写进历史"的断更问题，此步在每轮 build 时自动执行。
+#   幂等策略：
+#     - 按"日期"去重：当天已存在记录则不重复追加(保留既有/人工撰写的 highlight)，
+#       避免同一天多档采集刷屏；如需强制多档留痕可设 ALLOW_MULTI_DAILY=1。
+#     - 采集完全失败(raw_posts 为空)时跳过，绝不写入 0/0/0 空记录污染趋势。
+#     - 设 SKIP_HISTORY_APPEND=1 可临时关闭(用于本地调试/复现历史时间窗)。
+# ============================================================
+_today = now.strftime("%Y-%m-%d")
+_skip_append = os.environ.get("SKIP_HISTORY_APPEND") == "1"
+_allow_multi = os.environ.get("ALLOW_MULTI_DAILY") == "1"
+_has_today = any((isinstance(h, dict) and h.get("date") == _today) for h in risk_history)
+if _skip_append:
+    print("[历史] SKIP_HISTORY_APPEND=1，本轮不追加过往风险回顾")
+elif len(raw_posts) == 0:
+    print("[历史] 本轮 raw_posts 为空(疑似采集失败)，跳过追加，避免断更式空记录")
+elif _has_today and not _allow_multi:
+    print("[历史] {} 当日已有记录，按幂等策略不重复追加".format(_today))
+else:
+    _new_entry = {
+        "date": _today,
+        "slot": now.strftime("%H:%M") + "（每日自动整合）",
+        "p0": p0, "p1": p1, "p2": p2,
+        "pos": pos_count, "neu": neu_count, "neg": neg_count,
+        "total": real_negative,
+        "highlight": conclusion,
+    }
+    risk_history.append(_new_entry)
+    with open(os.path.join(BASE, "risk_history.json"), "w", encoding="utf-8") as _hf:
+        json.dump(risk_history, _hf, ensure_ascii=False, indent=2)
+    print("[历史] 已自动整合当日记录 -> {} {} | P0/P1/P2={}/{}/{} 情感 pos/neu/neg={}/{}/{} total(neg)={} (历史累计 {} 条)".format(
+        _today, _new_entry["slot"], p0, p1, p2, pos_count, neu_count, neg_count, real_negative, len(risk_history)))
 
 datasource = {
     "meta": {
@@ -510,10 +584,10 @@ datasource = {
         ],
         "xiaohongshu_status": xhs_status,
         "platform_stats": {
-            "weibo": {"total": wb_total, "real_negative": wb_real},
-            "douban": {"total": db_total, "real_negative": db_real},
-            "xiaohongshu": {"total": xhs_total, "real_negative": xhs_real},
-            "heimao": {"total": hm_total, "real_negative": hm_real},
+            "weibo": {"total": wb_total, "real_negative": wb_neg, "pos": wb_pos, "neu": wb_neu},
+            "douban": {"total": db_total, "real_negative": db_neg, "pos": db_pos, "neu": db_neu},
+            "xiaohongshu": {"total": xhs_total, "real_negative": xhs_neg, "pos": xhs_pos, "neu": xhs_neu},
+            "heimao": {"total": hm_total, "real_negative": hm_neg, "pos": hm_pos, "neu": hm_neu},
         },
         "schema_version": "1.1",
         "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。",
@@ -523,8 +597,9 @@ datasource = {
         "collected_by_platform": _collected,
         "total_raw": len(raw_posts),
         "real_negative": real_negative,
+        "pos": pos_count, "neu": neu_count, "neg": neg_count,
         "p0": p0, "p1": p1, "p2": p2,
-        "conclusion": _build_conclusion(p0, p1, p2, sentiment_events, hm_real),
+        "conclusion": conclusion,
     },
     "sentiment_events": sentiment_events,
     "raw_posts": raw_posts,
@@ -535,9 +610,10 @@ out = os.path.join(BASE, "datasource.json")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(datasource, f, ensure_ascii=False, indent=2)
 
-print("raw_posts:", len(raw_posts), "| real_negative:", real_negative,
-      "| 去重删除:", dup_removed)
-print("平台明细  微博:{}/{}  豆瓣:{}/{}  小红书:{}/{}  黑猫:{}/{} (采集/真实负面)".format(
-    wb_total, wb_real, db_total, db_real, xhs_total, xhs_real, hm_total, hm_real))
+print("raw_posts:", len(raw_posts), "| 真实负面(neg):", real_negative,
+      "| 正面(pos):", pos_count, "| 中性(neu):", neu_count, "| 去重删除:", dup_removed)
+print("平台明细  微博:{}/({}neg {}pos {}neu)  豆瓣:{}/({}neg {}pos {}neu)  小红书:{}/({}neg {}pos {}neu)  黑猫:{}/({}neg {}pos {}neu) (采集/情感细分)".format(
+    wb_total, wb_neg, wb_pos, wb_neu, db_total, db_neg, db_pos, db_neu,
+    xhs_total, xhs_neg, xhs_pos, xhs_neu, hm_total, hm_neg, hm_pos, hm_neu))
 print("events P0/P1/P2:", p0, p1, p2, "| risk_history:", len(risk_history))
 print("written:", out)

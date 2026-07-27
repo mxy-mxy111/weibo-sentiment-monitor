@@ -44,6 +44,24 @@
   .kpi .num { font-size:26px; font-weight:800; }
   .kpi .lab { font-size:12px; color:#888; margin-top:4px; }
   .kpi.p0 .num { color:#c62828; } .kpi.p1 .num { color:#e65100; } .kpi.p2 .num { color:#2e7d32; } .kpi.total .num { color:#1976d2; }
+  .kpi.pos .num { color:#2e7d32; } .kpi.neu .num { color:#90a4ae; }
+  /* 情感结构分部条（负面/正面/中性 整合一张图，横向占比条） */
+  .prop-wrap { }
+  .prop-total { font-size:13px; color:#555; margin-bottom:9px; }
+  .prop-total b { font-size:21px; color:#222; font-weight:800; margin:0 3px; font-variant-numeric:tabular-nums; }
+  .prop-bar { display:flex; width:100%; height:26px; border-radius:13px; overflow:hidden; background:#eef1f6; }
+  .prop-seg { height:100%; transition:width .3s ease; }
+  .prop-empty { width:100%; height:100%; background:#eef1f6; }
+  .prop-legend { display:flex; gap:24px; flex-wrap:wrap; margin-top:13px; }
+  .pl-row { display:flex; align-items:center; gap:8px; font-size:13.5px; }
+  .pl-row i { width:12px; height:12px; border-radius:3px; flex-shrink:0; }
+  .pl-name { font-weight:600; color:#333; }
+  .pl-val { color:#777; font-variant-numeric:tabular-nums; }
+  .pl-val b { color:#333; }
+  .prop-note { font-size:13px; color:#999; padding:6px 0; }
+  /* P0/P1/P2 风险等级一行 */
+  .kpi-grid--risk { grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:640px){ .kpi-grid--risk { grid-template-columns:repeat(3,1fr); } }
 
   .plat-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; font-size:13px; color:#555; }
   .plat-row span.tag { background:#eef2f8; padding:4px 10px; border-radius:6px; }
@@ -120,6 +138,14 @@
   .chart-empty { display:flex; align-items:center; justify-content:center; height:150px; color:#b0b6c0; font-size:12.5px; text-align:center; line-height:1.7; border:1px dashed #dfe4ec; border-radius:10px; background:#fafbfc; padding:0 14px; }
   @media (max-width: 640px) { .chart-card { flex:1 1 100%; } }
 
+  /* 核心水位内的「本轮结构分布」区块 */
+  .dist-block { margin-top:18px; padding-top:16px; border-top:1px dashed #e6eaf1; }
+  .dist-block-title { font-size:13px; font-weight:700; color:#0d1b3e; margin-bottom:12px; display:flex; align-items:center; gap:7px; letter-spacing:.5px; }
+  .dist-block-title::before { content:''; width:4px; height:14px; border-radius:2px; background:linear-gradient(180deg,#1976d2,#42a5f5); display:inline-block; }
+  .charts-row--dist { margin-bottom:0; gap:18px; }
+  .chart-card--dist { background:linear-gradient(180deg,#ffffff,#fbfcff); border:1px solid #e9edf5; border-radius:14px; padding:16px 18px 14px; box-shadow:0 1px 3px rgba(20,40,90,.04); transition:box-shadow .18s, transform .18s; }
+  .chart-card--dist:hover { box-shadow:0 6px 18px rgba(20,40,90,.10); transform:translateY(-2px); }
+
   .plat-detail { background:#f7f9fc; border:1px solid #eef1f6; border-radius:10px; padding:14px 16px; margin-bottom:12px; }
   .plat-detail h4 { font-size:13.5px; color:#0d1b3e; margin-bottom:6px; }
   .plat-detail p { font-size:12.5px; color:#666; }
@@ -173,8 +199,33 @@
       <div class="card" id="sec-summary">
         <h2>一、核心水位（结论前置）</h2>
         <div class="summary-line" id="summaryLine"></div>
-        <div class="kpi-grid" id="kpiGrid"></div>
+
+        <!-- 情感结构：负面/正面/中性 整合一张图 -->
+        <div class="dist-block">
+          <div class="dist-block-title" id="sentimentTitle">情感结构分布（负面 / 正面 / 中性）</div>
+          <div class="prop-wrap" id="sentimentBar"></div>
+        </div>
+
+        <!-- 风险等级事件数：P0 / P1 / P2 一行 -->
+        <div class="kpi-grid kpi-grid--risk" id="kpiGrid"></div>
         <div class="plat-row" id="platRow"></div>
+
+        <!-- 本轮结构分布：平台来源 + 风险板块（真实采集数据） -->
+        <div class="dist-block">
+          <div class="dist-block-title">本轮结构分布</div>
+          <div class="charts-row charts-row--dist">
+            <div class="chart-card chart-card--dist">
+              <div class="chart-title">各平台负面来源分布</div>
+              <div class="chart-sub">微博 / 豆瓣 / 小红书 / 黑猫投诉 真实负面条数占比</div>
+              <div class="chart-svg-wrap" id="chartPlatform"></div>
+            </div>
+            <div class="chart-card chart-card--dist">
+              <div class="chart-title">风险板块分布</div>
+              <div class="chart-sub">技术功能 / 内容运营 / 会员收费 / 其他 事件数占比</div>
+              <div class="chart-svg-wrap" id="chartSection"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 二、P0 -->
@@ -212,17 +263,17 @@
         <h2>七、过往风险回顾</h2>
         <p style="font-size:12px;color:#999;margin-bottom:10px;">按每次采集刷新自动追加，时间倒序排列（最新在最上），展示各时段 P0/P1/P2 分级数量及核心风险简述，用于观察风险水位变化趋势。</p>
 
-        <!-- 趋势图表：情感声量 + 风险等级，横向一排 -->
+        <!-- 趋势 + 结构 图表：全部基于真实采集数据 -->
         <div class="charts-row">
           <div class="chart-card">
-            <div class="chart-title">情感声量趋势</div>
-            <div class="chart-sub">正面 / 中性 / 负面 每日数量（每天以早上采集档为准）</div>
-            <div class="chart-svg-wrap" id="chartSentiment"></div>
+            <div class="chart-title">风险等级趋势</div>
+            <div class="chart-sub">P0 / P1 / P2 每日事件数变化（每天以早上采集档为准）</div>
+            <div class="chart-svg-wrap" id="chartRiskLevel"></div>
           </div>
           <div class="chart-card">
-            <div class="chart-title">风险等级趋势</div>
-            <div class="chart-sub">P0 / P1 / P2 每日数量变化（每天以早上采集档为准）</div>
-            <div class="chart-svg-wrap" id="chartRiskLevel"></div>
+            <div class="chart-title">情感声量趋势</div>
+            <div class="chart-sub">正面 / 中性 / 负面 每日声量（已接入三分类采集：真实抓取正面 / 中性 / 负面内容）</div>
+            <div class="chart-svg-wrap" id="chartSentiment"></div>
           </div>
         </div>
 
@@ -327,7 +378,7 @@ function render(d, srcLabel) {
   renderModules('modulesBody', events);
   renderWarn('warnBody', p0.concat(p1));
   renderHistory('historyList', history);
-  renderTrendCharts(history);
+  renderTrendCharts(history, meta, events);
   renderFooter(meta, srcLabel);
 
   document.getElementById('loading').style.display = 'none';
@@ -354,7 +405,13 @@ function renderSummary(meta, kpi, events) {
     html += '<div class="s-item"><span class="s-tag s-p0">结论</span><span class="s-text">' +
             esc(kpi.conclusion) + '</span></div>';
   }
-  events.forEach(function (e) {
+  // 事件按等级排序：P0 > P1 > P2（保证总结中 P1 在 P2 上方）
+  var lvOrder = { 'P0': 0, 'P1': 1, 'P2': 2 };
+  var sorted = (events || []).slice().sort(function (a, b) {
+    return (lvOrder[(a.level || '').toUpperCase()] != null ? lvOrder[(a.level || '').toUpperCase()] : 9) -
+           (lvOrder[(b.level || '').toUpperCase()] != null ? lvOrder[(b.level || '').toUpperCase()] : 9);
+  });
+  sorted.forEach(function (e) {
     var lv = (e.level || '').toUpperCase();
     html += '<div class="s-item"><span class="s-tag ' + levelClass(lv) + '">' + esc(lv) +
             '</span><span class="s-text"><b>[' + esc(e.section) + ']</b> ' + esc(e.title) +
@@ -362,15 +419,51 @@ function renderSummary(meta, kpi, events) {
   });
   document.getElementById('summaryLine').innerHTML = html;
 
+  // 情感结构：负面 / 正面 / 中性 整合为一张横向分部条（总数 + 各占比）
+  var sentTotal = (Number(kpi.pos) || 0) + (Number(kpi.neu) || 0) + (Number(kpi.neg) || 0);
+  var st = document.getElementById('sentimentTitle');
+  if (st) st.textContent = '情感结构分布（共 ' + sentTotal + ' 条真实帖 · 负面 / 正面 / 中性占比）';
+  document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi);
+
+  // 风险等级事件数：P0 / P1 / P2 一行
   var grid = '';
-  grid += kpiCell('total', (kpi.total_collected != null ? kpi.total_collected : (kpi.total_raw || 0)), '总共抓取（条）');
-  grid += kpiCell('total', (kpi.real_negative != null ? kpi.real_negative : 0), '真实负面（条）');
   grid += kpiCell('p0', kpi.p0 != null ? kpi.p0 : 0, 'P0 高危（事件数）');
   grid += kpiCell('p1', kpi.p1 != null ? kpi.p1 : 0, 'P1 中危（事件数）');
   grid += kpiCell('p2', kpi.p2 != null ? kpi.p2 : 0, 'P2 低危（事件数）');
   document.getElementById('kpiGrid').innerHTML = grid;
 
   document.getElementById('platRow').innerHTML = '';
+}
+function renderSentimentBar(kpi) {
+  var pos = Number(kpi.pos) || 0, neu = Number(kpi.neu) || 0, neg = Number(kpi.neg) || 0;
+  var total = pos + neu + neg;
+  var segs = [
+    { name: '负面', val: neg, color: '#e53935' },
+    { name: '正面', val: pos, color: '#43a047' },
+    { name: '中性', val: neu, color: '#90a4ae' }
+  ];
+  // 无数据：空态占位（保持大致样式），明早抓取后用真实数据填充
+  if (!total) {
+    return '<div class="prop-bar"><div class="prop-empty"></div></div>' +
+           '<div class="prop-note">本轮暂无情感分类数据（明早抓取后将显示真实占比）</div>';
+  }
+  var bar = '<div class="prop-bar">';
+  segs.forEach(function (s) {
+    var pct = s.val / total * 100;
+    if (pct <= 0) return;
+    bar += '<div class="prop-seg" style="width:' + pct + '%;background:' + s.color +
+           '" title="' + s.name + ' ' + s.val + ' 条 · ' + Math.round(pct) + '%"></div>';
+  });
+  bar += '</div>';
+  bar += '<div class="prop-legend">';
+  segs.forEach(function (s) {
+    var pct = Math.round(s.val / total * 100);
+    bar += '<div class="pl-row"><i style="background:' + s.color + '"></i>' +
+           '<span class="pl-name">' + s.name + '</span>' +
+           '<span class="pl-val"><b>' + s.val + '</b> 条 · ' + pct + '%</span></div>';
+  });
+  bar += '</div>';
+  return bar;
 }
 function kpiCell(cls, num, lab) {
   return '<div class="kpi ' + cls + '"><div class="num">' + esc(num) +
@@ -635,10 +728,115 @@ function _chartLegend(items) {
   items.forEach(function (it) { s += '<span><i style="background:' + it.color + ';"></i>' + it.name + '</span>'; });
   return s + '</div>';
 }
-function renderTrendCharts(history) {
+
+/* 折线（含面积）趋势图：用于「真实负面声量趋势」，纯 SVG */
+function _svgLine(days, valueFn, color, unit) {
+  var n = days.length;
+  var padL = 30, padR = 14, padT = 16, padB = 30;
+  var stepX = 46;
+  var plotW = (n > 1 ? (n - 1) * stepX : 0);
+  var W = padL + padR + Math.max(plotW, 200);
+  var H = 188, plotH = H - padT - padB;
+  var maxY = 0;
+  days.forEach(function (d) { var v = Number(valueFn(d)) || 0; if (v > maxY) maxY = v; });
+  if (maxY <= 0) maxY = 1;
+  var niceMax = maxY <= 5 ? 5 : (Math.ceil(maxY / 5) * 5);
+  function X(i) { return padL + (n > 1 ? i * stepX : plotW / 2 + (W - padL - padR) / 2 - plotW / 2); }
+  function Y(v) { return padT + plotH - (v / niceMax) * plotH; }
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img">';
+  [0, niceMax / 2, niceMax].forEach(function (t) {
+    var y = Y(t);
+    svg += '<line x1="' + padL + '" y1="' + y.toFixed(1) + '" x2="' + (W - padR) + '" y2="' + y.toFixed(1) + '" stroke="#eef1f6" stroke-width="1"/>';
+    var lbl = (t === Math.floor(t)) ? t : t.toFixed(1);
+    svg += '<text x="' + (padL - 5) + '" y="' + (y + 3).toFixed(1) + '" font-size="9" fill="#aab0bb" text-anchor="end">' + lbl + '</text>';
+  });
+  var pts = days.map(function (d, i) { return [X(i), Y(Number(valueFn(d)) || 0)]; });
+  if (pts.length) {
+    var base = (padT + plotH).toFixed(1);
+    var area = 'M' + pts[0][0].toFixed(1) + ',' + base;
+    pts.forEach(function (p) { area += ' L' + p[0].toFixed(1) + ',' + p[1].toFixed(1); });
+    area += ' L' + pts[pts.length - 1][0].toFixed(1) + ',' + base + ' Z';
+    svg += '<path d="' + area + '" fill="' + color + '" fill-opacity="0.12"/>';
+    if (pts.length > 1) {
+      var line = pts.map(function (p, i) { return (i ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' ');
+      svg += '<path d="' + line + '" fill="none" stroke="' + color + '" stroke-width="2"/>';
+    }
+    days.forEach(function (d, i) {
+      var v = Number(valueFn(d)) || 0;
+      svg += '<circle cx="' + pts[i][0].toFixed(1) + '" cy="' + pts[i][1].toFixed(1) + '" r="3.2" fill="#fff" stroke="' + color + '" stroke-width="1.8"><title>' + _mmdd(d.date) + '：' + v + (unit || '') + '</title></circle>';
+      svg += '<text x="' + pts[i][0].toFixed(1) + '" y="' + (pts[i][1] - 7).toFixed(1) + '" font-size="9.5" fill="#555" text-anchor="middle">' + v + '</text>';
+      svg += '<text x="' + pts[i][0].toFixed(1) + '" y="' + (H - padB + 14) + '" font-size="9" fill="#8a8f99" text-anchor="middle">' + _mmdd(d.date) + '</text>';
+    });
+  }
+  svg += '</svg>';
+  return svg;
+}
+
+/* 颜色加深/变浅：用于生成渐变的两端色，输入 #rrggbb */
+function _shade(hex, amt) {
+  var h = (hex || '#888888').replace('#', '');
+  if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+  var r = parseInt(h.substr(0, 2), 16), g = parseInt(h.substr(2, 2), 16), b = parseInt(h.substr(4, 2), 16);
+  function c(x) { return Math.max(0, Math.min(255, Math.round(x + amt))); }
+  function hh(x) { var s = c(x).toString(16); return s.length < 2 ? '0' + s : s; }
+  return '#' + hh(r) + hh(g) + hh(b);
+}
+
+/* 横向条形分布图：用于「平台来源分布 / 风险板块分布」，含数量与占比，纯 SVG（渐变美化版） */
+var _hbarSeq = 0;
+function _svgHBars(rows) {
+  var total = rows.reduce(function (s, r) { return s + (Number(r.value) || 0); }, 0);
+  var maxV = 0; rows.forEach(function (r) { var v = Number(r.value) || 0; if (v > maxV) maxV = v; });
+  if (maxV <= 0) maxV = 1;
+  var uid = 'hb' + (++_hbarSeq);
+  var padL = 4, padR = 12, rowH = 30, gap = 16, top = 6;
+  var labelW = 66, barMax = 158, valW = 66;
+  var W = padL + labelW + barMax + valW + padR;
+  var H = top + rows.length * rowH + (rows.length - 1) * gap + 8;
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img">';
+  /* 渐变定义 */
+  svg += '<defs>';
+  rows.forEach(function (r, i) {
+    var c = r.color || '#8a8f99';
+    svg += '<linearGradient id="' + uid + '_' + i + '" x1="0" y1="0" x2="1" y2="0">'
+      + '<stop offset="0" stop-color="' + _shade(c, 22) + '"/>'
+      + '<stop offset="1" stop-color="' + _shade(c, -14) + '"/></linearGradient>';
+  });
+  svg += '</defs>';
+  var barH = rowH - 10;
+  var ry = barH / 2;
+  rows.forEach(function (r, i) {
+    var v = Number(r.value) || 0;
+    var y = top + i * (rowH + gap);
+    var by = y + (rowH - barH) / 2;
+    var w = (v / maxV) * barMax;
+    var drawW = Math.max(w, v > 0 ? barH : 0);
+    var pct = total > 0 ? Math.round(v / total * 100) : 0;
+    /* 名称 */
+    svg += '<text x="' + padL + '" y="' + (y + rowH / 2 + 4) + '" font-size="11.5" font-weight="600" fill="#3a4150">' + r.name + '</text>';
+    /* 轨道 */
+    svg += '<rect x="' + (padL + labelW) + '" y="' + by + '" width="' + barMax + '" height="' + barH + '" rx="' + ry + '" fill="#eef1f7"/>';
+    /* 数据条（渐变 + 动画） */
+    if (v > 0) {
+      svg += '<rect x="' + (padL + labelW) + '" y="' + by + '" width="' + drawW.toFixed(1) + '" height="' + barH + '" rx="' + ry + '" fill="url(#' + uid + '_' + i + ')">'
+        + '<title>' + r.name + '：' + v + '（' + pct + '%）</title>'
+        + '<animate attributeName="width" from="0" to="' + drawW.toFixed(1) + '" dur="0.7s" begin="0s" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1" values="0;' + drawW.toFixed(1) + '"/></rect>';
+    }
+    /* 数值 · 占比 */
+    svg += '<text x="' + (padL + labelW + barMax + 8) + '" y="' + (y + rowH / 2 + 4) + '" font-size="11" fill="#5a6270">'
+      + '<tspan font-weight="700" fill="#1a1a2e">' + v + '</tspan>'
+      + '<tspan fill="#9aa0ac"> · </tspan>'
+      + '<tspan font-weight="600" fill="' + _shade(r.color || '#888', -20) + '">' + pct + '%</tspan></text>';
+  });
+  svg += '</svg>';
+  return svg;
+}
+
+function renderTrendCharts(history, meta, events) {
+  meta = meta || {}; events = events || [];
   var days = _byDayMorning(history);
 
-  /* 风险等级趋势：P0 / P1 / P2（真实数据） */
+  /* 1) 风险等级趋势：P0 / P1 / P2（真实数据，堆叠柱） */
   var rlBox = document.getElementById('chartRiskLevel');
   if (rlBox) {
     if (!days.length) {
@@ -654,26 +852,74 @@ function renderTrendCharts(history) {
     }
   }
 
-  /* 情感声量趋势：正面 / 中性 / 负面（数据待接入，兼容多种字段名，有真实数据即自动展示） */
+  /* 2) 情感声量趋势：正面 / 中性 / 负面（堆叠柱）。
+        兼容多种字段名；某天三类全为空则视为该日无情感数据。
+        全部历史都无三分类数据时 -> 显示"待接入"空态（自明日起采集纳入）。 */
   var seBox = document.getElementById('chartSentiment');
   if (seBox) {
     var alias = { pos: ['pos', 'positive'], neu: ['neu', 'neutral', 'mid'], neg: ['neg', 'negative'] };
-    function sv(d, which) {
+    function _sv(d, which) {
       var keys = alias[which];
       for (var i = 0; i < keys.length; i++) { if (d[keys[i]] != null) return Number(d[keys[i]]) || 0; }
       return null;
     }
-    var hasData = days.some(function (d) { return sv(d, 'pos') != null || sv(d, 'neu') != null || sv(d, 'neg') != null; });
-    if (!hasData) {
-      seBox.innerHTML = '<div class="chart-empty">情感声量数据待接入<br>（正面 / 中性 / 负面），接入真实数据后自动展示</div>';
+    var sdays = days.filter(function (d) {
+      return _sv(d, 'pos') != null || _sv(d, 'neu') != null || _sv(d, 'neg') != null;
+    });
+    if (!sdays.length) {
+      seBox.innerHTML = '<div class="chart-empty">情感声量数据待接入<br>正面 / 中性 / 负面 将自明日起纳入采集，届时自动展示</div>';
     } else {
       var segs2 = [
         { key: 'pos', color: '#43a047', name: '正面' },
         { key: 'neu', color: '#90a4ae', name: '中性' },
         { key: 'neg', color: '#e53935', name: '负面' }
       ];
-      seBox.innerHTML = _svgStacked(days, segs2, function (d, k) { var v = sv(d, k); return v == null ? 0 : v; }) +
+      seBox.innerHTML = _svgStacked(sdays, segs2, function (d, k) { var v = _sv(d, k); return v == null ? 0 : v; }) +
         _chartLegend([{ color: '#43a047', name: '正面' }, { color: '#90a4ae', name: '中性' }, { color: '#e53935', name: '负面' }]);
+    }
+  }
+
+  /* 3) 本轮各平台负面来源分布：meta.platform_stats.real_negative（真实数据，横向条形） */
+  var pBox = document.getElementById('chartPlatform');
+  if (pBox) {
+    var ps = meta.platform_stats || {};
+    var pmap = [
+      { name: '微博', key: 'weibo', color: '#ff8f00' },
+      { name: '豆瓣', key: 'douban', color: '#43a047' },
+      { name: '小红书', key: 'xiaohongshu', color: '#e53935' },
+      { name: '黑猫投诉', key: 'heimao', color: '#5b6bc0' }
+    ];
+    var prows = pmap.map(function (p) { var o = ps[p.key] || {}; return { name: p.name, value: Number(o.real_negative) || 0, color: p.color }; });
+    var psum = prows.reduce(function (s, r) { return s + r.value; }, 0);
+    if (!psum) {
+      pBox.innerHTML = '<div class="chart-empty">本轮各平台均无真实负面数据。</div>';
+    } else {
+      pBox.innerHTML = _svgHBars(prows);
+    }
+  }
+
+  /* 4) 本轮风险板块分布：按 section 归并 events（真实数据，横向条形） */
+  var sBox = document.getElementById('chartSection');
+  if (sBox) {
+    var buckets = { tech: 0, content: 0, member: 0, other: 0 };
+    events.forEach(function (e) {
+      var s = e.section || '', k = 'other';
+      if (s.indexOf('技术') >= 0) k = 'tech';
+      else if (s.indexOf('内容') >= 0) k = 'content';
+      else if (s.indexOf('会员') >= 0 || s.indexOf('收费') >= 0) k = 'member';
+      buckets[k]++;
+    });
+    var srows = [
+      { name: '技术功能', value: buckets.tech, color: '#29b6f6' },
+      { name: '内容运营', value: buckets.content, color: '#ab47bc' },
+      { name: '会员收费', value: buckets.member, color: '#ef5350' },
+      { name: '其他', value: buckets.other, color: '#78909c' }
+    ];
+    var ssum = srows.reduce(function (s, r) { return s + r.value; }, 0);
+    if (!ssum) {
+      sBox.innerHTML = '<div class="chart-empty">本轮无分级风险事件。</div>';
+    } else {
+      sBox.innerHTML = _svgHBars(srows);
     }
   }
 }
