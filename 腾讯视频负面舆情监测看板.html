@@ -39,7 +39,7 @@
   .summary-line .s-tag.s-plat { background:#bbdefb; color:#0d47a1; }
   .summary-line .s-text { font-size:14px; color:#333; line-height:1.55; }
 
-  .kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:6px; }
+  .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:14px; margin-bottom:6px; }
   .kpi { background:#f7f9fc; border-radius:10px; padding:16px; text-align:center; border:1px solid #eef1f6; }
   .kpi .num { font-size:26px; font-weight:800; }
   .kpi .lab { font-size:12px; color:#888; margin-top:4px; }
@@ -154,7 +154,6 @@
       <header class="title">
         <h1 id="reportTitle">《腾讯视频负面舆情监测报告》</h1>
         <div class="sub" id="reportSub"></div>
-        <div class="badge-row" id="reportBadges"></div>
       </header>
 
       <!-- 一、核心水位 -->
@@ -315,19 +314,8 @@ function renderHeader(meta, kpi, p0, p1, p2, srcLabel) {
 
   var sub = '';
   sub += '<div><b>监测周期：</b>' + fmtDT(meta.period_start) + ' ～ ' + fmtDT(meta.period_end) + '</div>';
-  sub += '<div><b>数据来源：</b>' + esc((meta.sources || []).join('；')) + '</div>';
-  sub += '<div><b>统计口径：</b>按技术功能／内容运营／会员收费／其他监管竞品四大板块覆盖，剔除官方号、宣传号、粉丝控评、正向好评、广告推广等噪音，仅保留真实用户负面/风险发帖</div>';
+  sub += '<div><b>数据来源：</b>微博、豆瓣、小红书、黑猫投诉</div>';
   document.getElementById('reportSub').innerHTML = sub;
-
-  var badges = '';
-  (meta.sources || []).forEach(function (s) {
-    badges += '<span class="badge">' + esc(s) + '</span>';
-  });
-  if (meta.xiaohongshu_status) {
-    badges += '<span class="badge blocked">小红书：' + esc(meta.xiaohongshu_status) + '</span>';
-  }
-  badges += '<span class="badge">P0：' + p0.length + ' ｜ P1：' + p1.length + ' ｜ P2：' + p2.length + '</span>';
-  document.getElementById('reportBadges').innerHTML = badges;
 }
 
 function renderSummary(meta, kpi, events) {
@@ -342,31 +330,17 @@ function renderSummary(meta, kpi, events) {
             '</span><span class="s-text"><b>[' + esc(e.section) + ']</b> ' + esc(e.title) +
             (e.post_count ? '（' + e.post_count + '条相关发帖）' : '') + '</span></div>';
   });
-  if (meta.xiaohongshu_status) {
-    html += '<div class="s-item"><span class="s-tag s-plat">小红书</span><span class="s-text">' +
-            esc(meta.xiaohongshu_status) + '</span></div>';
-  }
   document.getElementById('summaryLine').innerHTML = html;
 
   var grid = '';
-  grid += kpiCell('total', (kpi.real_negative != null ? kpi.real_negative : (kpi.total_raw || 0)), '真实负面发帖（条，过滤后）');
+  grid += kpiCell('total', (kpi.total_collected != null ? kpi.total_collected : (kpi.total_raw || 0)), '总共抓取（条，清洗前）');
+  grid += kpiCell('total', (kpi.real_negative != null ? kpi.real_negative : 0), '真实负面（条）');
   grid += kpiCell('p0', kpi.p0 != null ? kpi.p0 : 0, 'P0 高危（事件数）');
   grid += kpiCell('p1', kpi.p1 != null ? kpi.p1 : 0, 'P1 中危（事件数）');
   grid += kpiCell('p2', kpi.p2 != null ? kpi.p2 : 0, 'P2 低危（事件数）');
   document.getElementById('kpiGrid').innerHTML = grid;
 
-  var plat = '';
-  var ps = meta.platform_stats || {};
-  var platNames = [['weibo', '微博'], ['heimao', '黑猫投诉'], ['douban', '豆瓣'], ['xiaohongshu', '小红书']];
-  platNames.forEach(function (it) {
-    var s = ps[it[0]];
-    if (s) {
-      plat += '<span class="tag verified">' + it[1] + '：真实负面 ' +
-              (s.real_negative != null ? s.real_negative : '—') + ' 条</span>';
-    }
-  });
-  plat += '<span class="tag">合计真实负面 ' + (kpi.real_negative != null ? kpi.real_negative : '—') + ' 条</span>';
-  document.getElementById('platRow').innerHTML = plat;
+  document.getElementById('platRow').innerHTML = '';
 }
 function kpiCell(cls, num, lab) {
   return '<div class="kpi ' + cls + '"><div class="num">' + esc(num) +
@@ -561,7 +535,7 @@ function toggleHistoryMore() {
 
 function renderFooter(meta, srcLabel) {
   var f = '';
-  f += '<div>数据来源：' + esc((meta.sources || []).join('；')) + '；生成时间 ' + fmtDT(meta.generated_at) + '。</div>';
+  f += '<div>生成时间 ' + fmtDT(meta.generated_at) + '。</div>';
   if (meta.note) f += '<div style="margin-top:4px;">' + esc(meta.note) + '</div>';
   f += '<div class="src-note">本页为动态看板，数据实时读取自：' + esc(srcLabel) +
        '（schema v' + esc(meta.schema_version || '1.0') + '）。所有原文链接可点击核验，不含编造内容。</div>';

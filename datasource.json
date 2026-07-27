@@ -32,6 +32,13 @@
     "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。"
   },
   "kpi": {
+    "total_collected": 1003,
+    "collected_by_platform": {
+      "weibo": 396,
+      "douban": 34,
+      "xiaohongshu": 463,
+      "heimao": 110
+    },
     "total_raw": 61,
     "real_negative": 61,
     "p0": 0,
@@ -841,7 +848,7 @@
       "noise_reason": null
     },
     {
-      "id": "douban_271344549",
+      "id": "douban_272154533",
       "platform": "douban",
       "author": null,
       "followers": null,
