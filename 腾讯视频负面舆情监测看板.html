@@ -107,6 +107,19 @@
   .history-toggle { margin-top:12px; align-self:center; cursor:pointer; border:1px solid #d3dae3; background:#f5f7fa; color:#3a5a9c; font-size:12.5px; font-weight:600; padding:8px 20px; border-radius:20px; transition:all .15s; }
   .history-toggle:hover { background:#eaeff7; border-color:#a9bde0; box-shadow:0 2px 6px rgba(58,90,156,.12); }
 
+  /* 过往风险回顾 - 图表区 */
+  .charts-row { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:18px; }
+  .chart-card { flex:1 1 0; min-width:280px; border:1px solid #eef1f6; border-radius:12px; padding:14px 16px 10px; background:#fbfcfe; }
+  .chart-card .chart-title { font-size:13.5px; font-weight:700; color:#1a1a2e; margin-bottom:2px; }
+  .chart-card .chart-sub { font-size:11px; color:#9aa0ac; margin-bottom:10px; }
+  .chart-card .chart-svg-wrap { width:100%; overflow:hidden; }
+  .chart-card svg { display:block; width:100%; height:auto; }
+  .chart-legend { display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:#777; margin-top:8px; }
+  .chart-legend span { display:flex; align-items:center; gap:5px; }
+  .chart-legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
+  .chart-empty { display:flex; align-items:center; justify-content:center; height:150px; color:#b0b6c0; font-size:12.5px; text-align:center; line-height:1.7; border:1px dashed #dfe4ec; border-radius:10px; background:#fafbfc; padding:0 14px; }
+  @media (max-width: 640px) { .chart-card { flex:1 1 100%; } }
+
   .plat-detail { background:#f7f9fc; border:1px solid #eef1f6; border-radius:10px; padding:14px 16px; margin-bottom:12px; }
   .plat-detail h4 { font-size:13.5px; color:#0d1b3e; margin-bottom:6px; }
   .plat-detail p { font-size:12.5px; color:#666; }
@@ -139,7 +152,7 @@
       <a href="#sec-p0">二、P0 高危事件</a>
       <a href="#sec-p1">三、P1 重点关注</a>
       <a href="#sec-p2">四、P2 长期跟踪</a>
-      <a href="#sec-modules">五、四大板块专项</a>
+      <a href="#sec-modules">五、风险分类</a>
       <a href="#sec-warn">六、风险前置预警</a>
       <a href="#sec-history">七、过往风险回顾</a>
     </div>
@@ -184,7 +197,7 @@
 
       <!-- 五、四大板块专项 -->
       <div class="card" id="sec-modules">
-        <h2>五、四大板块专项</h2>
+        <h2>五、风险分类</h2>
         <div class="section-cols" id="modulesBody"></div>
       </div>
 
@@ -198,6 +211,21 @@
       <div class="card" id="sec-history">
         <h2>七、过往风险回顾</h2>
         <p style="font-size:12px;color:#999;margin-bottom:10px;">按每次采集刷新自动追加，时间倒序排列（最新在最上），展示各时段 P0/P1/P2 分级数量及核心风险简述，用于观察风险水位变化趋势。</p>
+
+        <!-- 趋势图表：情感声量 + 风险等级，横向一排 -->
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-title">情感声量趋势</div>
+            <div class="chart-sub">正面 / 中性 / 负面 每日数量（每天以早上采集档为准）</div>
+            <div class="chart-svg-wrap" id="chartSentiment"></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">风险等级趋势</div>
+            <div class="chart-sub">P0 / P1 / P2 每日数量变化（每天以早上采集档为准）</div>
+            <div class="chart-svg-wrap" id="chartRiskLevel"></div>
+          </div>
+        </div>
+
         <div class="history-legend">
           <span><i style="background:#e53935;"></i>高关注（含P0 或 P1≥3）</span>
           <span><i style="background:#fb8c00;"></i>中关注（P1 1～2）</span>
@@ -299,6 +327,7 @@ function render(d, srcLabel) {
   renderModules('modulesBody', events);
   renderWarn('warnBody', p0.concat(p1));
   renderHistory('historyList', history);
+  renderTrendCharts(history);
   renderFooter(meta, srcLabel);
 
   document.getElementById('loading').style.display = 'none';
@@ -409,7 +438,7 @@ function renderP2(containerId, list) {
   box.innerHTML = html;
 }
 
-/* 四大板块专项 */
+/* 风险分类 */
 function renderModules(containerId, events) {
   var groups = {
     tech:   { name: '技术功能', items: [] },
@@ -531,6 +560,121 @@ function toggleHistoryMore() {
   } else {
     more.style.display = 'flex';
     btn.innerHTML = '收起历史记录 ▴';
+  }
+}
+
+/* ============ 过往风险回顾 · 趋势图表（纯 SVG，无外部依赖） ============ */
+function _mmdd(d) {
+  var m = /^\d{4}-(\d{2})-(\d{2})/.exec(d || '');
+  return m ? (m[1] + '-' + m[2]) : (d || '');
+}
+function _slotMin(slot) {
+  var m = /^(\d{1,2}):(\d{2})/.exec(slot || '');
+  return m ? (parseInt(m[1], 10) * 60 + parseInt(m[2], 10)) : 9999;
+}
+/* 按日期归并，每天取"早上"（当天最早时间）的采集档 */
+function _byDayMorning(history) {
+  var map = {};
+  (history || []).forEach(function (h) {
+    var d = h.date;
+    if (!d) return;
+    var min = _slotMin(h.slot);
+    if (!map[d] || min < map[d]._min) {
+      var o = {};
+      for (var k in h) { if (h.hasOwnProperty(k)) o[k] = h[k]; }
+      o._min = min;
+      map[d] = o;
+    }
+  });
+  return Object.keys(map).sort().map(function (d) { return map[d]; });
+}
+/* 通用堆叠柱状 SVG */
+function _svgStacked(days, segDefs, valueFn) {
+  var n = days.length;
+  var padL = 26, padR = 10, padT = 12, padB = 30;
+  var barGap = 14, barW = 30;
+  var plotW = n * barW + (n > 0 ? (n - 1) * barGap : 0);
+  var W = padL + padR + Math.max(plotW, 200);
+  var H = 188, plotH = H - padT - padB;
+
+  var maxY = 0;
+  days.forEach(function (d) {
+    var s = 0;
+    segDefs.forEach(function (sd) { s += (Number(valueFn(d, sd.key)) || 0); });
+    if (s > maxY) maxY = s;
+  });
+  if (maxY <= 0) maxY = 1;
+  var niceMax = maxY <= 5 ? 5 : (Math.ceil(maxY / 5) * 5);
+
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img">';
+  [0, niceMax / 2, niceMax].forEach(function (t) {
+    var y = padT + plotH - (t / niceMax) * plotH;
+    svg += '<line x1="' + padL + '" y1="' + y.toFixed(1) + '" x2="' + (W - padR) + '" y2="' + y.toFixed(1) + '" stroke="#eef1f6" stroke-width="1"/>';
+    var lbl = (t === Math.floor(t)) ? t : t.toFixed(1);
+    svg += '<text x="' + (padL - 5) + '" y="' + (y + 3).toFixed(1) + '" font-size="9" fill="#aab0bb" text-anchor="end">' + lbl + '</text>';
+  });
+  days.forEach(function (d, i) {
+    var x = padL + i * (barW + barGap);
+    var acc = 0;
+    segDefs.forEach(function (sd) {
+      var v = Number(valueFn(d, sd.key)) || 0;
+      if (v <= 0) return;
+      var h = (v / niceMax) * plotH;
+      var y = padT + plotH - acc - h;
+      svg += '<rect x="' + x + '" y="' + y.toFixed(1) + '" width="' + barW + '" height="' + h.toFixed(1) + '" fill="' + sd.color + '"><title>' + _mmdd(d.date) + ' ' + sd.name + '：' + v + '</title></rect>';
+      acc += h;
+    });
+    var cx = x + barW / 2;
+    svg += '<text x="' + cx.toFixed(1) + '" y="' + (H - padB + 14) + '" font-size="9" fill="#8a8f99" text-anchor="middle">' + _mmdd(d.date) + '</text>';
+  });
+  svg += '</svg>';
+  return svg;
+}
+function _chartLegend(items) {
+  var s = '<div class="chart-legend">';
+  items.forEach(function (it) { s += '<span><i style="background:' + it.color + ';"></i>' + it.name + '</span>'; });
+  return s + '</div>';
+}
+function renderTrendCharts(history) {
+  var days = _byDayMorning(history);
+
+  /* 风险等级趋势：P0 / P1 / P2（真实数据） */
+  var rlBox = document.getElementById('chartRiskLevel');
+  if (rlBox) {
+    if (!days.length) {
+      rlBox.innerHTML = '<div class="chart-empty">暂无历史数据。</div>';
+    } else {
+      var segs = [
+        { key: 'p0', color: '#e53935', name: 'P0' },
+        { key: 'p1', color: '#fb8c00', name: 'P1' },
+        { key: 'p2', color: '#43a047', name: 'P2' }
+      ];
+      rlBox.innerHTML = _svgStacked(days, segs, function (d, k) { return d[k]; }) +
+        _chartLegend([{ color: '#e53935', name: 'P0' }, { color: '#fb8c00', name: 'P1' }, { color: '#43a047', name: 'P2' }]);
+    }
+  }
+
+  /* 情感声量趋势：正面 / 中性 / 负面（数据待接入，兼容多种字段名，有真实数据即自动展示） */
+  var seBox = document.getElementById('chartSentiment');
+  if (seBox) {
+    var alias = { pos: ['pos', 'positive'], neu: ['neu', 'neutral', 'mid'], neg: ['neg', 'negative'] };
+    function sv(d, which) {
+      var keys = alias[which];
+      for (var i = 0; i < keys.length; i++) { if (d[keys[i]] != null) return Number(d[keys[i]]) || 0; }
+      return null;
+    }
+    var hasData = days.some(function (d) { return sv(d, 'pos') != null || sv(d, 'neu') != null || sv(d, 'neg') != null; });
+    if (!hasData) {
+      seBox.innerHTML = '<div class="chart-empty">情感声量数据待接入<br>（正面 / 中性 / 负面），接入真实数据后自动展示</div>';
+    } else {
+      var segs2 = [
+        { key: 'pos', color: '#43a047', name: '正面' },
+        { key: 'neu', color: '#90a4ae', name: '中性' },
+        { key: 'neg', color: '#e53935', name: '负面' }
+      ];
+      seBox.innerHTML = _svgStacked(days, segs2, function (d, k) { var v = sv(d, k); return v == null ? 0 : v; }) +
+        _chartLegend([{ color: '#43a047', name: '正面' }, { color: '#90a4ae', name: '中性' }, { color: '#e53935', name: '负面' }]);
+    }
   }
 }
 
