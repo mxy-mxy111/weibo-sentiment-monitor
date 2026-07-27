@@ -44,7 +44,7 @@
     "p0": 0,
     "p1": 1,
     "p2": 1,
-    "conclusion": "本轮P0 0 / P1 1 / P2 1。核心风险：黑猫投诉集中反映自动续费未告知/退款遭拒(会员收费系统性风险)，共16条。"
+    "conclusion": "本轮 P0 0起｜P1 1起：会员收费—黑猫投诉集中反映自动续费未告知/退款遭拒（16条）｜P2 1起：技术功能—广告体验与试看限制吐槽（3条）。"
   },
   "sentiment_events": [
     {
@@ -848,7 +848,7 @@
       "noise_reason": null
     },
     {
-      "id": "douban_274064293",
+      "id": "douban_273671077",
       "platform": "douban",
       "author": null,
       "followers": null,

@@ -431,30 +431,39 @@ sentiment_events = [ev for ev in sentiment_events if ev["evidence"]]
 # 6. KPI
 # ============================================================
 def _build_conclusion(p0, p1, p2, events, hm_real):
-    """按本轮实际归并事件动态生成结论，避免与历史模板不符(如无P0却提示自伤言论)。"""
-    parts = ["本轮P0 {} / P1 {} / P2 {}".format(p0, p1, p2)]
-    highs = [e for e in events if e["level"] in ("P0", "P1")]
-    _hm_kw = ("黑猫", "续费", "退款", "扣费")
-    _hm_in_highs = False
-    if highs:
-        _titles = []
-        for e in highs[:3]:
-            t = e["title"]
-            # 每个风险总结为一句话；黑猫相关风险直接把条数并入本句，不再另起重复句
-            if hm_real > 0 and any(k in t for k in _hm_kw):
-                t = "{}，共{}条".format(t, hm_real)
-                _hm_in_highs = True
-            _titles.append(t)
-        parts.append("核心风险：" + "；".join(_titles))
-    # 仅当黑猫风险未进入核心风险时，才单独用一句话总结
-    if hm_real > 0 and not _hm_in_highs:
-        parts.append("黑猫投诉自动续费/退款遭拒类投诉集中({}条)".format(hm_real))
-    p0_ev = [e for e in events if e["level"] == "P0"]
-    if p0_ev:
-        parts.append("另有 {} 条P0级需即时人工研判：{}".format(len(p0_ev), "；".join(e["title"] for e in p0_ev)))
-    if not highs and not p0_ev and hm_real == 0:
-        parts.append("窗口内未见高等级(P0/P1)风险事件")
-    return "。".join(parts) + "。"
+    """对 P0/P1/P2 逐级做简要概括：事件数 + 板块 + 凝练问题。
+    结论聚焦、简洁，去掉举例/剧名，与下方分点(含完整描述与证据)形成区分。"""
+    import re as _re
+
+    def _short(t):
+        # 去掉举例括号与剧名，仅保留问题主干，使结论比下方分点更凝练
+        t = _re.sub(r"[（(][^）)]*[)）]", "", t or "")
+        t = _re.sub(r"《[^》]*》", "", t)
+        return t.strip("、，。/ ") or "相关负面反馈"
+
+    by = {"P0": [], "P1": [], "P2": []}
+    for e in events:
+        lv = (e.get("level") or "").upper()
+        if lv in by:
+            by[lv].append(e)
+
+    cnt_map = {"P0": p0, "P1": p1, "P2": p2}
+    seg = []
+    for lv in ("P0", "P1", "P2"):
+        head = "{} {}起".format(lv, cnt_map[lv])
+        es = by[lv]
+        if es:
+            items = []
+            for e in es[:2]:
+                sec = e.get("section") or ""
+                c = e.get("post_count")
+                s = (sec + "—" if sec else "") + _short(e.get("title"))
+                if c:
+                    s += "（{}条）".format(c)
+                items.append(s)
+            head += "：" + "；".join(items)
+        seg.append(head)
+    return "本轮 " + "｜".join(seg) + "。"
 
 p0 = sum(1 for e in sentiment_events if e["level"] == "P0")
 p1 = sum(1 for e in sentiment_events if e["level"] == "P1")
