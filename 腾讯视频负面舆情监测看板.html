@@ -333,7 +333,7 @@ function renderSummary(meta, kpi, events) {
   document.getElementById('summaryLine').innerHTML = html;
 
   var grid = '';
-  grid += kpiCell('total', (kpi.total_collected != null ? kpi.total_collected : (kpi.total_raw || 0)), '总共抓取（条，清洗前）');
+  grid += kpiCell('total', (kpi.total_collected != null ? kpi.total_collected : (kpi.total_raw || 0)), '总共抓取（条）');
   grid += kpiCell('total', (kpi.real_negative != null ? kpi.real_negative : 0), '真实负面（条）');
   grid += kpiCell('p0', kpi.p0 != null ? kpi.p0 : 0, 'P0 高危（事件数）');
   grid += kpiCell('p1', kpi.p1 != null ? kpi.p1 : 0, 'P1 中危（事件数）');
