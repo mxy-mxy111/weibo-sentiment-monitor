@@ -437,7 +437,12 @@ def _build_conclusion(p0, p1, p2, events, hm_real):
     if highs:
         parts.append("核心风险：" + "；".join(e["title"] for e in highs[:3]))
     if hm_real > 0:
-        parts.append("黑猫投诉端自动续费/重复扣费/退款遭拒类投诉集中({}条)".format(hm_real))
+        # 若核心风险已提及黑猫/续费/退款/扣费相关内容，则不重复整段描述，仅补充条数
+        _mentioned = any(any(k in e["title"] for k in ("黑猫", "续费", "退款", "扣费")) for e in highs)
+        if _mentioned:
+            parts.append("黑猫投诉相关共{}条".format(hm_real))
+        else:
+            parts.append("黑猫投诉端自动续费/重复扣费/退款遭拒类投诉集中({}条)".format(hm_real))
     p0_ev = [e for e in events if e["level"] == "P0"]
     if p0_ev:
         parts.append("另有 {} 条P0级需即时人工研判：{}".format(len(p0_ev), "；".join(e["title"] for e in p0_ev)))
@@ -449,6 +454,19 @@ p0 = sum(1 for e in sentiment_events if e["level"] == "P0")
 p1 = sum(1 for e in sentiment_events if e["level"] == "P1")
 p2 = sum(1 for e in sentiment_events if e["level"] == "P2")
 real_negative = sum(1 for r in raw_posts if not r["filtered_as_noise"])
+
+# ---- 过滤前总抓取量（各平台采集/解析出的原始条数：时间窗口过滤、噪音过滤、跨平台去重之前）----
+def _count(fn):
+    d = load(fn)
+    return len(d) if isinstance(d, list) else 0
+
+_collected = {
+    "weibo": _count("weibo_parsed_all.json") + _count("weibo_content_parsed_all.json"),
+    "douban": _count("douban_raw_results.json"),
+    "xiaohongshu": _count("xhs_raw_results.json"),
+    "heimao": _count("heimao_raw_results.json"),
+}
+total_collected = sum(_collected.values())
 
 now = _NOW
 period_start = _PERIOD_START
@@ -486,6 +504,8 @@ datasource = {
         "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。",
     },
     "kpi": {
+        "total_collected": total_collected,
+        "collected_by_platform": _collected,
         "total_raw": len(raw_posts),
         "real_negative": real_negative,
         "p0": p0, "p1": p1, "p2": p2,
