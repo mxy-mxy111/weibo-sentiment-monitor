@@ -434,15 +434,21 @@ def _build_conclusion(p0, p1, p2, events, hm_real):
     """按本轮实际归并事件动态生成结论，避免与历史模板不符(如无P0却提示自伤言论)。"""
     parts = ["本轮P0 {} / P1 {} / P2 {}".format(p0, p1, p2)]
     highs = [e for e in events if e["level"] in ("P0", "P1")]
+    _hm_kw = ("黑猫", "续费", "退款", "扣费")
+    _hm_in_highs = False
     if highs:
-        parts.append("核心风险：" + "；".join(e["title"] for e in highs[:3]))
-    if hm_real > 0:
-        # 若核心风险已提及黑猫/续费/退款/扣费相关内容，则不重复整段描述，仅补充条数
-        _mentioned = any(any(k in e["title"] for k in ("黑猫", "续费", "退款", "扣费")) for e in highs)
-        if _mentioned:
-            parts.append("黑猫投诉相关共{}条".format(hm_real))
-        else:
-            parts.append("黑猫投诉端自动续费/重复扣费/退款遭拒类投诉集中({}条)".format(hm_real))
+        _titles = []
+        for e in highs[:3]:
+            t = e["title"]
+            # 每个风险总结为一句话；黑猫相关风险直接把条数并入本句，不再另起重复句
+            if hm_real > 0 and any(k in t for k in _hm_kw):
+                t = "{}，共{}条".format(t, hm_real)
+                _hm_in_highs = True
+            _titles.append(t)
+        parts.append("核心风险：" + "；".join(_titles))
+    # 仅当黑猫风险未进入核心风险时，才单独用一句话总结
+    if hm_real > 0 and not _hm_in_highs:
+        parts.append("黑猫投诉自动续费/退款遭拒类投诉集中({}条)".format(hm_real))
     p0_ev = [e for e in events if e["level"] == "P0"]
     if p0_ev:
         parts.append("另有 {} 条P0级需即时人工研判：{}".format(len(p0_ev), "；".join(e["title"] for e in p0_ev)))
