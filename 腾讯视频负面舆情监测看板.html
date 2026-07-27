@@ -419,10 +419,10 @@ function renderSummary(meta, kpi, events) {
   });
   document.getElementById('summaryLine').innerHTML = html;
 
-  // 情感结构：负面 / 正面 / 中性 整合为一张横向分部条（总数 + 各占比）
-  var sentTotal = (Number(kpi.pos) || 0) + (Number(kpi.neu) || 0) + (Number(kpi.neg) || 0);
+  // 情感结构：以「本次抓取总数」为底，从中区分 负面 / 正面 / 中性 + 未分类
+  var totalCollected = Number(kpi.total_collected) || (Number(kpi.pos) || 0) + (Number(kpi.neu) || 0) + (Number(kpi.neg) || 0);
   var st = document.getElementById('sentimentTitle');
-  if (st) st.textContent = '情感结构分布（共 ' + sentTotal + ' 条真实帖 · 负面 / 正面 / 中性占比）';
+  if (st) st.textContent = '情感结构分布（本次共抓取 ' + totalCollected + ' 条 · 负面 / 正面 / 中性 + 未分类）';
   document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi);
 
   // 风险等级事件数：P0 / P1 / P2 一行
@@ -436,31 +436,36 @@ function renderSummary(meta, kpi, events) {
 }
 function renderSentimentBar(kpi) {
   var pos = Number(kpi.pos) || 0, neu = Number(kpi.neu) || 0, neg = Number(kpi.neg) || 0;
-  var total = pos + neu + neg;
+  // 总数以「本次抓取总数」为准（真实负面只是其中一部分）
+  var total = Number(kpi.total_collected) || (pos + neu + neg);
+  var classified = pos + neu + neg;
   var segs = [
     { name: '负面', val: neg, color: '#e53935' },
     { name: '正面', val: pos, color: '#43a047' },
     { name: '中性', val: neu, color: '#90a4ae' }
   ];
-  // 无数据：空态占位（保持大致样式），明早抓取后用真实数据填充
+  // 未参与情感分类的剩余部分（噪音/无关/未打标）显示为「未分类」灰段
+  var uncls = total - classified;
+  if (uncls > 0) segs.push({ name: '未分类', val: uncls, color: '#d7dce3' });
+  // 无抓取数据：空态占位（保持大致样式）
   if (!total) {
     return '<div class="prop-bar"><div class="prop-empty"></div></div>' +
-           '<div class="prop-note">本轮暂无情感分类数据（明早抓取后将显示真实占比）</div>';
+           '<div class="prop-note">本轮暂无抓取数据（明早抓取后将显示真实占比）</div>';
   }
   var bar = '<div class="prop-bar">';
   segs.forEach(function (s) {
     var pct = s.val / total * 100;
     if (pct <= 0) return;
     bar += '<div class="prop-seg" style="width:' + pct + '%;background:' + s.color +
-           '" title="' + s.name + ' ' + s.val + ' 条 · ' + Math.round(pct) + '%"></div>';
+           '" title="' + s.name + ' ' + s.val + ' 条 · ' + pct.toFixed(1) + '%"></div>';
   });
   bar += '</div>';
   bar += '<div class="prop-legend">';
   segs.forEach(function (s) {
-    var pct = Math.round(s.val / total * 100);
+    var pct = s.val / total * 100;
     bar += '<div class="pl-row"><i style="background:' + s.color + '"></i>' +
            '<span class="pl-name">' + s.name + '</span>' +
-           '<span class="pl-val"><b>' + s.val + '</b> 条 · ' + pct + '%</span></div>';
+           '<span class="pl-val"><b>' + s.val + '</b> 条 · ' + pct.toFixed(1) + '%</span></div>';
   });
   bar += '</div>';
   return bar;
