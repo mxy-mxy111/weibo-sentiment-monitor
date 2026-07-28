@@ -218,6 +218,7 @@
         <div class="dist-block">
           <div class="dist-block-title" id="sentimentTitle">情感结构分布（负面 / 正面 / 中性）</div>
           <div class="prop-wrap" id="sentimentBar"></div>
+          <div id="sentimentNote"></div>
         </div>
 
         <!-- 风险等级事件数：P0 / P1 / P2 一行 -->
@@ -409,7 +410,7 @@ function renderHeader(meta, kpi, p0, p1, p2, srcLabel) {
   var sub = '';
   sub += '<div><b>监测周期：</b>' + fmtDT(meta.period_start) + ' ～ ' + fmtDT(meta.period_end) + '</div>';
   sub += '<div><b>数据来源：</b>微博、豆瓣、小红书、黑猫投诉</div>';
-  sub += '<div><b>统计口径：</b>按技术功能／内容运营／会员收费／其他监管竞品四大板块覆盖；「本次共采集」为本轮四平台原始抓取的全部内容（含时间窗口外、跨平台重复、竞品/无关、广告控评等）；只有符合情感色彩的内容（正面/负面/中性）纳入结构分布，其余作为「非情感色彩」剔除，不计入负面风险事件</div>';
+  sub += '<div><b>统计口径：</b>按技术功能／内容运营／会员收费／其他监管竞品四大板块覆盖</div>';
   document.getElementById('reportSub').innerHTML = sub;
 }
 
@@ -453,6 +454,9 @@ function renderSummary(meta, kpi, events) {
           (Number(nb.promo) || 0) + '</b> 条（其中重复、竞品/无关为窗口内已识别的剔除项，时间窗口外内容将在后续轮次滚动进入分析）。</div>';
   }
   document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi) + cap;
+  // 数据下方：简化版口径说明（替代顶部冗长描述）
+  var note = '<div class="prop-note" style="margin-top:8px;">说明：本次共采集为本轮四平台原始抓取的全部内容；仅符合情感色彩（正面 / 负面 / 中性）的内容纳入结构分布，其余「非情感色彩」内容不计入负面风险事件。</div>';
+  document.getElementById('sentimentNote').innerHTML = note;
 
   // 风险等级事件数：P0 / P1 / P2 一行
   var grid = '';
