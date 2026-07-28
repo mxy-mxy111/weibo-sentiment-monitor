@@ -442,20 +442,9 @@ function renderSummary(meta, kpi, events) {
   var sentN = Number(kpi.sentiment_total) || (posN + neuN + negN);         // 符合情感色彩的帖子数
   var st = document.getElementById('sentimentTitle');
   if (st) st.textContent = '情感结构分布（本次共采集 ' + crawlN + ' 条，其中符合情感色彩的 ' + sentN + ' 条 · 正面 / 负面 / 中性）';
-  var nonS = Number(kpi.non_sentiment) || 0;
-  var nb = kpi.non_sentiment_breakdown || {};
-  var cap = '';
-  if (nonS > 0) {
-    cap = '<div class="prop-note">本次共采集 <b>' + crawlN + '</b> 条，其中 <b>' + sentN +
-          '</b> 条符合情感色彩（纳入正面/负面/中性分析）。另有 <b>' + nonS +
-          '</b> 条未纳入情感色彩分析，已作为「非情感色彩」剔除，主要包括：' +
-          '时间窗口外内容 <b>' + (Number(nb.out_of_window) || 0) + '</b> 条、跨平台/同平台重复 <b>' + (Number(nb.duplicate) || 0) +
-          '</b> 条、竞品及无关内容 <b>' + (Number(nb.competitor_irrelevant) || 0) + '</b> 条、广告/控评等运营性内容 <b>' +
-          (Number(nb.promo) || 0) + '</b> 条（其中重复、竞品/无关为窗口内已识别的剔除项，时间窗口外内容将在后续轮次滚动进入分析）。</div>';
-  }
-  document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi) + cap;
-  // 数据下方：简化版口径说明（替代顶部冗长描述）
-  var note = '<div class="prop-note" style="margin-top:8px;">说明：本次共采集为本轮四平台原始抓取的全部内容；仅符合情感色彩（正面 / 负面 / 中性）的内容纳入结构分布，其余「非情感色彩」内容不计入负面风险事件。</div>';
+  document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi);
+  // 数据下方：简化版口径说明（替代顶部冗长描述及上方详细拆解）
+  var note = '<div class="prop-note" style="margin-top:8px;">说明：本次共采集为本轮四平台原始抓取的全部内容；仅符合情感色彩（正面 / 负面 / 中性）的内容纳入结构分布，其余时间窗口外、跨平台、无关内容等不计入情感结构分布。</div>';
   document.getElementById('sentimentNote').innerHTML = note;
 
   // 风险等级事件数：P0 / P1 / P2 一行
