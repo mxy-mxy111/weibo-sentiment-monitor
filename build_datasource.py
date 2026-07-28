@@ -380,39 +380,89 @@ hm_total, hm_real, hm_pos, hm_neu, hm_neg = plat_stats("heimao")
 #    不再依赖特定日期的事件模板，任何真实负面主题都不会漏判。
 # ============================================================
 
-# 主题定义：(key, 板块section, 基础级别, [命中子串], 最小簇大小)
+# 主题定义：(key, 板块section, 基础级别, [板块命中子串], 最小簇大小, SUBTHEMES)
+# SUBTHEMES: (sub_key, 子主题标题[具体事件原因], [命中子串], 最小簇大小)
+# 两级聚类：先按板块(第1级)归并，再在板块内按 SUBTHEMES(第2级,具体事件原因)细分，
+# 同一板块下不同原因(如内容运营下的"遇见王沥川下架""完美世界造黄谣""弃剧")分别成独立事件。
 # 顺序即优先级：先匹配"会员/账号/极端"等高风险主题，再落到内容/技术/广告。
 THEME_DEFS = [
-    ("member",  "会员收费", "P1",
+    ("member", "会员收费", "P1",
      ["自动续费", "退款", "退钱", "退费", "乱扣费", "乱收费", "重复扣费", "扣费",
       "套娃收费", "超前点播", "会员权益", "权益缩水", "权益不保", "svip", "vip",
-      "会员涨价", "未到账", "割韭菜", "霸王条款"], 1),
+      "会员涨价", "未到账", "割韭菜", "霸王条款"], 1,
+     [
+        ("auto_renew", "自动续费/扣费未告知致退款诉求",
+         ["自动续费", "扣费", "乱扣费", "未到账", "退款", "退钱", "退费"], 1),
+        ("svip_quality", "SVIP/会员画质与权益不符预期",
+         ["svip", "vip", "画质", "清晰度", "臻彩", "1080p", "会员比免", "升级到svip", "升svip", "吃相难看"], 1),
+        ("minor", "未成年人/误充退款遭拒",
+         ["未成年", "小孩", "孩子", "误充", "不小心"], 1),
+        ("reward", "云包场/积分商城虚假宣传",
+         ["云包场", "积分商城", "虚假宣传"], 1),
+     ]),
     ("account", "账号安全", "P1",
-     ["封号", "封禁", "盗号", "风控", "涉嫌诈骗", "账号限制", "社交功能", "永久封停"], 1),
+     ["封号", "封禁", "盗号", "风控", "涉嫌诈骗", "账号限制", "社交功能", "永久封停"], 1,
+     [
+        ("wechat_ban", "微信账号批量封禁/风控误伤",
+         ["封号", "封禁", "永久封停", "社交功能", "账号限制", "风控", "涉嫌诈骗"], 1),
+     ]),
     ("extreme", "其他/监管竞品", "P0",
-     ["抑郁", "想不开", "走投无路", "自伤", "自杀", "轻生", "活不下去", "逼到走投无路"], 1),
+     ["抑郁", "想不开", "走投无路", "自伤", "自杀", "轻生", "活不下去", "逼到走投无路"], 1,
+     [
+        ("self_harm", "含极端自伤倾向的归因言论",
+         ["抑郁", "想不开", "走投无路", "自伤", "自杀", "轻生", "活不下去", "逼到走投无路"], 1),
+     ]),
     ("content", "内容运营", "P2",
      ["下架", "停更", "断更", "选角争议", "剪辑", "删减", "塌房", "价值观", "魔改",
-      "抄袭", "烂尾", "悬浮", "抠图", "抵制", "辱女", "造黄谣", "黄谣", "弃剧", "弃坑", "难看"], 2),
+      "抄袭", "烂尾", "悬浮", "抠图", "抵制", "辱女", "造黄谣", "黄谣", "弃剧", "弃坑", "难看"], 2,
+     [
+        ("wanglichuan", "《遇见王沥川》下架争议",
+         ["遇见王沥川", "王沥川"], 1),
+        ("perfect_world", "《完美世界》造黄谣/下架风波",
+         ["完美世界"], 1),
+        ("quit", "剧集弃剧/观感差",
+         ["弃剧", "弃坑"], 1),
+        ("produce", "抠图/滤镜/制作粗糙争议",
+         ["抠图", "滤镜", "悬浮", "烂尾", "魔改", "抄袭", "塌房", "价值观", "造黄谣", "黄谣", "辱女"], 1),
+     ]),
     ("tech",    "技术功能", "P2",
      ["卡顿", "闪退", "崩溃", "黑屏", "白屏", "花屏", "无法播放", "看不了", "加载",
       "缓冲", "投屏", "故障", "报错", "画质差", "音画不同步", "卡死", "卡住",
-      "登录不上", "无法登录"], 2),
+      "登录不上", "无法登录"], 2,
+     [
+        ("playback", "播放卡顿/闪退/崩溃等故障",
+         ["卡顿", "闪退", "崩溃", "黑屏", "白屏", "花屏", "无法播放", "看不了", "加载",
+          "缓冲", "投屏", "故障", "报错", "画质差", "音画不同步", "卡死", "卡住",
+          "登录不上", "无法登录"], 1),
+     ]),
     ("ad",      "技术功能", "P2",
-     ["广告多", "广告太多", "弹窗广告", "前情提要广告", "试看", "广告钢钢的"], 2),
+     ["广告多", "广告太多", "弹窗广告", "前情提要广告", "试看", "广告钢钢的"], 2,
+     [
+        ("ad_exp", "广告过多/试看限制体验差",
+         ["广告多", "广告太多", "弹窗广告", "前情提要广告", "试看", "广告钢钢的"], 1),
+     ]),
 ]
-_THEME_KW = {t[0]: t[3] for t in THEME_DEFS}
+# 板块 -> SUBTHEMES 索引；子主题(section, sub_key) -> 命中词，便于按板块/子主题查找
+_SECTION_SUBS = {t[0]: t[5] for t in THEME_DEFS}
+_SUB_KW = {(sec, sk): skws for sec, _s, _l, _k, _m, subs in THEME_DEFS for sk, _t, skws, _sm in subs}
 
 def _theme_of(text):
     t = text or ""
-    for key, _sec, _lv, kws, _min in THEME_DEFS:
+    for key, _sec, _lv, kws, _min, _subs in THEME_DEFS:
         if any(k in t for k in kws):
             return key
     return None
 
-# 聚类：每条真实 neg 帖归到首个命中主题（优先级靠前的主题优先）
+def _subtheme_of(section_key, text):
+    t = text or ""
+    for sk, _title, skws, _smin in _SECTION_SUBS.get(section_key, []):
+        if any(k in t for k in skws):
+            return sk
+    return None
+
+# 两级聚类：第1级按板块；第2级在板块内按具体事件原因(SUBTHEMES)细分
 _clusters = {t[0]: [] for t in THEME_DEFS}
-_other = []
+_other = []          # 未命中任何板块的零散真实负面
 for _p in raw_posts:
     if _p["filtered_as_noise"] or _p.get("sentiment") != "neg":
         continue
@@ -421,6 +471,16 @@ for _p in raw_posts:
         _clusters[_k].append(_p)
     else:
         _other.append(_p)
+
+_sub_clusters = {}   # (section_key, sub_key) -> [posts]：同板块下按具体原因细分
+_section_other = {t[0]: [] for t in THEME_DEFS}   # 命中板块但未命中任何子主题的零散帖
+for _sec, _posts in _clusters.items():
+    for _p in _posts:
+        _sk = _subtheme_of(_sec, _p.get("text"))
+        if _sk:
+            _sub_clusters.setdefault((_sec, _sk), []).append(_p)
+        else:
+            _section_other[_sec].append(_p)
 
 def _engagement(p):
     def _int(v):
@@ -443,7 +503,7 @@ def _to_evidence(p):
         "text": (p.get("text") or "")[:120],
     }
 
-def _build_event(key, section, base_level, posts):
+def _build_event(section_key, sub_key, section, sub_title, base_level, posts):
     count = len(posts)
     # 严重度：基础级别；P2 主题若簇规模 >=10 升级为 P1（系统性），P0/P1 不升不降
     level = base_level
@@ -454,25 +514,25 @@ def _build_event(key, section, base_level, posts):
     for p in posts:
         plats[p["platform"]] = plats.get(p["platform"], 0) + 1
     plat_desc = "、".join("{} {}条".format(k, v) for k, v in plats.items())
-    # 主题内最高频命中词（用于标题/摘要）
-    kws = _THEME_KW.get(key, [])
+    # 子主题(具体原因)内最高频命中词（用于摘要，帮助快速定位原因）
+    kws = _SUB_KW.get((section_key, sub_key), [])
     kw_counter = {}
     for p in posts:
         for k in kws:
             if k in (p.get("text") or ""):
                 kw_counter[k] = kw_counter.get(k, 0) + 1
     top_kw = sorted(kw_counter.items(), key=lambda x: -x[1])
-    kw_desc = "、".join(k for k, _ in top_kw[:3]) if top_kw else section
+    kw_desc = "、".join(k for k, _ in top_kw[:3]) if top_kw else sub_title
     # 代表性原文（按互动量取前 6）
     top = sorted(posts, key=_engagement, reverse=True)[:6]
     evidence = [_to_evidence(p) for p in top]
     sample = (posts[0].get("text") or "")
-    title = "监测到「{}」相关负面 {} 条".format(kw_desc, count)
-    summary = ("本轮在{}共聚类出 {} 条与「{}」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。"
-               "典型表述如：「{}…」。建议结合工单/客服渠道核实处理时效。").format(
-        plat_desc, count, kw_desc, sample[:30])
+    title = sub_title
+    summary = ("本轮在{}共聚类出 {} 条与「{}」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。"
+               "高频原因词：{}。典型表述如：「{}…」。建议结合工单/客服渠道核实处理时效。").format(
+        plat_desc, count, sub_title, kw_desc, sample[:30])
     return {
-        "id": "EV-DYN-{}-{}".format(key.upper(), _NOW.strftime("%Y%m%d")),
+        "id": "EV-DYN-{}-{}-{}".format(section_key.upper(), sub_key.upper(), _NOW.strftime("%Y%m%d")),
         "level": level,
         "section": section,
         "title": title,
@@ -482,13 +542,18 @@ def _build_event(key, section, base_level, posts):
     }
 
 sentiment_events = []
-for key, section, base_level, _kws, min_count in THEME_DEFS:
-    posts = _clusters.get(key, [])
-    if len(posts) >= min_count:
-        sentiment_events.append(_build_event(key, section, base_level, posts))
-# 兜底：未命中任何主题的零散真实负面，>=3 条也单列，避免漏判
+for key, section, base_level, _kws, min_count, subs in THEME_DEFS:
+    for sk, stitle, _skws, smin in subs:
+        posts = _sub_clusters.get((key, sk), [])
+        if len(posts) >= smin:
+            sentiment_events.append(_build_event(key, sk, section, stitle, base_level, posts))
+    # 板块内未命中任何子主题的零散负面，>=3 条也单列，避免漏判
+    so = _section_other.get(key, [])
+    if len(so) >= 3:
+        sentiment_events.append(_build_event(key, "other", section, "{}—其他分散负面".format(section), base_level, so))
+# 兜底：未命中任何板块的零散真实负面，>=3 条也单列，避免漏判
 if len(_other) >= 3:
-    sentiment_events.append(_build_event("other", "其他/监管竞品", "P2", _other))
+    sentiment_events.append(_build_event("other", "other", "其他/监管竞品", "其他/监管竞品—其他分散负面", "P2", _other))
 
 # 按级别(高危在前)、规模(大在前)二次排序，便于阅读与看板呈现
 _lv_order = {"P0": 0, "P1": 1, "P2": 2}
@@ -521,13 +586,17 @@ def _build_conclusion(p0, p1, p2, events, hm_real):
         es = by[lv]
         if es:
             items = []
-            for e in es[:2]:
+            prev_sec = None
+            for e in es:
                 sec = e.get("section") or ""
                 c = e.get("post_count")
-                s = (sec + "—" if sec else "") + _short(e.get("title"))
+                # 同一板块的多个事件原因合并前缀，仅首次显示板块名，避免重复
+                prefix = (sec + "：") if sec != prev_sec else ""
+                s = prefix + (e.get("title") or "")
                 if c:
                     s += "（{}条）".format(c)
                 items.append(s)
+                prev_sec = sec
             head += "：" + "；".join(items)
         seg.append(head)
     return "本轮 " + "｜".join(seg) + "。"

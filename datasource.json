@@ -53,18 +53,18 @@
     "neu": 89,
     "neg": 27,
     "p0": 0,
-    "p1": 2,
-    "p2": 1,
-    "conclusion": "本轮 P0 0起｜P1 2起：会员收费—监测到「退款、自动续费、扣费」相关负面 15 条（15条）；账号安全—监测到「封禁、社交功能、风控」相关负面 4 条（4条）｜P2 1起：内容运营—监测到「下架、弃剧、停更」相关负面 6 条（6条）。"
+    "p1": 3,
+    "p2": 4,
+    "conclusion": "本轮 P0 0起｜P1 3起：会员收费：自动续费/扣费未告知致退款诉求（14条）；账号安全：微信账号批量封禁/风控误伤（4条）；会员收费：SVIP/会员画质与权益不符预期（1条）｜P2 4起：内容运营：《遇见王沥川》下架争议（2条）；剧集弃剧/观感差（2条）；《完美世界》造黄谣/下架风波（1条）；抠图/滤镜/制作粗糙争议（1条）。"
   },
   "sentiment_events": [
     {
-      "id": "EV-DYN-MEMBER-20260728",
+      "id": "EV-DYN-MEMBER-AUTO_RENEW-20260728",
       "level": "P1",
       "section": "会员收费",
-      "title": "监测到「退款、自动续费、扣费」相关负面 15 条",
-      "summary": "本轮在xiaohongshu 3条、heimao 12条共聚类出 15 条与「退款、自动续费、扣费」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。典型表述如：「腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后…」。建议结合工单/客服渠道核实处理时效。",
-      "post_count": 15,
+      "title": "自动续费/扣费未告知致退款诉求",
+      "summary": "本轮在xiaohongshu 2条、heimao 12条共聚类出 14 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：退款、自动续费、扣费。典型表述如：「腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 14,
       "evidence": [
         {
           "platform": "xiaohongshu",
@@ -75,16 +75,6 @@
           "published_at": "2026-07-23T10:07:25",
           "permalink": "https://www.xiaohongshu.com/explore/6a60e19000000000100260f2?xsec_token=ABN1U0M8_UxgfhXG72EbTZIllQEICn5vdngiP-SHy0dJg=&xsec_source=pc_feed",
           "text": "腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后面全都没有了只有被削减鸡肋的1080p，糊过b站盗版，吃相难看，我作为消费者本来就是为了画质才开的会员，结果现在会员比免费资源还糊？你还做什么生意？退钱吧 糊得要死看得我一肚子火。"
-        },
-        {
-          "platform": "xiaohongshu",
-          "author": "匿名用户",
-          "followers": null,
-          "likes": null,
-          "reposts": null,
-          "published_at": "2026-07-22T10:07:25",
-          "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=pc_feed",
-          "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip"
         },
         {
           "platform": "xiaohongshu",
@@ -125,15 +115,25 @@
           "published_at": "2026-07-27 19:10:58",
           "permalink": "https://tousu.sina.com.cn/complaint/view/17400238419/?sld=9aa451b35f0e9770ff2ff47f0a1221ef",
           "text": "一直申请退款，没有结果 小孩不小心点了会员，那个链接在我不知道的情况下扣了我四年的会员费用，我申请退款一直没有结果"
+        },
+        {
+          "platform": "heimao",
+          "author": "机灵喵",
+          "followers": null,
+          "likes": 0,
+          "reposts": null,
+          "published_at": "2026-07-27 18:55:50",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400237939/?sld=1f231678acc52eadaf08539ebc1445da",
+          "text": "深圳市腾讯计算机系统有限公司在顾客不知情况下自动续费 该企业旗下腾讯视频VIP服务，在我不知情、未收到任何显著提前提醒的情况下，私自完成自动续费扣费，违反《网络交易监督管理办法》第十八条关于自动续费的规定。本人通过微信支付开通腾讯视频VIP"
         }
       ]
     },
     {
-      "id": "EV-DYN-ACCOUNT-20260728",
+      "id": "EV-DYN-ACCOUNT-WECHAT_BAN-20260728",
       "level": "P1",
       "section": "账号安全",
-      "title": "监测到「封禁、社交功能、风控」相关负面 4 条",
-      "summary": "本轮在weibo 4条共聚类出 4 条与「封禁、社交功能、风控」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。典型表述如：「这么多人出现相同的账号限制，明显是批量风控误伤。大家保留账号…」。建议结合工单/客服渠道核实处理时效。",
+      "title": "微信账号批量封禁/风控误伤",
+      "summary": "本轮在weibo 4条共聚类出 4 条与「微信账号批量封禁/风控误伤」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：封禁、社交功能、账号限制。典型表述如：「这么多人出现相同的账号限制，明显是批量风控误伤。大家保留账号…」。建议结合工单/客服渠道核实处理时效。",
       "post_count": 4,
       "evidence": [
         {
@@ -179,43 +179,33 @@
       ]
     },
     {
-      "id": "EV-DYN-CONTENT-20260728",
-      "level": "P2",
-      "section": "内容运营",
-      "title": "监测到「下架、弃剧、停更」相关负面 6 条",
-      "summary": "本轮在weibo 6条共聚类出 6 条与「下架、弃剧、停更」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。典型表述如：「哈，腾讯视频下架王沥川那别的平台，快点收回他呀，他那么火爆，…」。建议结合工单/客服渠道核实处理时效。",
-      "post_count": 6,
+      "id": "EV-DYN-MEMBER-SVIP_QUALITY-20260728",
+      "level": "P1",
+      "section": "会员收费",
+      "title": "SVIP/会员画质与权益不符预期",
+      "summary": "本轮在xiaohongshu 1条共聚类出 1 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：svip、vip、升级到svip。典型表述如：「腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 1,
       "evidence": [
         {
-          "platform": "weibo",
-          "author": "想做一朵海棠花",
-          "followers": "106",
-          "likes": 15,
-          "reposts": 2,
-          "published_at": "2026-07-27T11:34:15",
-          "permalink": "https://m.weibo.cn/detail/5325255259200029",
-          "text": "花开锦绣  如果是想要爆剧就好好打磨剧情，保证一番主角赵凌的主体待遇，别乱开滤镜，到时候实景变抠图就尴尬了！赵凌用原声更能表现人物情绪，希望用原声 "
-        },
-        {
-          "platform": "weibo",
-          "author": "率真顽童a118899",
-          "followers": "5993",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-07-28T00:44:54",
-          "permalink": "https://m.weibo.cn/detail/5325454231734786",
-          "text": "《莫离》——白鹿演话了女主叶璃的灵魂！故看剧就像身临境，身同感受！其他人演的剧只是人物的一亇漂亮空壳子，往往没了兴趣，弃剧而去！等待明春的《开到荼蘼》@白鹿my @白鹿资料室 #白鹿my##白鹿#白鹿#莫离#莫离#开到荼蘼# 《刚追完《莫离"
-        },
-        {
-          "platform": "weibo",
-          "author": "她似故人归",
-          "followers": "135",
-          "likes": 1,
-          "reposts": 0,
-          "published_at": "2026-07-27T17:32:45",
-          "permalink": "https://m.weibo.cn/detail/5325345477631146",
-          "text": "完美世界动漫官方带头在500人大群里面褥女，造女性黄色💊言！不把女性当人看！必须下架，完美世界活着都是浪费资源，不尊重女性的动漫没有必要播，快点下架停更，永不复更！@完美世界动画官微 @腾讯视频动漫 @腾讯视频 @腾讯动漫 @中国妇女报 #"
-        },
+          "platform": "xiaohongshu",
+          "author": "匿名用户",
+          "followers": null,
+          "likes": null,
+          "reposts": null,
+          "published_at": "2026-07-22T10:07:25",
+          "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=pc_feed",
+          "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip"
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-WANGLICHUAN-20260728",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "《遇见王沥川》下架争议",
+      "summary": "本轮在weibo 2条共聚类出 2 条与「《遇见王沥川》下架争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：王沥川、遇见王沥川。典型表述如：「哈，腾讯视频下架王沥川那别的平台，快点收回他呀，他那么火爆，…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 2,
+      "evidence": [
         {
           "platform": "weibo",
           "author": "薪享事成yyc",
@@ -235,6 +225,26 @@
           "published_at": "2026-07-28T01:10:34",
           "permalink": "https://m.weibo.cn/detail/5325460691223785",
           "text": "腾讯视频，你是不是傻？为什么要下架遇见王沥川？ "
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-QUIT-20260728",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "剧集弃剧/观感差",
+      "summary": "本轮在weibo 2条共聚类出 2 条与「剧集弃剧/观感差」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：弃剧。典型表述如：「《莫离》——白鹿演话了女主叶璃的灵魂！故看剧就像身临境，身同…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 2,
+      "evidence": [
+        {
+          "platform": "weibo",
+          "author": "率真顽童a118899",
+          "followers": "5993",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T00:44:54",
+          "permalink": "https://m.weibo.cn/detail/5325454231734786",
+          "text": "《莫离》——白鹿演话了女主叶璃的灵魂！故看剧就像身临境，身同感受！其他人演的剧只是人物的一亇漂亮空壳子，往往没了兴趣，弃剧而去！等待明春的《开到荼蘼》@白鹿my @白鹿资料室 #白鹿my##白鹿#白鹿#莫离#莫离#开到荼蘼# 《刚追完《莫离"
         },
         {
           "platform": "weibo",
@@ -245,6 +255,46 @@
           "published_at": "2026-07-27T23:58:05",
           "permalink": "https://m.weibo.cn/detail/5325442450984829",
           "text": "我看百花杀看一半弃剧了。我忍不了男主了 "
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-PERFECT_WORLD-20260728",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "《完美世界》造黄谣/下架风波",
+      "summary": "本轮在weibo 1条共聚类出 1 条与「《完美世界》造黄谣/下架风波」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：完美世界。典型表述如：「完美世界动漫官方带头在500人大群里面褥女，造女性黄色💊言！…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 1,
+      "evidence": [
+        {
+          "platform": "weibo",
+          "author": "她似故人归",
+          "followers": "135",
+          "likes": 1,
+          "reposts": 0,
+          "published_at": "2026-07-27T17:32:45",
+          "permalink": "https://m.weibo.cn/detail/5325345477631146",
+          "text": "完美世界动漫官方带头在500人大群里面褥女，造女性黄色💊言！不把女性当人看！必须下架，完美世界活着都是浪费资源，不尊重女性的动漫没有必要播，快点下架停更，永不复更！@完美世界动画官微 @腾讯视频动漫 @腾讯视频 @腾讯动漫 @中国妇女报 #"
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-PRODUCE-20260728",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "抠图/滤镜/制作粗糙争议",
+      "summary": "本轮在weibo 1条共聚类出 1 条与「抠图/滤镜/制作粗糙争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：抠图、滤镜。典型表述如：「花开锦绣  如果是想要爆剧就好好打磨剧情，保证一番主角赵凌的…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 1,
+      "evidence": [
+        {
+          "platform": "weibo",
+          "author": "想做一朵海棠花",
+          "followers": "106",
+          "likes": 15,
+          "reposts": 2,
+          "published_at": "2026-07-27T11:34:15",
+          "permalink": "https://m.weibo.cn/detail/5325255259200029",
+          "text": "花开锦绣  如果是想要爆剧就好好打磨剧情，保证一番主角赵凌的主体待遇，别乱开滤镜，到时候实景变抠图就尴尬了！赵凌用原声更能表现人物情绪，希望用原声 "
         }
       ]
     }
@@ -3507,7 +3557,7 @@
       "sentiment": "neu"
     },
     {
-      "id": "douban_271416229",
+      "id": "douban_272293797",
       "platform": "douban",
       "author": null,
       "followers": null,
