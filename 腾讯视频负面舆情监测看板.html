@@ -433,11 +433,20 @@ function renderSummary(meta, kpi, events) {
   });
   document.getElementById('summaryLine').innerHTML = html;
 
-  // 情感结构：以「本次抓取总数」为底，从中区分 负面 / 正面 / 中性 + 未分类
-  var totalCollected = Number(kpi.total_collected) || (Number(kpi.pos) || 0) + (Number(kpi.neu) || 0) + (Number(kpi.neg) || 0);
+  // 情感结构：分母用「纳入分析的去噪真实帖」(= pos+neu+neg)，每条均已准确打标，不存在"未分类"。
+  // 另用一行说明采集漏斗：本次抓取总数 → 经窗口/噪音/去重过滤后纳入分析的条数（这部分才是"已过滤"，不是未分类）。
+  var posN = Number(kpi.pos) || 0, neuN = Number(kpi.neu) || 0, negN = Number(kpi.neg) || 0;
+  var analyzed = posN + neuN + negN;                       // 实际参与情感分类的去噪帖
+  var totalCrawl = Number(kpi.total_collected) || analyzed;
+  var filtered = Math.max(totalCrawl - analyzed, 0);       // 窗口外/噪音/去重等未纳入分析的部分
   var st = document.getElementById('sentimentTitle');
-  if (st) st.textContent = '情感结构分布（本次共抓取 ' + totalCollected + ' 条 · 负面 / 正面 / 中性 + 未分类）';
-  document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi);
+  if (st) st.textContent = '情感结构分布（纳入分析的 ' + analyzed + ' 条真实帖 · 负面 / 正面 / 中性）';
+  var cap = '';
+  if (totalCrawl > analyzed) {
+    cap = '<div class="prop-note">本次共抓取 ' + totalCrawl + ' 条原始内容，经时间窗口 / 噪音(官方号·广告·控评) / 跨平台去重过滤后，' +
+          analyzed + ' 条纳入情感分析（已过滤 ' + filtered + ' 条，属正常剔除，非「未分类」）。</div>';
+  }
+  document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi) + cap;
 
   // 风险等级事件数：P0 / P1 / P2 一行
   var grid = '';
@@ -450,21 +459,17 @@ function renderSummary(meta, kpi, events) {
 }
 function renderSentimentBar(kpi) {
   var pos = Number(kpi.pos) || 0, neu = Number(kpi.neu) || 0, neg = Number(kpi.neg) || 0;
-  // 总数以「本次抓取总数」为准（真实负面只是其中一部分）
-  var total = Number(kpi.total_collected) || (pos + neu + neg);
-  var classified = pos + neu + neg;
+  // 分母用「纳入分析的去噪帖总数」(= pos+neu+neg)，每条均已打标，不存在未分类段
+  var total = pos + neu + neg;
   var segs = [
     { name: '负面', val: neg, color: '#e53935' },
     { name: '正面', val: pos, color: '#43a047' },
     { name: '中性', val: neu, color: '#90a4ae' }
   ];
-  // 未参与情感分类的剩余部分（噪音/无关/未打标）显示为「未分类」灰段
-  var uncls = total - classified;
-  if (uncls > 0) segs.push({ name: '未分类', val: uncls, color: '#d7dce3' });
   // 无抓取数据：空态占位（保持大致样式）
   if (!total) {
     return '<div class="prop-bar"><div class="prop-empty"></div></div>' +
-           '<div class="prop-note">本轮暂无抓取数据（明早抓取后将显示真实占比）</div>';
+           '<div class="prop-note">本轮纳入分析的去噪帖为 0（明早抓取后将显示真实占比）</div>';
   }
   var bar = '<div class="prop-bar">';
   segs.forEach(function (s) {
