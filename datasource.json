@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-07-28T10:07:25",
-    "period_start": "2026-07-27T10:07:25",
-    "period_end": "2026-07-28T10:07:25",
+    "generated_at": "2026-07-28T16:08:00",
+    "period_start": "2026-07-27T16:08:00",
+    "period_end": "2026-07-28T16:08:00",
     "sources": [
       "微博 m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)",
       "豆瓣小组 公开讨论搜索",
@@ -52,6 +52,12 @@
     "pos": 65,
     "neu": 88,
     "neg": 32,
+    "unclassified": 30,
+    "unclassified_breakdown": {
+      "soft": 0,
+      "hard": 4,
+      "dedup": 26
+    },
     "p0": 0,
     "p1": 3,
     "p2": 5,
@@ -78,7 +84,7 @@
           "followers": null,
           "likes": null,
           "reposts": null,
-          "published_at": "2026-07-23T10:07:25",
+          "published_at": "2026-07-23T16:08:00",
           "permalink": "https://www.xiaohongshu.com/explore/6a60e19000000000100260f2?xsec_token=ABN1U0M8_UxgfhXG72EbTZIllQEICn5vdngiP-SHy0dJg=&xsec_source=pc_feed",
           "text": "腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后面全都没有了只有被削减鸡肋的1080p，糊过b站盗版，吃相难看，我作为消费者本来就是为了画质才开的会员，结果现在会员比免费资源还糊？你还做什么生意？退钱吧 糊得要死看得我一肚子火。"
         },
@@ -88,7 +94,7 @@
           "followers": null,
           "likes": null,
           "reposts": null,
-          "published_at": "2026-07-22T10:07:25",
+          "published_at": "2026-07-22T16:08:00",
           "permalink": "https://www.xiaohongshu.com/explore/6a5f3ae3000000000402ae2d?xsec_token=ABgqeEvSp67VBbmdpHezmo4OvToXLy28mQ4plIqzHKy_w=&xsec_source=pc_feed",
           "text": "腾讯视频自动续费成功退款 没有收到通知提醒就直接自动续费了，在小红书搜了维权教程结果投诉无果，发现简单快捷的方式，十分钟不到就成功退款了！！\np1：扣款截图\np2：按照小红书维权教程开始投诉\np3：腾讯客服投诉\np4：得到回复，拒绝退款\np"
         },
@@ -210,7 +216,7 @@
           "followers": null,
           "likes": null,
           "reposts": null,
-          "published_at": "2026-07-22T10:07:25",
+          "published_at": "2026-07-22T16:08:00",
           "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=pc_feed",
           "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip"
         }
@@ -426,7 +432,7 @@
       "filtered_as_noise": true,
       "noise_category": "hard",
       "noise_reason": "会员买卖/罗列刷屏广告(竞品)",
-      "sentiment": "neu"
+      "sentiment": "unclassified"
     },
     {
       "id": "5325593973359935",
@@ -506,7 +512,7 @@
       "filtered_as_noise": true,
       "noise_category": "hard",
       "noise_reason": "会员买卖/罗列刷屏广告(竞品)",
-      "sentiment": "pos"
+      "sentiment": "unclassified"
     },
     {
       "id": "5325592581901354",
@@ -646,7 +652,7 @@
       "filtered_as_noise": true,
       "noise_category": "hard",
       "noise_reason": "会员买卖/罗列刷屏广告(竞品)",
-      "sentiment": "neu"
+      "sentiment": "unclassified"
     },
     {
       "id": "5325576560445563",
@@ -3836,7 +3842,7 @@
       "sentiment": "neu"
     },
     {
-      "id": "douban_269225893",
+      "id": "douban_272970661",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -3850,14 +3856,14 @@
       "filtered_as_noise": true,
       "noise_category": "hard",
       "noise_reason": "未提及腾讯视频/无关组帖",
-      "sentiment": "neu"
+      "sentiment": "unclassified"
     },
     {
       "id": "6a60e19000000000100260f2",
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-23T10:07:25",
+      "published_at": "2026-07-23T16:08:00",
       "date_text": "5天前 广东",
       "text": "腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后面全都没有了只有被削减鸡肋的1080p，糊过b站盗版，吃相难看，我作为消费者本来就是为了画质才开的会员，结果现在会员比免费资源还糊？你还做什么生意？退钱吧 糊得要死看得我一肚子火。\n\t\n#画质 #腾讯视频 #画质差 #腾讯#追剧",
       "reposts": null,
@@ -3875,7 +3881,7 @@
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-22T10:07:25",
+      "published_at": "2026-07-22T16:08:00",
       "date_text": "6天前 江苏",
       "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip",
       "reposts": null,
@@ -3893,7 +3899,7 @@
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-22T10:07:25",
+      "published_at": "2026-07-22T16:08:00",
       "date_text": "6天前 河南",
       "text": "腾讯视频自动续费成功退款 没有收到通知提醒就直接自动续费了，在小红书搜了维权教程结果投诉无果，发现简单快捷的方式，十分钟不到就成功退款了！！\np1：扣款截图\np2：按照小红书维权教程开始投诉\np3：腾讯客服投诉\np4：得到回复，拒绝退款\np5：持续投诉，已经没有任何回复了\n❗正确操作过程：\np6：打开腾讯视频app，个人中心-右上角设置-专属客服\np7：复制如下话术：根据2021年5月1号实施的《 网络交易监督管理办法 》法律明确说明自动续费需要在五日前已较为显著的方式提醒消费者，但是我没有收到任何显著的提醒你们那边就给我自动续费了，我不接受，这是违法的，我要退款！\np8-10：申请退款\np11-12：5分钟退款到账\n\t\n注意：腾讯视频退款渠道中，只有一次退款机会，请注意关闭自动续费#维护自己的权益 #退款也是原路退回 #腾讯视频自动续费 #自动续费",
       "reposts": null,

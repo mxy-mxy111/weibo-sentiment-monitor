@@ -346,11 +346,15 @@ for e in heimao_raw:
         "noise_reason": None,
     })
 
-# ---- 为每条原始帖打"情感三分类"标签（pos / neu / neg），供情感声量趋势使用 ----
+# ---- 为每条原始帖打"情感标签"：pos / neu / neg / unclassified（未分类） ----
+#   规则（用户要求 2026-07-28）：
+#     - 竞品/无关等硬噪音(filtered_as_noise) → 未分类（本就不在监控主体）
+#     - 广告/控评/官方号等腾讯视频相关推广(soft) → 未分类（保留监控量，但不计入负面风险，也不计入中性）
+#     - 其余真实帖 → classify_sentiment 判 pos / neu / neg
+#   未分类段在看板保留展示，并对其含义做说明。
 for _p in raw_posts:
-    # 推广/控评(soft)归入中性：保留监控量，但不计入负面风险事件
-    if _p.get("noise_category") == "soft":
-        _p["sentiment"] = "neu"
+    if _p.get("filtered_as_noise") or _p.get("noise_category") == "soft":
+        _p["sentiment"] = "unclassified"
     else:
         _p["sentiment"] = classify_sentiment(_p.get("text"))
 
@@ -625,6 +629,10 @@ neu_count = sum(1 for r in raw_posts if not r["filtered_as_noise"] and r.get("se
 neg_count = sum(1 for r in raw_posts if not r["filtered_as_noise"] and r.get("sentiment") == "neg")
 # 真实负面 = 去噪后判定为 neg 的帖（情感三分类口径下，"真实负面"即 neg 维度）
 real_negative = neg_count
+# 未分类构成（软/硬/去重，均不依赖 total_collected，可先算）；unclassified 总数在 total_collected 定义后再计算
+soft_count = sum(1 for r in raw_posts if r.get("noise_category") == "soft")          # 广告/控评/官方号
+hard_count = sum(1 for r in raw_posts if r["filtered_as_noise"])                     # 竞品/无关硬噪音
+dedup_count = dup_removed                                                          # 跨平台去重剔除
 conclusion = _build_conclusion(p0, p1, p2, sentiment_events, hm_real)
 
 # ---- 过滤前总抓取量（各平台采集/解析出的原始条数：时间窗口过滤、噪音过滤、跨平台去重之前）----
@@ -640,6 +648,8 @@ _collected = {
     "heimao": _count("heimao_parsed_in_window.json"),
 }
 total_collected = sum(_collected.values())
+# 未分类总数 = 窗口内总采集量 - 已纳入情感三分类的帖子（广告/控评/官方号 + 竞品/无关 + 跨平台去重），保留监控量但不参与三分类、不计入负面风险
+unclassified_count = max(total_collected - (pos_count + neu_count + neg_count), 0)
 
 now = _NOW
 period_start = _PERIOD_START
@@ -681,6 +691,7 @@ else:
         "slot": now.strftime("%H:%M") + "（每日自动整合）",
         "p0": p0, "p1": p1, "p2": p2,
         "pos": pos_count, "neu": neu_count, "neg": neg_count,
+        "unclassified": unclassified_count,
         "total": real_negative,
         "highlight": conclusion,
     }
@@ -717,6 +728,12 @@ datasource = {
         "total_raw": len(raw_posts),
         "real_negative": real_negative,
         "pos": pos_count, "neu": neu_count, "neg": neg_count,
+        "unclassified": unclassified_count,
+        "unclassified_breakdown": {
+            "soft": soft_count,      # 广告/控评/官方号（腾讯视频相关）
+            "hard": hard_count,      # 竞品/无关内容
+            "dedup": dedup_count,    # 跨平台去重剔除
+        },
         "p0": p0, "p1": p1, "p2": p2,
         "conclusion": conclusion,
     },
@@ -730,7 +747,8 @@ with open(out, "w", encoding="utf-8") as f:
     json.dump(datasource, f, ensure_ascii=False, indent=2)
 
 print("raw_posts:", len(raw_posts), "| 真实负面(neg):", real_negative,
-      "| 正面(pos):", pos_count, "| 中性(neu):", neu_count, "| 去重删除:", dup_removed)
+      "| 正面(pos):", pos_count, "| 中性(neu):", neu_count,
+      "| 未分类:", unclassified_count, "(soft广告控评", soft_count, "/hard竞品", hard_count, "/去重", dedup_count, ") | 去重删除:", dup_removed)
 print("平台明细  微博:{}/({}neg {}pos {}neu)  豆瓣:{}/({}neg {}pos {}neu)  小红书:{}/({}neg {}pos {}neu)  黑猫:{}/({}neg {}pos {}neu) (采集/情感细分)".format(
     wb_total, wb_neg, wb_pos, wb_neu, db_total, db_neg, db_pos, db_neu,
     xhs_total, xhs_neg, xhs_pos, xhs_neu, hm_total, hm_neg, hm_pos, hm_neu))
