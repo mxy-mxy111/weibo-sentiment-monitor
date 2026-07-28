@@ -503,8 +503,7 @@ function renderEventBlocks(containerId, list, emptyText) {
     html += '<div class="event-block">';
     html += '<h4>【' + esc(e.section) + '】' + esc(e.title) + '</h4>';
     html += '<div class="event-meta">板块：<b>' + esc(e.section) + '</b> ｜ 分级：<b>' +
-            esc(e.level) + '</b>' + (e.post_count ? ' ｜ 相关发帖：<b>' + e.post_count + ' 条</b>' : '') +
-            (e.id ? ' ｜ 事件ID：' + esc(e.id) : '') + '</div>';
+            esc(e.level) + '</b>' + (e.post_count ? ' ｜ 相关发帖：<b>' + e.post_count + ' 条</b>' : '') + '</div>';
     html += eventSummaryHTML(e);
     html += renderEvidence(e.evidence);
     html += '</div>';
@@ -541,14 +540,14 @@ function renderP2(containerId, list) {
     return;
   }
   var html = '';
-  list.forEach(function (e, i) {
-    var links = '';
-    (e.evidence || []).forEach(function (v, j) {
-      links += ' <a href="' + esc(v.permalink) + '" target="_blank" rel="noopener noreferrer">原文' +
-               (e.evidence.length > 1 ? (j + 1) : '') + '→</a>';
-    });
-    html += '<div class="p2-item">' + (i + 1) + '. 【' + esc(e.section) + '】<b>' + esc(e.title) + '</b>' +
-            (e.summary ? '：' + esc(e.summary) : '') + links + '</div>';
+  list.forEach(function (e) {
+    html += '<div class="event-block">';
+    html += '<h4>【' + esc(e.section) + '】' + esc(e.title) + '</h4>';
+    html += '<div class="event-meta">板块：<b>' + esc(e.section) + '</b> ｜ 分级：<b>' +
+            esc(e.level) + '</b>' + (e.post_count ? ' ｜ 相关发帖：<b>' + e.post_count + ' 条</b>' : '') + '</div>';
+    html += eventSummaryHTML(e);
+    html += renderEvidence(e.evidence);
+    html += '</div>';
   });
   box.innerHTML = html;
 }
