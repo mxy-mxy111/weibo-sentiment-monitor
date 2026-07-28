@@ -13,8 +13,8 @@
     "platform_stats": {
       "weibo": {
         "total": 171,
-        "real_negative": 17,
-        "pos": 63,
+        "real_negative": 11,
+        "pos": 69,
         "neu": 88
       },
       "douban": {
@@ -48,83 +48,203 @@
       "heimao": 110
     },
     "total_raw": 189,
-    "real_negative": 33,
-    "pos": 63,
+    "real_negative": 27,
+    "pos": 69,
     "neu": 89,
-    "neg": 33,
+    "neg": 27,
     "p0": 0,
-    "p1": 1,
+    "p1": 2,
     "p2": 1,
-    "conclusion": "本轮 P0 0起｜P1 1起：会员收费—黑猫投诉集中反映自动续费未告知/退款遭拒（14条）｜P2 1起：技术功能—广告体验与试看限制吐槽（1条）。"
+    "conclusion": "本轮 P0 0起｜P1 2起：会员收费—监测到「退款、自动续费、扣费」相关负面 15 条（15条）；账号安全—监测到「封禁、社交功能、风控」相关负面 4 条（4条）｜P2 1起：内容运营—监测到「下架、弃剧、停更」相关负面 6 条（6条）。"
   },
   "sentiment_events": [
     {
-      "id": "EV-20260723-04",
-      "level": "P2",
-      "section": "技术功能",
-      "title": "广告体验与试看限制吐槽(《这一秒过火》等)",
-      "summary": "用户吐槽同为S+剧《这一秒过火》广告过多、观感割裂('广告钢钢的')；另有用户激烈吐槽'看1分钟广告只给试看3分钟'，反映广告密度与试看策略的体验不满。",
-      "post_count": 1,
+      "id": "EV-DYN-MEMBER-20260728",
+      "level": "P1",
+      "section": "会员收费",
+      "title": "监测到「退款、自动续费、扣费」相关负面 15 条",
+      "summary": "本轮在xiaohongshu 3条、heimao 12条共聚类出 15 条与「退款、自动续费、扣费」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。典型表述如：「腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 15,
       "evidence": [
         {
-          "author": "白豆腐TINA",
-          "followers": "3",
-          "permalink": "https://m.weibo.cn/detail/5325435036240922",
-          "published_at": "2026-07-27T23:28:37",
-          "likes": 3,
-          "reposts": 0
+          "platform": "xiaohongshu",
+          "author": "匿名用户",
+          "followers": null,
+          "likes": null,
+          "reposts": null,
+          "published_at": "2026-07-23T10:07:25",
+          "permalink": "https://www.xiaohongshu.com/explore/6a60e19000000000100260f2?xsec_token=ABN1U0M8_UxgfhXG72EbTZIllQEICn5vdngiP-SHy0dJg=&xsec_source=pc_feed",
+          "text": "腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后面全都没有了只有被削减鸡肋的1080p，糊过b站盗版，吃相难看，我作为消费者本来就是为了画质才开的会员，结果现在会员比免费资源还糊？你还做什么生意？退钱吧 糊得要死看得我一肚子火。"
+        },
+        {
+          "platform": "xiaohongshu",
+          "author": "匿名用户",
+          "followers": null,
+          "likes": null,
+          "reposts": null,
+          "published_at": "2026-07-22T10:07:25",
+          "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=pc_feed",
+          "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip"
+        },
+        {
+          "platform": "xiaohongshu",
+          "author": "匿名用户",
+          "followers": null,
+          "likes": null,
+          "reposts": null,
+          "published_at": "2026-07-22T10:07:25",
+          "permalink": "https://www.xiaohongshu.com/explore/6a5f3ae3000000000402ae2d?xsec_token=ABgqeEvSp67VBbmdpHezmo4OvToXLy28mQ4plIqzHKy_w=&xsec_source=pc_feed",
+          "text": "腾讯视频自动续费成功退款 没有收到通知提醒就直接自动续费了，在小红书搜了维权教程结果投诉无果，发现简单快捷的方式，十分钟不到就成功退款了！！\np1：扣款截图\np2：按照小红书维权教程开始投诉\np3：腾讯客服投诉\np4：得到回复，拒绝退款\np"
+        },
+        {
+          "platform": "heimao",
+          "author": "正义喵",
+          "followers": null,
+          "likes": 0,
+          "reposts": null,
+          "published_at": "2026-07-27 20:23:38",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400240554/?sld=18be12447ab60e0b39107bba029be439",
+          "text": "未使用腾讯会员自动续费扣款，要求退款 被腾讯视频自动续费扣款，扣费后没有使用会员任何权益，向客服申请退款被直接拒绝。自动续费提醒不足，未消费情况下拒绝退费，诉求全额原路退还扣费金额。上传所有截图证据。"
+        },
+        {
+          "platform": "heimao",
+          "author": "洞察喵",
+          "followers": null,
+          "likes": 0,
+          "reposts": null,
+          "published_at": "2026-07-27 19:20:43",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400238691/?sld=4ab71c3a3751862fbc532d56b9d297d4",
+          "text": "腾讯视频乱扣费不退款 我于2026年7月27日早上九点的时候收到腾讯视频的68元扣费通知，没有提前告知，也没有需要确认，款就在微信里面给扣走了，我九点二十三分的时候就申请了退款，我一没有使用，二没有同意，但是客服就回了一堆不相干的话，这不是"
+        },
+        {
+          "platform": "heimao",
+          "author": "友爱喵",
+          "followers": null,
+          "likes": 0,
+          "reposts": null,
+          "published_at": "2026-07-27 19:10:58",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400238419/?sld=9aa451b35f0e9770ff2ff47f0a1221ef",
+          "text": "一直申请退款，没有结果 小孩不小心点了会员，那个链接在我不知道的情况下扣了我四年的会员费用，我申请退款一直没有结果"
         }
       ]
     },
     {
-      "id": "EV-20260723-06",
+      "id": "EV-DYN-ACCOUNT-20260728",
       "level": "P1",
-      "section": "会员收费",
-      "title": "黑猫投诉集中反映自动续费未告知/退款遭拒(会员收费系统性风险)",
-      "summary": "黑猫投诉平台'腾讯视频小助手'受理账号窗口内新增 14 条真实用户投诉，高度集中在'自动续费未明确告知''充值后版权缺失要求退款''退款遭拒/客服踢皮球'等，反映会员收费与退款处理已具备系统性特征，建议结合工单核实处理时效。",
-      "post_count": 14,
+      "section": "账号安全",
+      "title": "监测到「封禁、社交功能、风控」相关负面 4 条",
+      "summary": "本轮在weibo 4条共聚类出 4 条与「封禁、社交功能、风控」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。典型表述如：「这么多人出现相同的账号限制，明显是批量风控误伤。大家保留账号…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 4,
       "evidence": [
         {
-          "author": "正义喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400240554/?sld=18be12447ab60e0b39107bba029be439",
-          "published_at": "2026-07-27 20:23:38",
-          "likes": null,
-          "reposts": null
+          "platform": "weibo",
+          "author": "小仙女副业找我",
+          "followers": "6321",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T03:54:57",
+          "permalink": "https://m.weibo.cn/detail/5325502061478260",
+          "text": "这么多人出现相同的账号限制，明显是批量风控误伤。大家保留账号封禁截图，各自去12300、12315提交投诉，统一反馈微信无原来不止我一个人遇到这种限制！账号社交功能全部锁死，换头像、进群、小程序全部无法使用，唯独保留支付功能。大家都可以整理"
         },
         {
-          "author": "洞察喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400238691/?sld=4ab71c3a3751862fbc532d56b9d297d4",
-          "published_at": "2026-07-27 19:20:43",
-          "likes": null,
-          "reposts": null
+          "platform": "weibo",
+          "author": "平凡人的随笔",
+          "followers": "13",
+          "likes": 4,
+          "reposts": 0,
+          "published_at": "2026-07-27T23:47:44",
+          "permalink": "https://m.weibo.cn/detail/5325439845537559",
+          "text": "@腾讯公司 @腾讯微信团队 @腾讯客服 腾讯视频微信 @工信微报 今天想完整记录下本人实名微信账号被90天社交功能封禁之后，多轮申诉维权的全部经过，希望客观的经历可以被看到。我本人是一名个体茶叶经营者，这个使用多年的实名认证微信，是我日常对"
         },
         {
-          "author": "友爱喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400238419/?sld=9aa451b35f0e9770ff2ff47f0a1221ef",
-          "published_at": "2026-07-27 19:10:58",
-          "likes": null,
-          "reposts": null
+          "platform": "weibo",
+          "author": "用户6664975950",
+          "followers": "1",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-27T22:41:33",
+          "permalink": "https://m.weibo.cn/detail/5325423189697788",
+          "text": "腾讯工作人员你好：我的微信被永久封号。一直打电话也冷冰冰的，重新注册也给我封号，本人并未做违法违规的事情，腾讯，直接给我永久封号。封号的理由是违反互联网政策法规，但又不能举实例。致电贵司。也被客服直接拒绝。这个微信号，我用了超10年。内有所"
         },
         {
-          "author": "正义喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400236767/?sld=619159113f42ce448cb59bda8f7137ce",
-          "published_at": "2026-07-27 18:21:33",
-          "likes": null,
-          "reposts": null
+          "platform": "weibo",
+          "author": "流凨苦贼危邻泡",
+          "followers": "3",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-27T11:26:40",
+          "permalink": "https://m.weibo.cn/detail/5325253355766346",
+          "text": "普通人正常使用微信，只是简单群发家人朋友客户聊天，被扣上 “涉嫌诈骗” 的帽子永久封停。前期多次以网络异常限制我的号，腾讯客服两次来电，全程无法出示我诈骗的证据，多方求助、投诉渠道屡屡碰壁，普通人维权太难。已提交工信部投诉，希望微信审核能说"
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-20260728",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "监测到「下架、弃剧、停更」相关负面 6 条",
+      "summary": "本轮在weibo 6条共聚类出 6 条与「下架、弃剧、停更」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。典型表述如：「哈，腾讯视频下架王沥川那别的平台，快点收回他呀，他那么火爆，…」。建议结合工单/客服渠道核实处理时效。",
+      "post_count": 6,
+      "evidence": [
+        {
+          "platform": "weibo",
+          "author": "想做一朵海棠花",
+          "followers": "106",
+          "likes": 15,
+          "reposts": 2,
+          "published_at": "2026-07-27T11:34:15",
+          "permalink": "https://m.weibo.cn/detail/5325255259200029",
+          "text": "花开锦绣  如果是想要爆剧就好好打磨剧情，保证一番主角赵凌的主体待遇，别乱开滤镜，到时候实景变抠图就尴尬了！赵凌用原声更能表现人物情绪，希望用原声 "
         },
         {
-          "author": "正义喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400228388/?sld=b693a1cea505221b0a92978cc54202ac",
-          "published_at": "2026-07-27 15:17:03",
-          "likes": null,
-          "reposts": null
+          "platform": "weibo",
+          "author": "率真顽童a118899",
+          "followers": "5993",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T00:44:54",
+          "permalink": "https://m.weibo.cn/detail/5325454231734786",
+          "text": "《莫离》——白鹿演话了女主叶璃的灵魂！故看剧就像身临境，身同感受！其他人演的剧只是人物的一亇漂亮空壳子，往往没了兴趣，弃剧而去！等待明春的《开到荼蘼》@白鹿my @白鹿资料室 #白鹿my##白鹿#白鹿#莫离#莫离#开到荼蘼# 《刚追完《莫离"
         },
         {
-          "author": "机灵喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400227809/?sld=68a366388c75ed4153580855adc9ecfa",
-          "published_at": "2026-07-27 15:06:08",
-          "likes": null,
-          "reposts": null
+          "platform": "weibo",
+          "author": "她似故人归",
+          "followers": "135",
+          "likes": 1,
+          "reposts": 0,
+          "published_at": "2026-07-27T17:32:45",
+          "permalink": "https://m.weibo.cn/detail/5325345477631146",
+          "text": "完美世界动漫官方带头在500人大群里面褥女，造女性黄色💊言！不把女性当人看！必须下架，完美世界活着都是浪费资源，不尊重女性的动漫没有必要播，快点下架停更，永不复更！@完美世界动画官微 @腾讯视频动漫 @腾讯视频 @腾讯动漫 @中国妇女报 #"
+        },
+        {
+          "platform": "weibo",
+          "author": "薪享事成yyc",
+          "followers": "3",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T01:11:06",
+          "permalink": "https://m.weibo.cn/detail/5325460825179394",
+          "text": "哈，腾讯视频下架王沥川那别的平台，快点收回他呀，他那么火爆，又那么多人看，肯定有人为之愿意买 VIP，我就是其中一个，为什么你们不买呀？我就是觉得就是一个非常能，就是可观的盈利的，可盈利的一个项目。 "
+        },
+        {
+          "platform": "weibo",
+          "author": "薪享事成yyc",
+          "followers": "3",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T01:10:34",
+          "permalink": "https://m.weibo.cn/detail/5325460691223785",
+          "text": "腾讯视频，你是不是傻？为什么要下架遇见王沥川？ "
+        },
+        {
+          "platform": "weibo",
+          "author": "掌心的紋路是你名字的形状",
+          "followers": "396",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-27T23:58:05",
+          "permalink": "https://m.weibo.cn/detail/5325442450984829",
+          "text": "我看百花杀看一半弃剧了。我忍不了男主了 "
         }
       ]
     }
@@ -1672,7 +1792,7 @@
       "permalink": "https://m.weibo.cn/detail/5325578045489886",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325577437317547",
@@ -2794,7 +2914,7 @@
       "permalink": "https://m.weibo.cn/detail/5325381660053943",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325377539155152",
@@ -2813,7 +2933,7 @@
       "permalink": "https://m.weibo.cn/detail/5325377539155152",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325377148816280",
@@ -2927,7 +3047,7 @@
       "permalink": "https://m.weibo.cn/detail/5325361757819130",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325360633742694",
@@ -3060,7 +3180,7 @@
       "permalink": "https://m.weibo.cn/detail/5325344911397081",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325341657661837",
@@ -3079,7 +3199,7 @@
       "permalink": "https://m.weibo.cn/detail/5325341657661837",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "pos"
+      "sentiment": "neg"
     },
     {
       "id": "5325326779417559",
@@ -3232,7 +3352,7 @@
       "permalink": "https://m.weibo.cn/detail/5325264093447909",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325263835501701",
@@ -3270,7 +3390,7 @@
       "permalink": "https://m.weibo.cn/detail/5325258011706132",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325257080833034",
@@ -3327,7 +3447,7 @@
       "permalink": "https://m.weibo.cn/detail/5325247679038050",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325246640685738",
@@ -3365,7 +3485,7 @@
       "permalink": "https://m.weibo.cn/detail/5325244652066293",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325243172522927",
@@ -3387,7 +3507,7 @@
       "sentiment": "neu"
     },
     {
-      "id": "douban_268970917",
+      "id": "douban_271416229",
       "platform": "douban",
       "author": null,
       "followers": null,

@@ -38,27 +38,36 @@ except Exception:
 # 情感三分类词库（供 classify_sentiment 对每条原始帖做 pos / neu / neg 判定）
 try:
     from keywords_config import (
-        NEG_SENTIMENT_WORDS as _NEG_W,
+        STRONG_NEG_SENTIMENT_WORDS as _STRONG_NEG,
+        SOFT_NEG_SENTIMENT_WORDS as _SOFT_NEG,
         POSITIVE_WORDS as _POS_W,
         NEUTRAL_WORDS as _NEU_W,
     )
 except Exception:
-    _NEG_W, _POS_W, _NEU_W = [], [], []
+    _STRONG_NEG, _SOFT_NEG, _POS_W, _NEU_W = [], [], [], []
 
 # ---- 情感三分类判定（pos / neu / neg）----
-# 规则：强负面词命中且无正面词 -> neg；正面词命中且无负面词 -> pos；
-#      正负皆命中 -> 以命中数量多者为准（负面优先，负面>=正面则 neg）；
-#      皆无 -> 中性（neu）。黑猫投诉本身即投诉，正文必含负面词，自然归 neg。
+# 规则（重构，解决"夸剧/中性被误判为 neg"问题）：
+#   1) 命中【强负面词】(投诉/故障/欺诈/收费/封禁等) -> 直接 neg（优先级最高，
+#      即便同时出现夸赞也保留为负面，如"好看但退款太难"仍是投诉）。
+#   2) 仅命中【弱负面词】(弃剧/离谱/尴尬等轻吐槽) 且【无正面词】 -> neg；
+#      若同时出现正面词（如"演活了女主+弃剧""封神+离谱"），正面语境压过弱负面 -> pos/neu。
+#   3) 仅命中正面词 -> pos；皆无 -> neu。
+#   黑猫投诉正文必含强负面词，自然归 neg。
 def classify_sentiment(text):
     t = text or ""
-    neg = sum(1 for w in _NEG_W if w in t)
+    strong = sum(1 for w in _STRONG_NEG if w in t)
+    soft = sum(1 for w in _SOFT_NEG if w in t)
     pos = sum(1 for w in _POS_W if w in t)
-    if neg and not pos:
+    if strong:
         return "neg"
-    if pos and not neg:
+    if pos and not soft:
         return "pos"
-    if neg and pos:
-        return "neg" if neg >= pos else "pos"
+    if pos and soft:
+        # 正面语境压过弱负面：赞多于/等于轻吐槽 -> pos，否则归中性
+        return "pos" if pos >= soft else "neu"
+    if soft:
+        return "neg"
     return "neu"
 
 # ============================================================
@@ -365,100 +374,125 @@ xhs_total, xhs_real, xhs_pos, xhs_neu, xhs_neg = plat_stats("xiaohongshu")
 hm_total, hm_real, hm_pos, hm_neu, hm_neg = plat_stats("heimao")
 
 # ============================================================
-# 5. 归并分级事件（基于微博本轮真实帖，人工规则归并）
+# 5. 动态风险聚类（取代写死的事件模板）
+#    对每条"去噪后的真实负面(neg)帖"按主题关键词聚类；
+#    同一主题命中数 >= 阈值 即视为一个风险事件，并按严重度自动定级 P0/P1/P2，
+#    不再依赖特定日期的事件模板，任何真实负面主题都不会漏判。
 # ============================================================
-def find(*subs):
-    """按文本子串定位真实微博帖，返回永久链接与作者，用于事件引用。"""
-    out = []
-    for e in weibo_posts:
-        t = e.get("text") or ""
-        if all(s in t for s in subs):
-            out.append({"author": e.get("screen_name"), "followers": e.get("followers_count"),
-                        "permalink": permalink(e), "published_at": e.get("dt"),
-                        "likes": e.get("attitudes_count"), "reposts": e.get("reposts_count")})
-    return out
 
-def find_heimao(*subs):
-    """按文本子串定位黑猫投诉真实条目，用于会员收费类事件引用。"""
-    out = []
-    for e in heimao_raw:
-        m = e.get("main") or {}
-        t = (m.get("title") or "") + (m.get("summary") or "")
-        if all(s in t for s in subs):
-            out.append({"author": (e.get("author") or {}).get("title"),
-                        "permalink": m.get("url"), "published_at": m.get("created_dt_str"),
-                        "likes": None, "reposts": None})
-    return out
-
-sentiment_events = [
-    {
-        "id": "EV-20260723-01",
-        "level": "P1",
-        "section": "会员收费",
-        "title": "《半熟恋人5》柳周CP剪辑争议叠加SVIP超点退款诉求持续发酵",
-        "summary": "多名自称腾讯视频SVIP付费用户就《半熟恋人5》维权：指节目长期用周佑凌&柳柳CP话题引流吸引充值，正片却大量删减二人镜头、碎片化剪辑制造对立；伴随'坚决不买超点''退钱，买SVIP不是来看边角料'等付费不满与退款诉求，24小时内同类发帖十余条。",
-        "post_count": len(find("半熟恋人")),
-        "evidence": (find("半熟恋人", "投诉") + find("半熟恋人5柳周镜头少") + find("买svip") + find("退钱"))[:8],
-    },
-    {
-        "id": "EV-20260723-02",
-        "level": "P1",
-        "section": "其他/监管竞品",
-        "title": "《五十公里桃花坞第六季》'用已故周涛拍真人秀'实名举报言论",
-        "summary": "用户以'实名举报'措辞发帖，称腾讯视频《五十公里桃花坞第六季》'用死人周涛拍真人秀节目、欺骗观众'，要求公开道歉；措辞激烈、带举报/道德争议属性，存在被放大传播风险(同一用户24h内重复发布3条)。",
-        "post_count": len(find("桃花坞", "举报")),
-        "evidence": find("桃花坞", "举报")[:3],
-    },
-    {
-        "id": "EV-20260723-03",
-        "level": "P2",
-        "section": "内容运营",
-        "title": "《十日终焉》选角争议(擦边博主进组加戏)延续",
-        "summary": "书粉持续发帖反对'擦边博主'进组出演'余念安/白月光'，称影响青少年价值观、要求剧组出具官方声明或换人，态度延续此前组织化维权基调。",
-        "post_count": len(find("十日终焉")) + len(find("擦边博主进组")),
-        "evidence": (find("十日终焉") + find("擦边博主进组"))[:4],
-    },
-    {
-        "id": "EV-20260723-04",
-        "level": "P2",
-        "section": "技术功能",
-        "title": "广告体验与试看限制吐槽(《这一秒过火》等)",
-        "summary": "用户吐槽同为S+剧《这一秒过火》广告过多、观感割裂('广告钢钢的')；另有用户激烈吐槽'看1分钟广告只给试看3分钟'，反映广告密度与试看策略的体验不满。",
-        "post_count": len(find("广告")) ,
-        "evidence": (find("这一秒过火", "广告") + find("试看3分钟"))[:4],
-    },
-    {
-        "id": "EV-20260723-05",
-        "level": "P0",
-        "section": "其他/监管竞品",
-        "title": "含自伤/抑郁倾向的极端归因言论(需即时人工研判)",
-        "summary": "一名用户发帖称'被腾讯逼到走投无路、有严重抑郁、接下来想不开、绝对是腾讯逼的'，将极端情绪归因于账号被永久封停。虽粉丝量极低、传播面小，但含自伤倾向表述，按风险监测规则上报为P0，建议人工即时核实并做安抚/申诉引导，防止舆情与安全事件叠加。",
-        "post_count": len(find("抑郁", "腾讯")),
-        "evidence": find("抑郁", "腾讯")[:2],
-    },
+# 主题定义：(key, 板块section, 基础级别, [命中子串], 最小簇大小)
+# 顺序即优先级：先匹配"会员/账号/极端"等高风险主题，再落到内容/技术/广告。
+THEME_DEFS = [
+    ("member",  "会员收费", "P1",
+     ["自动续费", "退款", "退钱", "退费", "乱扣费", "乱收费", "重复扣费", "扣费",
+      "套娃收费", "超前点播", "会员权益", "权益缩水", "权益不保", "svip", "vip",
+      "会员涨价", "未到账", "割韭菜", "霸王条款"], 1),
+    ("account", "账号安全", "P1",
+     ["封号", "封禁", "盗号", "风控", "涉嫌诈骗", "账号限制", "社交功能", "永久封停"], 1),
+    ("extreme", "其他/监管竞品", "P0",
+     ["抑郁", "想不开", "走投无路", "自伤", "自杀", "轻生", "活不下去", "逼到走投无路"], 1),
+    ("content", "内容运营", "P2",
+     ["下架", "停更", "断更", "选角争议", "剪辑", "删减", "塌房", "价值观", "魔改",
+      "抄袭", "烂尾", "悬浮", "抠图", "抵制", "辱女", "造黄谣", "黄谣", "弃剧", "弃坑", "难看"], 2),
+    ("tech",    "技术功能", "P2",
+     ["卡顿", "闪退", "崩溃", "黑屏", "白屏", "花屏", "无法播放", "看不了", "加载",
+      "缓冲", "投屏", "故障", "报错", "画质差", "音画不同步", "卡死", "卡住",
+      "登录不上", "无法登录"], 2),
+    ("ad",      "技术功能", "P2",
+     ["广告多", "广告太多", "弹窗广告", "前情提要广告", "试看", "广告钢钢的"], 2),
 ]
+_THEME_KW = {t[0]: t[3] for t in THEME_DEFS}
 
-# ---- 黑猫投诉：会员收费系统性投诉事件（有数据才纳入）----
-heimao_refund = find_heimao("退款") + find_heimao("扣费") + find_heimao("自动续费")
-# 黑猫按 sn 内部去重
-_hseen = set(); _he = []
-for v in heimao_refund:
-    k = v.get("permalink")
-    if k and k not in _hseen:
-        _hseen.add(k); _he.append(v)
-if hm_real >= 5:
-    sentiment_events.append({
-        "id": "EV-20260723-06",
-        "level": "P1",
-        "section": "会员收费",
-        "title": "黑猫投诉集中反映自动续费未告知/退款遭拒(会员收费系统性风险)",
-        "summary": "黑猫投诉平台'腾讯视频小助手'受理账号窗口内新增 {} 条真实用户投诉，高度集中在'自动续费未明确告知''充值后版权缺失要求退款''退款遭拒/客服踢皮球'等，反映会员收费与退款处理已具备系统性特征，建议结合工单核实处理时效。".format(hm_real),
-        "post_count": hm_real,
-        "evidence": _he[:6],
-    })
+def _theme_of(text):
+    t = text or ""
+    for key, _sec, _lv, kws, _min in THEME_DEFS:
+        if any(k in t for k in kws):
+            return key
+    return None
 
-# 清理空事件(evidence 为空说明本轮无对应真实帖，直接剔除，避免编造)
-sentiment_events = [ev for ev in sentiment_events if ev["evidence"]]
+# 聚类：每条真实 neg 帖归到首个命中主题（优先级靠前的主题优先）
+_clusters = {t[0]: [] for t in THEME_DEFS}
+_other = []
+for _p in raw_posts:
+    if _p["filtered_as_noise"] or _p.get("sentiment") != "neg":
+        continue
+    _k = _theme_of(_p.get("text"))
+    if _k:
+        _clusters[_k].append(_p)
+    else:
+        _other.append(_p)
+
+def _engagement(p):
+    def _int(v):
+        try:
+            return int(v)
+        except (TypeError, ValueError):
+            return 0
+    return (_int(p.get("likes")) + _int(p.get("reposts")) * 3
+            + _int(p.get("followers")) // 1000)
+
+def _to_evidence(p):
+    return {
+        "platform": p.get("platform"),
+        "author": p.get("author") or "匿名用户",
+        "followers": p.get("followers"),
+        "likes": p.get("likes"),
+        "reposts": p.get("reposts"),
+        "published_at": p.get("published_at"),
+        "permalink": p.get("permalink"),
+        "text": (p.get("text") or "")[:120],
+    }
+
+def _build_event(key, section, base_level, posts):
+    count = len(posts)
+    # 严重度：基础级别；P2 主题若簇规模 >=10 升级为 P1（系统性），P0/P1 不升不降
+    level = base_level
+    if base_level == "P2" and count >= 10:
+        level = "P1"
+    # 平台分布
+    plats = {}
+    for p in posts:
+        plats[p["platform"]] = plats.get(p["platform"], 0) + 1
+    plat_desc = "、".join("{} {}条".format(k, v) for k, v in plats.items())
+    # 主题内最高频命中词（用于标题/摘要）
+    kws = _THEME_KW.get(key, [])
+    kw_counter = {}
+    for p in posts:
+        for k in kws:
+            if k in (p.get("text") or ""):
+                kw_counter[k] = kw_counter.get(k, 0) + 1
+    top_kw = sorted(kw_counter.items(), key=lambda x: -x[1])
+    kw_desc = "、".join(k for k, _ in top_kw[:3]) if top_kw else section
+    # 代表性原文（按互动量取前 6）
+    top = sorted(posts, key=_engagement, reverse=True)[:6]
+    evidence = [_to_evidence(p) for p in top]
+    sample = (posts[0].get("text") or "")
+    title = "监测到「{}」相关负面 {} 条".format(kw_desc, count)
+    summary = ("本轮在{}共聚类出 {} 条与「{}」相关的真实负面反馈（动态聚类生成，按主题自动归并，不依赖固定模板）。"
+               "典型表述如：「{}…」。建议结合工单/客服渠道核实处理时效。").format(
+        plat_desc, count, kw_desc, sample[:30])
+    return {
+        "id": "EV-DYN-{}-{}".format(key.upper(), _NOW.strftime("%Y%m%d")),
+        "level": level,
+        "section": section,
+        "title": title,
+        "summary": summary,
+        "post_count": count,
+        "evidence": evidence,
+    }
+
+sentiment_events = []
+for key, section, base_level, _kws, min_count in THEME_DEFS:
+    posts = _clusters.get(key, [])
+    if len(posts) >= min_count:
+        sentiment_events.append(_build_event(key, section, base_level, posts))
+# 兜底：未命中任何主题的零散真实负面，>=3 条也单列，避免漏判
+if len(_other) >= 3:
+    sentiment_events.append(_build_event("other", "其他/监管竞品", "P2", _other))
+
+# 按级别(高危在前)、规模(大在前)二次排序，便于阅读与看板呈现
+_lv_order = {"P0": 0, "P1": 1, "P2": 2}
+sentiment_events.sort(key=lambda e: (_lv_order.get(e["level"], 9), -(e.get("post_count") or 0)))
 
 # ============================================================
 # 6. KPI
