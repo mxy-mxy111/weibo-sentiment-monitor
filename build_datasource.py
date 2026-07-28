@@ -512,10 +512,11 @@ def _build_event(section_key, sub_key, section, sub_title, base_level, posts):
     level = base_level
     if base_level == "P2" and count >= 10:
         level = "P1"
-    # 平台分布
+    # 平台分布（中文化：用汉字而非拼音）
     plats = {}
     for p in posts:
-        plats[p["platform"]] = plats.get(p["platform"], 0) + 1
+        cn = PLATFORM_CN.get(p["platform"], p["platform"])
+        plats[cn] = plats.get(cn, 0) + 1
     plat_desc = "、".join("{} {}条".format(k, v) for k, v in plats.items())
     # 子主题(具体原因)内最高频命中词（用于摘要，帮助快速定位原因）
     kws = _SUB_KW.get((section_key, sub_key), [])
@@ -529,17 +530,27 @@ def _build_event(section_key, sub_key, section, sub_title, base_level, posts):
     # 代表性原文（按互动量取前 6）
     top = sorted(posts, key=_engagement, reverse=True)[:6]
     evidence = [_to_evidence(p) for p in top]
-    sample = (posts[0].get("text") or "")
+    sample = (posts[0].get("text") or "").replace("\n", " ")
     title = sub_title
+    # 单句串联版（P2 列表 / 预警内联使用），平台已中文化
     summary = ("本轮在{}共聚类出 {} 条与「{}」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。"
                "高频原因词：{}。典型表述如：「{}…」。建议结合工单/客服渠道核实处理时效。").format(
         plat_desc, count, sub_title, kw_desc, sample[:30])
+    # 分点版（P0/P1 详情逐条展示，加标记；平台中文化、不再堆叠成一段）
+    summary_points = [
+        "本轮在{}，共聚类出 {} 条与「{}」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。".format(
+            plat_desc, count, sub_title),
+        "高频原因词：{}。".format(kw_desc),
+        "典型表述如：「{}…」。".format(sample[:30]),
+        "建议结合工单/客服渠道核实处理时效。",
+    ]
     return {
         "id": "EV-DYN-{}-{}-{}".format(section_key.upper(), sub_key.upper(), _NOW.strftime("%Y%m%d")),
         "level": level,
         "section": section,
         "title": title,
         "summary": summary,
+        "summary_points": summary_points,
         "post_count": count,
         "evidence": evidence,
     }
@@ -566,33 +577,17 @@ sentiment_events.sort(key=lambda e: (_lv_order.get(e["level"], 9), -(e.get("post
 # 6. KPI
 # ============================================================
 def _build_conclusion(p0, p1, p2, events, hm_real):
-    """对 P0/P1/P2 逐级生成概览，并以多行分点列出每个事件原因（便于看板逐条展示）。
-
-    返回含换行符(\\n)的字符串：首行为各级事件数概览，随后按级别分段，
-    每个事件原因独立成行（· 板块｜标题（N条相关）），不再把所有案例堆叠在一行。"""
+    """核心水位结论：一句话，仅给出各级事件数 + 主要涉及的问题，不展开分点。"""
     by = {"P0": [], "P1": [], "P2": []}
     for e in events:
         lv = (e.get("level") or "").upper()
         if lv in by:
             by[lv].append(e)
-
-    lv_cn = {"P0": "P0 高危", "P1": "P1 中危", "P2": "P2 低危"}
-    lines = ["本轮风险分级：P0 {} 起｜P1 {} 起｜P2 {} 起".format(p0, p1, p2), ""]
-    for lv in ("P0", "P1", "P2"):
-        es = by[lv]
-        if not es:
-            continue
-        lines.append("【{}】".format(lv_cn[lv]))
-        for e in es:
-            sec = e.get("section") or ""
-            title = e.get("title") or ""
-            c = e.get("post_count")
-            if c:
-                lines.append("· {}｜{}（{} 条相关）".format(sec, title, c))
-            else:
-                lines.append("· {}｜{}".format(sec, title))
-        lines.append("")
-    return "\n".join(lines).strip("\n")
+    parts = []
+    for lv, n in (("P0", p0), ("P1", p1), ("P2", p2)):
+        issues = "、".join(e.get("title") or "" for e in by[lv]) if by[lv] else "无"
+        parts.append("{} {} 起（主要：{}）".format(lv, n, issues))
+    return "本轮风险分级：" + "；".join(parts) + "。"
 
 p0 = sum(1 for e in sentiment_events if e["level"] == "P0")
 p1 = sum(1 for e in sentiment_events if e["level"] == "P1")

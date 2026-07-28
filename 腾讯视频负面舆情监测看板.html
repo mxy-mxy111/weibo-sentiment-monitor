@@ -37,10 +37,10 @@
   .summary-line .s-tag.s-p1 { background:#ffe0b2; color:#bf360c; }
   .summary-line .s-tag.s-p2 { background:#c8e6c9; color:#1b5e20; }
   .summary-line .s-tag.s-plat { background:#bbdefb; color:#0d47a1; }
-  .summary-line .s-text { font-size:14px; color:#333; line-height:1.55; }
-  .summary-line .s-text.s-concl { white-space:normal; display:block; }
-  .summary-line .s-concl .c-head { font-weight:700; color:#b3261e; margin:6px 0 2px; font-size:13px; }
-  .summary-line .s-concl .c-line { line-height:1.85; padding-left:2px; }
+  .summary-line .s-text { font-size:14px; color:#333; line-height:1.6; }
+  .summary-line .s-text.s-concl { white-space:normal; display:block; font-weight:600; color:#b3261e; }
+  .content-pts { margin-top:5px; padding-left:10px; border-left:3px solid #ffd9b3; }
+  .content-pt { font-size:13px; color:#3a4150; line-height:1.75; }
   .ev-platform { display:inline-block; font-size:11px; padding:1px 7px; border-radius:9px; background:#eef2f7; color:#4a5568; margin-right:6px; border:1px solid #dbe2ea; }
 
   .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:14px; margin-bottom:6px; }
@@ -406,12 +406,8 @@ function renderHeader(meta, kpi, p0, p1, p2, srcLabel) {
 function renderSummary(meta, kpi, events) {
   var html = '';
   if (kpi.conclusion) {
-    var clines = String(kpi.conclusion).split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l; });
-    var chtml = clines.map(function (l) {
-      if (/^【.+】$/.test(l)) return '<div class="c-head">' + esc(l) + '</div>';
-      return '<div class="c-line">' + esc(l) + '</div>';
-    }).join('');
-    html += '<div class="s-item"><span class="s-tag s-p0">结论</span><div class="s-text s-concl">' + chtml + '</div></div>';
+    html += '<div class="s-item"><span class="s-tag s-p0">结论</span><div class="s-text s-concl">' +
+            esc(kpi.conclusion) + '</div></div>';
   }
   // 事件按等级排序：P0 > P1 > P2（保证总结中 P1 在 P2 上方）
   var lvOrder = { 'P0': 0, 'P1': 1, 'P2': 2 };
@@ -484,6 +480,18 @@ function kpiCell(cls, num, lab) {
 }
 
 /* 事件块（P0 / P1 通用） */
+/* 事件说明：优先分点(带标记)展示，否则单行串联 */
+function eventSummaryHTML(e) {
+  if (e.summary_points && e.summary_points.length) {
+    var pts = e.summary_points.map(function (pt) {
+      return '<div class="content-pt">· ' + esc(pt) + '</div>';
+    }).join('');
+    return '<div class="content-pts">' + pts + '</div>';
+  }
+  if (e.summary) return '<div class="content-line">' + esc(e.summary) + '</div>';
+  return '';
+}
+
 function renderEventBlocks(containerId, list, emptyText) {
   var box = document.getElementById(containerId);
   if (!list.length) {
@@ -497,7 +505,7 @@ function renderEventBlocks(containerId, list, emptyText) {
     html += '<div class="event-meta">板块：<b>' + esc(e.section) + '</b> ｜ 分级：<b>' +
             esc(e.level) + '</b>' + (e.post_count ? ' ｜ 相关发帖：<b>' + e.post_count + ' 条</b>' : '') +
             (e.id ? ' ｜ 事件ID：' + esc(e.id) : '') + '</div>';
-    if (e.summary) html += '<div class="content-line">' + esc(e.summary) + '</div>';
+    html += eventSummaryHTML(e);
     html += renderEvidence(e.evidence);
     html += '</div>';
   });
@@ -803,7 +811,7 @@ function _svgHBars(rows) {
   var maxV = 0; rows.forEach(function (r) { var v = Number(r.value) || 0; if (v > maxV) maxV = v; });
   if (maxV <= 0) maxV = 1;
   var uid = 'hb' + (++_hbarSeq);
-  var padL = 4, padR = 12, rowH = 30, gap = 16, top = 6;
+  var padL = 4, padR = 12, rowH = 22, gap = 9, top = 4;
   var labelW = 66, barMax = 158, valW = 66;
   var W = padL + labelW + barMax + valW + padR;
   var H = top + rows.length * rowH + (rows.length - 1) * gap + 8;
@@ -817,7 +825,7 @@ function _svgHBars(rows) {
       + '<stop offset="1" stop-color="' + _shade(c, -14) + '"/></linearGradient>';
   });
   svg += '</defs>';
-  var barH = rowH - 10;
+  var barH = rowH - 8;
   var ry = barH / 2;
   rows.forEach(function (r, i) {
     var v = Number(r.value) || 0;
