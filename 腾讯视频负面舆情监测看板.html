@@ -409,7 +409,7 @@ function renderHeader(meta, kpi, p0, p1, p2, srcLabel) {
   var sub = '';
   sub += '<div><b>监测周期：</b>' + fmtDT(meta.period_start) + ' ～ ' + fmtDT(meta.period_end) + '</div>';
   sub += '<div><b>数据来源：</b>微博、豆瓣、小红书、黑猫投诉</div>';
-  sub += '<div><b>统计口径：</b>按技术功能／内容运营／会员收费／其他监管竞品四大板块覆盖；广告/控评/官方号等腾讯视频相关推广统一计入「未分类」（保留监控量，但不计入负面风险，也不计入中性），仅剔除竞品/无关内容；情感三分类(pos/neu/neg)仅覆盖纳入分析的去噪真实帖，其余未参与三分类的归「未分类」</div>';
+  sub += '<div><b>统计口径：</b>按技术功能／内容运营／会员收费／其他监管竞品四大板块覆盖；「本次共采集」为本轮四平台原始抓取的全部内容（含时间窗口外、跨平台重复、竞品/无关、广告控评等）；只有符合情感色彩的内容（正面/负面/中性）纳入结构分布，其余作为「非情感色彩」剔除，不计入负面风险事件</div>';
   document.getElementById('reportSub').innerHTML = sub;
 }
 
@@ -433,17 +433,25 @@ function renderSummary(meta, kpi, events) {
   });
   document.getElementById('summaryLine').innerHTML = html;
 
-  // 情感结构：分母用「本次共采集总量」total_collected，含 负面 / 正面 / 中性 / 未分类 四段。
-  // 未分类 = 窗口内采集但未纳入情感三分类的内容（广告/控评/官方号 + 竞品/无关 + 跨平台去重），保留监控量但不计入三分类、不计入负面风险。
+  // 情感结构：先展示「本次共采集 xx 条，其中符合情感色彩的 xx 条」，
+  // 再展示 正面/负面/中性 三色结构（分母=符合情感色彩的帖子数 sentiment_total），
+  // 最后对未纳入情感色彩的「非情感色彩」内容做剔除说明（重复/竞品/无关/广告控评/时间窗口外）。
   var posN = Number(kpi.pos) || 0, neuN = Number(kpi.neu) || 0, negN = Number(kpi.neg) || 0;
-  var totalCrawl = Number(kpi.total_collected) || (posN + neuN + negN);   // 本次共采集总量
+  var crawlN = Number(kpi.total_collected) || (posN + neuN + negN);        // 本次共采集总量（一千余条）
+  var sentN = Number(kpi.sentiment_total) || (posN + neuN + negN);         // 符合情感色彩的帖子数
   var st = document.getElementById('sentimentTitle');
-  if (st) st.textContent = '情感结构分布（本次共采集 ' + totalCrawl + ' 条 · 负面 / 正面 / 中性 / 未分类）';
-  var bd = kpi.unclassified_breakdown || {};
-  var cap = '<div class="prop-note">本次共采集 <b>' + totalCrawl + '</b> 条：其中 <b>' + (posN + neuN + negN) +
-            '</b> 条纳入情感三分类（负面 / 正面 / 中性），<b>' + (Number(kpi.unclassified) || 0) + '</b> 条为「未分类」——' +
-            '即窗口内采集但未参与情感三分类的内容，含跨平台去重 ' + (Number(bd.dedup) || 0) + ' 条、竞品/无关内容 ' +
-            (Number(bd.hard) || 0) + ' 条、广告/控评/官方号 ' + (Number(bd.soft) || 0) + ' 条（腾讯视频相关，保留监控量、不计入负面风险）。</div>';
+  if (st) st.textContent = '情感结构分布（本次共采集 ' + crawlN + ' 条，其中符合情感色彩的 ' + sentN + ' 条 · 正面 / 负面 / 中性）';
+  var nonS = Number(kpi.non_sentiment) || 0;
+  var nb = kpi.non_sentiment_breakdown || {};
+  var cap = '';
+  if (nonS > 0) {
+    cap = '<div class="prop-note">本次共采集 <b>' + crawlN + '</b> 条，其中 <b>' + sentN +
+          '</b> 条符合情感色彩（纳入正面/负面/中性分析）。另有 <b>' + nonS +
+          '</b> 条未纳入情感色彩分析，已作为「非情感色彩」剔除，主要包括：' +
+          '时间窗口外内容 <b>' + (Number(nb.out_of_window) || 0) + '</b> 条、跨平台/同平台重复 <b>' + (Number(nb.duplicate) || 0) +
+          '</b> 条、竞品及无关内容 <b>' + (Number(nb.competitor_irrelevant) || 0) + '</b> 条、广告/控评等运营性内容 <b>' +
+          (Number(nb.promo) || 0) + '</b> 条（其中重复、竞品/无关为窗口内已识别的剔除项，时间窗口外内容将在后续轮次滚动进入分析）。</div>';
+  }
   document.getElementById('sentimentBar').innerHTML = renderSentimentBar(kpi) + cap;
 
   // 风险等级事件数：P0 / P1 / P2 一行
@@ -457,21 +465,17 @@ function renderSummary(meta, kpi, events) {
 }
 function renderSentimentBar(kpi) {
   var pos = Number(kpi.pos) || 0, neu = Number(kpi.neu) || 0, neg = Number(kpi.neg) || 0;
-  // 分母用「本次共采集总量」(= total_collected)，含未分类段
-  var total = Number(kpi.total_collected) || (pos + neu + neg);
-  var classified = pos + neu + neg;
+  // 分母用「符合情感色彩的帖子数」(= sentiment_total)，仅 正面 / 负面 / 中性 三色，不含非情感色彩段
+  var total = Number(kpi.sentiment_total) || (pos + neu + neg);
   var segs = [
     { name: '负面', val: neg, color: '#e53935' },
     { name: '正面', val: pos, color: '#43a047' },
     { name: '中性', val: neu, color: '#90a4ae' }
   ];
-  // 窗口内采集但未参与情感三分类的，归「未分类」灰段（广告/控评/官方号 + 竞品/无关 + 跨平台去重）
-  var uncls = total - classified;
-  if (uncls > 0) segs.push({ name: '未分类', val: uncls, color: '#d7dce3' });
   // 无抓取数据：空态占位（保持大致样式）
   if (!total) {
     return '<div class="prop-bar"><div class="prop-empty"></div></div>' +
-           '<div class="prop-note">本轮共采集 0 条（明早抓取后将显示真实占比）</div>';
+           '<div class="prop-note">本轮符合情感色彩的帖子为 0 条（明早抓取后将显示真实占比）</div>';
   }
   var bar = '<div class="prop-bar">';
   segs.forEach(function (s) {
@@ -902,7 +906,7 @@ function renderTrendCharts(history, meta, events) {
       return null;
     }
     var sdays = days.filter(function (d) {
-      return _sv(d, 'pos') != null || _sv(d, 'neu') != null || _sv(d, 'neg') != null || d.unclassified != null;
+      return _sv(d, 'pos') != null || _sv(d, 'neu') != null || _sv(d, 'neg') != null;
     });
     if (!sdays.length) {
       seBox.innerHTML = '<div class="chart-empty">情感声量数据待接入<br>正面 / 中性 / 负面 将自明日起纳入采集，届时自动展示</div>';
@@ -910,14 +914,12 @@ function renderTrendCharts(history, meta, events) {
       var segs2 = [
         { key: 'pos', color: '#43a047', name: '正面' },
         { key: 'neu', color: '#90a4ae', name: '中性' },
-        { key: 'neg', color: '#e53935', name: '负面' },
-        { key: 'unclassified', color: '#d7dce3', name: '未分类' }
+        { key: 'neg', color: '#e53935', name: '负面' }
       ];
       seBox.innerHTML = _svgStacked(sdays, segs2, function (d, k) {
-          if (k === 'unclassified') return Number(d.unclassified) || 0;
           var v = _sv(d, k); return v == null ? 0 : v;
         }) +
-        _chartLegend([{ color: '#43a047', name: '正面' }, { color: '#90a4ae', name: '中性' }, { color: '#e53935', name: '负面' }, { color: '#d7dce3', name: '未分类' }]);
+        _chartLegend([{ color: '#43a047', name: '正面' }, { color: '#90a4ae', name: '中性' }, { color: '#e53935', name: '负面' }]);
     }
   }
 

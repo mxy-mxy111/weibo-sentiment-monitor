@@ -640,16 +640,44 @@ def _count(fn):
     d = load(fn)
     return len(d) if isinstance(d, list) else 0
 
-# 以「窗口内实际纳入的采集量」为分母(与 raw_posts 同源)，避免用 *_all 毛抓取量导致漏斗虚高、监控量被低估。
+# ---- 采集量统计 ----
+#   in_window_total  : 窗口内实际纳入分析的采集量（与 raw_posts 同源，= 各平台 *_in_window 文件之和）
+#   total_collected  : 本次共采集毛量（= 各平台本轮原始抓取并经解析的全部结果，
+#                      含时间窗口外内容、跨平台重复、竞品/无关、广告控评等）。
+#                      这是"本轮到底抓了多少条"的真实数字（一千余条），用于看板"本次共采集 xx 条"。
 _collected = {
     "weibo": _count("weibo_parsed_in_window.json") + _count("weibo_content_parsed_in_window.json"),
     "douban": _count("douban_parsed_in_window.json"),
     "xiaohongshu": xhs_in_window,   # 窗口内已核实笔记数(见上文代码计算)
     "heimao": _count("heimao_parsed_in_window.json"),
 }
-total_collected = sum(_collected.values())
-# 未分类总数 = 窗口内总采集量 - 已纳入情感三分类的帖子（广告/控评/官方号 + 竞品/无关 + 跨平台去重），保留监控量但不参与三分类、不计入负面风险
-unclassified_count = max(total_collected - (pos_count + neu_count + neg_count), 0)
+in_window_total = sum(_collected.values())
+
+# 各平台「本次共采集」毛量（原始抓取全部结果，未经过滤）
+_crawled_files = {
+    "weibo": ("weibo_parsed_all.json", "weibo_content_parsed_all.json"),
+    "douban": ("douban_raw_results.json",),
+    "xiaohongshu": ("xhs_raw_results.json",),
+    "heimao": ("heimao_raw_results.json",),
+}
+_collected_by_crawled = {k: sum(_count(f) for f in fs) for k, fs in _crawled_files.items()}
+total_collected = sum(_collected_by_crawled.values())   # 本次共采集毛量（一千余条）
+
+# 符合情感色彩的帖子数（正面+中性+负面，即参与三分类的帖子）
+sentiment_total = pos_count + neu_count + neg_count
+# 非情感色彩：本次共采集但不符合情感色彩、未纳入三分类的内容
+non_sentiment = max(total_collected - sentiment_total, 0)
+# 非情感色彩构成拆解：时间窗口外（非本轮分析区间）+ 窗口内已识别剔除（重复 / 竞品无关 / 广告控评）
+out_of_window = max(total_collected - in_window_total, 0)
+duplicate = dup_removed                       # 跨平台/同平台重复
+competitor_irrelevant = hard_count            # 竞品/无关内容
+promo = soft_count                            # 广告/控评/官方号
+non_sentiment_breakdown = {
+    "out_of_window": out_of_window,
+    "duplicate": duplicate,
+    "competitor_irrelevant": competitor_irrelevant,
+    "promo": promo,
+}
 
 now = _NOW
 period_start = _PERIOD_START
@@ -691,7 +719,8 @@ else:
         "slot": now.strftime("%H:%M") + "（每日自动整合）",
         "p0": p0, "p1": p1, "p2": p2,
         "pos": pos_count, "neu": neu_count, "neg": neg_count,
-        "unclassified": unclassified_count,
+        "sentiment_total": sentiment_total,
+        "non_sentiment": non_sentiment,
         "total": real_negative,
         "highlight": conclusion,
     }
@@ -723,17 +752,15 @@ datasource = {
         "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。",
     },
     "kpi": {
-        "total_collected": total_collected,
-        "collected_by_platform": _collected,
+        "total_collected": total_collected,                  # 本次共采集毛量（一千余条）
+        "collected_by_platform": _collected_by_crawled,      # 各平台本次共采集量
+        "in_window_total": in_window_total,                  # 窗口内纳入分析的采集量
         "total_raw": len(raw_posts),
         "real_negative": real_negative,
         "pos": pos_count, "neu": neu_count, "neg": neg_count,
-        "unclassified": unclassified_count,
-        "unclassified_breakdown": {
-            "soft": soft_count,      # 广告/控评/官方号（腾讯视频相关）
-            "hard": hard_count,      # 竞品/无关内容
-            "dedup": dedup_count,    # 跨平台去重剔除
-        },
+        "sentiment_total": sentiment_total,                  # 符合情感色彩的帖子数
+        "non_sentiment": non_sentiment,                      # 非情感色彩（已剔除）量
+        "non_sentiment_breakdown": non_sentiment_breakdown,
         "p0": p0, "p1": p1, "p2": p2,
         "conclusion": conclusion,
     },
@@ -746,9 +773,10 @@ out = os.path.join(BASE, "datasource.json")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(datasource, f, ensure_ascii=False, indent=2)
 
-print("raw_posts:", len(raw_posts), "| 真实负面(neg):", real_negative,
-      "| 正面(pos):", pos_count, "| 中性(neu):", neu_count,
-      "| 未分类:", unclassified_count, "(soft广告控评", soft_count, "/hard竞品", hard_count, "/去重", dedup_count, ") | 去重删除:", dup_removed)
+print("本次共采集:", total_collected, "| 符合情感色彩:", sentiment_total,
+      "(neg", neg_count, "/pos", pos_count, "/neu", neu_count, ")",
+      "| 非情感色彩剔除:", non_sentiment,
+      "(窗口外", out_of_window, "/重复", duplicate, "/竞品无关", competitor_irrelevant, "/广告控评", promo, ")")
 print("平台明细  微博:{}/({}neg {}pos {}neu)  豆瓣:{}/({}neg {}pos {}neu)  小红书:{}/({}neg {}pos {}neu)  黑猫:{}/({}neg {}pos {}neu) (采集/情感细分)".format(
     wb_total, wb_neg, wb_pos, wb_neu, db_total, db_neg, db_pos, db_neu,
     xhs_total, xhs_neg, xhs_pos, xhs_neu, hm_total, hm_neg, hm_pos, hm_neu))

@@ -100,17 +100,16 @@
   4. 若审核发现漏判，按"七次改造"的修法补词库 + 子主题后重跑，直至无漏判、无截断、无编造，再 git push。
 - 此条已与 D 段"明日执行要点"互为补充：D 段是[次日]当天操作清单，本段是每日都须执行的【审核标准】，二者合并构成"每日抓取→仔细审核负面→全面准确→推送"的闭环。
 
-## 2026-07-28 八/九次改造（非采集轮次）—— 噪音分级(soft/hard) + 漏斗分母修正 + 未分类段保留
-- 用户两阶段反馈：
+## 2026-07-28 八/九/十次改造（非采集轮次）—— 真实采集总量展示 + 三色情感结构 + 非情感色彩剔除说明
+- 用户三次反馈演进：
   1. 先质疑"为什么会剔除？广告/控评可放中性，不直接减少监控量"；
-  2. **最终决定（当前生效）**："我需要知道一共采集了多少条，未分类保留显示即可，广告、控评也放在未分类即可"。即——广告/控评/官方号等腾讯视频相关推广 **归「未分类」**（保留在监控量里=计入 total_collected，但不计入情感三分类 pos/neu/neg，也不计入负面风险事件）；仅竞品/无关内容(hard)剔除；跨平台去重也计入未分类。
-- 排查结论（两层）：
-  1. **看板分母虚高（主因）**：`total_collected` 原来用采集毛文件 `*_all.json`/`*_raw_results.json`（=1282，含时间窗口外全部历史），而分析集 `raw_posts` 只用窗口内文件（=215）。导致漏斗"1282→185、已过滤1097"严重虚高，误导以为丢了大量数据。
-  2. **build 阶段把广告/控评当硬噪音**（次因，但本窗口数据为 0）：旧 `is_noise_weibo/is_noise_generic` 把"控评/推广/官方号"打成 `filtered_as_noise=True` 直接从情感统计与风险聚类中剔除。
-- 最终实现(commit fcf67b1 已推送)：
-  1. `NOISE_PAT` 拆分为 `PROMO_PAT`（控评/腾讯视频推广话术→**软噪音 soft**）与 `IRRELEVANT_PAT`（剪映/爱奇艺套娃/会展等竞品无关→**硬噪音 hard**）；`is_noise_weibo/is_noise_generic` 返回 `(类别,原因)`，类别为 `hard`(剔除)/`soft`(归未分类)/`None`(正常)。
-  2. 打标循环：`filtered_as_noise` 或 `noise_category=="soft"` → `sentiment="unclassified"`；其余 → `classify_sentiment`(pos/neu/neg)。`raw_posts` 加 `noise_category` 字段；`filtered_as_noise` 仅 hard 为真。故广告/控评计入未分类、保留监控量、**不进负面风险事件**（风险聚类只收 neg）、也**不污染中性段**。
-  3. `total_collected` 改用窗口内实际采集量(215)，不再用 `*_all` 毛量(1282)。新增 `kpi.unclassified = total_collected - (pos+neu+neg)`、`kpi.unclassified_breakdown{soft,hard,dedup}`。
-  4. 看板同步：情感结构条**恢复未分类灰段**、分母=总采集量(215)、标题显示"本次共采集 215 条"；下方诚实说明未分类构成(去重26 + 竞品无关4 + 广告控评0)；统计口径说明改为"广告/控评/官方号统一计入未分类(保留监控量,不计入负面风险也不计入中性),仅剔除竞品/无关"；情感声量趋势图补未分类灰段(历史记录加 unclassified 字段)。
-- **重要边界**：本轮窗口内微博文件 grep 证明**采集阶段(collect_weibo 等)已预先过滤掉控评/推广词**（窗口文件里 0 条命中 PROMO_PAT），故未分类本轮仅含去重26+竞品4。若未来采集放开保留推广帖，build 会正确归未分类。若用户希望广告/控评**真实出现在数据里**(而非采集阶段就丢弃)，需另改采集/解析脚本放开过滤——此为待确认项。
-- 效果：总采集量215如实展示，未分类30(去重26+竞品4)做诚实说明；既保留监控量、不误导"丢数据"，又不污染负面风险与中性段。
+  2. 改"未分类保留显示即可，广告/控评放未分类"→ 当时把 `total_collected` 改成窗口内215；
+  3. **最终决定（当前生效）**："本次不是一共采集了一千余条吗？你只需要本次共采集xx条，其中符合情感色彩的xx条，下面放情感结构分布(正面/负面/中性)，对于1000多条中不符合情感色彩的需要说明(重复/竞品/无关/广告控评等作为非情感色彩一并剔除)"。
+     → **恢复用真实「本次共采集」毛量(total_collected=1282，各平台 *_all/*_raw_results 之和)，不再用窗口内215**；情感结构条只显示 正面/负面/中性 三色(分母=符合情感色彩的 sentiment_total=185)，不含灰段；其余 1097 条作为「非情感色彩」在条下方做剔除说明(时间窗口外1067 + 跨平台重复26 + 竞品/无关4 + 广告控评0)。
+- 实现(commit 待定/已推送)：
+  1. build 新增 `crawled_total` = 各平台毛采集量之和(weibo_parsed_all 200 + weibo_content_parsed_all 469 + douban_raw_results 40 + heimao_raw_results 110 + xhs_raw_results 463 = 1282)。`total_collected` 改回 crawled_total；`collected_by_platform` 改用毛量平台分布；`in_window_total` 保留窗口内215。
+  2. kpi 新增 `sentiment_total = pos+neu+neg`(符合情感色彩=185)、`non_sentiment = total_collected - sentiment_total`(非情感色彩=1097)、`non_sentiment_breakdown{out_of_window, duplicate, competitor_irrelevant, promo}`。risk_history 当日记录同步写 sentiment_total/non_sentiment（取代旧 unclassified 字段）。
+  3. 打标循环维持：`filtered_as_noise` 或 `noise_category=="soft"` → `sentiment="unclassified"`（内部标记，仅用于区分，不参与三分类、不进风险聚类）；但**看板不再展示"未分类"灰段**，而是把 total-sentiment 全部归为"非情感色彩"在说明区列出构成。
+  4. 看板：标题"本次共采集 1282 条，其中符合情感色彩的 185 条 · 正面/负面/中性"；`renderSentimentBar` 三色(分母 sentiment_total=185)；下方 prop-note 说明 1097 条非情感色彩构成(时间窗口外1067 / 重复26 / 竞品无关4 / 广告控评0)；统计口径说明改为"本次共采集=四平台原始抓取全部内容(含窗口外/重复/竞品/广告控评)，仅情感色彩内容纳入结构分布"；情感声量趋势图改回三色(去掉 unclassified 段)。
+- **关键边界（务必牢记）**：`total_collected` 是「本轮四平台原始抓取并经解析的全部结果」(1282)，含大量时间窗口外历史帖(1067)与跨平台重复(26)；真正参与情感分析的是窗口内去重去噪后的 185 条(pos/neu/neg)。看板必须如实显示"共采集1282 / 符合情感色彩185"，**不得**再把 total 缩成215(那是窗口内子集，会低估监控量)。广告/控评本轮窗口内采集阶段已预先过滤(soft=0)。
+- 效果：既如实展示本轮真实抓取规模(一千余条)，又让正面/负面/中性三色结构清晰反映真实情感占比(分母185)，非情感色彩1097条做透明说明(主因是时间窗口外1067条，将在后续轮次滚动进入分析)。
