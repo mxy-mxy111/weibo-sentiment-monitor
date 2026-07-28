@@ -40,11 +40,12 @@ try:
     from keywords_config import (
         STRONG_NEG_SENTIMENT_WORDS as _STRONG_NEG,
         SOFT_NEG_SENTIMENT_WORDS as _SOFT_NEG,
+        DUBBING_NEG_PHRASES as _DUBBING_NEG,
         POSITIVE_WORDS as _POS_W,
         NEUTRAL_WORDS as _NEU_W,
     )
 except Exception:
-    _STRONG_NEG, _SOFT_NEG, _POS_W, _NEU_W = [], [], [], []
+    _STRONG_NEG, _SOFT_NEG, _DUBBING_NEG, _POS_W, _NEU_W = [], [], [], [], []
 
 # ---- 情感三分类判定（pos / neu / neg）----
 # 规则（重构，解决"夸剧/中性被误判为 neg"问题）：
@@ -53,13 +54,16 @@ except Exception:
 #   2) 仅命中【弱负面词】(弃剧/离谱/尴尬等轻吐槽) 且【无正面词】 -> neg；
 #      若同时出现正面词（如"演活了女主+弃剧""封神+离谱"），正面语境压过弱负面 -> pos/neu。
 #   3) 仅命中正面词 -> pos；皆无 -> neu。
+#   4) 命中【配音/原声争议短语】(拒配音/要求原声/配音不符等) -> 直接 neg（强信号，
+#      优先级等同强负面，压过帖中"原声好评/夸赞"等正面词，避免真实投诉被误判为正面）。
 #   黑猫投诉正文必含强负面词，自然归 neg。
 def classify_sentiment(text):
     t = text or ""
     strong = sum(1 for w in _STRONG_NEG if w in t)
     soft = sum(1 for w in _SOFT_NEG if w in t)
+    dub = sum(1 for w in _DUBBING_NEG if w in t)
     pos = sum(1 for w in _POS_W if w in t)
-    if strong:
+    if strong or dub:
         return "neg"
     if pos and not soft:
         return "pos"
@@ -414,7 +418,8 @@ THEME_DEFS = [
      ]),
     ("content", "内容运营", "P2",
      ["下架", "停更", "断更", "选角争议", "剪辑", "删减", "塌房", "价值观", "魔改",
-      "抄袭", "烂尾", "悬浮", "抠图", "抵制", "辱女", "造黄谣", "黄谣", "弃剧", "弃坑", "难看"], 2,
+      "抄袭", "烂尾", "悬浮", "抠图", "抵制", "辱女", "造黄谣", "黄谣", "弃剧", "弃坑", "难看",
+      "配音", "原声"], 2,
      [
         ("wanglichuan", "《遇见王沥川》下架争议",
          ["遇见王沥川", "王沥川"], 1),
@@ -424,6 +429,8 @@ THEME_DEFS = [
          ["弃剧", "弃坑"], 1),
         ("produce", "抠图/滤镜/制作粗糙争议",
          ["抠图", "滤镜", "悬浮", "烂尾", "魔改", "抄袭", "塌房", "价值观", "造黄谣", "黄谣", "辱女"], 1),
+        ("dubbing", "配音/原声争议（要求原声/拒配音）",
+         ["配音", "原声", "拒配音", "改原声", "改为原声", "必须用原声", "希望用原声"], 1),
      ]),
     ("tech",    "技术功能", "P2",
      ["卡顿", "闪退", "崩溃", "黑屏", "白屏", "花屏", "无法播放", "看不了", "加载",

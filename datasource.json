@@ -13,9 +13,9 @@
     "platform_stats": {
       "weibo": {
         "total": 171,
-        "real_negative": 11,
-        "pos": 69,
-        "neu": 88
+        "real_negative": 16,
+        "pos": 65,
+        "neu": 87
       },
       "douban": {
         "total": 1,
@@ -48,14 +48,14 @@
       "heimao": 110
     },
     "total_raw": 189,
-    "real_negative": 27,
-    "pos": 69,
-    "neu": 89,
-    "neg": 27,
+    "real_negative": 32,
+    "pos": 65,
+    "neu": 88,
+    "neg": 32,
     "p0": 0,
     "p1": 3,
-    "p2": 4,
-    "conclusion": "本轮风险分级：P0 0 起（主要：无）；P1 3 起（主要：自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期）；P2 4 起（主要：《遇见王沥川》下架争议、剧集弃剧/观感差、《完美世界》造黄谣/下架风波、抠图/滤镜/制作粗糙争议）。"
+    "p2": 5,
+    "conclusion": "本轮风险分级：P0 0 起（主要：无）；P1 3 起（主要：自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期）；P2 5 起（主要：配音/原声争议（要求原声/拒配音）、《遇见王沥川》下架争议、剧集弃剧/观感差、《完美世界》造黄谣/下架风波、抠图/滤镜/制作粗糙争议）。"
   },
   "sentiment_events": [
     {
@@ -213,6 +213,72 @@
           "published_at": "2026-07-22T10:07:25",
           "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=pc_feed",
           "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip"
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-DUBBING-20260728",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "配音/原声争议（要求原声/拒配音）",
+      "summary": "本轮在微博 5条共聚类出 5 条与「配音/原声争议（要求原声/拒配音）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：原声、配音。典型表述如：「丁禹兮 //@沈韫dyxx:丁禹兮每个角色的原声都在各平台出…」。建议结合工单/客服渠道核实处理时效。",
+      "summary_points": [
+        "本轮在微博 5条，共聚类出 5 条与「配音/原声争议（要求原声/拒配音）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：原声、配音。",
+        "典型表述如：「丁禹兮 //@沈韫dyxx:丁禹兮每个角色的原声都在各平台出…」。",
+        "建议结合工单/客服渠道核实处理时效。"
+      ],
+      "post_count": 5,
+      "evidence": [
+        {
+          "platform": "微博",
+          "author": "香蕉千层焦糖杏仁挞",
+          "followers": "6",
+          "likes": 2,
+          "reposts": 0,
+          "published_at": "2026-07-27T23:07:39",
+          "permalink": "https://m.weibo.cn/detail/5325429760067597",
+          "text": "丁禹兮 //@沈韫dyxx:丁禹兮每个角色的原声都在各平台出圈被观众夸赞，演员的感情与对角色的爱是任何配音都无法比拟的，不接受任何不使用原声的理由，赵凌必须使用原声！请正视诉求，赵凌用丁禹兮原声！@花开锦绣官微 @Miss莹颖 @Denis"
+        },
+        {
+          "platform": "微博",
+          "author": "在这个烦人的星球",
+          "followers": "67",
+          "likes": 1,
+          "reposts": 0,
+          "published_at": "2026-07-27T11:06:07",
+          "permalink": "https://m.weibo.cn/detail/5325248182616543",
+          "text": "花开锦绣  @花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL ❗花开锦绣最新预告中赵凌配音与赵凌的人物内核、性格设定、成长经历严重不符！请剧方立"
+        },
+        {
+          "platform": "微博",
+          "author": "你要说不行我就删删来迟",
+          "followers": "132",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-27T18:50:36",
+          "permalink": "https://m.weibo.cn/detail/5325365070531183",
+          "text": "🚫永拒打包配音！花开锦绣最新预告中赵凌配音与赵凌人物内核、性格设定、成长经历严重不符！请立刻改为丁禹兮本人原声❗丁禹兮原声好评不断出圈无数最适配赵凌❗赵凌必须用丁禹兮原声❗赵凌必须完整属于丁禹兮❗@花开锦绣官微 @Miss莹颖 @Denis"
+        },
+        {
+          "platform": "微博",
+          "author": "凝时Jane",
+          "followers": "6",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-27T18:39:20",
+          "permalink": "https://m.weibo.cn/detail/5325362239112884",
+          "text": "@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL 丁禹兮原声好评不断下沉出圈高赞数不胜数，赵凌作为精品剧集花开锦绣的核心灵魂人物理应用丁禹兮本人"
+        },
+        {
+          "platform": "微博",
+          "author": "砂糖桔不砂糖",
+          "followers": "147",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-27T12:20:14",
+          "permalink": "https://m.weibo.cn/detail/5325266835473544",
+          "text": "@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL //@葵弋弋:🚫永拒打包配音！花开锦绣最新预告中赵凌配音与赵凌人物内核、性格设定、成长经历严重"
         }
       ]
     },
@@ -872,7 +938,7 @@
       "permalink": "https://m.weibo.cn/detail/5325429760067597",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325428203980619",
@@ -1067,7 +1133,7 @@
       "permalink": "https://m.weibo.cn/detail/5325365070531183",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "pos"
+      "sentiment": "neg"
     },
     {
       "id": "5325362239112884",
@@ -1086,7 +1152,7 @@
       "permalink": "https://m.weibo.cn/detail/5325362239112884",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "pos"
+      "sentiment": "neg"
     },
     {
       "id": "5325353341946137",
@@ -1162,7 +1228,7 @@
       "permalink": "https://m.weibo.cn/detail/5325266835473544",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "pos"
+      "sentiment": "neg"
     },
     {
       "id": "5325264881981492",
@@ -1257,7 +1323,7 @@
       "permalink": "https://m.weibo.cn/detail/5325248182616543",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "pos"
+      "sentiment": "neg"
     },
     {
       "id": "5325240343201543",
@@ -3599,7 +3665,7 @@
       "sentiment": "neu"
     },
     {
-      "id": "douban_271038373",
+      "id": "douban_271255461",
       "platform": "douban",
       "author": null,
       "followers": null,
