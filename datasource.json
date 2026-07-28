@@ -1,37 +1,37 @@
 {
   "meta": {
-    "generated_at": "2026-07-27T18:14:19",
-    "period_start": "2026-07-26T18:14:19",
-    "period_end": "2026-07-27T18:14:19",
+    "generated_at": "2026-07-28T10:07:25",
+    "period_start": "2026-07-27T10:07:25",
+    "period_end": "2026-07-28T10:07:25",
     "sources": [
       "微博 m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)",
       "豆瓣小组 公开讨论搜索",
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮去噪有效相关 4 条",
+    "xiaohongshu_status": "本轮去噪有效相关 3 条",
     "platform_stats": {
       "weibo": {
-        "total": 40,
+        "total": 171,
         "real_negative": 17,
-        "pos": 6,
-        "neu": 17
+        "pos": 63,
+        "neu": 88
       },
       "douban": {
         "total": 1,
         "real_negative": 0,
         "pos": 0,
-        "neu": 1
+        "neu": 0
       },
       "xiaohongshu": {
-        "total": 4,
-        "real_negative": 4,
+        "total": 3,
+        "real_negative": 3,
         "pos": 0,
         "neu": 0
       },
       "heimao": {
-        "total": 16,
-        "real_negative": 15,
+        "total": 14,
+        "real_negative": 13,
         "pos": 0,
         "neu": 1
       }
@@ -40,22 +40,22 @@
     "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。"
   },
   "kpi": {
-    "total_collected": 1003,
+    "total_collected": 1282,
     "collected_by_platform": {
-      "weibo": 396,
-      "douban": 34,
+      "weibo": 669,
+      "douban": 40,
       "xiaohongshu": 463,
       "heimao": 110
     },
-    "total_raw": 61,
-    "real_negative": 36,
-    "pos": 6,
-    "neu": 19,
-    "neg": 36,
+    "total_raw": 189,
+    "real_negative": 33,
+    "pos": 63,
+    "neu": 89,
+    "neg": 33,
     "p0": 0,
     "p1": 1,
     "p2": 1,
-    "conclusion": "本轮 P0 0起｜P1 1起：会员收费—黑猫投诉集中反映自动续费未告知/退款遭拒（16条）｜P2 1起：技术功能—广告体验与试看限制吐槽（3条）。"
+    "conclusion": "本轮 P0 0起｜P1 1起：会员收费—黑猫投诉集中反映自动续费未告知/退款遭拒（14条）｜P2 1起：技术功能—广告体验与试看限制吐槽（1条）。"
   },
   "sentiment_events": [
     {
@@ -64,15 +64,15 @@
       "section": "技术功能",
       "title": "广告体验与试看限制吐槽(《这一秒过火》等)",
       "summary": "用户吐槽同为S+剧《这一秒过火》广告过多、观感割裂('广告钢钢的')；另有用户激烈吐槽'看1分钟广告只给试看3分钟'，反映广告密度与试看策略的体验不满。",
-      "post_count": 3,
+      "post_count": 1,
       "evidence": [
         {
-          "author": "追星剧透",
-          "followers": "10.7万",
-          "permalink": "https://m.weibo.cn/detail/5324880713089097",
-          "published_at": "2026-07-26T10:45:55",
-          "likes": 37,
-          "reposts": 9
+          "author": "白豆腐TINA",
+          "followers": "3",
+          "permalink": "https://m.weibo.cn/detail/5325435036240922",
+          "published_at": "2026-07-27T23:28:37",
+          "likes": 3,
+          "reposts": 0
         }
       ]
     },
@@ -81,48 +81,48 @@
       "level": "P1",
       "section": "会员收费",
       "title": "黑猫投诉集中反映自动续费未告知/退款遭拒(会员收费系统性风险)",
-      "summary": "黑猫投诉平台'腾讯视频小助手'受理账号窗口内新增 16 条真实用户投诉，高度集中在'自动续费未明确告知''充值后版权缺失要求退款''退款遭拒/客服踢皮球'等，反映会员收费与退款处理已具备系统性特征，建议结合工单核实处理时效。",
-      "post_count": 16,
+      "summary": "黑猫投诉平台'腾讯视频小助手'受理账号窗口内新增 14 条真实用户投诉，高度集中在'自动续费未明确告知''充值后版权缺失要求退款''退款遭拒/客服踢皮球'等，反映会员收费与退款处理已具备系统性特征，建议结合工单核实处理时效。",
+      "post_count": 14,
       "evidence": [
         {
           "author": "正义喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400208564/?sld=9357aa814f2591318cb10a03bbb99bd3",
-          "published_at": "2026-07-26 23:11:13",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400240554/?sld=18be12447ab60e0b39107bba029be439",
+          "published_at": "2026-07-27 20:23:38",
           "likes": null,
           "reposts": null
         },
         {
-          "author": "勇敢喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400205579/?sld=db242d0272477d06552e5a87c99818f4",
-          "published_at": "2026-07-26 20:40:32",
+          "author": "洞察喵",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400238691/?sld=4ab71c3a3751862fbc532d56b9d297d4",
+          "published_at": "2026-07-27 19:20:43",
           "likes": null,
           "reposts": null
         },
         {
-          "author": "勇敢喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400204319/?sld=9896751c1e8bba1b8d1f7d49a2dc9d1c",
-          "published_at": "2026-07-26 19:46:45",
-          "likes": null,
-          "reposts": null
-        },
-        {
-          "author": "勇敢喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400204237/?sld=2d741e0d453005690fd0b13bae2156fc",
-          "published_at": "2026-07-26 19:43:45",
+          "author": "友爱喵",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400238419/?sld=9aa451b35f0e9770ff2ff47f0a1221ef",
+          "published_at": "2026-07-27 19:10:58",
           "likes": null,
           "reposts": null
         },
         {
           "author": "正义喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400202196/?sld=19d40f0711b40c033899c2a1d970352f",
-          "published_at": "2026-07-26 18:25:00",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400236767/?sld=619159113f42ce448cb59bda8f7137ce",
+          "published_at": "2026-07-27 18:21:33",
           "likes": null,
           "reposts": null
         },
         {
-          "author": "勇敢喵",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400199312/?sld=fad14662ddeeb7f1398a3c37d7363b5b",
-          "published_at": "2026-07-26 16:56:19",
+          "author": "正义喵",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400228388/?sld=b693a1cea505221b0a92978cc54202ac",
+          "published_at": "2026-07-27 15:17:03",
+          "likes": null,
+          "reposts": null
+        },
+        {
+          "author": "机灵喵",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400227809/?sld=68a366388c75ed4153580855adc9ecfa",
+          "published_at": "2026-07-27 15:06:08",
           "likes": null,
           "reposts": null
         }
@@ -131,787 +131,3275 @@
   ],
   "raw_posts": [
     {
-      "id": "5325193557837179",
+      "id": "5325594452558591",
       "platform": "weibo",
-      "author": "用户4058727259",
-      "followers": "1",
+      "author": "妙影时光",
+      "followers": "30.5万",
       "verified": false,
-      "published_at": "2026-07-27T07:29:04",
-      "text": "我理解平台需要净化网络环境、打击黑灰产，对此我没有异议。但是处罚必须建立在本人真实发生的违规行为之上，不能仅凭系统算法的风险标签，就腾讯视频对普通用户账号做社交功能全限制。 本人账号为个人日常使用，用于和家人联络，不存在广告营销、引流牟利、跑分等任何黑灰产相关行为。多次 ...全文",
+      "published_at": "2026-07-28T10:02:04",
+      "text": "芒果TV会员腾讯视频会员 qq音乐会员优酷 还有 夸克爱奇艺会员 , 微博会员svip年卡。当你已经觉得自己非常努力时，须明白一不幸的事实，那就是不管你多努力，一定有人比你更努力，所以随时检讨自己努力的方向是否正确尤其重要，在错误的道路上越努力，结果越悲催。 ",
       "reposts": 0,
       "comments": 0,
       "likes": 0,
       "keywords": [
-        "腾讯视频 处罚",
-        "腾讯视频 无法使用"
+        "腾讯视频 错误"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325193557837179",
-      "filtered_as_noise": false,
-      "noise_reason": null,
+      "permalink": "https://m.weibo.cn/detail/5325594452558591",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告",
       "sentiment": "neu"
     },
     {
-      "id": "5325192639545445",
+      "id": "5325593973359935",
       "platform": "weibo",
-      "author": "用户4058727259",
-      "followers": "1",
-      "verified": false,
-      "published_at": "2026-07-27T07:25:24",
-      "text": "早期微信到处流传广告信息，平台并未如此处置账号。我只是普通老百姓，账号用来和家中生病亲属联系，既不发广告，也没有任何牟利行为。现在仅凭系统标签就判定黑灰产风险，拿不出我实际违规的记录，就直接封禁社交功能，对普通用户很不公平，恳请人工完整复盘账号全部使用记录。平台用户体量变大之后 ...全文",
+      "author": "腾讯视频VIP",
+      "followers": "295万",
+      "verified": true,
+      "published_at": "2026-07-28T10:00:11",
+      "text": "可以全力以赴与对方较量，也可以毫无保留向对方托付。输赢从来不是战友情的判断标准。成为@腾讯视频VIP #兵自风中来# 正在热播！领衔主演：@欧豪 出演：@TNT赵荀 ",
       "reposts": 0,
       "comments": 0,
       "likes": 0,
       "keywords": [
-        "腾讯视频 处罚",
-        "腾讯视频 无法使用"
+        "腾讯视频 VIP"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325192639545445",
+      "permalink": "https://m.weibo.cn/detail/5325593973359935",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5325073393129325",
+      "id": "5325593956583298",
       "platform": "weibo",
-      "author": "M言兮雨",
-      "followers": "150",
+      "author": "腾讯视频VIP",
+      "followers": "295万",
+      "verified": true,
+      "published_at": "2026-07-28T10:00:07",
+      "text": "#小芳收官# 不等人点头，不靠谁成全。这一程，只为自己而活。成为@腾讯视频VIP #电视剧小芳# 今日收官！领衔主演：（按姓氏笔画排序）王璐璐@王影璐_ @辛云来特别出演：（按姓氏笔画排序）@王勉__ @王姬 刘颖@颖儿Yinger @李川Leon 邹元清@元清儿yuan #吴军# @吴彦姝 @林永健 @范明 夏君@夏力薪_妙果 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325593956583298",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325593940069225",
+      "platform": "weibo",
+      "author": "腾讯视频VIP",
+      "followers": "295万",
+      "verified": true,
+      "published_at": "2026-07-28T10:00:03",
+      "text": "#这一秒过火婚礼预告# 🔥喧嚣掩盖心绪，帷幕落下，万千难言暗自翻涌。成为@腾讯视频VIP 每晚18:00，#这一秒过火# 正在热播！ ",
+      "reposts": 1,
+      "comments": 0,
+      "likes": 4,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325593940069225",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325593283397597",
+      "platform": "weibo",
+      "author": "破产姐妹拯救局",
+      "followers": "52.2万",
+      "verified": true,
+      "published_at": "2026-07-28T09:57:26",
+      "text": "嘿，之前弄了几个会员，分别是QQ音乐绿钻年卡、网易云会员年卡、优酷会员年卡、芒果TV会员、腾讯视频会员年卡、酷狗音乐VIP，你要是追剧听歌正好能用上。",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 9,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325593283397597",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告",
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325592581901354",
+      "platform": "weibo",
+      "author": "星云璐",
+      "followers": "19",
       "verified": false,
-      "published_at": "2026-07-26T23:31:35",
-      "text": "我们强烈要求花开锦绣使用丁禹兮原声，丁禹兮本人声线优越，原声台词在各大平台出圈，观众对丁禹兮原声认可度高‼️配音无法共情角色，赵凌必须是丁禹兮原声‼️只要原声‼️‼️还我赵凌原声‼️‼️  @花开锦绣官微  @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL ",
+      "published_at": "2026-07-28T09:54:39",
+      "text": "腾讯视频VIP 腾讯SV 周4 月8 稳定 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325592581901354",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325592154342088",
+      "platform": "weibo",
+      "author": "用户8400200604",
+      "followers": "2",
+      "verified": false,
+      "published_at": "2026-07-28T09:52:56",
+      "text": "关于我微信被永封的过程-3.27日，我朋友登陆我微信，在群里面当群拖，涉及到红包资金那些，所以导致微信被永封，我已经深刻意识到错误，希望微信平台能给一次机会，我已经跟微信专属客服联系过，我越发意识到事情严重性，微信里面的人脉跟亲朋好友，还有我事业上的合作伙伴，都对我很重要，影响着我和 ...全文",
       "reposts": 0,
       "comments": 1,
       "likes": 0,
       "keywords": [
-        "腾讯视频 无法使用"
+        "腾讯视频 错误"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325073393129325",
+      "permalink": "https://m.weibo.cn/detail/5325592154342088",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5325072566850401",
+      "id": "5325592060757474",
       "platform": "weibo",
-      "author": "M言兮雨",
-      "followers": "150",
+      "author": "池鱼Pisces",
+      "followers": "633",
       "verified": false,
-      "published_at": "2026-07-26T23:28:18",
-      "text": "花开锦绣  我们强烈要求花开锦绣使用丁禹兮原声，丁禹兮本人声线优越，原声台词在各大平台出圈，观众对丁禹兮原声认可度高‼️配音无法共情角色，赵凌必须是丁禹兮原声‼️只要原声‼️‼️还我赵凌原声‼️‼️  @花开锦绣官微  @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌  ...全文",
+      "published_at": "2026-07-28T09:52:35",
+      "text": "腾讯视频会员 出腾讯vip周4月9 ",
       "reposts": 0,
-      "comments": 1,
+      "comments": 0,
       "likes": 0,
       "keywords": [
-        "腾讯视频 无法使用"
+        "腾讯视频 VIP"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325072566850401",
+      "permalink": "https://m.weibo.cn/detail/5325592060757474",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5325055564453050",
+      "id": "5325592023269607",
+      "platform": "weibo",
+      "author": "池鱼Pisces",
+      "followers": "633",
+      "verified": false,
+      "published_at": "2026-07-28T09:52:25",
+      "text": "腾讯视频VIP 出腾讯vip周4月9 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325592023269607",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325591990764265",
+      "platform": "weibo",
+      "author": "池鱼Pisces",
+      "followers": "633",
+      "verified": false,
+      "published_at": "2026-07-28T09:52:18",
+      "text": "腾讯视频 出腾讯vip周4月9 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325591990764265",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325588910838824",
+      "platform": "weibo",
+      "author": "有券19HI",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-28T09:40:04",
+      "text": "⑴腾讯视频VIP会员年卡🔜【官方旗舰店】腾讯视频VIP会员年卡12个月会员VIP年卡 ⑵立白除菌内衣洗衣液 480g🔜立白内衣洗衣液内裤清洗液女士专用祛除血渍杀菌正品祛除HPV抑菌 荣幸他抹了把 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325588910838824",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325588242105524",
+      "platform": "weibo",
+      "author": "破产姐妹拯救局",
+      "followers": "52.2万",
+      "verified": true,
+      "published_at": "2026-07-28T09:37:24",
+      "text": "嘿兄弟，我这边有QQ音乐绿钻年卡、网易云会员年卡、优酷会员年卡、芒果TV会员、腾讯视频会员年卡、酷狗音乐VIP，都给你留着呢。",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 9,
+      "keywords": [
+        "腾讯视频 VIP"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325588242105524",
+      "filtered_as_noise": true,
+      "noise_reason": "会员买卖/罗列刷屏广告",
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325576560445563",
+      "platform": "weibo",
+      "author": "补充点维生素C",
+      "followers": "53.5万",
+      "verified": true,
+      "published_at": "2026-07-28T08:50:59",
+      "text": "#时代少年团上海演唱会联排上班##时代少年团上海演唱会直播官宣# 投：#丁程鑫 开始推理吧4#恭喜开始推理吧第四季腾讯视频单平台独播仅61天进入云合【全部综艺】【年榜】top10，是榜单上上线天数最短且是唯二的腾讯独播综艺！！丁程鑫作为全新加入常驻mc表现亮眼自带超强热度，合作共赢✌️ ",
+      "reposts": 2,
+      "comments": 4,
+      "likes": 123,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325576560445563",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325526377955756",
+      "platform": "weibo",
+      "author": "潮流精神病人",
+      "followers": "103.3万",
+      "verified": true,
+      "published_at": "2026-07-28T05:31:35",
+      "text": "1、鞠婧祎下一部剧在接触腾讯视频出品的《璀璨世界》，商务方面，她即将官宣凸凸棉卫生巾代言。2、向涵之的下一部剧是芒果的现偶《灼灼烈日》。3、包上恩下一个作品接触的是芒果的民国奇幻剧《如木知》。4、张康乐下一部剧接触的还是现偶《逐夏》，女主谈的是沈羽洁，8月份在宁波开机。5、邓凯 ...全文",
+      "reposts": 0,
+      "comments": 12,
+      "likes": 30,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325526377955756",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325502061478260",
       "platform": "weibo",
       "author": "小仙女副业找我",
       "followers": "6321",
       "verified": false,
-      "published_at": "2026-07-26T22:20:44",
+      "published_at": "2026-07-28T03:54:57",
       "text": "这么多人出现相同的账号限制，明显是批量风控误伤。大家保留账号封禁截图，各自去12300、12315提交投诉，统一反馈微信无原来不止我一个人遇到这种限制！账号社交功能全部锁死，换头像、进群、小程序全部无法使用，唯独保留支付功能。大家都可以整理自己的封禁截图，各自去工信部12300、12315提交投诉， ...全文",
       "reposts": 0,
-      "comments": 1,
+      "comments": 0,
       "likes": 0,
       "keywords": [
-        "腾讯视频 无法使用",
-        "腾讯视频 维权"
+        "腾讯视频 投诉"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325055564453050",
+      "permalink": "https://m.weibo.cn/detail/5325502061478260",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "5325045737981449",
+      "id": "5325501558423801",
       "platform": "weibo",
-      "author": "元队长",
-      "followers": "12.6万",
-      "verified": true,
-      "published_at": "2026-07-26T21:41:41",
-      "text": "这一秒过火连着两个腾讯视频礼品卡。。。一个没领到 ",
+      "author": "用户4058727259",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-28T03:52:57",
+      "text": "我只是普通老百姓，完全不懂什么黑灰产，也从来没有做过任何牟利违规的事情，账号主要用来和家里生病的亲人联系。平台直接定性黑灰产风险，但不给我看任何对应的行为证据，直接锁死社交功能。希望人工完整核查账号全部聊天、登录记录，不要仅凭系统机器标签就处置普通用户账号微信刚上线早期，平台本 ...全文",
       "reposts": 0,
-      "comments": 64,
-      "likes": 35,
+      "comments": 0,
+      "likes": 0,
       "keywords": [
-        "腾讯视频 礼品卡"
+        "腾讯视频 无法登录"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325045737981449",
+      "permalink": "https://m.weibo.cn/detail/5325501558423801",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5325027135981689",
+      "id": "5325467663991334",
+      "platform": "weibo",
+      "author": "夏笺书墨_O",
+      "followers": "1.1万",
+      "verified": true,
+      "published_at": "2026-07-28T01:38:16",
+      "text": "腾讯视频您快官宣我急死了… ",
+      "reposts": 0,
+      "comments": 11,
+      "likes": 5,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325467663991334",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325449978709218",
+      "platform": "weibo",
+      "author": "快乐星球集结地",
+      "followers": "20.2万",
+      "verified": true,
+      "published_at": "2026-07-28T00:28:00",
+      "text": "龙吟苏华已登场，腾讯视频每周三、周四锁定我，见证一口入魂的高光时刻！ 一饭封神2厨师阵容官宣 #一饭封神# 快乐星球集结地的微博视频 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325449978709218",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325445929108097",
+      "platform": "weibo",
+      "author": "YN_菲菲菲",
+      "followers": "26.5万",
+      "verified": true,
+      "published_at": "2026-07-28T00:11:54",
+      "text": "这个🐧对真心肝就是这样藏不住的炫耀🔺又是提着云南特产到《铁证》剧组探班🔺又是时不时的就要cue到《铁证》🔺又是刚官宣开机就迫不及待的“谦虚了啊「高原」”两档综艺节目里已经是对《铁证》克制又克制，但还是cue很多，但这个🐧是根本毫无克制，一有机会就要炫耀，一有机会就要提到~ ...全文",
+      "reposts": 528,
+      "comments": 159,
+      "likes": 2338,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325445929108097",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325445648091354",
+      "platform": "weibo",
+      "author": "聆椿至",
+      "followers": "1.6万",
+      "verified": true,
+      "published_at": "2026-07-28T00:10:47",
+      "text": "#曝陈飞宇张子枫主演河清海晏#1. 词条发酵时间：2026年7月27日，多名影视圈内博主集中爆料，词条迅速登上文娱热搜2. 重要前提：全部阵容仅为网传爆料，腾讯视频、两位演员工作室暂未发布任何官宣，项目筹备阶段存在阵容变更风险3. 剧集基础档案剧名：《河清海晏》平台：腾讯视频自制网剧题材：都 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 17,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325445648091354",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325445165484109",
+      "platform": "weibo",
+      "author": "小雨续续",
+      "followers": "3.1万",
+      "verified": true,
+      "published_at": "2026-07-28T00:08:52",
+      "text": "#曝陈飞宇张子枫主演河清海晏#2026年7月27日，微博多个认证账号及大V集中爆料，网传陈飞宇与张子枫将主演腾讯视频都市缉毒虐恋剧《河清海晏》，目前该消息仍处于网络爆料阶段，尚未官方正式官宣。 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 17,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325445165484109",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325440487000075",
+      "platform": "weibo",
+      "author": "麻花煎饼qq",
+      "followers": "27",
+      "verified": false,
+      "published_at": "2026-07-27T23:50:17",
+      "text": "我刚赞赏了 @汽水日记哈 100积分，发现宝藏博主一枚，强烈安利给你~ 网页链接龚俊#龚俊凤舞九天# GJ#龚俊陆小凤# 天下千古风流事，人间往来皆看我。锦裘凤舞花亦醉，山水胜意复登临。祝贺龚俊陆小凤@龚俊Simon 腾讯视频《凤舞九天》杀青大吉，肝胆相照好年华，豪杰知己再相会。 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325440487000075",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325440426443932",
+      "platform": "weibo",
+      "author": "麻花煎饼qq",
+      "followers": "27",
+      "verified": false,
+      "published_at": "2026-07-27T23:50:02",
+      "text": "我刚赞赏了 @汽水日记哈 100积分，发现宝藏博主一枚，强烈安利给你~ 网页链接龚俊#龚俊# 俊味仙#龚俊凤舞九天# GJ#龚俊陆小凤# 灵犀一指定风云亦刚亦柔，酒里乾坤藏故事可大可小。四条眉毛走江湖亦侠亦隐，一襟明月行天下且歌且啸。从甘肃到浙江，近五个月的紧张拍摄，定会结出最甜 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325440426443932",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325440374020224",
+      "platform": "weibo",
+      "author": "麻花煎饼qq",
+      "followers": "27",
+      "verified": false,
+      "published_at": "2026-07-27T23:49:50",
+      "text": "我刚赞赏了 @汽水日记哈 100积分，发现宝藏博主一枚，强烈安利给你~ 网页链接龚俊#龚俊凤舞九天# GJ#龚俊陆小凤# 龚成名就，四条眉毛藏锋芒；俊朗无俦，万种风情入酒觞。陆离光怪，风流浪子破奇案；小鸡大王，一袭红衣随风扬；凤高万丈，扶摇直上九天翔！杀青大吉，期待和龚俊陆小 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325440374020224",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325439845537559",
+      "platform": "weibo",
+      "author": "平凡人的随笔",
+      "followers": "13",
+      "verified": false,
+      "published_at": "2026-07-27T23:47:44",
+      "text": "@腾讯公司 @腾讯微信团队 @腾讯客服 腾讯视频微信 @工信微报 今天想完整记录下本人实名微信账号被90天社交功能封禁之后，多轮申诉维权的全部经过，希望客观的经历可以被看到。我本人是一名个体茶叶经营者，这个使用多年的实名认证微信，是我日常对接客户订单、收发客户消息、和家人 ...全文",
+      "reposts": 0,
+      "comments": 4,
+      "likes": 4,
+      "keywords": [
+        "腾讯视频 无法登录"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325439845537559",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325434372751387",
+      "platform": "weibo",
+      "author": "lyn-景景别跑啦",
+      "followers": "62",
+      "verified": false,
+      "published_at": "2026-07-27T23:25:58",
+      "text": "刘宇宁  你只管往前走，我们一直跟在你身后，永远相信你，是你坚强的后盾。而我们也会一直在一直爱，期待你光芒万丈。摩登兄弟腾讯视频#摩登兄弟刘宇宁# #王玉雯刘宇宁cue铁证# @摩登兄弟刘宇宁 谁是宝藏歌手摩登兄弟#地球超新鲜# #刘宇宁地球超新鲜#",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325434372751387",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325431498875058",
+      "platform": "weibo",
+      "author": "中娱日记",
+      "followers": "1.9万",
+      "verified": true,
+      "published_at": "2026-07-27T23:14:34",
+      "text": "#曝陈飞宇张子枫主演河清海晏#最近影视圈新瓜刷屏，多个业内账号爆料腾讯自制剧《河清海晏》网传主演定为陈飞宇、张子枫，消息目前处于网传阶段，官方暂未发布正式官宣。先梳理剧集基础信息，本剧是都市缉毒虐恋题材，由《爱情而已》编剧张盈执笔，《白日提灯》导演秦榛执导，网传一共20集，拍摄周期7 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 18,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325431498875058",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325429760067597",
+      "platform": "weibo",
+      "author": "香蕉千层焦糖杏仁挞",
+      "followers": "6",
+      "verified": false,
+      "published_at": "2026-07-27T23:07:39",
+      "text": "丁禹兮 //@沈韫dyxx:丁禹兮每个角色的原声都在各平台出圈被观众夸赞，演员的感情与对角色的爱是任何配音都无法比拟的，不接受任何不使用原声的理由，赵凌必须使用原声！请正视诉求，赵凌用丁禹兮原声！@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌...全文",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 2,
+      "keywords": [
+        "腾讯视频 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325429760067597",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325428203980619",
+      "platform": "weibo",
+      "author": "纯净水0914",
+      "followers": "21",
+      "verified": false,
+      "published_at": "2026-07-27T23:01:28",
+      "text": "#百花杀# 我的评分：电视剧百花杀#百花杀# “待到秋来九月八，我花开后百花杀。”电视剧根据锦凰的古言小说《我花开后百花杀》改编，围绕沈汐和与顾青栀一体双魂作为崭新形象，从西北至皇都，奉旨择夫，依靠聪颖果敢、睿智理性守护沈家和西北，并与萧华雍在 ...全文",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 流畅"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325428203980619",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325423189697788",
+      "platform": "weibo",
+      "author": "用户6664975950",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-27T22:41:33",
+      "text": "腾讯工作人员你好：我的微信被永久封号。一直打电话也冷冰冰的，重新注册也给我封号，本人并未做违法违规的事情，腾讯，直接给我永久封号。封号的理由是违反互联网政策法规，但又不能举实例。致电贵司。也被客服直接拒绝。这个微信号，我用了超10年。内有所有的人际关系：亲人，朋友，同事，合作伙 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 投诉",
+        "腾讯视频 无法登录"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325423189697788",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325421759432950",
+      "platform": "weibo",
+      "author": "秋知庭季Gaeutumn",
+      "followers": "2146",
+      "verified": true,
+      "published_at": "2026-07-27T22:35:52",
+      "text": "#河清海晏#2026年7月27日，网传陈飞宇、张子枫将主演腾讯视频出品的都市缉毒剧《河清海晏》，目前尚未官宣#实时号检测# ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 官宣"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325421759432950",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325418266625255",
+      "platform": "weibo",
+      "author": "用户6664975950",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-27T22:21:58",
+      "text": "你好尊敬的微信团队，，我的账号被永久限制社交场景，跟专属客服聊了很久不与解封。我怀着万分诚恳的心情，向您反馈我的微信账号被永久限制所有社交场景功能的情况，恳请您能重新公正核查，并给予我一次解封的机会！找客服申诉问微信永久封禁怎么处理，需要举证我也可以配合，永远是车轱辘话，系统审 ...全文",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 投诉"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325418266625255",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325417926099325",
       "platform": "weibo",
       "author": "独孤九鎗",
       "followers": "18.5万",
       "verified": true,
-      "published_at": "2026-07-26T20:27:46",
-      "text": "随着2026年暑期古装剧百花杀圆满开播收官，孟子义的影视存货清单完成一次全新迭代。此前备受关注的五部待播作品顺利“毕业”一部，剩余四部高规格剧集蓄势待发。不同于单一同质化古装题材，四部新作横跨现代奇幻、古装权谋、重生复仇、黑色轻喜剧四大赛道，人设风格迥异、题材壁垒清晰。扎实丰富的作品 ...全文",
+      "published_at": "2026-07-27T22:20:37",
+      "text": "《河清海晏》网传阵容引热议，缉毒虐恋故事能否解锁全新火花2026年7月27日，社交平台多名影视博主集中爆料，都市缉毒虐恋剧《河清海晏》网传将由陈飞宇、张子枫领衔主演。消息尚未获得官方盖章，依旧处于网传吃瓜阶段，但缉毒题材搭配BE虐恋设定，加上两位演员首度搭档的组合，迅速掀起全网讨论，褒 ...全文",
       "reposts": 4,
-      "comments": 36,
+      "comments": 32,
       "likes": 15,
       "keywords": [
-        "腾讯视频 曝光"
+        "腾讯视频 好评",
+        "腾讯视频 官宣"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325027135981689",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "pos"
-    },
-    {
-      "id": "5324977953835593",
-      "platform": "weibo",
-      "author": "用户5245864118",
-      "followers": "2",
-      "verified": false,
-      "published_at": "2026-07-26T17:12:20",
-      "text": "你好尊敬的微信团队，我的账号被永久限制社交场景，跟专属客服聊了很久不与解封。我怀着万分诚恳的心情，向您反馈我的微信账号被永久限制所有社交场景功能的情况，恳请您能重新公正核查，并给予我一次解封的机会！找客服申诉问微信永久封禁怎么处理，需要举证我也可以配合，永远是车轱辘话，系统审核 ...全文",
-      "reposts": 0,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "腾讯视频 无法使用"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5324977953835593",
+      "permalink": "https://m.weibo.cn/detail/5325417926099325",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5324951243458446",
+      "id": "5325414807634056",
       "platform": "weibo",
-      "author": "机智簪花做雕刻",
-      "followers": "1",
+      "author": "许愿瓶KJY",
+      "followers": "3",
       "verified": false,
-      "published_at": "2026-07-26T15:26:12",
-      "text": "腾讯人工腾讯视频腾讯你好，本人微信：Wish88yh    电话：19946613808在2026年7月25号被判定永久限制社交场景违规标注为诈骗行为，不予解封。该账号一直是本人实名，日常使用不存在任何诈骗，欺诈行为，怀疑是恶意投诉或系统误判。恳请工作人员重新复核账号，全部聊天交易记录 ...全文",
+      "published_at": "2026-07-27T22:08:13",
+      "text": "白鹿逐光而行，岁岁生辉——祝白鹿永远大红大火 星光不问赶路人，时光不负有心人。在浩瀚璀璨的娱乐圈星河中，总有一束温柔又坚韧的光芒，始终热烈生长、稳步绽放。这束光，便是演员白鹿，本名白梦妍。从默默无闻的追梦新人，到口碑与热度双收的实力演员，十年逐梦，初心不改。她用脚踏实地 ...全文",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 曝光",
+        "腾讯视频 流畅"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325414807634056",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325410374256284",
+      "platform": "weibo",
+      "author": "许愿瓶KJY",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-27T21:50:37",
+      "text": "逐光而行，岁岁生辉——祝白鹿永远大红大火 星光不问赶路人，时光不负有心人。在浩瀚璀璨的娱乐圈星河中，总有一束温柔又坚韧的光芒，始终热烈生长、稳步绽放。这束光，便是演员白鹿，本名白梦妍。从默默无闻的追梦新人，到口碑与热度双收的实力演员，十年逐梦，初心不改。她用脚踏实地的努力打磨演 ...全文",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 宝藏",
+        "腾讯视频 曝光",
+        "腾讯视频 流畅"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325410374256284",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325382624478540",
+      "platform": "weibo",
+      "author": "温野菜菜班班长",
+      "followers": "4.5万",
+      "verified": true,
+      "published_at": "2026-07-27T20:00:21",
+      "text": "【每日养铁】先guan主再互动，坚持养铁增加耗子权重✊🏻等级越高越靠前❗可分两批次互动，间隔20min，避免pf❗第一批👇🏻⭐王安宇网页链接⭐影视剧集一念江南网页链接（需私信）球状闪电网页链接⭐综艺现在就出发网页链接忙忙碌碌寻宝 ...全文",
+      "reposts": 1,
+      "comments": 1,
+      "likes": 4,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325382624478540",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325365316684267",
+      "platform": "weibo",
+      "author": "追星少女林北北",
+      "followers": "140.8万",
+      "verified": true,
+      "published_at": "2026-07-27T18:51:35",
+      "text": "景甜有多白？看她和白百何和童谣的对比，白的镜头都快曝光了！ 追星少女林北北的微博视频 ",
+      "reposts": 12,
+      "comments": 3,
+      "likes": 56,
+      "keywords": [
+        "腾讯视频 曝光"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325365316684267",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325365070531183",
+      "platform": "weibo",
+      "author": "你要说不行我就删删来迟",
+      "followers": "132",
+      "verified": false,
+      "published_at": "2026-07-27T18:50:36",
+      "text": "🚫永拒打包配音！花开锦绣最新预告中赵凌配音与赵凌人物内核、性格设定、成长经历严重不符！请立刻改为丁禹兮本人原声❗丁禹兮原声好评不断出圈无数最适配赵凌❗赵凌必须用丁禹兮原声❗赵凌必须完整属于丁禹兮❗@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325365070531183",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325362239112884",
+      "platform": "weibo",
+      "author": "凝时Jane",
+      "followers": "6",
+      "verified": false,
+      "published_at": "2026-07-27T18:39:20",
+      "text": "@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL 丁禹兮原声好评不断下沉出圈高赞数不胜数，赵凌作为精品剧集花开锦绣的核心灵魂人物理应用丁禹兮本人原声！赵凌必须完整属于丁禹兮❗赵凌必须用丁禹兮原声❗赵凌必须完整属于丁禹兮❗",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325362239112884",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325353341946137",
+      "platform": "weibo",
+      "author": "莓瑰荔枝冰",
+      "followers": "678",
+      "verified": true,
+      "published_at": "2026-07-27T18:04:00",
+      "text": "#河清海晏#1. 剧集项目消息流出，网传主演阵容引发广泛讨论都市刑侦情感剧《河清海晏》由腾讯视频、上海影视传媒联合出品，导演秦榛、编剧张盈，改编自橘子不酸同名小说。7月27日，带有主创、角色信息的项目书截图在网络流传，爆料称陈飞宇、张子枫出演男女主角，但剧方至今没有针对演员阵容发布任何 ...全文",
+      "reposts": 0,
+      "comments": 10,
+      "likes": 14,
+      "keywords": [
+        "腾讯视频 曝光"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325353341946137",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325310914465821",
+      "platform": "weibo",
+      "author": "星星味的邱邱糖Shellie",
+      "followers": "574",
+      "verified": true,
+      "published_at": "2026-07-27T15:15:24",
+      "text": "#白鹿欢娱分手戏 朝玉阶# 事件完整梳理 2026年7月16日，白鹿与欢娱影视创始人于正双双发文官宣十年合约到期不再续约，二人文字温和走心，彼此感恩陪伴，被网友称作内娱体面解约范本。于正更是以“嫁女儿”的温柔口吻送别白鹿，感慨一段合作落幕亦是全新起点。 合约消息曝光后，大批娱乐博主爆料 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 曝光"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325310914465821",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325301162707250",
+      "platform": "weibo",
+      "author": "小棠不想熬夜啦",
+      "followers": "1.7万",
+      "verified": true,
+      "published_at": "2026-07-27T14:36:39",
+      "text": "只知道#孟子义#百花杀在暑假档期被好评不断，在2026🐧站内独播剧里打分人数第二名，站内评分9.4都来欣赏孟子义沈汐和的美貌 ",
+      "reposts": 19,
+      "comments": 34,
+      "likes": 498,
+      "keywords": [
+        "腾讯视频 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325301162707250",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325266835473544",
+      "platform": "weibo",
+      "author": "砂糖桔不砂糖",
+      "followers": "147",
+      "verified": false,
+      "published_at": "2026-07-27T12:20:14",
+      "text": "@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL //@葵弋弋:🚫永拒打包配音！花开锦绣最新预告中赵凌配音与赵凌人物内核、性格设定、成长经历严重不符！请立刻改为丁禹兮本人原声❗丁禹兮原声好评不断出圈无数最适配赵凌❗赵凌必须...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325266835473544",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325264881981492",
+      "platform": "weibo",
+      "author": "爱奇艺纪录片",
+      "followers": "6.5万",
+      "verified": true,
+      "published_at": "2026-07-27T12:12:29",
+      "text": "这个暑期，把世界装进屏幕里！🎬7月27日—8月2日，@爱奇艺 携手 @优酷 @腾讯视频，三大平台首次联合开启纪录片限时免费活动，1000部精品纪录片陪你畅看一整周！历史文明、人间百味、自然万象、地球生灵，总有一部值得你按下播放键。#爱奇艺纪录片# 超500部宝藏纪录片限时免费：🌏 沿着镜头看 ...全文",
+      "reposts": 1,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325264881981492",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325263677949904",
+      "platform": "weibo",
+      "author": "keitimo",
+      "followers": "8",
+      "verified": false,
+      "published_at": "2026-07-27T12:07:42",
+      "text": "#腾讯人工超话#腾讯视频#腾讯视频##腾讯人工##腾讯人工申诉##腾讯申诉人工超话# @腾讯公司 @腾讯视频 @腾讯视频VIP您好，打扰工作人员了。我本人名下的QQ账号，在登录腾讯视频时被系统自动判定风险，开启了长期安全保护，会员权益暂时无法正常使用。该账号一直由我本人独自使用，不存在转租、 ...全文",
       "reposts": 0,
       "comments": 1,
       "likes": 0,
       "keywords": [
-        "腾讯视频 处罚",
-        "腾讯视频 诈骗"
+        "腾讯视频 无法登录"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324951243458446",
+      "permalink": "https://m.weibo.cn/detail/5325263677949904",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325261740181360",
+      "platform": "weibo",
+      "author": "优酷纪录片",
+      "followers": "18.1万",
+      "verified": true,
+      "published_at": "2026-07-27T12:00:00",
+      "text": "#优酷纪录片暑期限免#这个暑期，纪录片爱好者的狂欢真的来了！🎬7月27日-8月2日，@优酷 @爱奇艺 @腾讯视频 三大平台首次强强联手，限时开放1000部精品纪录片免费看🔥。历史文脉、地球生灵、人间烟火一次刷够，这个夏天沉浸式看纪录片！#优酷纪录片#宝藏片单免费看：📺 经典重磅限免！01-14年 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325261740181360",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325253355766346",
+      "platform": "weibo",
+      "author": "流凨苦贼危邻泡",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-27T11:26:40",
+      "text": "普通人正常使用微信，只是简单群发家人朋友客户聊天，被扣上 “涉嫌诈骗” 的帽子永久封停。前期多次以网络异常限制我的号，腾讯客服两次来电，全程无法出示我诈骗的证据，多方求助、投诉渠道屡屡碰壁，普通人维权太难。已提交工信部投诉，希望微信审核能说明我哪个行为属于诈骗信息，请还给我正常使用 ...全文",
+      "reposts": 0,
+      "comments": 3,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 投诉"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325253355766346",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "5324949969702511",
+      "id": "5325248182616543",
       "platform": "weibo",
-      "author": "机智簪花做雕刻",
+      "author": "在这个烦人的星球",
+      "followers": "67",
+      "verified": false,
+      "published_at": "2026-07-27T11:06:07",
+      "text": "花开锦绣  @花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL ❗花开锦绣最新预告中赵凌配音与赵凌的人物内核、性格设定、成长经历严重不符！请剧方立刻更换配音改为丁禹兮本人原声！❗丁禹兮原声好评不断下沉高赞数不胜数， ...全文",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325248182616543",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325240343201543",
+      "platform": "weibo",
+      "author": "猫眼专业版",
+      "followers": "12.6万",
+      "verified": true,
+      "published_at": "2026-07-27T10:34:59",
+      "text": "#忙忙碌碌寻宝藏·双人成行记登猫眼综艺热度榜TOP1#  猫眼专业版榜单·7月26日综艺TOP10  冠军：芒果TV 播出  #忙忙碌碌寻宝藏双人成行记# 猫眼昨日热度值9798.79  亚军：腾讯视频 播出  #地球超新鲜第2季# 猫眼昨日热度值9703.88  季军：爱奇艺 播出  #说唱巅峰对决2026# 猫眼昨日热度值9255.25 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 宝藏"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325240343201543",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325597703144382",
+      "platform": "weibo",
+      "author": "爱奇艺",
+      "followers": "2487.1万",
+      "verified": true,
+      "published_at": "2026-07-28T10:15:00",
+      "text": "#这一秒过火婚礼预告# #一起来桃嗑桃嗑这一秒# 一场假面婚礼，台前是浪漫仪式，幕后是拉扯纠缠的心事，这里究竟藏了多少不能说的隐秘？每日18点锁定爱奇艺，#这一秒过火# 正在热播！ ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "这一秒过火 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325597703144382",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325596897058931",
+      "platform": "weibo",
+      "author": "葵花娱乐",
+      "followers": "320.3万",
+      "verified": true,
+      "published_at": "2026-07-28T10:11:48",
+      "text": "#张凌赫慕容清峄连续9天v榜破9登顶##张凌赫连续9天V榜破9登顶#恭喜张凌赫《这一秒过火》开播以来持续破9登顶v榜🔥 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325596897058931",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325596003666715",
+      "platform": "weibo",
+      "author": "星姐微博",
+      "followers": "1022.2万",
+      "verified": true,
+      "published_at": "2026-07-28T10:08:15",
+      "text": "#慕容清峄背任素素出阁名场面来了##即便你跟着我大哥也算是永远在我身边了# 张凌赫王楚然这一秒过火预告二少：比起慕容家，我跟你倒是更亲近一些，一会儿新娘出嫁，我来背你出阁。我想通了无论你嫁给你谁我都无所谓，即便你跟着我大哥，也算是永远在我身边了星姐 星姐微博的微博视频 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 9,
+      "keywords": [
+        "这一秒过火 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325596003666715",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325595896448828",
+      "platform": "weibo",
+      "author": "困眠小椿_",
+      "followers": "4.3万",
+      "verified": true,
+      "published_at": "2026-07-28T10:07:49",
+      "text": "电视剧百花杀 不敢想家产要是从小相识该有多欢他俩演得太好看了，真实了，动作，眼神都很到位，演技自然！希望两位二搭主演男女主角 困眠小椿_的微博视频 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325595896448828",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325595895400887",
+      "platform": "weibo",
+      "author": "世界末世快来吧",
+      "followers": "3585",
+      "verified": true,
+      "published_at": "2026-07-28T10:07:49",
+      "text": "都去看这个垂娱冷笑话大全好吗哈哈哈！！这个评论区真的走不出来了！ ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325595895400887",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325595569554369",
+      "platform": "weibo",
+      "author": "占卜与星座",
+      "followers": "56.7万",
+      "verified": true,
+      "published_at": "2026-07-28T10:06:31",
+      "text": "#张凌赫王楚然这一秒过火婚礼预告##张凌赫王楚然婚礼预告# 张凌赫王楚然这一秒过火婚礼预告 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "这一秒过火 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325595569554369",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325594448628575",
+      "platform": "weibo",
+      "author": "用户9003657586",
+      "followers": "4",
+      "verified": false,
+      "published_at": "2026-07-28T10:02:04",
+      "text": "何与#微博奇遇记##与雍共饮东宫茶#百花杀很好看，萧华雍也演的很好，百花杀一定大爆！ ",
+      "reposts": 0,
+      "comments": 4,
+      "likes": 0,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325594448628575",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325594369725150",
+      "platform": "weibo",
+      "author": "x-s-ai",
       "followers": "1",
       "verified": false,
-      "published_at": "2026-07-26T15:21:08",
-      "text": "腾讯人工腾讯视频腾讯你好，本人微信：Wish88yh    在2026年7月25号被判定永久限制社交场景违规标注为诈骗行为，不予解封。该账号一直是本人实名，日常使用不存在任何诈骗，欺诈行为，怀疑是恶意投诉或系统误判。恳请工作人员重新复核账号，全部聊天交易记录人可以提供身份证 ...全文",
+      "published_at": "2026-07-28T10:01:45",
+      "text": "喜美  今日回顾深海历险记推荐第26集，好磕虽然具体同框画面不太多，但是勇士和公主的感觉非常强p1：美羊羊传来害怕声，都跑去保护美羊羊，这个画面最好笑的是，喜子哥连脚都用上了，好了我承认就身体位置来看，喜子哥获得第一名，但是脑袋没有，哈哈哈哈哈p2：依旧是美美害怕小鱼，喜羊羊 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325594369725150",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325594011374197",
+      "platform": "weibo",
+      "author": "北驚常扇赵子龙",
+      "followers": "1.1万",
+      "verified": true,
+      "published_at": "2026-07-28T10:00:20",
+      "text": "《这一秒过火》7月19日开播，腾讯视频热度破24000，双平台预约破900万，豆瓣开分却只有5.1。网友：张凌赫喊母亲我忍了，付辛博喊母亲我也忍了，吴莫愁一喊母亲我破防了。 ",
+      "reposts": 0,
+      "comments": 5,
+      "likes": 36,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325594011374197",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325592912467914",
+      "platform": "weibo",
+      "author": "大漂亮的珍珠项链",
+      "followers": "10.2万",
+      "verified": true,
+      "published_at": "2026-07-28T09:55:58",
+      "text": "恭喜张凌赫//@妹系学论:恭喜张凌赫慕容清峄V榜从开播以来持续破9登顶 都来看这一秒过火 评论配图",
       "reposts": 0,
       "comments": 0,
       "likes": 0,
       "keywords": [
-        "腾讯视频 处罚",
-        "腾讯视频 诈骗"
+        "这一秒过火 开播"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324949969702511",
+      "permalink": "https://m.weibo.cn/detail/5325592912467914",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
-      "id": "5324925355429938",
+      "id": "5325592165876923",
       "platform": "weibo",
-      "author": "时尚音浪花小娱",
-      "followers": "55.7万",
-      "verified": true,
-      "published_at": "2026-07-26T13:43:20",
-      "text": "陈哲远、张婧仪主演古装剧《梦花廷》网传档期曝光！剧集暂定暑期档8月初登陆腾讯视频独播。陈哲远饰演汤乾自，身披铠甲英气十足；张婧仪一人分饰缇兰、紫簪两角，异域造型惊艳亮眼。双生女主设定搭配权谋叙事，看点十足，剧集预约热度持续走高。目前仅为网传排播计划，准确上线时间静待腾讯视频官方 ...全文",
-      "reposts": 10,
-      "comments": 13,
-      "likes": 43,
-      "keywords": [
-        "腾讯视频 曝光"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5324925355429938",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "pos"
-    },
-    {
-      "id": "5324923113308847",
-      "platform": "weibo",
-      "author": "宋祖儿_鹅量守恒局",
-      "followers": "2354",
+      "author": "Kina_Pipi",
+      "followers": "267",
       "verified": false,
-      "published_at": "2026-07-26T13:34:25",
-      "text": "宋祖儿 【腾讯视频金币囤集激励活动✨正式开启】《表妹万福》开播在即，蓄力甄嘉芙角色热度，现启动金币囤集激励活动。欢迎大家参与。 📌 报名活动有意参与的小水滴们，请录制带有🐧帐浩ID的🐧视频金币初始录屏，作为涨幅基数凭证，上传到图1凭证要求：完整展示账号主页、金币总 ...全文",
-      "reposts": 56,
-      "comments": 56,
-      "likes": 136,
-      "keywords": [
-        "腾讯视频 超时"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5324923113308847",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neu"
-    },
-    {
-      "id": "5324915861620029",
-      "platform": "weibo",
-      "author": "张张只喝粥",
-      "followers": "11.1万",
-      "verified": true,
-      "published_at": "2026-07-26T13:05:36",
-      "text": "#微博视频号续航计划#  越避嫌越上头，越拉扯越难忘，昀牵孟绕永远让人魂牵梦绕。 张张只喝粥的微博视频 ",
+      "published_at": "2026-07-28T09:53:00",
+      "text": "撤回说百花杀不好看的 不带脑子纯当短剧看 爽 虽然没get到孟子义演技 但孟姐和皇子们确实养眼 ",
       "reposts": 0,
       "comments": 0,
-      "likes": 88,
+      "likes": 0,
       "keywords": [
-        "腾讯视频 维权"
+        "百花杀 好看"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324915861620029",
+      "permalink": "https://m.weibo.cn/detail/5325592165876923",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "pos"
     },
     {
-      "id": "5324913587782023",
+      "id": "5325591474603924",
       "platform": "weibo",
-      "author": "Absinthea",
-      "followers": "21.5万",
-      "verified": true,
-      "published_at": "2026-07-26T12:56:34",
-      "text": "《你是我的荣耀》最经典的一句话就是，想到这部剧会爆，但是没想到这么爆直接把鹅干崩了最高播放市占26.74%，斩获全网正片播放市占率周冠×4、全网正片播放市占率日冠×24、舆情热度日冠x21、腾讯视频播放量日冠x30。 ",
-      "reposts": 2,
-      "comments": 2,
-      "likes": 92,
+      "author": "这世界乱七八糟",
+      "followers": "34",
+      "verified": false,
+      "published_at": "2026-07-28T09:50:15",
+      "text": "#一天一本小说# 今日推荐《涂鸦王子》by红口白牙。首发晋江，中长篇 主攻，推荐指数四星半。太太的脑洞特别大，剧情总是反转反转再反转，有口皆碑，总是似甜似虐的。这篇也一样，攻相当于受的创世神，但是因为一些三次元的因素“抛弃”了二次元的小王子。王子由爱生恨，“报复”攻。整体就是这样一个引 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
       "keywords": [
-        "腾讯视频 崩了"
+        "哈哈哈哈哈 推荐"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324913587782023",
+      "permalink": "https://m.weibo.cn/detail/5325591474603924",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325591144565251",
+      "platform": "weibo",
+      "author": "小迷妹神吐槽",
+      "followers": "1571.9万",
+      "verified": true,
+      "published_at": "2026-07-28T09:48:56",
+      "text": "#张凌赫新剧连续8天云合top1# 《这一秒过火》连续8天登顶云合第一，自开播以来一路坚挺就没有掉下来过，说到底还是节奏剧情能打！好的内容就是自带吸引力，让观众一直愿意持续追更下去，慕容清峄任素素好不容易大仇得报以为要开始撒糖，结果又因为得知了当年的真相被迫分开每天这剧情钩子真 ...全文",
+      "reposts": 1,
+      "comments": 1,
+      "likes": 12,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325591144565251",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5324911942829087",
+      "id": "5325590392473517",
       "platform": "weibo",
-      "author": "旺旺碎迪迪",
-      "followers": "3857",
-      "verified": true,
-      "published_at": "2026-07-26T12:50:02",
-      "text": "#你是我的荣耀开播5周年#大爆剧你是我的荣耀腾讯都崩了 ",
+      "author": "辞镜临川",
+      "followers": "8",
+      "verified": false,
+      "published_at": "2026-07-28T09:45:57",
+      "text": "好看",
       "reposts": 0,
       "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325590392473517",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325589753889529",
+      "platform": "weibo",
+      "author": "今天也要更白鸭",
+      "followers": "37.5万",
+      "verified": false,
+      "published_at": "2026-07-28T09:43:25",
+      "text": "请叫我睡袋富翁哈哈哈 开心果：麻麻请给我安排第7个 ",
+      "reposts": 0,
+      "comments": 8,
+      "likes": 11,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325589753889529",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325589651129130",
+      "platform": "weibo",
+      "author": "超级无敌辣鸭头",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-28T09:43:00",
+      "text": "百花杀太好看了 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325589651129130",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325588682244315",
+      "platform": "weibo",
+      "author": "椰果奶茶太甜了",
+      "followers": "3811",
+      "verified": true,
+      "published_at": "2026-07-28T09:39:08",
+      "text": "神仙过家家哈哈哈哈哈哈哈！！",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325588682244315",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325588546979710",
+      "platform": "weibo",
+      "author": "凌风展羽",
+      "followers": "816",
+      "verified": false,
+      "published_at": "2026-07-28T09:38:37",
+      "text": "牛哇//@zzz少年的云和月_福满峄版:恭喜张凌赫慕容清峄V榜从开播以来持续破9登顶 都来看这一秒过火",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325588546979710",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325587866452313",
+      "platform": "weibo",
+      "author": "zzz少年的云和月_福满峄版",
+      "followers": "1.4万",
+      "verified": true,
+      "published_at": "2026-07-28T09:35:54",
+      "text": "恭喜张凌赫慕容清峄V榜从开播以来持续破9登顶 都来看这一秒过火",
+      "reposts": 2,
+      "comments": 1,
+      "likes": 5,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325587866452313",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325587309921137",
+      "platform": "weibo",
+      "author": "兔森ple",
+      "followers": "17.2万",
+      "verified": false,
+      "published_at": "2026-07-28T09:33:42",
+      "text": "#干丝衬衣反馈# 一醒来就是一顿收获干丝衬衣反馈和去年的干丝裤一样，大家刚开始都是小试牛刀，到手就开始回购去年做干丝裤的时候就想着今年要做干丝衬衣了，这一套舒适度在三伏天真是不敢想不敢想哈哈哈…ps，特别惊喜意外的，都是去年没买过干丝裤，第一次买干丝的，【真的别错过兔兔的 ...全文",
+      "reposts": 0,
+      "comments": 5,
+      "likes": 9,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325587309921137",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325586814730628",
+      "platform": "weibo",
+      "author": "青海在线网官微",
+      "followers": "12.3万",
+      "verified": true,
+      "published_at": "2026-07-28T09:31:44",
+      "text": "#青海在线网#【投票：#现在就出发4新阵容路透#，你最期待谁？】《现在就出发4》在三亚正式开录。沈腾、贾冰、白敬亭、黄景瑜、范丞丞、王安宇、胡先煦、王楚然全员身着潜水服亮相海边。本季女常驻换血，王楚然加盟，也是阵容最大亮点。沈腾、贾冰等核心嘉宾阵容稳定，默契依旧。你最期待谁的表现？  ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325586814730628",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325586492031773",
+      "platform": "weibo",
+      "author": "若若buss",
+      "followers": "1708",
+      "verified": true,
+      "published_at": "2026-07-28T09:30:27",
+      "text": "#王安宇最不需要面子之人##王安宇现在就出发# 💙 全体注意！@王安宇buss 的快乐风暴即将在@现在就出发 登陆！🌪️ 请速速打开你的快乐雷达📡，锁定频道 #现在就出发# ，准备迎接一波接一波的笑弹袭击！💙 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 3,
+      "keywords": [
+        "现在就出发 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325586492031773",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325585257857233",
+      "platform": "weibo",
+      "author": "up大美妞儿",
+      "followers": "153",
+      "verified": false,
+      "published_at": "2026-07-28T09:25:32",
+      "text": "现在一心只有#现在就出发4# 开播aaaaa！！ ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325585257857233",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325584490041834",
+      "platform": "weibo",
+      "author": "JA521-爱亦有道-萌-被瓦送饭版",
+      "followers": "92",
+      "verified": false,
+      "published_at": "2026-07-28T09:22:30",
+      "text": "@_用你的目光看海 没在杭州没吃到喝到什么新鲜的推荐这道菜“冰凌淋烤布蕾”（图一）适合爱吃甜的你吃一半觉得好吃才想起来拍照，哈哈哈接下来嘚！瑟！预！警！👻👻👻但是，但是，但是全世界最好吃的，是我瓦亲手！亲手！亲手！递给我的美梦套餐，汉堡+特调（图二 ...全文",
+      "reposts": 0,
+      "comments": 6,
       "likes": 4,
       "keywords": [
-        "腾讯视频 崩了"
+        "哈哈哈哈哈 推荐"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324911942829087",
+      "permalink": "https://m.weibo.cn/detail/5325584490041834",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325583873739827",
+      "platform": "weibo",
+      "author": "青春的还是爱你1999",
+      "followers": "269",
+      "verified": false,
+      "published_at": "2026-07-28T09:20:03",
+      "text": "小说txt分享#耽美小说##热门小说推荐##推文#小说推文#小说# 【bl强推】《情花入道》 作者：腐眼看文文案道心坚定天然渣总受，又（）又沙雕的正文，π匹【评价】修仙 - 沙雕 - 1vsN - 画风清奇这本我真是笑到喷饭！！！正经中透出一丝无厘头，非常极度超级无敌羞耻的修仙文，作 ...全文",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325583873739827",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325582397342684",
+      "platform": "weibo",
+      "author": "筷说鱼乐",
+      "followers": "404.4万",
+      "verified": true,
+      "published_at": "2026-07-28T09:14:11",
+      "text": "#这一秒过火连续8日云合top1##张凌赫新剧连续8天云合top1# 实打实的热度黑马，开播至今八天稳拿云合第一，多条故事线交织不乱，反转层层递进，完全碾压同期其他影视作品。 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 2,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325582397342684",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5324861120450483",
+      "id": "5325581995741192",
       "platform": "weibo",
-      "author": "思属星辰",
-      "followers": "1162",
+      "author": "JSA相逢星辰花开时",
+      "followers": "66",
+      "verified": false,
+      "published_at": "2026-07-28T09:12:35",
+      "text": "向所有dfs姐推荐这篇好看好笑好玩，好多梗啊啊啊 怎么还有kwd和ktk的事情啊哈哈哈哈哈哈哈 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325581995741192",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325581529122855",
+      "platform": "weibo",
+      "author": "比奇堡知名磕学家",
+      "followers": "786.4万",
       "verified": true,
-      "published_at": "2026-07-26T09:28:05",
-      "text": "🧱//@two_lost_souls:🧱//@窗帘拉不上:我们强烈要求花开锦绣使用丁禹兮原声，丁禹兮本人声线优越，原声台词在各大平台出圈，观众对丁禹兮原声认可度高‼️配音无法共情角色，赵凌必须是丁禹兮原声‼️只要原声‼️‼️还我赵凌原声‼️‼️  @花开锦绣官微  @邓科导演 @腾讯视频 @腾讯电视剧...全文",
+      "published_at": "2026-07-28T09:10:44",
+      "text": "#这一秒过火连续8日云合top1##张凌赫新剧连续8天云合top1# 从开播一路稳坐云合top1长达八天，市面上同质化民国剧层出不穷，只有它凭借独特爱恨叙事牢牢抓住大众视线。 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 2,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325581529122855",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325580872192443",
+      "platform": "weibo",
+      "author": "爱吉赛尔880218",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-28T09:08:07",
+      "text": "好看//@帅贵男妻:补百花 跨:网页链接    渡:网页链接",
       "reposts": 0,
       "comments": 0,
       "likes": 0,
       "keywords": [
-        "腾讯视频 无法使用"
+        "百花杀 好看"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324861120450483",
+      "permalink": "https://m.weibo.cn/detail/5325580872192443",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325580234130209",
+      "platform": "weibo",
+      "author": "最小说控",
+      "followers": "51.8万",
+      "verified": true,
+      "published_at": "2026-07-28T09:05:35",
+      "text": "小说推荐：《相思好》 作者:大芹菜/陈惜简评；活泼明媚女主vs温柔清隽男主，青梅竹马，平淡日常，温馨治愈风。男女主父母是好友，买的房子也是挨着的。男女主从小一起长大，因为男主比女主大4岁，而且性格早熟又懂事，可以说女主就是男主一手带大的。女主上幼儿园时，男主每天手牵手接她上下学，还 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 5,
+      "keywords": [
+        "哈哈哈哈哈 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325580234130209",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325578746203904",
+      "platform": "weibo",
+      "author": "红星新闻",
+      "followers": "2276万",
+      "verified": true,
+      "published_at": "2026-07-28T08:59:40",
+      "text": "【投票：#现在就出发4新阵容路透#，你最期待谁？】《现在就出发4》在三亚正式开录。沈腾、贾冰、白敬亭、黄景瑜、范丞丞、王安宇、胡先煦、王楚然全员身着潜水服亮相海边。本季女常驻换血，王楚然加盟，也是阵容最大亮点。沈腾、贾冰等核心嘉宾阵容稳定，默契依旧。你最期待谁的表现？  ...全文",
+      "reposts": 1,
+      "comments": 0,
+      "likes": 61,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325578746203904",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325578045489886",
+      "platform": "weibo",
+      "author": "视你的剧",
+      "followers": "1.2万",
+      "verified": true,
+      "published_at": "2026-07-28T08:56:53",
+      "text": "7.27百指这一秒过火3.4万，还在下降，比兵自风中来低了。九门定档4900+，这个百指有点低啊！怎么办御廷谣开播前一日7700+，还行，没有物料，只有一个极限下证的消息。#九门##御廷谣##这一秒过火# ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "这一秒过火 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325578045489886",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5325098860941018",
+      "id": "5325577437317547",
       "platform": "weibo",
-      "author": "如果是只小猫OvO",
-      "followers": "2680",
+      "author": "没有休息的娱乐",
+      "followers": "319.1万",
       "verified": true,
-      "published_at": "2026-07-27T01:12:47",
-      "text": "热度全网登顶，却被一星差评刷屏，《这一秒过火》太尴尬了！这部剧故事也挺无聊，就很难让观众理解，军阀幼子被抱错，就很尴尬了，更不用说后面的受尽虐待，遇到了天使，本来以为要和天使在一起，结果天使女子转身却成了大哥的未婚妻，明明是长剧，却非得要搞这种小手段。而且还是什么替身、假死之 ...全文",
-      "reposts": 0,
-      "comments": 10,
-      "likes": 16,
+      "published_at": "2026-07-28T08:54:28",
+      "text": "#这一秒过火连续8日云合top1##张凌赫新剧连续8天云合top1# 《这一秒过火》连续8天登顶云合第一，自开播以来一路坚挺就没有掉下来过，说到底还是节奏剧情能打，好的内容就是自带吸引力，让观众一直愿意持续追更下去，今晚慕容清峄任素素好不容易大仇得报以为要开始撒糖，结果又因为得知了当年的真相被迫 ...全文",
+      "reposts": 1,
+      "comments": 1,
+      "likes": 1,
       "keywords": [
-        "这一秒过火 差评"
+        "这一秒过火 开播"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325098860941018",
+      "permalink": "https://m.weibo.cn/detail/5325577437317547",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
-      "id": "5325082239173150",
+      "id": "5325575901418574",
       "platform": "weibo",
-      "author": "细雨落红妆",
-      "followers": "122",
+      "author": "幽灵2026吃饱睡好版",
+      "followers": "214",
       "verified": false,
-      "published_at": "2026-07-27T00:06:43",
-      "text": "#百花杀大结局# 最后几集节奏很好，如果一开始前五集也是这种缜密又紧凑的叙事节奏，也不会这么多人看两集看不明白就弃剧的了，百花杀真是属于越看越好看的，而且所有人演技都没有掉链子，该高光出彩的地方都出彩了，我们萧华雍更加是光芒万丈，是真想让所有人都来看他表演的欣喜与自豪，这部剧没有被 ...全文",
+      "published_at": "2026-07-28T08:48:22",
+      "text": "看过电视《雀骨》，我的评分：★★★★☆ 剧情很不错 看前几集的时候很上头 剧情连贯没有乱七八糟的 节奏很快 男女主的选角也好 每个人物都很立体好看 扣掉一星是因为男二演的很奇怪 除了男二盐的一言难尽 别的都很好 好剧！(来自 @豆瓣App) 网页链接 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "雀骨 一星"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325575901418574",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325575894077344",
+      "platform": "weibo",
+      "author": "两碗豆浆o",
+      "followers": "8",
+      "verified": false,
+      "published_at": "2026-07-28T08:48:20",
+      "text": "百花杀太好看了 昨晚一口气看到了第八集 导致今天早上起不来吃早餐了 ",
       "reposts": 0,
       "comments": 2,
-      "likes": 7,
+      "likes": 1,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325575894077344",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325569275463427",
+      "platform": "weibo",
+      "author": "孟一个巧克力",
+      "followers": "1095",
+      "verified": false,
+      "published_at": "2026-07-28T08:22:02",
+      "text": "#孟子义沈汐和#mzy#孟子义百花杀# 你与明月都好看 皆是人间浪漫 𝐘𝐨𝐮 𝐚𝐧𝐝 𝐭𝐡𝐞 𝐦𝐨𝐨𝐧 𝐚𝐫𝐞 𝐛𝐞𝐚𝐮𝐭𝐢𝐟𝐮𝐥, 𝐚𝐫𝐞 𝐫𝐨𝐦𝐚𝐧𝐭𝐢𝐜.“追随光 我对你的爱意永远热烈真诚” '𝓕𝓸𝓵𝓵𝓸𝔀 ? ...全文",
+      "reposts": 0,
+      "comments": 5,
+      "likes": 1,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325569275463427",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325568969280328",
+      "platform": "weibo",
+      "author": "ym锁死",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-28T08:20:49",
+      "text": "#百花杀# 我的评分：好看大爆 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325568969280328",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325558911075606",
+      "platform": "weibo",
+      "author": "提笔落诗毅",
+      "followers": "2",
+      "verified": false,
+      "published_at": "2026-07-28T07:40:51",
+      "text": "电视剧百花杀百花杀怎么惹到你了，我只是想说你呼吁豆瓣评分一星或两星的人，请你认真了解一下，OK？就像这俩天李宏毅的事一样，没有真正了解的请谨慎发言 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "百花杀 一星"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325558911075606",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325555306072130",
+      "platform": "weibo",
+      "author": "薯条品鉴局局长",
+      "followers": "12",
+      "verified": false,
+      "published_at": "2026-07-28T07:26:32",
+      "text": "最最最最好看的古偶",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325555306072130",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325525153481180",
+      "platform": "weibo",
+      "author": "咖啡奶茶和我",
+      "followers": "5468",
+      "verified": true,
+      "published_at": "2026-07-28T05:26:43",
+      "text": "《兵自风中来》没看到剧宣就上演了！是我最喜欢的军旅题材！有欧豪蓝盈莹、侯勇刘奕君。黄景瑜啥时候出来啊，哈哈，今早我先把这剧追平！ ",
+      "reposts": 0,
+      "comments": 10,
+      "likes": 5,
+      "keywords": [
+        "兵自风中来 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325525153481180",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325512911093845",
+      "platform": "weibo",
+      "author": "木阿立青",
+      "followers": "1.1万",
+      "verified": false,
+      "published_at": "2026-07-28T04:38:04",
+      "text": "百花杀 剧情不错吧…女主好美，而且人设和脸很贴就很合适！剧情新颖没看过同类型，挺好看，女主和男二的戏份有张力我喜欢看他两，男主还是那句好丑…差点弃剧，不过不耽误我超点，还好死了几集要不是剧情不许，我真想男二女主在一起 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
       "keywords": [
         "百花杀 弃剧"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325082239173150",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325078725923245",
-      "platform": "weibo",
-      "author": "黑皮糯米二号机",
-      "followers": "38",
-      "verified": false,
-      "published_at": "2026-07-26T23:52:46",
-      "text": "古偶男主还是得帅哥来，不然百花杀我高低还能多看一集半，不至于停在第三集头10分钟这一秒过火那让人无语的剧情，我起码能忍住第一天的5集，就是第二天弃剧而已同期这几部看下来，不知道是不是同行衬托的缘故，反正怎么看雀骨就觉得雀骨除了男二演员选角不行，其他哪哪都好野狗 ...全文",
-      "reposts": 0,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "百花杀 弃剧",
-        "雀骨 弃剧"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325078725923245",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325067604985046",
-      "platform": "weibo",
-      "author": "恋冬情诀",
-      "followers": "1.7万",
-      "verified": true,
-      "published_at": "2026-07-26T23:08:35",
-      "text": "别再骂王楚然了，她亲口承认，自己最怕的不是差评，而是只能演好看的角色。  说实话，这挺让人意外的，毕竟在《我的人间烟火》之后，她的口碑几乎跌到谷底，被贴上了木头美人演技太淡的标签。  但你再看她最近干了什么？新剧《爱情有烟火》里，演一个班味儿十足的沪漂打工人；《柳舟记》里，直接一人 ...全文",
-      "reposts": 20,
-      "comments": 0,
-      "likes": 3,
-      "keywords": [
-        "这一秒过火 差评"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325067604985046",
+      "permalink": "https://m.weibo.cn/detail/5325512911093845",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "pos"
     },
     {
-      "id": "5325066206187064",
+      "id": "5325507566764459",
       "platform": "weibo",
-      "author": "hydeguopd1782OO",
-      "followers": "23",
+      "author": "可爱炸了yb",
+      "followers": "2",
       "verified": false,
-      "published_at": "2026-07-26T23:03:01",
-      "text": "浅浅记录一下最近的追剧，纯属个人观点南部档案，开头两男主各种装X耍帅，在反派跟前自报家门那一段蠢得人想看看徐磊的脑子是怎么写出这种雷霆剧情的，害死档案馆这么多人，哪怕后面复活了海虾，也无法原谅海楼那个角色。到后面海虾黑化疯魔实在看不下去弃剧了，还好弃剧早，没看到海虾结局，太惨了， ...全文",
+      "published_at": "2026-07-28T04:16:50",
+      "text": "#百花杀# 百花杀萧华雍沈汐壁纸更新#孟子义##何与#电视剧百花杀 ",
+      "reposts": 0,
+      "comments": 12,
+      "likes": 10,
+      "keywords": [
+        "百花杀 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325507566764459",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325499272004021",
+      "platform": "weibo",
+      "author": "rtoxeeee",
+      "followers": "13",
+      "verified": false,
+      "published_at": "2026-07-28T03:43:52",
+      "text": "电视剧百花杀  完结撒花🎉感谢百花杀让我拥有了一个特别的夏天。每天等着六点更新的日子再也不会有啦🥹最好的呦呦鹿鸣 ",
+      "reposts": 1,
+      "comments": 6,
+      "likes": 0,
+      "keywords": [
+        "百花杀 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325499272004021",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325465114117074",
+      "platform": "weibo",
+      "author": "大莉要加油",
+      "followers": "9",
+      "verified": false,
+      "published_at": "2026-07-28T01:28:08",
+      "text": "滚石杂志《500首最伟大的歌曲 》夸克：网页链接 佩德罗·阿莫多瓦 合集 共27部  夸克：网页链接 兵自风中来 更01-12集  夸克：网页链接百度：网页链接  八～仙夸克：网页链接百度：网页链接  ...全文",
       "reposts": 0,
       "comments": 0,
       "likes": 0,
       "keywords": [
-        "百花杀 弃剧",
-        "雀骨 弃剧"
+        "百花杀 更新"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325066206187064",
+      "permalink": "https://m.weibo.cn/detail/5325465114117074",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325460825179394",
+      "platform": "weibo",
+      "author": "薪享事成yyc",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-28T01:11:06",
+      "text": "哈，腾讯视频下架王沥川那别的平台，快点收回他呀，他那么火爆，又那么多人看，肯定有人为之愿意买 VIP，我就是其中一个，为什么你们不买呀？我就是觉得就是一个非常能，就是可观的盈利的，可盈利的一个项目。 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 剧 下架"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325460825179394",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "5325065295236718",
+      "id": "5325460691223785",
       "platform": "weibo",
-      "author": "拿出来吃旺旺雪饼",
-      "followers": "56",
+      "author": "薪享事成yyc",
+      "followers": "3",
       "verified": false,
-      "published_at": "2026-07-26T22:59:24",
-      "text": "可是雀骨的权谋就是写得很难看啊，把男主写成了一个天神其他配角就只是为了突出男主聪明才智和能力的垫脚石但其实整个剧情都写得特别随便，编剧唯一写的出彩的是男女主的感情线，但如果这个剧换了那几个老脸来演我只会分分钟弃剧 ",
+      "published_at": "2026-07-28T01:10:34",
+      "text": "腾讯视频，你是不是傻？为什么要下架遇见王沥川？ ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "腾讯视频 剧 下架"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325460691223785",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325460231684332",
+      "platform": "weibo",
+      "author": "折几枝竹",
+      "followers": "1248",
+      "verified": false,
+      "published_at": "2026-07-28T01:08:44",
+      "text": "现在就出发就不能现在就开播吗 ",
+      "reposts": 0,
+      "comments": 7,
+      "likes": 6,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325460231684332",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325458745852199",
+      "platform": "weibo",
+      "author": "啪嗒搭",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-28T01:02:49",
+      "text": "现在就出发 各位#现在就出发4新阵容路透#现在就出发主要矛盾不是换女常驻了，是连导演组都换了，从今天路透看出来来各位真的很累，氛围明显不一样#现在就出发制作团队谢涤葵# ",
+      "reposts": 0,
+      "comments": 8,
+      "likes": 1,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325458745852199",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325454231734786",
+      "platform": "weibo",
+      "author": "率真顽童a118899",
+      "followers": "5993",
+      "verified": false,
+      "published_at": "2026-07-28T00:44:54",
+      "text": "《莫离》——白鹿演话了女主叶璃的灵魂！故看剧就像身临境，身同感受！其他人演的剧只是人物的一亇漂亮空壳子，往往没了兴趣，弃剧而去！等待明春的《开到荼蘼》@白鹿my @白鹿资料室 #白鹿my##白鹿#白鹿#莫离#莫离#开到荼蘼# 《刚追完《莫离》，又无缝衔接了《百花杀》，心里挺多话 ...全文",
       "reposts": 0,
       "comments": 1,
       "likes": 0,
       "keywords": [
-        "雀骨 弃剧"
+        "百花杀 弃剧"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325065295236718",
+      "permalink": "https://m.weibo.cn/detail/5325454231734786",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "5325055195091430",
+      "id": "5325452132484207",
       "platform": "weibo",
-      "author": "秒針缺口",
-      "followers": "1",
+      "author": "计剧",
+      "followers": "10.2万",
+      "verified": true,
+      "published_at": "2026-07-28T00:36:33",
+      "text": "原来她是陈思诚的女朋友，才26岁，新剧出演《兵自风中来》，和佟丽娅风格不一样！热播剧《兵自风中来》欧豪和蓝盈莹领衔主演的，而这部剧的配角也是阵容强大，作为女配之一的阮巨也是相当眼熟，原来她是陈思诚的女友。在剧中欧豪出演的是郭子剑，蓝盈莹是梁虹，而阮巨是陈晓珊，性格活泼开朗，大大 ...全文",
+      "reposts": 1,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "兵自风中来 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325452132484207",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325448611629409",
+      "platform": "weibo",
+      "author": "财欢欢呀",
+      "followers": "2.5万",
+      "verified": true,
+      "published_at": "2026-07-28T00:22:34",
+      "text": "#王楚然现在就出发三亚路透#颜值体态双在线，王楚然凭实力解锁全新综艺面貌 很多艺人的出圈造型都靠华丽礼服和精致妆造加持，唯独王楚然不一样，简简单单的基础穿搭，依旧能凭绝佳体态和出众气质惊艳全场，自带让人一眼沦陷的氛围感。 这次加盟《现在就出发4》担任本季唯一女常驻，接替前辈开启 ...全文",
+      "reposts": 0,
+      "comments": 6,
+      "likes": 22,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325448611629409",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325448562087540",
+      "platform": "weibo",
+      "author": "朝花惜识1027",
+      "followers": "6",
       "verified": false,
-      "published_at": "2026-07-26T22:19:16",
-      "text": "终于看完雀骨了，整体挺好的，男主和几位女演员的关系剧情我觉得还能改改，虽然是古代设定，但是这部分都是给男主高光，我不在意什么双不双洁，只是觉得能有更好的设定剧情吧。八百年没完整看一部古偶了，男女主演得挺好的，艾米真不错，妹妹多多演戏。必须要说的是男二演技真得好差，之前看他演的剧 ...全文",
+      "published_at": "2026-07-28T00:22:22",
+      "text": "#张凌赫王楚然新剧风评逆反#这一秒过火立意很高，每个人物都很丰满，没有局限于男女主的个人情爱，而是以社会现实为背景，孤儿院、映射萝莉岛、人口拐卖，器官买卖、名流俱乐部都是反应了社会现实问题，这些在今天依然存在，而剧中女孩、孩子们的互相帮助、自我救赎以及向不公的命运抗争的勇气，让她们 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 9,
+      "keywords": [
+        "这一秒过火 值得看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325448562087540",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325445307568711",
+      "platform": "weibo",
+      "author": "温沉丶",
+      "followers": "1万",
+      "verified": true,
+      "published_at": "2026-07-28T00:09:26",
+      "text": "#王楚然现在就出发三亚路透#《现在就出发4》三亚录制路透流出，王楚然一身黑色紧身潜水服生图迅速出圈，亮眼外形吸引大量关注。舆论核心焦点却落在阵容变动上，她接替金晨成为本季唯一女常驻。男嘉宾班底大多维持原状，女常驻的更替引发网友持续讨论。观众好奇新人能否融入磨合已久的常驻熟人局，路透 ...全文",
+      "reposts": 0,
+      "comments": 15,
+      "likes": 6,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325445307568711",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325442450984829",
+      "platform": "weibo",
+      "author": "掌心的紋路是你名字的形状",
+      "followers": "396",
+      "verified": true,
+      "published_at": "2026-07-27T23:58:05",
+      "text": "我看百花杀看一半弃剧了。我忍不了男主了 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "百花杀 弃剧"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325442450984829",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325441734807447",
+      "platform": "weibo",
+      "author": "剧亭",
+      "followers": "13.1万",
+      "verified": true,
+      "published_at": "2026-07-27T23:55:14",
+      "text": "关于《现在就出发》换团队这事，我猜是沈腾不想录了。毕竟他当初接这个节目，就是因为录《王牌》太累了，第一季时他就开玩笑说过。结果到了第二三季，游戏强度和录制时间反而比第一季还大，加上他优酷那边还有个综艺要录。这种节目太累了，很多时候是为了刻意制造冲突搞出来的效果，劳心劳力 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325441734807447",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325439834786593",
+      "platform": "weibo",
+      "author": "佳念秋日",
+      "followers": "34",
+      "verified": false,
+      "published_at": "2026-07-27T23:47:41",
+      "text": "现在就出发 关于#现在就出发4# 我想谈两句。虽然我还是希望原成员一起出发，因为我感觉她们在一起很轻松很随意很自在很开心，我怕有新成员加入他们不会立马放开玩，但是转头想，有腾哥他们在肯定能迅速熟络起来的，我相信原成员的八位同志，也相信现在的七位同志会和新同志打成一片，带来精彩 ...全文",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 3,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325439834786593",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325435036240922",
+      "platform": "weibo",
+      "author": "白豆腐TINA",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-27T23:28:37",
+      "text": "张凌赫#张凌赫这一秒过火##这一秒过火招商##张凌赫慕容清峄# 哎呀妈呀！这一秒过火的招商，挡不住啊挡不住，品牌商集体追剧，太快乐了！！除了看剧，看广告商集体开团建会太开心了，追剧开心！ 别人追剧沉浸式看剧情，我们追剧沉浸式观看百家品牌大型线下团建交流会！各大品牌全员就位、整 ...全文",
+      "reposts": 0,
+      "comments": 3,
+      "likes": 3,
+      "keywords": [
+        "这一秒过火 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325435036240922",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325434553897867",
+      "platform": "weibo",
+      "author": "无瑜伦比_鲸杰同行",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-27T23:26:42",
+      "text": "黄景瑜啊啊啊啊啊啊 黄sir的美式前刺好帅啊！！！！真的狠狠期待现发四开播了！#黄景瑜#现在就出发黄景瑜 无瑜伦比_鲸杰同行的微博视频 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 1,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325434553897867",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325432783379148",
+      "platform": "weibo",
+      "author": "Tacit0924",
+      "followers": "9268",
+      "verified": true,
+      "published_at": "2026-07-27T23:19:40",
+      "text": "周一更新 ",
       "reposts": 0,
       "comments": 2,
       "likes": 6,
       "keywords": [
-        "雀骨 弃剧"
+        "百花杀 更新"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325055195091430",
+      "permalink": "https://m.weibo.cn/detail/5325432783379148",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5325054906730571",
+      "id": "5325428858033160",
       "platform": "weibo",
-      "author": "娱颖帝",
-      "followers": "103.9万",
+      "author": "颜与YY_",
+      "followers": "1.3万",
       "verified": true,
-      "published_at": "2026-07-26T22:18:07",
-      "text": "《这一秒过火》这部民国复仇剧给多数导演们提了一个醒那就是拍民国剧的时候，千万要找那种看起来，非常周正的男演员来当男主！这部剧刚上映的时候，有好多差评，说它节奏快，雷霆万钧的声效，看着像短剧。男主角的扮演者张凌赫也是被好一顿喷，说他变丑了，都不如在剧中饰演大哥的付一博帅 ...全文",
-      "reposts": 19,
-      "comments": 1,
-      "likes": 0,
-      "keywords": [
-        "这一秒过火 差评"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325054906730571",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325050640077819",
-      "platform": "weibo",
-      "author": "等风来的金鱼姬",
-      "followers": "8万",
-      "verified": true,
-      "published_at": "2026-07-26T22:01:10",
-      "text": "《这一秒过火》韩国网民之前也挺期待，还有nhr翻了原著小说。所以他们读过小说刚开始以为《这一秒过火》张凌赫挑战全新角色花花公子还看过男主跳水救女主的路透还很期待。后面看了雷霆预告就觉得味不对感到不安，后面第一集就劝退不少nhr，吐槽说完全小短剧不知道导演为什么这么拍，连追下去的兴趣都没 ...全文",
-      "reposts": 0,
-      "comments": 2,
-      "likes": 4,
-      "keywords": [
-        "这一秒过火 差评"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325050640077819",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325037678628384",
-      "platform": "weibo",
-      "author": "不要昵称202211",
-      "followers": "60",
-      "verified": false,
-      "published_at": "2026-07-26T21:09:40",
-      "text": "发布了头条文章：《热度全网登顶，却被一星差评刷屏，《这一秒过火》太尴尬了！》  热度全网登顶，却被一星差评刷屏，《这一秒过火》太尴尬了！ ",
-      "reposts": 0,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "这一秒过火 差评"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325037678628384",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325036260957799",
-      "platform": "weibo",
-      "author": "木木1定不吃雪糕",
-      "followers": "5",
-      "verified": false,
-      "published_at": "2026-07-26T21:04:02",
-      "text": "@魏大勋 影视综音全面发展遍地开花🌸🥝年代情感悬/疑《有罪之身》演员编剧导演剪辑美术音乐六角俱全🌠至今0差评的含金量🈶 B站嘿色幽默悬疑《九号秘事之黑帷背后》9️⃣演技大赏反转不断🥭脑综《大侦探》与👖综艺百科全书《周五晚高疯》正适合治愈看完《有罪之身》后哭到头晕的你~...全文",
+      "published_at": "2026-07-27T23:04:04",
+      "text": "𝐇𝐢𝐝𝐞｜搞笑综艺名场面｜现在就出发 奔跑吧兄弟片段｜音乐分享 感觉至上萌宠头像｜治愈系头像头像安利｜卡通手绘｜软萌头像｜审美封神｜可爱爆棚｜毛茸茸萌物｜平板全屏壁纸｜手机超清壁纸｜小红书热榜｜无水印原图｜转运好运｜搞怪趣味｜小众独特｜清新温柔｜氛围感拉满｜韩系极简｜高 ...全文",
       "reposts": 0,
       "comments": 4,
+      "likes": 6,
+      "keywords": [
+        "现在就出发 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325428858033160",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325427780616622",
+      "platform": "weibo",
+      "author": "认布得蒜求",
+      "followers": "48",
+      "verified": false,
+      "published_at": "2026-07-27T22:59:46",
+      "text": "#脱口秀和Ta的朋友们# 我的评分：🌟亮点推荐： ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "脱口秀和Ta的朋友们 推荐"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325427780616622",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325427384261927",
+      "platform": "weibo",
+      "author": "Jiacely-",
+      "followers": "393",
+      "verified": true,
+      "published_at": "2026-07-27T22:58:13",
+      "text": "黄景瑜  【ins更新】黄sir热乎照来了～微博不咋更 ins倒是更的挺勤哈哈哈哈在现发玩的开心呀。#黄景瑜##现在就出发##黄景瑜一款清爽型硬汉# 每天靠着路透续命！@黄景瑜 哥多发点照片给我们看看👀！ ",
+      "reposts": 1,
+      "comments": 4,
+      "likes": 3,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325427384261927",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325422357125436",
+      "platform": "weibo",
+      "author": "梔尽",
+      "followers": "51",
+      "verified": false,
+      "published_at": "2026-07-27T22:38:14",
+      "text": "本次的主要更新是：zjb 百花杀沈璎婼@周静波小宝更多资讯，请持续关注。栀尽 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325422357125436",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325422330912529",
+      "platform": "weibo",
+      "author": "猪刚鬣小饼干呀",
+      "followers": "277",
+      "verified": false,
+      "published_at": "2026-07-27T22:38:08",
+      "text": "#百花杀# 我的评分：🌟亮点推荐：第一的话，是长剧的质感和短剧的爽感在这里很巧妙地融合了。别的剧是皇子选妃，这里直接上演“天家选夫101”！女主沈汐和面对五位皇子排队求娶，用挑事业合伙人的态度审视婚姻，看着皇子们争相孔雀开屏，而她始终保持绝对主动权。 ...全文",
+      "reposts": 0,
+      "comments": 3,
       "likes": 1,
       "keywords": [
-        "十日终焉 差评"
+        "百花杀 封神"
       ],
-      "permalink": "https://m.weibo.cn/detail/5325036260957799",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325034111632596",
-      "platform": "weibo",
-      "author": "王一硕V",
-      "followers": "2.3万",
-      "verified": false,
-      "published_at": "2026-07-26T20:55:29",
-      "text": "#百花杀大结局#孟姐对不起，我撑了4集弃剧了，将门独后再给我看你的机会吧～ ",
-      "reposts": 0,
-      "comments": 2,
-      "likes": 0,
-      "keywords": [
-        "百花杀 弃剧"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325034111632596",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325031485474065",
-      "platform": "weibo",
-      "author": "小兔包咿呀嘿",
-      "followers": "22.6万",
-      "verified": true,
-      "published_at": "2026-07-26T20:45:03",
-      "text": "张凌赫这两部剧我都瞅了几眼，落差确实挺大的。 《逐玉》当时是真火，古装权谋那挂的，全网播放量35亿，双平台热度都破万了，连海外Netflix都上了榜。 那会儿谁没刷到过他跟田曦薇的片段啊，俩人拉扯感特别自然，书粉买账、路人爱看，连平时不怎么追古偶的都能跟着嗑两集。 这回《这一秒过火》 ...全文",
-      "reposts": 9,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "这一秒过火 抠图"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325031485474065",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neu"
-    },
-    {
-      "id": "5325025394827925",
-      "platform": "weibo",
-      "author": "苏昊梦",
-      "followers": "33",
-      "verified": false,
-      "published_at": "2026-07-26T20:20:51",
-      "text": "✂️ #侯明昊雀骨# |#侯明昊萧无衣# | #侯明昊属于我们的巡回演唱会# ｜独学学不如众学学大家一起來試試吧@侯明昊本集分享如何打马塞克应用功能：画中画、抠图、特效对象《雀骨》正在热播中，快来看剧吧🔥🔥🔥《🥝桃妹专用视频剪辑技巧分享 - 马塞克》 ...全文",
-      "reposts": 0,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "雀骨 抠图"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325025394827925",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neu"
-    },
-    {
-      "id": "5325016963222214",
-      "platform": "weibo",
-      "author": "不要娱香菜",
-      "followers": "1.4万",
-      "verified": true,
-      "published_at": "2026-07-26T19:47:21",
-      "text": "我在张凌赫身上发现了一个玄学，而且准的可怕，那就是无论张凌赫的剧拍的怎么样，总会有大量差评！他跟王楚然搭档的新剧《这一秒过火》，之前的剧透，妈呀那叫一个唯美，氛围感十足。结果一到正片，网友直呼不忍直视，演技浮夸，表情僵硬，还有人喷他嘴唇太红了。《逐玉》更是被嘲讽粉底 ...全文",
-      "reposts": 21,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "这一秒过火 差评"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325016963222214",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5325012237296969",
-      "platform": "weibo",
-      "author": "左又先生",
-      "followers": "67",
-      "verified": false,
-      "published_at": "2026-07-26T19:28:34",
-      "text": "继铁拳教育之后，又追完一部韩国爽剧#金特务:本色回归# ，结尾小小升华了一下主题，挺好的。今年内娱上的剧走马观花一样，完完整整看完且没有倍速和快进的就只有两部剧#危险关系# 和#主角# ，《家业》《莫璃》和《迷墙》勉强拖着快进看完，其他像《逐玉》《翘楚》《百花杀》《雨霖铃》等等都因为这样 ...全文",
-      "reposts": 0,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "百花杀 弃剧"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325012237296969",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neu"
-    },
-    {
-      "id": "5325007398110938",
-      "platform": "weibo",
-      "author": "观天追娱",
-      "followers": "106.7万",
-      "verified": true,
-      "published_at": "2026-07-26T19:09:20",
-      "text": "#百花杀大结局#大结局播出后，百花杀迅速登顶热搜，热度与争议同步爆发，观众评价两极分化，豆瓣评分从开分7.1回落至6.8，五星与一星评价形成鲜明对峙。核心剧情走向成为争议焦点。剧版将原著中女主沈汐和怀抱幼子登基、孤独掌权的“大女主”结局，改为一家三口温情相守：太子萧华雍历经假死与中毒波 ...全文",
-      "reposts": 0,
-      "comments": 0,
-      "likes": 28,
-      "keywords": [
-        "百花杀 一星"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325007398110938",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neu"
-    },
-    {
-      "id": "5325004501682186",
-      "platform": "weibo",
-      "author": "365天都想喝奶茶的我",
-      "followers": "450",
-      "verified": false,
-      "published_at": "2026-07-26T18:57:50",
-      "text": "百花杀 第三集 弃剧 ……//@365天都想喝奶茶的我:看了灿如繁星4集，弃剧。雀骨，在看中，目前进度15集，还行，不难看只能说。",
-      "reposts": 0,
-      "comments": 0,
-      "likes": 0,
-      "keywords": [
-        "百花杀 弃剧",
-        "雀骨 弃剧"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5325004501682186",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5324959710708799",
-      "platform": "weibo",
-      "author": "午后阳光白流苏",
-      "followers": "17",
-      "verified": false,
-      "published_at": "2026-07-26T15:59:51",
-      "text": "今天去了心心念念的黎德湾咖啡小镇，早上起床上卫生间，外甥打电话说今天一起去黎德湾，十点多出发，简单收拾好，差不多十一点了他们就来接我了，到地方以后，十二点半，准备进门结果门口两个人不让进，让扫码，还问几个人，我们说三个大人一个孩子，一个人28元，扫码付了84元，才让进，还给了一张票， ...全文",
-      "reposts": 0,
-      "comments": 1,
-      "likes": 0,
-      "keywords": [
-        "百花杀 弃剧"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5324959710708799",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neu"
-    },
-    {
-      "id": "5324915113989797",
-      "platform": "weibo",
-      "author": "萌宅樱糕",
-      "followers": "16.5万",
-      "verified": true,
-      "published_at": "2026-07-26T13:02:38",
-      "text": "暑期档剧集也太卷了吧！十几部新剧扎堆上线，热度一个比一个高，但口碑嘛……就有点一言难尽了。先说说热度最高的几部。TOP1《这一秒过火》，张凌赫王楚然主演的民国虐恋剧，单日播放量直接破3000万，开播第一天就把播了快两周的《百花杀》拉下榜首。民国氛围感拉满，虐恋名场面超多，二创素材刷 ...全文",
-      "reposts": 0,
-      "comments": 1,
-      "likes": 56,
-      "keywords": [
-        "百花杀 一星"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5324915113989797",
+      "permalink": "https://m.weibo.cn/detail/5325422330912529",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "pos"
     },
     {
-      "id": "5324913449372610",
+      "id": "5325420309252721",
       "platform": "weibo",
-      "author": "萌宅樱糕",
-      "followers": "16.5万",
+      "author": "Be4epa",
+      "followers": "383",
+      "verified": false,
+      "published_at": "2026-07-27T22:30:06",
+      "text": "每追完一部心肝剧我就这样……再也没有每天等着六点更新百花杀的日子了怎么办呀ㅠㅠㅠ虽然每天不停在看剧但是我的心肝剧只有那几部，看十部剧也比不上一部心肝剧呀ㅠㅠ ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "百花杀 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325420309252721",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325419537500194",
+      "platform": "weibo",
+      "author": "花心杂货铺",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-27T22:27:02",
+      "text": "#初夏的兔子# 七月又快结束了好饿╰(⇀‸↼)╯好想吃各种美食嘤嘤嘤早餐手抓饼今天的手抓饼挺成功的午餐家常菜饭晚餐千禧果外出咨询咋这么麻烦这个学校真不靠谱想吃面包ʕ·ᴥ·ʔっ🍞了好馋沧元图下一集能不能快点更新我想看F4合体抖音刷刷刷又刷到了张桂源大梦想家的舞台 ...全文",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325419537500194",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325416774243084",
+      "platform": "weibo",
+      "author": "飞跃小狗",
+      "followers": "238",
+      "verified": false,
+      "published_at": "2026-07-27T22:16:03",
+      "text": "最近一次听剧是江医生，但是听着听着索然无味了，这部剧制作整体是没问题的，但是故事风格和节奏我突然不感兴趣了，被我归为没有强烈吸引我继续听下去这个类别了。我感觉有些剧还是要及时放弃，不然这么多男同广播剧有声剧我要是全听要听到猴年马月，我还要抽时间看电视剧，电视剧还能放着当背景音干 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 弃剧"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325416774243084",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325416374211106",
+      "platform": "weibo",
+      "author": "搬砖醇香土豆泥",
+      "followers": "1920",
       "verified": true,
-      "published_at": "2026-07-26T12:56:01",
-      "text": "《百花杀》热度领跑口碑遇冷，6.1分上演冰火两极截至2026年7月24日，由孟子义、何与主演的古装剧《百花杀》豆瓣评分回落至6.1分。一边是全网播放数据断层领跑，稳居暑期档前列；另一边是评价撕裂、争议不断，典型的热度与口碑严重失衡，上演了一出“冰火两重天”的市场现象。从热度数据来看 ...全文",
+      "published_at": "2026-07-27T22:14:28",
+      "text": "#现在就出发4三亚开录#现在就出发4三亚开录一、三亚首轮录制启动，原班男团全员到齐录制时间：7月26日至29日在海南三亚进行首轮录制，主打海边竞技与海岛非遗文化体验。男团阵容：沈腾、贾冰、白敬亭、范丞丞、黄景瑜、王安宇、胡先煦七位老成员全部回归，延续\"熟人局\"的默契底色。播出安排：节目 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325416374211106",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325416110760669",
+      "platform": "weibo",
+      "author": "橙叽豆包糕",
+      "followers": "9",
+      "verified": false,
+      "published_at": "2026-07-27T22:13:25",
+      "text": "最近看的剧belike百花杀：中规中矩没什么新意的剧情，副cp剧情倒是挺好看昭阳公主：追更中，很好磕的一对设定但是对男主颜值实在接受无力，原配恨海情天风换个剧本来写应该也挺好看一梦如初：因为上面的男二，所以看了这部，依旧中规中矩，长公主的剧情依旧换个剧本来写会很好磕，长公主×状元郎贵 ...全文",
+      "reposts": 0,
+      "comments": 3,
+      "likes": 1,
+      "keywords": [
+        "百花杀 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325416110760669",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325411925098955",
+      "platform": "weibo",
+      "author": "冷港雪",
+      "followers": "4169",
+      "verified": true,
+      "published_at": "2026-07-27T21:56:46",
+      "text": "现在就出发4三亚开录，女常驻换成王楚然，七位原班男常驻全员留守，阵容变动你能接受吗现在就出发4丨综艺丨王楚然丨王安宇丨胡先熙 冷港雪的微博视频 ",
+      "reposts": 1,
+      "comments": 11,
+      "likes": 190,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325411925098955",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325409518357265",
+      "platform": "weibo",
+      "author": "是囧尼小太阳啊",
+      "followers": "505",
+      "verified": true,
+      "published_at": "2026-07-27T21:47:13",
+      "text": "黄景瑜  🌊 #黄景瑜现在就出发# 20260727 INS更新对镜自拍照@黄景瑜 ",
       "reposts": 0,
       "comments": 6,
-      "likes": 43,
+      "likes": 5,
       "keywords": [
-        "百花杀 一星"
+        "现在就出发 更新"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324913449372610",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "pos"
-    },
-    {
-      "id": "5324900927801900",
-      "platform": "weibo",
-      "author": "冥王星漫游指南",
-      "followers": "172",
-      "verified": true,
-      "published_at": "2026-07-26T12:06:16",
-      "text": "雀骨还挺好看的，难得能有不中途弃剧的古偶 ",
-      "reposts": 0,
-      "comments": 1,
-      "likes": 0,
-      "keywords": [
-        "雀骨 弃剧"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5324900927801900",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "5324880713089097",
-      "platform": "weibo",
-      "author": "追星剧透",
-      "followers": "10.7万",
-      "verified": true,
-      "published_at": "2026-07-26T10:45:55",
-      "text": "花了2.64亿，换来一个5.1，这笔账怎么算都亏。说实话，看到《这一秒过火》的招商数据时，我是真心替它高兴。张凌赫、王楚然两张王牌往那一摆，还没开播就揽下1.2亿广告费，二十多个品牌挤破头往里塞。单集八百万的预算搁在国产剧里，怎么看都是\"含着金汤匙出生\"的命。但豆瓣5.1分一出，所有人的期待 ...全文",
-      "reposts": 9,
-      "comments": 5,
-      "likes": 37,
-      "keywords": [
-        "这一秒过火 差评"
-      ],
-      "permalink": "https://m.weibo.cn/detail/5324880713089097",
+      "permalink": "https://m.weibo.cn/detail/5325409518357265",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "5324860798795949",
+      "id": "5325407974855519",
       "platform": "weibo",
-      "author": "冰阔落太好喝了吧",
-      "followers": "134",
+      "author": "marry咸鱼翻身计划",
+      "followers": "136",
       "verified": false,
-      "published_at": "2026-07-26T09:26:47",
-      "text": "百花杀弃剧了，男主丑的要命，人设也很sb，剧情也难看，今年的剧都怎么了 ",
+      "published_at": "2026-07-27T21:41:05",
+      "text": "#百花杀# 更新至第36集👇臻享资源如下 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "百花杀 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325407974855519",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325407687803047",
+      "platform": "weibo",
+      "author": "illuminant_祎绾温茶",
+      "followers": "4898",
+      "verified": true,
+      "published_at": "2026-07-27T21:39:56",
+      "text": "现在就出发爆笑综艺片段沈腾/贾冰/林更新/王安宇/胡先煦/范丞丞/白敬亭/金晨 illuminant_祎绾温茶的微博视频 ",
+      "reposts": 0,
+      "comments": 4,
+      "likes": 118,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325407687803047",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325407142543970",
+      "platform": "weibo",
+      "author": "conform-粉",
+      "followers": "3.1万",
+      "verified": true,
+      "published_at": "2026-07-27T21:37:47",
+      "text": "原来她是陈思诚的女朋友，才27岁，新剧出演《兵自风中来》，和佟丽娅风格不一样！热播剧《兵自风中来》欧豪和蓝盈莹领衔主演的，而这部剧的配角也是阵容强大，作为女配之一的阮巨也是相当眼熟，原来她是陈思诚的女友。在剧中欧豪出演的是郭子剑，蓝盈莹是梁虹，而阮巨是陈晓珊，性格活泼开朗，大 ...全文",
+      "reposts": 20,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "兵自风中来 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325407142543970",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325405311209833",
+      "platform": "weibo",
+      "author": "追影逐剧ing",
+      "followers": "1287",
+      "verified": false,
+      "published_at": "2026-07-27T21:30:30",
+      "text": "百花杀 已更36集+番外资源先👍🏻后取 4K臻享 ",
       "reposts": 0,
       "comments": 1,
       "likes": 3,
       "keywords": [
+        "百花杀 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325405311209833",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325404892043678",
+      "platform": "weibo",
+      "author": "瑞屿淮",
+      "followers": "1324",
+      "verified": true,
+      "published_at": "2026-07-27T21:28:50",
+      "text": "#现在就出发4三亚开录#期待期待，坐等开播下饭综艺回归 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 11,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325404892043678",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325399941711089",
+      "platform": "weibo",
+      "author": "无聊吃个哇三",
+      "followers": "15",
+      "verified": false,
+      "published_at": "2026-07-27T21:09:09",
+      "text": "黄景瑜#黄景瑜#  黄sir的ins又更新啦美式前刺的神来了#黄景瑜现在就出发##黄景瑜深v快开到腰了##现在就出发# ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 2,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325399941711089",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325399383085397",
+      "platform": "weibo",
+      "author": "暴富啊暴富111",
+      "followers": "346",
+      "verified": false,
+      "published_at": "2026-07-27T21:06:57",
+      "text": "7.26  百花杀  两星半⭐ 可看大女主光环太牛了，鼻子比狗鼻子都还灵，怪不得是调香高手，但是确实也太夸张了信王的男演员有演技，但也确实是年龄大了，与女主没有CP感烈王虽然没长在我的审美上，总觉得脸怪怪的，但是与女主和女主妹妹都有CP感，哈哈哈哈太子殿下也没长在我的审美上，不过确实适合 ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 一星"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325399383085397",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325398692856767",
+      "platform": "weibo",
+      "author": "国旻患者",
+      "followers": "2",
+      "verified": false,
+      "published_at": "2026-07-27T21:04:11",
+      "text": "我要原班人马！！！为什么要换人啊",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325398692856767",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325396625063956",
+      "platform": "weibo",
+      "author": "娱尊",
+      "followers": "41.4万",
+      "verified": true,
+      "published_at": "2026-07-27T20:55:58",
+      "text": "#何与萧华雍演技##百花杀#雪地诀别这段戏直接封神，何与将濒死的虚弱、不舍爱人的痛苦融为一体，颤抖的肢体、涣散却温柔的眼神，短短几分钟收割无数观众眼泪。 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325396625063956",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325393796011569",
+      "platform": "weibo",
+      "author": "大哥-被亭霆迷倒",
+      "followers": "1118",
+      "verified": true,
+      "published_at": "2026-07-27T20:44:45",
+      "text": "可以开播了现出，我要看啊啊啊//@Apray·:宝宝",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325393796011569",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325389459098229",
+      "platform": "weibo",
+      "author": "料理咩咩派",
+      "followers": "1207",
+      "verified": true,
+      "published_at": "2026-07-27T20:27:31",
+      "text": "#现在就出发4三亚开录#所有人期待！我喜欢这个阵容 王楚然我喜欢你 黄景瑜我喜欢你 现发团我喜欢你们！ ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 2,
+      "keywords": [
+        "现在就出发 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325389459098229",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325389233920026",
+      "platform": "weibo",
+      "author": "醉梦寰尘",
+      "followers": "1.5万",
+      "verified": true,
+      "published_at": "2026-07-27T20:26:37",
+      "text": "我嘞个，神女妈咪的手太好看了这里拍的挺有感觉的，可惜是盛香盛香的手也挺好看，大结局盛香被姬谭音一脚踢下去了哈哈哈，懒得听他废话哈哈哈哈#唐嫣##念无双# ",
+      "reposts": 6,
+      "comments": 13,
+      "likes": 60,
+      "keywords": [
+        "醉梦 好看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325389233920026",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325389015547952",
+      "platform": "weibo",
+      "author": "霍去病夫人",
+      "followers": "2459",
+      "verified": false,
+      "published_at": "2026-07-27T20:25:44",
+      "text": "只要你开心 如果你问2026年的我，全中国你最喜欢的城市是哪一座？我的答案一定是「南京」。五月曾带给过我极致的痛彻心扉，两年前的五月，我永远失去了我的亲人。她给了我全部的爱，却只陪了我二十三年。永恒的痛苦会永远伴随我，但是我也会慢慢改变自己的心态，用另一种方式去看待和见证 ...全文",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 1,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325389015547952",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325388662446313",
+      "platform": "weibo",
+      "author": "星光乐台",
+      "followers": "24.5万",
+      "verified": true,
+      "published_at": "2026-07-27T20:24:21",
+      "text": "语言锋芒直击人心，范丞丞这次彻底封神！ #影娱热点团# #现在就出发# #搞笑# 星光乐台的微博视频 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 1,
+      "keywords": [
+        "现在就出发 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325388662446313",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325388375133925",
+      "platform": "weibo",
+      "author": "娱乐最hot",
+      "followers": "40.5万",
+      "verified": true,
+      "published_at": "2026-07-27T20:23:12",
+      "text": "即刻启程，宇过天亭组合闪亮登场！默契值持续攀升，稳态渐成。#现在就出发# #王安宇# #白敬亭# 娱乐最hot的微博视频 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325388375133925",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325388362028056",
+      "platform": "weibo",
+      "author": "Audre_YY",
+      "followers": "5349",
+      "verified": true,
+      "published_at": "2026-07-27T20:23:09",
+      "text": "这个现在就出发可以立马开播了刷路透都感觉大事很妙！ ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 1,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325388362028056",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325387765645775",
+      "platform": "weibo",
+      "author": "封心锁爱不再嗑真人cp",
+      "followers": "338",
+      "verified": false,
+      "published_at": "2026-07-27T20:20:46",
+      "text": "等现在就出发开播之前，我最近又在从第一季开始重温新西游记，真是惬意啊又搞笑，又对中国的城市拍得很好 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325387765645775",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325387497996463",
+      "platform": "weibo",
+      "author": "你算什么你黑他",
+      "followers": "5",
+      "verified": false,
+      "published_at": "2026-07-27T20:19:42",
+      "text": "@现在就出发 都录了两天了，差不多明天就该开播了吧😃我想我心肝儿了😊@白敬亭 @现在就出发 @白敬亭工作室 白敬亭白敬亭#特立独行# ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 开播"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325387497996463",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325382792249498",
+      "platform": "weibo",
+      "author": "SOLE_履程",
+      "followers": "362.3万",
+      "verified": true,
+      "published_at": "2026-07-27T20:01:00",
+      "text": "#履程剧集#由迈克·弗拉纳根打造的恐怖剧集《魔女嘉莉》发布预告，由莎莫·H·豪威尔饰演主角嘉莉·怀特。改编自史蒂芬·金的同名小说，共八集，将于10月7日Amazon流媒开播。该剧聚焦羞怯孤僻的少女嘉莉因长期遭受校园霸凌，在毕业舞会上被同学恶作剧羞辱后激发魔女能力展开复仇的故事，围绕“伤害善良之 ...全文",
+      "reposts": 3,
+      "comments": 8,
+      "likes": 26,
+      "keywords": [
+        "现在就出发 开播",
+        "现在就出发 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325382792249498",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325381660053943",
+      "platform": "weibo",
+      "author": "K姐9666",
+      "followers": "1",
+      "verified": false,
+      "published_at": "2026-07-27T19:56:31",
+      "text": "#百花杀# 我的评分：好看。近几年全部看完没弃剧的 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
         "百花杀 弃剧"
       ],
-      "permalink": "https://m.weibo.cn/detail/5324860798795949",
+      "permalink": "https://m.weibo.cn/detail/5325381660053943",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "douban_273654693",
+      "id": "5325377539155152",
+      "platform": "weibo",
+      "author": "钱财多多身体棒棒",
+      "followers": "1147",
+      "verified": false,
+      "published_at": "2026-07-27T19:40:09",
+      "text": "百花杀看到目前感觉还行，最起码能看的下去，不会让人想弃剧，唯一的槽点是男女主非得在战场上亲亲吗？虽然是刚刚打赢了吧，但是战场上啊喂 还有定王妃自杀抹脖都得原地转两圈吗，不过好像好多剧都这样 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "百花杀 弃剧"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325377539155152",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325377148816280",
+      "platform": "weibo",
+      "author": "Lux序",
+      "followers": "1421",
+      "verified": false,
+      "published_at": "2026-07-27T19:38:36",
+      "text": "7.27📚🍊共计1jf豆瓣              计1jf   专栏 · Lux序 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "兵自风中来 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325377148816280",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325376428445016",
+      "platform": "weibo",
+      "author": "是大蚊呀_1015",
+      "followers": "153",
+      "verified": false,
+      "published_at": "2026-07-27T19:35:44",
+      "text": "黄sir，微博密码忘了吗？这里麻烦也更新一下吧！@黄景瑜 黄景瑜现在就出发 三亚·蜈支洲岛旅游风景区 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325376428445016",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325376332763563",
+      "platform": "weibo",
+      "author": "锅包肉嘟嘟_Johnny",
+      "followers": "190",
+      "verified": true,
+      "published_at": "2026-07-27T19:35:21",
+      "text": "黄景瑜 啊啊啊 ins也更新啦@黄景瑜 #黄景瑜现在就出发# ",
+      "reposts": 1,
+      "comments": 1,
+      "likes": 1,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325376332763563",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325371329481128",
+      "platform": "weibo",
+      "author": "瑜行无界",
+      "followers": "3万",
+      "verified": true,
+      "published_at": "2026-07-27T19:15:28",
+      "text": "ins也更新了，就差📕更新夏天了，期待你把你拍发出来。#现在就出发4三亚开录#   #黄景瑜说演林臻东是赶上了#  @黄景瑜 ",
+      "reposts": 21,
+      "comments": 11,
+      "likes": 94,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325371329481128",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325371056324812",
+      "platform": "weibo",
+      "author": "晶-瑜-儿",
+      "followers": "3.2万",
+      "verified": true,
+      "published_at": "2026-07-27T19:14:22",
+      "text": "黄景瑜#黄景瑜现在就出发##现在就出发4三亚开录# ins 更新帅照 是不也被自己帅到了最近几天是忘了微博密码吗@黄景瑜 #黄景瑜说演林臻东是赶上了# ",
+      "reposts": 12,
+      "comments": 10,
+      "likes": 71,
+      "keywords": [
+        "现在就出发 更新"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325371056324812",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325361757819130",
+      "platform": "weibo",
+      "author": "栖归月",
+      "followers": "1.6万",
+      "verified": true,
+      "published_at": "2026-07-27T18:37:26",
+      "text": "#用AI把这一秒过火做成民国解密游戏#虽然剧情略显尴尬雷霆，但是王楚然往那一站就已经赢了！ 栖归月的微博视频 ",
+      "reposts": 0,
+      "comments": 16,
+      "likes": 51,
+      "keywords": [
+        "这一秒过火 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325361757819130",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325360633742694",
+      "platform": "weibo",
+      "author": "小兔包咿呀嘿",
+      "followers": "22.6万",
+      "verified": true,
+      "published_at": "2026-07-27T18:32:58",
+      "text": "腾讯那部刚收官的《百花杀》站内热度一路冲破28600，光是一个“雪夜诀别”的片段在短视频平台上就斩获了超十亿的播放量但最让全网炸锅的，不是何与和孟子义这对双强CP有多虐，而是导演硬生生靠着衣服摩擦声和错位镜头，搞出了一场火上热搜的“三人浴桶吻”这波操作一出，算是彻底把内娱古装剧拍 ...全文",
+      "reposts": 9,
+      "comments": 2,
+      "likes": 4,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325360633742694",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325358124761898",
+      "platform": "weibo",
+      "author": "奶鞠啵",
+      "followers": "12",
+      "verified": false,
+      "published_at": "2026-07-27T18:23:00",
+      "text": "鞠婧祎最近在xhs老是刷到这样的疑问“《来战》在🐧和🥝双pt播出我们应该优先看哪个pt”在此之前我已经询问了@FocusJ_知事阁 阁子给出的回答是“腾讯视频”       那再来说说我的看法 想要双pt破w还是很难的 粉丝意见不统一就会造成各做各的🌳🍊 反而会让剧集rd分流造成无法破w的现象  ...全文",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 剧 下架"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325358124761898",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325351859261335",
+      "platform": "weibo",
+      "author": "LLuux7-",
+      "followers": "104",
+      "verified": false,
+      "published_at": "2026-07-27T17:58:06",
+      "text": "#这一秒过火# 我的评分：🌟亮点推荐：画面绝美，题材新颖，剧情紧凑，全员演技颜值在线，张凌赫对角色的透彻理解和克制内敛的演技，完美诠释了慕容清峄，剧情跌宕起伏，冲突不断升级，越看越上头，非常值得看！ ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "这一秒过火 值得看"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325351859261335",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325348789291611",
+      "platform": "weibo",
+      "author": "柚柚鸭_",
+      "followers": "3",
+      "verified": false,
+      "published_at": "2026-07-27T17:45:54",
+      "text": "终于有喜欢的剧了～开追 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "兵自风中来 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325348789291611",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325348436705612",
+      "platform": "weibo",
+      "author": "风起_spring",
+      "followers": "3510",
+      "verified": true,
+      "published_at": "2026-07-27T17:44:29",
+      "text": "#现在就出发4三亚开录# 沈腾大叔带着他的“显眼包”兄弟们去三亚霍霍了，这次还空降了一位“清冷搞笑女”王楚然，这配置简直是给咱们的电子榨菜里加了猛料！🌊🎬听说这一季玩起了“冰火两重天”，北边刚在齐齐哈尔冻得瑟瑟发抖，转头就来三亚晒日光浴潜水，这温差比我的工资条波动还大。🥶☀️ ...全文",
+      "reposts": 0,
+      "comments": 10,
+      "likes": 47,
+      "keywords": [
+        "现在就出发 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325348436705612",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325345477631146",
+      "platform": "weibo",
+      "author": "她似故人归",
+      "followers": "135",
+      "verified": false,
+      "published_at": "2026-07-27T17:32:45",
+      "text": "完美世界动漫官方带头在500人大群里面褥女，造女性黄色💊言！不把女性当人看！必须下架，完美世界活着都是浪费资源，不尊重女性的动漫没有必要播，快点下架停更，永不复更！@完美世界动画官微 @腾讯视频动漫 @腾讯视频 @腾讯动漫 @中国妇女报 #完美世界停更下架#",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 1,
+      "keywords": [
+        "腾讯视频 剧 下架"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325345477631146",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325344911397081",
+      "platform": "weibo",
+      "author": "浅语清谈",
+      "followers": "407",
+      "verified": true,
+      "published_at": "2026-07-27T17:30:30",
+      "text": "#徐正溪百花杀下线九门上线#刚送别 《百花杀》里偏执悲情的萧长卿，徐正溪无缝切换进 《九门》演二月红，这反差太顶了！前脚深宫权谋爱而不得，后脚民国江湖风华担起，戏路宽得离谱。 萧长卿自戕下线还是意难平，二月红又让人期待值拉满，演员用角色说话，这波无缝接档直接封神，坐等 ...全文",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 16,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325344911397081",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325341657661837",
+      "platform": "weibo",
+      "author": "不要娱香菜",
+      "followers": "1.4万",
+      "verified": true,
+      "published_at": "2026-07-27T17:17:33",
+      "text": "教科书级别的演技！徐正溪凭萧长卿再次封神真心想说一句：徐正溪的古装，永远不会让人失望！这次在《百花杀》里真的又被他狠狠惊艳到，完全是越看越沦陷的程度，太适合古装权谋剧了！很多演员演权臣王爷只会演“冷、拽、狠”，特别脸谱化，但徐正溪真的不一样！他把萧长卿这个人物演得有骨、有 ...全文",
+      "reposts": 25,
+      "comments": 0,
+      "likes": 3,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325341657661837",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325326779417559",
+      "platform": "weibo",
+      "author": "茶茶茶瓶宝",
+      "followers": "2",
+      "verified": false,
+      "published_at": "2026-07-27T16:18:27",
+      "text": "#百花杀步疏林恢复女装赐婚# 百密一疏CP的结局真的封神，沈汐和赐婚化解步疏林欺君隐患，她卸下男装枷锁以女装示人，转身奔赴军营保家卫国，柔美长相之下藏着不输任何男儿的将帅气魄。 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325326779417559",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325318614419792",
+      "platform": "weibo",
+      "author": "广西日报",
+      "followers": "750.4万",
+      "verified": true,
+      "published_at": "2026-07-27T15:46:00",
+      "text": "#龚俊环法赛事摇铃嘉宾#已官宣阵容的待播剧里，有你喜欢关注的新剧吗~即将到来的八月，好戏连台，你期待哪些新剧开播？#白鹿欢娱分手戏 朝玉阶##迪丽热巴 VOGUE##张凌赫对章若楠吹口哨##虞书欣灿如繁星收官回复##陈伟霆陈瑶都是原名#@肖战 @周依然6 @彭昱畅 《莫得闲》@龚俊Simon《凤舞九天》 ...全文",
+      "reposts": 48,
+      "comments": 25,
+      "likes": 704,
+      "keywords": [
+        "醉梦 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325318614419792",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325315439332156",
+      "platform": "weibo",
+      "author": "冲浪漫漫",
+      "followers": "11.8万",
+      "verified": true,
+      "published_at": "2026-07-27T15:33:23",
+      "text": "#百花杀步疏林恢复女装赐婚#  终于等到百密一疏圆满结局，沈汐和赐婚促成良缘，步疏林恢复女儿身任职参军，女装造型颜值直接封神。",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 0,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325315439332156",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325307043381634",
+      "platform": "weibo",
+      "author": "成都文理学院",
+      "followers": "26.3万",
+      "verified": true,
+      "published_at": "2026-07-27T15:00:01",
+      "text": "#文理放映厅##成都文理学子暑期正当时# 《百花杀》步疏林女装打戏直接封神！一袭素雅长裙，褪去世子戎装，柔美裙袂翻飞间招式凌厉。往日伪装纨绔的世子，此刻展露真实模样，柔与烈极致碰撞，每一帧又美又有冲击力。                                                          编辑｜龚靓羚           ...全文",
+      "reposts": 41,
+      "comments": 18,
+      "likes": 4,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325307043381634",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325304345922309",
+      "platform": "weibo",
+      "author": "就不困芽",
+      "followers": "1432",
+      "verified": true,
+      "published_at": "2026-07-27T14:49:18",
+      "text": "#周深脱口秀没想到这么好笑#周深有时候真的挺搞笑的呀，而且他参加跑男也特别有综艺效果，而且也放得开，周深在《脱口秀和Ta的朋友们3》里彻底放飞，靠一段对王大刀的即兴模仿直接封神，网友看过正片后集体真香“没想到这么好笑”。一、爆笑名场面：抽象模仿让人忘记原唱神来之笔：点评环节中，周深 ...全文",
+      "reposts": 0,
+      "comments": 40,
+      "likes": 57,
+      "keywords": [
+        "脱口秀和Ta的朋友们 封神",
+        "脱口秀和Ta的朋友们 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325304345922309",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325296775726452",
+      "platform": "weibo",
+      "author": "人生得意MCN",
+      "followers": "27万",
+      "verified": true,
+      "published_at": "2026-07-27T14:19:13",
+      "text": "#孟子义百花杀33集7分19秒# 孟子义这段表演封神了吧！面对荣妃逼迫交权，眼神从冷静到凌厉层层递进，拿出懿旨喊“跪下”时简直A爆！沈汐和用行动证明：真正的底牌从来不是别人给的，而是自己骨子里的坚韧！#孟子义这一声跪下太解气了# ",
+      "reposts": 1,
+      "comments": 2,
+      "likes": 2,
+      "keywords": [
+        "百花杀 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325296775726452",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325276978086201",
+      "platform": "weibo",
+      "author": "脱口秀和Ta的朋友们",
+      "followers": "9.8万",
+      "verified": true,
+      "published_at": "2026-07-27T13:00:33",
+      "text": "#脱友3的会客厅# 欢聚会客厅，回味大王洞！今天18:00-19:00 @封馨童fairia @韩大狗咯 @单口喜剧林琛 @世玉不是玉 @小块哪好笑了 惊喜开播！想知道“大王洞之夜”联欢晚会脱友们都做了哪些准备吗？想了解晚会更多幕后故事吗？蹲守直播间，一起来听听大王洞里的趣味小彩蛋吧～每周五周六12点锁定 ...全文",
+      "reposts": 1,
+      "comments": 7,
+      "likes": 7,
+      "keywords": [
+        "脱口秀和Ta的朋友们 预告"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325276978086201",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325264093447909",
+      "platform": "weibo",
+      "author": "Sushiyu_",
+      "followers": "4",
+      "verified": false,
+      "published_at": "2026-07-27T12:09:21",
+      "text": "最近的热播剧 只有百花杀追完了真的很好看啊 其他的追了没几集就弃剧了 ",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 2,
+      "keywords": [
+        "百花杀 弃剧"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325264093447909",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325263835501701",
+      "platform": "weibo",
+      "author": "追星少女杨淑芬",
+      "followers": "56.2万",
+      "verified": true,
+      "published_at": "2026-07-27T12:08:20",
+      "text": "#第一次见吃西瓜的速度比我抢票还快# 脱友3的吃西瓜大赛卷成这样了？！王大刀一上来8秒31我直呼大神，结果贾耗反手2秒30直接封神……这哪是吃西瓜啊，这是西瓜在嘴里原地消失术吧！#脱口秀和Ta的朋友们# ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 3,
+      "keywords": [
+        "脱口秀和Ta的朋友们 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325263835501701",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "pos"
+    },
+    {
+      "id": "5325258011706132",
+      "platform": "weibo",
+      "author": "喝红茶房日志",
+      "followers": "1.3万",
+      "verified": true,
+      "published_at": "2026-07-27T11:45:11",
+      "text": "#太后得知萧华雍是亲孙子后悔莫及#        刚追完《百花杀》，真的是一口老血堵在胸口！那个一直慈眉善目、每天给太子萧华雍准备点心的孟太后，居然给他下了二十年的慢性毒！         而最讽刺的是，她恨了一辈子、报复了一辈子的那个孩子，竟然是她亲儿子，谦王的遗腹子，是她在这世上最后的血脉。 ...全文",
+      "reposts": 0,
+      "comments": 2,
+      "likes": 13,
+      "keywords": [
+        "百花杀 抠图"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325258011706132",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325257080833034",
+      "platform": "weibo",
+      "author": "Ning逝",
+      "followers": "2.9万",
+      "verified": true,
+      "published_at": "2026-07-27T11:41:29",
+      "text": "不讲爱情的军旅剧 太好了是纯军旅剧，我们“纯战党”有救了！ Ning逝的微博视频 ",
+      "reposts": 0,
+      "comments": 0,
+      "likes": 2,
+      "keywords": [
+        "兵自风中来 好评"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325257080833034",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325255259200029",
+      "platform": "weibo",
+      "author": "想做一朵海棠花",
+      "followers": "106",
+      "verified": false,
+      "published_at": "2026-07-27T11:34:15",
+      "text": "花开锦绣  如果是想要爆剧就好好打磨剧情，保证一番主角赵凌的主体待遇，别乱开滤镜，到时候实景变抠图就尴尬了！赵凌用原声更能表现人物情绪，希望用原声 ",
+      "reposts": 2,
+      "comments": 3,
+      "likes": 15,
+      "keywords": [
+        "花开锦绣 抠图"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325255259200029",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325247679038050",
+      "platform": "weibo",
+      "author": "抱着云朵等日出哦",
+      "followers": "24",
+      "verified": false,
+      "published_at": "2026-07-27T11:04:08",
+      "text": "#黄景瑜深V快开到腰了##黄景瑜给我干到哪年来了#黄景瑜录制现在就出发造型封神，深V西装随性松弛，浅发金边眼镜复古感拉满，恍惚间直接回到贺兰出圈的时候，要素全到离谱 ",
+      "reposts": 0,
+      "comments": 1,
+      "likes": 0,
+      "keywords": [
+        "现在就出发 封神"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325247679038050",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "5325246640685738",
+      "platform": "weibo",
+      "author": "你很猫",
+      "followers": "2.3万",
+      "verified": true,
+      "published_at": "2026-07-27T11:00:00",
+      "text": "CCTV8 黄金档 Q3将播4部剧：第一部 《兵自风中来》主演：欧豪、蓝盈莹第二部 《重器》主演：黄景瑜、蒋奇明、张佳宁第三部 《醒来》主演：欧豪、古力娜扎、江疏影第四部 《交锋》主演：王凯、彭昱畅你最想看哪一部？ ",
+      "reposts": 0,
+      "comments": 28,
+      "likes": 109,
+      "keywords": [
+        "兵自风中来 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325246640685738",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325244652066293",
+      "platform": "weibo",
+      "author": "冻梨好吃",
+      "followers": "2569",
+      "verified": false,
+      "published_at": "2026-07-27T10:52:06",
+      "text": "这个九月看着竞争很激烈啊啊啊… 虽然我觉得看播剧速度，八月这几部能播出来三个就不错了，九月这个更是 ",
+      "reposts": 2,
+      "comments": 10,
+      "likes": 11,
+      "keywords": [
+        "醉梦 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325244652066293",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "5325243172522927",
+      "platform": "weibo",
+      "author": "北风余可乐",
+      "followers": "3.2万",
+      "verified": true,
+      "published_at": "2026-07-27T10:46:13",
+      "text": "🐧腾讯排播更新【8月】《藏锋》段奕宏 余男 阿如那 李纯 万鹏《花开锦绣》丁禹兮 邓恩熙 温峥嵘 范诗然《囧徒之预演告别》贾冰 田嘉瑞《金色》辛芷蕾 尹昉 陈坤 高伟光 吴汉坤 卜冠今 《士兵荣耀》李昀锐 陈永胜 周放 周政杰【9月】《交锋》王凯  周依然 欧豪 彭昱畅《醉梦》刘诗诗 ...全文",
+      "reposts": 23,
+      "comments": 44,
+      "likes": 114,
+      "keywords": [
+        "醉梦 阵容"
+      ],
+      "permalink": "https://m.weibo.cn/detail/5325243172522927",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neu"
+    },
+    {
+      "id": "douban_268970917",
       "platform": "douban",
       "author": null,
       "followers": null,
       "published_at": null,
-      "text": "桃花坞停播🍉",
+      "text": "第三季｜我支持现发4明天开播",
       "reposts": null,
       "comments": null,
       "likes": null,
       "keywords": null,
       "permalink": null,
-      "filtered_as_noise": false,
-      "noise_reason": null,
+      "filtered_as_noise": true,
+      "noise_reason": "未提及腾讯视频/无关组帖",
       "sentiment": "neu"
     },
     {
@@ -919,14 +3407,14 @@
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-23T18:14:19",
-      "date_text": "4天前 广东",
+      "published_at": "2026-07-23T10:07:25",
+      "date_text": "5天前 广东",
       "text": "腾讯视频给我退钱！ 腾讯你看看这合理吗？只有第一集有臻彩，后面全都没有了只有被削减鸡肋的1080p，糊过b站盗版，吃相难看，我作为消费者本来就是为了画质才开的会员，结果现在会员比免费资源还糊？你还做什么生意？退钱吧 糊得要死看得我一肚子火。\n\t\n#画质 #腾讯视频 #画质差 #腾讯#追剧",
       "reposts": null,
       "comments": null,
       "likes": null,
       "keywords": "腾讯视频 加载不出来",
-      "permalink": "https://www.xiaohongshu.com/explore/6a60e19000000000100260f2?xsec_token=ABN1U0M8_UxgfhXG72EbTZIllQEICn5vdngiP-SHy0dJg=&xsec_source=",
+      "permalink": "https://www.xiaohongshu.com/explore/6a60e19000000000100260f2?xsec_token=ABN1U0M8_UxgfhXG72EbTZIllQEICn5vdngiP-SHy0dJg=&xsec_source=pc_feed",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
@@ -936,14 +3424,14 @@
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-22T18:14:19",
-      "date_text": "5天前 江苏",
+      "published_at": "2026-07-22T10:07:25",
+      "date_text": "6天前 江苏",
       "text": "腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了，还要我升级到svip才能看，腾讯，你的吃相太难看了#别太离谱了 #好好好这么玩是吧 #腾讯视频 #腾讯svip",
       "reposts": null,
       "comments": null,
       "likes": null,
       "keywords": "腾讯视频 黑屏",
-      "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=",
+      "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=pc_feed",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
@@ -953,290 +3441,241 @@
       "platform": "xiaohongshu",
       "author": null,
       "followers": null,
-      "published_at": "2026-07-22T18:14:19",
-      "date_text": "5天前 河南",
+      "published_at": "2026-07-22T10:07:25",
+      "date_text": "6天前 河南",
       "text": "腾讯视频自动续费成功退款 没有收到通知提醒就直接自动续费了，在小红书搜了维权教程结果投诉无果，发现简单快捷的方式，十分钟不到就成功退款了！！\np1：扣款截图\np2：按照小红书维权教程开始投诉\np3：腾讯客服投诉\np4：得到回复，拒绝退款\np5：持续投诉，已经没有任何回复了\n❗正确操作过程：\np6：打开腾讯视频app，个人中心-右上角设置-专属客服\np7：复制如下话术：根据2021年5月1号实施的《 网络交易监督管理办法 》法律明确说明自动续费需要在五日前已较为显著的方式提醒消费者，但是我没有收到任何显著的提醒你们那边就给我自动续费了，我不接受，这是违法的，我要退款！\np8-10：申请退款\np11-12：5分钟退款到账\n\t\n注意：腾讯视频退款渠道中，只有一次退款机会，请注意关闭自动续费#维护自己的权益 #退款也是原路退回 #腾讯视频自动续费 #自动续费",
       "reposts": null,
       "comments": null,
       "likes": null,
       "keywords": "腾讯视频 加载不出来",
-      "permalink": "https://www.xiaohongshu.com/explore/6a5f3ae3000000000402ae2d?xsec_token=ABgqeEvSp67VBbmdpHezmo4OvToXLy28mQ4plIqzHKy_w=&xsec_source=",
+      "permalink": "https://www.xiaohongshu.com/explore/6a5f3ae3000000000402ae2d?xsec_token=ABgqeEvSp67VBbmdpHezmo4OvToXLy28mQ4plIqzHKy_w=&xsec_source=pc_feed",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "6a5cce53000000001c00c0ab",
-      "platform": "xiaohongshu",
-      "author": null,
-      "followers": null,
-      "published_at": "2026-07-20T18:14:19",
-      "date_text": "7天前 山西",
-      "text": "腾讯好恶心 又在剧集前加了广告，烦都烦死了",
-      "reposts": null,
-      "comments": null,
-      "likes": null,
-      "keywords": "腾讯视频 广告",
-      "permalink": "https://www.xiaohongshu.com/explore/6a5cce53000000001c00c0ab?xsec_token=ABIW84XntO2eaTw4KGNV7mqd1iG8jm_Sq0i2e9GDnYdYM=&xsec_source=",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400208564",
+      "id": "heimao_17400240554",
       "platform": "heimao",
       "author": "正义喵",
       "followers": null,
-      "published_at": "2026-07-26 23:11:13",
-      "text": "腾讯视频自动续费扣费 我在2026年7月26日中午1:27左右，收到了腾讯的扣款记录，我发现扣款之后尝试申请退款但是收不到验证码，客服一直不回复卡死压根联系不上人工客服\n自动续费压根就没有醒目提示和弹窗，只有扣款后才有提示作违反了《网络交易监督管理办法》属于不知情扣费\n无故被会员扣费¥25元反复多次尝试联系客服申请退款，浪费了时间和...",
+      "published_at": "2026-07-27 20:23:38",
+      "text": "未使用腾讯会员自动续费扣款，要求退款 被腾讯视频自动续费扣款，扣费后没有使用会员任何权益，向客服申请退款被直接拒绝。自动续费提醒不足，未消费情况下拒绝退费，诉求全额原路退还扣费金额。上传所有截图证据。",
       "reposts": null,
       "comments": 0,
       "likes": 0,
-      "keywords": "退款|自动续费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400208564/?sld=9357aa814f2591318cb10a03bbb99bd3",
+      "keywords": "退款|自动续费未使用会员",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400240554/?sld=18be12447ab60e0b39107bba029be439",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "heimao_17400205579",
-      "platform": "heimao",
-      "author": "勇敢喵",
-      "followers": null,
-      "published_at": "2026-07-26 20:40:32",
-      "text": "向腾讯视频申请退款不成功 我于2026年7月24日13:33购买花费19元购买了腾讯视频SVIP，由于腾讯视频并为对我进行明显提示，充值错误账号，寻找客服却告知我他们退不了要我找Apple官方，但我在Apple官方申请了两次退款都没成功，并将此事一直拖到现在7月26号了都还未解决。现在我要求腾讯公司将我的19元全部退还",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款|申请退款/提现不到账,霸王条款",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400205579/?sld=db242d0272477d06552e5a87c99818f4",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400204319",
-      "platform": "heimao",
-      "author": "勇敢喵",
-      "followers": null,
-      "published_at": "2026-07-26 19:46:45",
-      "text": "2026年7月26日腾讯视频自动续费无提醒，诉求退款 我于2026年7月26日被腾讯视频自动续费会员一月，在此之前并未有短信提醒，要求退款",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款|自动续费,客服不处理/处理不当",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400204319/?sld=9896751c1e8bba1b8d1f7d49a2dc9d1c",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400204237",
-      "platform": "heimao",
-      "author": "勇敢喵",
-      "followers": null,
-      "published_at": "2026-07-26 19:43:45",
-      "text": "腾讯视频间隔数日重试扣费，未提前告知拒不退款 本人腾讯视频微信自动续费，会员到期当日余额不足扣费失败，会员权益随即中断。平台时隔多日，没有发起新一轮续费提醒，静默重试补扣35元。扣费成功之后，至今我未观看任何VIP影视，没有享用新周期会员权益。\n腾讯客服以内部“重试扣费规则”为由直接拒绝退款。商家单方面格式条款限制消费者退款权利，扣费前未履行充分告...",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款|自动续费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400204237/?sld=2d741e0d453005690fd0b13bae2156fc",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400202821",
-      "platform": "heimao",
-      "author": "机灵喵",
-      "followers": null,
-      "published_at": "2026-07-26 18:46:33",
-      "text": "腾讯视频 在我不知情情况下，腾讯视频会员连续七八个月扣费，对此很不满，2025年9月开始，中间有一个月不扣费，后面连续扣费",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款|自动续费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400202821/?sld=f73495a5c9c50538046eb4814e6297f5",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400202196",
-      "platform": "heimao",
-      "author": "正义喵",
-      "followers": null,
-      "published_at": "2026-07-26 18:25:00",
-      "text": "腾讯视频自动续费乱扣款 腾讯视频在我不知情的情况下自动续费从2023年6月15日开始扣每月25元会员费，一直到现在，一共扣了930元，我不知道会自动续费，扣费前没有弹窗、短信提醒，麻烦帮我全额退款，谢谢！",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款|自动续费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400202196/?sld=19d40f0711b40c033899c2a1d970352f",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400202156",
-      "platform": "heimao",
-      "author": "友爱喵",
-      "followers": null,
-      "published_at": "2026-07-26 18:23:55",
-      "text": "腾讯视频乱收费 本人充值腾讯视频SVIP，平台热播剧《百花杀》大结局需要额外付费18元购买点映礼才能提前观看。该模式属于变相超前点播，会员付费后还要二次花钱解锁正片内容，购买会员时未醒目提示存在额外付费项目，侵害消费者公平交易权。\n诉求：1、取消该剧点映礼收费；2、开放SVIP正常观看全部大结局；3、规范剧集收费模式，杜绝会...",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "改善服务|乱收费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400202156/?sld=abd3df7a0a51562f4710432b0814761a",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400199312",
-      "platform": "heimao",
-      "author": "勇敢喵",
-      "followers": null,
-      "published_at": "2026-07-26 16:56:19",
-      "text": "商家不解决问题 本人被腾讯视频VIP微信自动续费扣费，忘记关闭自动续费，扣费前没有明显弹窗提醒。我已经通过微信账单投诉商家多次，长期无任何回复；联系腾讯视频在线客服协商退款无果。现申请本次扣费全额原路退还，希望平台尽快协调处理。",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款,改善服务|客服不处理/处理不当,申请退款/提现不到账,联系不到客服",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400199312/?sld=fad14662ddeeb7f1398a3c37d7363b5b",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400198787",
-      "platform": "heimao",
-      "author": "友爱喵",
-      "followers": null,
-      "published_at": "2026-07-26 16:42:31",
-      "text": "未成年开通了VIP没有关自动扣费，他们在我没有输密码，不知道的情况下扣我的钱， 我在2026年6月25号，我弟弟未成年开通了VIP，然后没有关自动扣费，在我不知道的情况下也没有输密码的情况下，后台自动扣了我的钱，我现在的要求是把我的钱立马退回来",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款|自动续费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400198787/?sld=737de85e6a3e3393720ae96de5d44250",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400197347",
+      "id": "heimao_17400238691",
       "platform": "heimao",
       "author": "洞察喵",
       "followers": null,
-      "published_at": "2026-07-26 16:04:01",
-      "text": "深圳市腾讯计算机系统有限公司会员乱扣费 腾讯视频会员乱扣费多年，多次联系腾讯官方推诿拒不处理乱扣费以及取消续费问题，多次要求腾讯官方取消关闭自动续费服务，一直未回应，短信回复无法解决，官方客服表示只能记录反馈审核结果无疾而终，从未使用过其服务，为何连取消扣费都难于登青天",
+      "published_at": "2026-07-27 19:20:43",
+      "text": "腾讯视频乱扣费不退款 我于2026年7月27日早上九点的时候收到腾讯视频的68元扣费通知，没有提前告知，也没有需要确认，款就在微信里面给扣走了，我九点二十三分的时候就申请了退款，我一没有使用，二没有同意，但是客服就回了一堆不相干的话，这不是明抢吗？我现在只想把钱退回来，",
       "reposts": null,
       "comments": 0,
       "likes": 0,
-      "keywords": "退款,作出处罚,解释,开发票|客服不处理/处理不当,乱收费,自动续费,强迫收费,联系不到客服,发票问题",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400197347/?sld=ad05fd796c95d7943f4708dd87fe6fbe",
+      "keywords": "退款|客服不处理/处理不当,强迫收费,乱收费,服务不到位/态度差,申请退款/提现不到账",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400238691/?sld=4ab71c3a3751862fbc532d56b9d297d4",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "heimao_17400194606",
+      "id": "heimao_17400238447",
       "platform": "heimao",
       "author": "正义喵",
       "followers": null,
-      "published_at": "2026-07-26 14:48:41",
-      "text": "没有使用任何会员权益拒不退款 多次推诿 本人于2026年07月22日遭遇腾讯视频自动续费扣款35元。本人主观无意续费，扣费完成后从未登录账号、没有观看任何VIP影视内容，完全没有享受本次周期内任何会员权益。\n \n自7月22日扣款当日起，我多次联系腾讯视频客服申请全额原路退款，平台反复套用固定模板，以“会员权益已开通不予退款”为由持续拒绝协商。\n商家所称“虚拟...",
+      "published_at": "2026-07-27 19:12:05",
+      "text": "腾讯视频APP云包场奖励缺失，客户投诉 腾讯视频APP诱导客户看云包场结果不给发放奖励",
       "reposts": null,
       "comments": 0,
       "likes": 0,
-      "keywords": "退款|霸王条款,申请退款/提现不到账,客服不处理/处理不当,自动续费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400194606/?sld=7a513be37dabb52485c9b30ce340eb51",
+      "keywords": "赔偿,解释|客服不处理/处理不当,虚假/误导宣传,账号问题",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400238447/?sld=048a13473878dffe9556d97703c2151f",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "heimao_17400194376",
+      "id": "heimao_17400238419",
       "platform": "heimao",
       "author": "友爱喵",
       "followers": null,
-      "published_at": "2026-07-26 14:42:18",
-      "text": "自动续费没有提醒 自动续费没有提醒，等我找到已经自动续费成功了",
+      "published_at": "2026-07-27 19:10:58",
+      "text": "一直申请退款，没有结果 小孩不小心点了会员，那个链接在我不知道的情况下扣了我四年的会员费用，我申请退款一直没有结果",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款|申请退款/提现不到账",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400238419/?sld=9aa451b35f0e9770ff2ff47f0a1221ef",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "heimao_17400237939",
+      "platform": "heimao",
+      "author": "机灵喵",
+      "followers": null,
+      "published_at": "2026-07-27 18:55:50",
+      "text": "深圳市腾讯计算机系统有限公司在顾客不知情况下自动续费 该企业旗下腾讯视频VIP服务，在我不知情、未收到任何显著提前提醒的情况下，私自完成自动续费扣费，违反《网络交易监督管理办法》第十八条关于自动续费的规定。本人通过微信支付开通腾讯视频VIP自动续费服务，于近期被自动扣款35元。根据《网络交易监督管理办法》第十八条明确规定：经营者采用自动续费等方式提供服务的...",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款,解释,道歉,作出处罚|申请退款/提现不到账,自动续费,服务不到位/态度差,联系不到客服,客服不处理/处理不当",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400237939/?sld=1f231678acc52eadaf08539ebc1445da",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "heimao_17400236767",
+      "platform": "heimao",
+      "author": "正义喵",
+      "followers": null,
+      "published_at": "2026-07-27 18:21:33",
+      "text": "未成年人退款 家中未成年人在腾讯游戏进行充值消费，我按照平台流程提交未成年人退款申请。腾讯方面以游戏道具已消耗为由核算退费，给出的退款金额远低于合理标准。现申请复审，期望退款金额1380.03元。希望平台依据未成年人网络消费相关法规重新核算订单，妥善处理退款事宜 我多次进行复审处理还是141块钱 和消费账单不符还有很多图...",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款|未成年人退款",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400236767/?sld=619159113f42ce448cb59bda8f7137ce",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "heimao_17400228388",
+      "platform": "heimao",
+      "author": "正义喵",
+      "followers": null,
+      "published_at": "2026-07-27 15:17:03",
+      "text": "腾讯视频自动续费未履行显著提醒义务 我于2026年7月26日通过微信自动续费支付35元购买腾讯视频SVIP，支付时未提示账号归属，导致误充到朋友手机号（尾号5717）上。本人账号未使用任何VIP权益，朋友也未观看，现要求全额退款。根据2026年网络服务续费新规，扣费前未收到显著提醒，请协助处理。交易单号请查后台记录。",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款|客服不处理/处理不当,联系不到客服,自动续费",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400228388/?sld=b693a1cea505221b0a92978cc54202ac",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "heimao_17400228036",
+      "platform": "heimao",
+      "author": "正义喵",
+      "followers": null,
+      "published_at": "2026-07-27 15:10:20",
+      "text": "腾讯视频会员退费 腾讯视频 从2021年开始不断的自动续费 几十笔订单中途卸载app未使用权益 申请退费",
       "reposts": null,
       "comments": 0,
       "likes": 0,
       "keywords": "退款|自动续费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400194376/?sld=e511960c2a70bbf722fac00a308b9abe",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400228036/?sld=63835f952363df5a832027f940d49d46",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "heimao_17400194333",
-      "platform": "heimao",
-      "author": "友爱喵",
-      "followers": null,
-      "published_at": "2026-07-26 14:41:06",
-      "text": "深圳市腾讯计算机系统有限公司 没有收到任何明显提示被扣费，而且我的会员是中国移动送的，下面有截图，连着两个月被扣！还拒不退款，客服态度极差，一直以各种理由搪塞",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "退款,赔偿,解释,作出处罚,改善服务|申请退款/提现不到账,自动续费,联系不到客服,服务不到位/态度差",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400194333/?sld=887ffa3dd4bb6b3a033488f60e34c65e",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400191458",
-      "platform": "heimao",
-      "author": "正义喵",
-      "followers": null,
-      "published_at": "2026-07-26 13:15:00",
-      "text": "腾讯视频svip被他人恶意换绑，腾讯客服不解决 我的腾讯视频svip家庭卡被他人恶意更换绑定手机号码，诉求解除绑定，找客服一直踢皮球无法解决",
-      "reposts": null,
-      "comments": 0,
-      "likes": 0,
-      "keywords": "恢复账号|客服不处理/处理不当",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400191458/?sld=abf94622a2c2ad5769aa7abd73baa301",
-      "filtered_as_noise": false,
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "heimao_17400188067",
+      "id": "heimao_17400227809",
       "platform": "heimao",
       "author": "机灵喵",
       "followers": null,
-      "published_at": "2026-07-26 11:34:17",
-      "text": "腾讯强买强卖。 腾讯会员自动续费问题。打过电话给客服沟通，说不需要开通了   但是他还是强制性的帮我开通了，并且我说了我的诉求，我说当月那能扣的话，扣掉其他的你得还给我。",
+      "published_at": "2026-07-27 15:06:08",
+      "text": "腾讯视频积分商城 商家商品页面虚假宣传，宣称手环精准测血压、心率，实际检测数值误差巨大，完全不具备健康监测功能，误导消费者购买。\n收到货后多次联系商家协商退换，商家推诿扯皮，拒绝承担退货运费。\n诉求：全额退货退款，商家承担来回运费，平台对商家虚假宣传行为核查处罚，望平台公正处理。",
       "reposts": null,
       "comments": 0,
       "likes": 0,
-      "keywords": "退款,赔偿|强迫收费",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400188067/?sld=e04ac2d5c842ec1a95691c309e970d88",
+      "keywords": "退款,下架产品|会员积分商城",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400227809/?sld=68a366388c75ed4153580855adc9ecfa",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neg"
     },
     {
-      "id": "heimao_17400185393",
+      "id": "heimao_17400226055",
       "platform": "heimao",
-      "author": "洞察喵",
+      "author": "正义喵",
       "followers": null,
-      "published_at": "2026-07-26 10:23:29",
-      "text": "我于2026年7月26日使用腾讯科技（深圳）有限公司运营的腾讯视频APP 我于2026年7月26日在腾讯视频APP，看到平台宣传观看广告兑换免费观影时长。我领取时长后，打开《喜羊羊与灰太狼之奇妙大营救》依旧需要VIP。该影片无法使用广告时长的限制没有醒目展示，只藏在小字协议，误导我观看广告。诉求：平台在受限剧集页面明显标注限制内容。",
+      "published_at": "2026-07-27 14:29:59",
+      "text": "腾讯视频 一直扣款都没用过我需要退款 我不理解因为啥扣款",
       "reposts": null,
       "comments": 0,
       "likes": 0,
-      "keywords": "解释,赔偿,改善服务|虚假/误导宣传,宣传广告续时长却无法观影",
-      "permalink": "https://tousu.sina.com.cn/complaint/view/17400185393/?sld=292a3cd27c8158a84b3286baa01e7901",
+      "keywords": "退款|客服不处理/处理不当,乱收费,申请退款/提现不到账,强迫收费",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400226055/?sld=22bbe26b3aa12d0e63a6efb47cd669e4",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "heimao_17400223350",
+      "platform": "heimao",
+      "author": "勇敢喵",
+      "followers": null,
+      "published_at": "2026-07-27 13:24:38",
+      "text": "微信现腾讯视频自动扣钱，未用且联系不上，盼退全款 微信里有自动扣款，腾讯视频 ，从来没有用过，客户电话也打不通，需要全额退回",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款|申请退款/提现不到账,自动续费,乱收费",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400223350/?sld=68454ae0c146ef8efef87f4341d806ea",
       "filtered_as_noise": false,
       "noise_reason": null,
       "sentiment": "neu"
+    },
+    {
+      "id": "heimao_17400222699",
+      "platform": "heimao",
+      "author": "洞察喵",
+      "followers": null,
+      "published_at": "2026-07-27 13:05:57",
+      "text": "腾讯视频SVIP自动续费退款 孩子于去年七月在腾讯视频开通SVIS不小心开通了自动续费，联系人工提示不在线，对订单有疑惑客服不予回复，我诉求就是予以退款，希望平台给与帮助。",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款|申请退款/提现不到账",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400222699/?sld=b5b3ce4c364ce04a55f4f991653da8a4",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "heimao_17400218626",
+      "platform": "heimao",
+      "author": "勇敢喵",
+      "followers": null,
+      "published_at": "2026-07-27 11:26:50",
+      "text": "自动续费退款。 2006/7/27 10:29:25 根据《网络交易监督管理办法》，  腾讯视频\n未尽到提醒义务，基于此便处分了我的财产\n对我进行了扣费，应该至少在续费的5天前\n对我进行提醒，但是我没有受到任何即将扣\n费的提醒，因此我要求退费",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款|申请退款/提现不到账,自动续费",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400218626/?sld=2cec2f39138ce4dc55d4726b612f0d86",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "heimao_17400215874",
+      "platform": "heimao",
+      "author": "洞察喵",
+      "followers": null,
+      "published_at": "2026-07-27 10:30:23",
+      "text": "腾讯视频自动续费未提醒，消费者要求退98元 我于7月27日在忘记关闭，并不知情的情况下被腾讯视频自动续费扣费98元，关于此自动续费，我要求退款，根据《网络交易管理法》规定，自动续费应当在消费者接受服务的前5日以显著的方式提醒消费者，消费者自行选择消费与否，而你们平台未通过短信或电话的方式提醒我，所以你侵犯了我作为消费者的选择权和知情权，所以我要...",
+      "reposts": null,
+      "comments": 0,
+      "likes": 0,
+      "keywords": "退款|客服不处理/处理不当,联系不到客服,自动续费",
+      "permalink": "https://tousu.sina.com.cn/complaint/view/17400215874/?sld=1a9c3a9c4b89aa57945bf5b80a9837f5",
+      "filtered_as_noise": false,
+      "noise_reason": null,
+      "sentiment": "neg"
     }
   ],
   "risk_history": [
@@ -1359,6 +3798,18 @@
       "neg": 36,
       "total": 36,
       "highlight": "本轮 P0 0起｜P1 1起：会员收费—黑猫投诉集中反映自动续费未告知/退款遭拒（16条）｜P2 1起：技术功能—广告体验与试看限制吐槽（3条）。"
+    },
+    {
+      "date": "2026-07-28",
+      "slot": "10:07（每日自动整合）",
+      "p0": 0,
+      "p1": 1,
+      "p2": 1,
+      "pos": 63,
+      "neu": 89,
+      "neg": 33,
+      "total": 33,
+      "highlight": "本轮 P0 0起｜P1 1起：会员收费—黑猫投诉集中反映自动续费未告知/退款遭拒（14条）｜P2 1起：技术功能—广告体验与试看限制吐槽（1条）。"
     }
   ]
 }
