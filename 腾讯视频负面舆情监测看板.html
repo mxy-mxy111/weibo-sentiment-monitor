@@ -143,9 +143,9 @@
   .charts-row { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:18px; }
   .chart-card { flex:1 1 0; min-width:280px; border:1px solid #eef1f6; border-radius:12px; padding:14px 16px 10px; background:#fbfcfe; }
   .chart-card .chart-title { font-size:13.5px; font-weight:700; color:#1a1a2e; margin-bottom:2px; }
-  .chart-card .chart-sub { font-size:11px; color:#9aa0ac; margin-bottom:10px; }
-  .chart-card .chart-svg-wrap { width:100%; overflow:hidden; }
-  .chart-card svg { display:block; width:100%; height:auto; }
+  .chart-card .chart-sub { font-size:11px; color:#9aa0ac; margin-bottom:10px; min-height:30px; }
+  .chart-card .chart-svg-wrap { width:100%; overflow:hidden; min-height:200px; display:flex; align-items:center; }
+  .chart-card svg { display:block; width:100%; height:188px; }
   .chart-legend { display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:#777; margin-top:8px; }
   .chart-legend span { display:flex; align-items:center; gap:5px; }
   .chart-legend i { width:10px; height:10px; border-radius:3px; display:inline-block; }
@@ -909,7 +909,9 @@ function renderTrendCharts(history, meta, events) {
         { key: 'neu', color: '#90a4ae', name: '中性' },
         { key: 'neg', color: '#e53935', name: '负面' }
       ];
-      seBox.innerHTML = _svgStacked(sdays, segs2, function (d, k) {
+      // 与「风险等级趋势」共用同一组 days（x 轴天数一致），保证两图宽度/高度一致、上下对齐；
+      // 无情感数据的日期以 0 柱显示，空态仍由 sdays 是否为空判定。
+      seBox.innerHTML = _svgStacked(days, segs2, function (d, k) {
           var v = _sv(d, k); return v == null ? 0 : v;
         }) +
         _chartLegend([{ color: '#43a047', name: '正面' }, { color: '#90a4ae', name: '中性' }, { color: '#e53935', name: '负面' }]);
