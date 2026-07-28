@@ -40,12 +40,12 @@
     "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。"
   },
   "kpi": {
-    "total_collected": 1282,
+    "total_collected": 215,
     "collected_by_platform": {
-      "weibo": 669,
-      "douban": 40,
-      "xiaohongshu": 463,
-      "heimao": 110
+      "weibo": 194,
+      "douban": 4,
+      "xiaohongshu": 3,
+      "heimao": 14
     },
     "total_raw": 189,
     "real_negative": 32,
@@ -424,7 +424,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325594452558591",
       "filtered_as_noise": true,
-      "noise_reason": "会员买卖/罗列刷屏广告",
+      "noise_category": "hard",
+      "noise_reason": "会员买卖/罗列刷屏广告(竞品)",
       "sentiment": "neu"
     },
     {
@@ -443,6 +444,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325593973359935",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -462,6 +464,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325593956583298",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -481,6 +484,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325593940069225",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -500,7 +504,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325593283397597",
       "filtered_as_noise": true,
-      "noise_reason": "会员买卖/罗列刷屏广告",
+      "noise_category": "hard",
+      "noise_reason": "会员买卖/罗列刷屏广告(竞品)",
       "sentiment": "pos"
     },
     {
@@ -519,6 +524,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325592581901354",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -538,6 +544,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325592154342088",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -557,6 +564,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325592060757474",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -576,6 +584,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325592023269607",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -595,6 +604,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325591990764265",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -614,6 +624,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325588910838824",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -633,7 +644,8 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325588242105524",
       "filtered_as_noise": true,
-      "noise_reason": "会员买卖/罗列刷屏广告",
+      "noise_category": "hard",
+      "noise_reason": "会员买卖/罗列刷屏广告(竞品)",
       "sentiment": "neu"
     },
     {
@@ -652,6 +664,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325576560445563",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -671,6 +684,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325526377955756",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -690,6 +704,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325502061478260",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -709,6 +724,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325501558423801",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -728,6 +744,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325467663991334",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -747,6 +764,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325449978709218",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -766,6 +784,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325445929108097",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -785,6 +804,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325445648091354",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -804,6 +824,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325445165484109",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -823,6 +844,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325440487000075",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -842,6 +864,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325440426443932",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -861,6 +884,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325440374020224",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -880,6 +904,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325439845537559",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -899,6 +924,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325434372751387",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -918,6 +944,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325431498875058",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -937,6 +964,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325429760067597",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -956,6 +984,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325428203980619",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -976,6 +1005,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325423189697788",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -995,6 +1025,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325421759432950",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1014,6 +1045,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325418266625255",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1034,6 +1066,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325417926099325",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1054,6 +1087,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325414807634056",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1075,6 +1109,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325410374256284",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1094,6 +1129,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325382624478540",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1113,6 +1149,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325365316684267",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1132,6 +1169,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325365070531183",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -1151,6 +1189,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325362239112884",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -1170,6 +1209,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325353341946137",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1189,6 +1229,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325310914465821",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1208,6 +1249,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325301162707250",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1227,6 +1269,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325266835473544",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -1246,6 +1289,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325264881981492",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1265,6 +1309,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325263677949904",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1284,6 +1329,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325261740181360",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1303,6 +1349,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325253355766346",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -1322,6 +1369,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325248182616543",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -1341,6 +1389,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325240343201543",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1360,6 +1409,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325597703144382",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1379,6 +1429,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325596897058931",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1398,6 +1449,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325596003666715",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1417,6 +1469,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325595896448828",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1436,6 +1489,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325595895400887",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1455,6 +1509,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325595569554369",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1474,6 +1529,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325594448628575",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1493,6 +1549,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325594369725150",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1512,6 +1569,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325594011374197",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1531,6 +1589,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325592912467914",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1550,6 +1609,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325592165876923",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1569,6 +1629,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325591474603924",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1588,6 +1649,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325591144565251",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1607,6 +1669,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325590392473517",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1626,6 +1689,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325589753889529",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1645,6 +1709,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325589651129130",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1664,6 +1729,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325588682244315",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1683,6 +1749,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325588546979710",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1702,6 +1769,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325587866452313",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1721,6 +1789,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325587309921137",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1740,6 +1809,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325586814730628",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1759,6 +1829,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325586492031773",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1778,6 +1849,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325585257857233",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1797,6 +1869,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325584490041834",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1816,6 +1889,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325583873739827",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1835,6 +1909,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325582397342684",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1854,6 +1929,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325581995741192",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1873,6 +1949,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325581529122855",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1892,6 +1969,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325580872192443",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1911,6 +1989,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325580234130209",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1930,6 +2009,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325578746203904",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1949,6 +2029,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325578045489886",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -1968,6 +2049,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325577437317547",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -1987,6 +2069,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325575901418574",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2006,6 +2089,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325575894077344",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2025,6 +2109,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325569275463427",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2044,6 +2129,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325568969280328",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2063,6 +2149,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325558911075606",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2082,6 +2169,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325555306072130",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2101,6 +2189,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325525153481180",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2120,6 +2209,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325512911093845",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2139,6 +2229,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325507566764459",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2158,6 +2249,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325499272004021",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2177,6 +2269,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325465114117074",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2196,6 +2289,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325460825179394",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -2215,6 +2309,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325460691223785",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -2234,6 +2329,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325460231684332",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2253,6 +2349,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325458745852199",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2272,6 +2369,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325454231734786",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -2291,6 +2389,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325452132484207",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2310,6 +2409,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325448611629409",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2329,6 +2429,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325448562087540",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2348,6 +2449,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325445307568711",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2367,6 +2469,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325442450984829",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -2386,6 +2489,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325441734807447",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2405,6 +2509,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325439834786593",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2424,6 +2529,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325435036240922",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2443,6 +2549,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325434553897867",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2462,6 +2569,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325432783379148",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2481,6 +2589,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325428858033160",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2500,6 +2609,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325427780616622",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2519,6 +2629,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325427384261927",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2538,6 +2649,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325422357125436",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2557,6 +2669,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325422330912529",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2576,6 +2689,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325420309252721",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2595,6 +2709,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325419537500194",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2614,6 +2729,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325416774243084",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2633,6 +2749,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325416374211106",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2652,6 +2769,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325416110760669",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2671,6 +2789,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325411925098955",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2690,6 +2809,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325409518357265",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2709,6 +2829,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325407974855519",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2728,6 +2849,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325407687803047",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2747,6 +2869,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325407142543970",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2766,6 +2889,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325405311209833",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2785,6 +2909,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325404892043678",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2804,6 +2929,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325399941711089",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2823,6 +2949,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325399383085397",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2842,6 +2969,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325398692856767",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2861,6 +2989,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325396625063956",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2880,6 +3009,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325393796011569",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2899,6 +3029,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325389459098229",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2918,6 +3049,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325389233920026",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2937,6 +3069,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325389015547952",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2956,6 +3089,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325388662446313",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -2975,6 +3109,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325388375133925",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -2994,6 +3129,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325388362028056",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3013,6 +3149,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325387765645775",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3032,6 +3169,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325387497996463",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3052,6 +3190,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325382792249498",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3071,6 +3210,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325381660053943",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3090,6 +3230,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325377539155152",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3109,6 +3250,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325377148816280",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3128,6 +3270,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325376428445016",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3147,6 +3290,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325376332763563",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3166,6 +3310,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325371329481128",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3185,6 +3330,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325371056324812",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3204,6 +3350,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325361757819130",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3223,6 +3370,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325360633742694",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3242,6 +3390,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325358124761898",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3261,6 +3410,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325351859261335",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3280,6 +3430,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325348789291611",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3299,6 +3450,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325348436705612",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3318,6 +3470,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325345477631146",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -3337,6 +3490,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325344911397081",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3356,6 +3510,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325341657661837",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -3375,6 +3530,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325326779417559",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3394,6 +3550,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325318614419792",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3413,6 +3570,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325315439332156",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3432,6 +3590,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325307043381634",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3452,6 +3611,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325304345922309",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3471,6 +3631,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325296775726452",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3490,6 +3651,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325276978086201",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3509,6 +3671,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325264093447909",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3528,6 +3691,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325263835501701",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3547,6 +3711,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325258011706132",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3566,6 +3731,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325257080833034",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3585,6 +3751,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325255259200029",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -3604,6 +3771,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325247679038050",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3623,6 +3791,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325246640685738",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
@@ -3642,6 +3811,7 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325244652066293",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "pos"
     },
@@ -3661,11 +3831,12 @@
       ],
       "permalink": "https://m.weibo.cn/detail/5325243172522927",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neu"
     },
     {
-      "id": "douban_271255461",
+      "id": "douban_269225893",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -3677,6 +3848,7 @@
       "keywords": null,
       "permalink": null,
       "filtered_as_noise": true,
+      "noise_category": "hard",
       "noise_reason": "未提及腾讯视频/无关组帖",
       "sentiment": "neu"
     },
@@ -3694,6 +3866,7 @@
       "keywords": "腾讯视频 加载不出来",
       "permalink": "https://www.xiaohongshu.com/explore/6a60e19000000000100260f2?xsec_token=ABN1U0M8_UxgfhXG72EbTZIllQEICn5vdngiP-SHy0dJg=&xsec_source=pc_feed",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -3711,6 +3884,7 @@
       "keywords": "腾讯视频 黑屏",
       "permalink": "https://www.xiaohongshu.com/explore/6a5f554c000000000f01167d?xsec_token=ABgqeEvSp67VBbmdpHezmo4MZJUq1G_8AnKW_M-LRj4oY=&xsec_source=pc_feed",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },
@@ -3728,6 +3902,7 @@
       "keywords": "腾讯视频 加载不出来",
       "permalink": "https://www.xiaohongshu.com/explore/6a5f3ae3000000000402ae2d?xsec_token=ABgqeEvSp67VBbmdpHezmo4OvToXLy28mQ4plIqzHKy_w=&xsec_source=pc_feed",
       "filtered_as_noise": false,
+      "noise_category": "",
       "noise_reason": null,
       "sentiment": "neg"
     },

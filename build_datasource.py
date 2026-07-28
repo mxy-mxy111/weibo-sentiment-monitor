@@ -144,11 +144,15 @@ def permalink(e):
 # ============================================================
 # 2. 噪音过滤规则
 # ============================================================
-NOISE_PAT = [
+# 推广/控评类（腾讯视频相关，非真实用户情感）→ 归为「中性」，保留在监控量中，不计入负面风险
+PROMO_PAT = [
     r"收\s*(ipad|平板|vip|svip|腾讯)", r"走.?鱼", r"会员共享", r"任意端\d+r", r"到.*过期",
     r"活动来了", r"购买戳", r"连续包年", r"抓紧入", r"太给力", r"年卡.{0,6}158",
     r"来打分", r"守护.*打分", r"摇人", r"低赞一星", r"新号\d.?老号", r"聚宝",
-    r"心有多宽", r"人走茶凉", r"打碎心中", r"多努力", r"抛弃这世界",  # 鸡汤+会员罗列刷屏
+    r"心有多宽", r"人走茶凉", r"打碎心中", r"多努力", r"抛弃这世界",  # 鸡汤+会员罗列刷屏(控评)
+]
+# 竞品/无关内容（非腾讯视频主体，如剪映/爱奇艺套娃、会展等）→ 仍按硬噪音剔除
+IRRELEVANT_PAT = [
     r"茶业博览|会展服务|展会",
     r"剪映",  # 剪映/爱奇艺套娃，非腾讯视频主体
 ]
@@ -186,32 +190,41 @@ HARD_SALE_PAT = [
 ]
 
 def is_noise_weibo(e):
+    """返回 (类别, 原因)。类别: 'hard'=竞品/无关/其他产品(剔除); 'soft'=腾讯视频相关推广/控评/官方(归中性,保留监控量); None=非噪音。"""
     t = e.get("text") or ""
     name = e.get("screen_name") or ""
     if any(o in name for o in OFFICIAL_NAME):
-        return True, "官方/媒体号"
+        return "soft", "官方/媒体号(计中性)"
     if t.count("会员") >= 2 and ("qq音乐" in t.lower() or "芒果tv会员" in t.lower() or "网易云" in t) and "投诉" not in t and "退" not in t:
-        return True, "会员买卖/罗列刷屏广告"
-    for p in NOISE_PAT:
+        return "hard", "会员买卖/罗列刷屏广告(竞品)"
+    for p in IRRELEVANT_PAT:
         if re.search(p, t, re.I):
-            return True, "促销/买卖/控评/无关噪音"
-    return False, ""
+            return "hard", "竞品/无关内容"
+    for p in PROMO_PAT:
+        if re.search(p, t, re.I):
+            return "soft", "控评/腾讯视频推广(计中性)"
+    return None, ""
 
 def is_noise_generic(text, extra_sale=True):
+    """同 is_noise_weibo，用于豆瓣/小红书（extra_sale 仅小红书）。"""
     t = text or ""
-    for p in NOISE_PAT:
+    for p in IRRELEVANT_PAT:
         if re.search(p, t, re.I):
-            return True, "促销/买卖/控评/无关噪音"
+            return "hard", "竞品/无关内容"
+    for p in PROMO_PAT:
+        if re.search(p, t, re.I):
+            return "soft", "控评/腾讯视频推广(计中性)"
     if extra_sale:
         for p in SALE_PAT:
             if re.search(p, t, re.I):
-                # 边界救回：正文含明确投诉/维权强信号，且不含硬交易特征(出腾讯/低价/秒到/加微/xxr/车位/拼车/帮抢等)，
-                # 说明是"捎带云包场等软词但实为投诉"的真实负面，予以保留，不当广告过滤。
+                # 边界救回：正文含明确投诉/维权强信号，且不含硬交易特征，说明是"捎带推广软词但实为投诉"的真实负面，保留(可能判neg)。
                 if (any(re.search(cp, t, re.I) for cp in COMPLAINT_PAT)
                         and not any(re.search(hp, t, re.I) for hp in HARD_SALE_PAT)):
-                    return False, ""
-                return True, "会员买卖/代开/推广广告"
-    return False, ""
+                    return None, ""
+                # 其余 腾讯视频会员买卖/代开/云包场/拼车等推广 → 计中性(按用户要求：广告不减少监控量，归入中性)
+                # 注：小红书此分支已前置要求正文含"腾讯/鹅厂"，故匹配的均为腾讯视频相关推广。
+                return "soft", "会员买卖/代开/推广广告(计中性)"
+    return None, ""
 
 # ============================================================
 # 3. 四平台归一化为 raw_posts（统一结构）
@@ -234,7 +247,8 @@ for e in weibo_posts:
         "likes": e.get("attitudes_count"),
         "keywords": e.get("keywords"),
         "permalink": permalink(e),
-        "filtered_as_noise": noise,
+        "filtered_as_noise": noise == "hard",
+        "noise_category": noise or "",
         "noise_reason": reason or None,
     })
 
@@ -253,7 +267,7 @@ for e in douban_raw:
     # 剧名讨论帖正文常不出现"腾讯"二字，故必须按剧综名识别，避免腾讯综艺/剧集负面被误剔。
     hit_title = any(w and w in text for w in _TITLE_WORDS)
     if not noise and not mentions and "腾讯" not in text and not hit_title:
-        noise, reason = True, "未提及腾讯视频/无关组帖"
+        noise, reason = "hard", "未提及腾讯视频/无关组帖"
     raw_posts.append({
         "id": douban_id(e.get("href")),
         "platform": "douban",
@@ -266,7 +280,8 @@ for e in douban_raw:
         "likes": None,
         "keywords": e.get("kw"),
         "permalink": e.get("href"),
-        "filtered_as_noise": noise,
+        "filtered_as_noise": noise == "hard",
+        "noise_category": noise or "",
         "noise_reason": reason or None,
     })
 
@@ -302,7 +317,8 @@ for e in xhs_raw:
         "likes": None,
         "keywords": e.get("kw"),
         "permalink": e.get("final_url") or e.get("href"),
-        "filtered_as_noise": noise,
+        "filtered_as_noise": noise == "hard",
+        "noise_category": noise or "",
         "noise_reason": reason or None,
     })
 
@@ -332,7 +348,11 @@ for e in heimao_raw:
 
 # ---- 为每条原始帖打"情感三分类"标签（pos / neu / neg），供情感声量趋势使用 ----
 for _p in raw_posts:
-    _p["sentiment"] = classify_sentiment(_p.get("text"))
+    # 推广/控评(soft)归入中性：保留监控量，但不计入负面风险事件
+    if _p.get("noise_category") == "soft":
+        _p["sentiment"] = "neu"
+    else:
+        _p["sentiment"] = classify_sentiment(_p.get("text"))
 
 # ============================================================
 # 4. 跨平台去重（重复内容删除）
@@ -612,11 +632,12 @@ def _count(fn):
     d = load(fn)
     return len(d) if isinstance(d, list) else 0
 
+# 以「窗口内实际纳入的采集量」为分母(与 raw_posts 同源)，避免用 *_all 毛抓取量导致漏斗虚高、监控量被低估。
 _collected = {
-    "weibo": _count("weibo_parsed_all.json") + _count("weibo_content_parsed_all.json"),
-    "douban": _count("douban_raw_results.json"),
-    "xiaohongshu": _count("xhs_raw_results.json"),
-    "heimao": _count("heimao_raw_results.json"),
+    "weibo": _count("weibo_parsed_in_window.json") + _count("weibo_content_parsed_in_window.json"),
+    "douban": _count("douban_parsed_in_window.json"),
+    "xiaohongshu": xhs_in_window,   # 窗口内已核实笔记数(见上文代码计算)
+    "heimao": _count("heimao_parsed_in_window.json"),
 }
 total_collected = sum(_collected.values())
 
