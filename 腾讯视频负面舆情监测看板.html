@@ -38,6 +38,10 @@
   .summary-line .s-tag.s-p2 { background:#c8e6c9; color:#1b5e20; }
   .summary-line .s-tag.s-plat { background:#bbdefb; color:#0d47a1; }
   .summary-line .s-text { font-size:14px; color:#333; line-height:1.55; }
+  .summary-line .s-text.s-concl { white-space:normal; display:block; }
+  .summary-line .s-concl .c-head { font-weight:700; color:#b3261e; margin:6px 0 2px; font-size:13px; }
+  .summary-line .s-concl .c-line { line-height:1.85; padding-left:2px; }
+  .ev-platform { display:inline-block; font-size:11px; padding:1px 7px; border-radius:9px; background:#eef2f7; color:#4a5568; margin-right:6px; border:1px solid #dbe2ea; }
 
   .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:14px; margin-bottom:6px; }
   .kpi { background:#f7f9fc; border-radius:10px; padding:16px; text-align:center; border:1px solid #eef1f6; }
@@ -402,8 +406,12 @@ function renderHeader(meta, kpi, p0, p1, p2, srcLabel) {
 function renderSummary(meta, kpi, events) {
   var html = '';
   if (kpi.conclusion) {
-    html += '<div class="s-item"><span class="s-tag s-p0">结论</span><span class="s-text">' +
-            esc(kpi.conclusion) + '</span></div>';
+    var clines = String(kpi.conclusion).split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l; });
+    var chtml = clines.map(function (l) {
+      if (/^【.+】$/.test(l)) return '<div class="c-head">' + esc(l) + '</div>';
+      return '<div class="c-line">' + esc(l) + '</div>';
+    }).join('');
+    html += '<div class="s-item"><span class="s-tag s-p0">结论</span><div class="s-text s-concl">' + chtml + '</div></div>';
   }
   // 事件按等级排序：P0 > P1 > P2（保证总结中 P1 在 P2 上方）
   var lvOrder = { 'P0': 0, 'P1': 1, 'P2': 2 };
@@ -507,7 +515,8 @@ function renderEvidence(evidence) {
     if (v.likes) metaBits.push('赞' + esc(v.likes));
     if (v.reposts) metaBits.push('转' + esc(v.reposts));
     if (v.published_at) metaBits.push(fmtDT(v.published_at));
-    html += '· <a class="link' + (hot ? ' hot' : '') + '" href="' + esc(v.permalink) +
+    var plat = v.platform ? '<span class="ev-platform">' + esc(v.platform) + '</span>' : '';
+    html += '· ' + plat + '<a class="link' + (hot ? ' hot' : '') + '" href="' + esc(v.permalink) +
             '" target="_blank" rel="noopener noreferrer">' + esc(v.author || '匿名用户') + '</a>' +
             (metaBits.length ? ' <span style="color:#999;">(' + metaBits.join('/') + ')</span>' : '') +
             (hot ? ' <span class="hot">热帖</span>' : '') + '<br>';

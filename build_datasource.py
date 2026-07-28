@@ -491,9 +491,12 @@ def _engagement(p):
     return (_int(p.get("likes")) + _int(p.get("reposts")) * 3
             + _int(p.get("followers")) // 1000)
 
+# 平台名中文化（报告/看板展示用汉字，不用拼音）
+PLATFORM_CN = {"weibo": "微博", "xiaohongshu": "小红书", "heimao": "黑猫投诉", "douban": "豆瓣"}
+
 def _to_evidence(p):
     return {
-        "platform": p.get("platform"),
+        "platform": PLATFORM_CN.get(p.get("platform"), p.get("platform")),
         "author": p.get("author") or "匿名用户",
         "followers": p.get("followers"),
         "likes": p.get("likes"),
@@ -563,43 +566,33 @@ sentiment_events.sort(key=lambda e: (_lv_order.get(e["level"], 9), -(e.get("post
 # 6. KPI
 # ============================================================
 def _build_conclusion(p0, p1, p2, events, hm_real):
-    """对 P0/P1/P2 逐级做简要概括：事件数 + 板块 + 凝练问题。
-    结论聚焦、简洁，去掉举例/剧名，与下方分点(含完整描述与证据)形成区分。"""
-    import re as _re
+    """对 P0/P1/P2 逐级生成概览，并以多行分点列出每个事件原因（便于看板逐条展示）。
 
-    def _short(t):
-        # 去掉举例括号与剧名，仅保留问题主干，使结论比下方分点更凝练
-        t = _re.sub(r"[（(][^）)]*[)）]", "", t or "")
-        t = _re.sub(r"《[^》]*》", "", t)
-        return t.strip("、，。/ ") or "相关负面反馈"
-
+    返回含换行符(\\n)的字符串：首行为各级事件数概览，随后按级别分段，
+    每个事件原因独立成行（· 板块｜标题（N条相关）），不再把所有案例堆叠在一行。"""
     by = {"P0": [], "P1": [], "P2": []}
     for e in events:
         lv = (e.get("level") or "").upper()
         if lv in by:
             by[lv].append(e)
 
-    cnt_map = {"P0": p0, "P1": p1, "P2": p2}
-    seg = []
+    lv_cn = {"P0": "P0 高危", "P1": "P1 中危", "P2": "P2 低危"}
+    lines = ["本轮风险分级：P0 {} 起｜P1 {} 起｜P2 {} 起".format(p0, p1, p2), ""]
     for lv in ("P0", "P1", "P2"):
-        head = "{} {}起".format(lv, cnt_map[lv])
         es = by[lv]
-        if es:
-            items = []
-            prev_sec = None
-            for e in es:
-                sec = e.get("section") or ""
-                c = e.get("post_count")
-                # 同一板块的多个事件原因合并前缀，仅首次显示板块名，避免重复
-                prefix = (sec + "：") if sec != prev_sec else ""
-                s = prefix + (e.get("title") or "")
-                if c:
-                    s += "（{}条）".format(c)
-                items.append(s)
-                prev_sec = sec
-            head += "：" + "；".join(items)
-        seg.append(head)
-    return "本轮 " + "｜".join(seg) + "。"
+        if not es:
+            continue
+        lines.append("【{}】".format(lv_cn[lv]))
+        for e in es:
+            sec = e.get("section") or ""
+            title = e.get("title") or ""
+            c = e.get("post_count")
+            if c:
+                lines.append("· {}｜{}（{} 条相关）".format(sec, title, c))
+            else:
+                lines.append("· {}｜{}".format(sec, title))
+        lines.append("")
+    return "\n".join(lines).strip("\n")
 
 p0 = sum(1 for e in sentiment_events if e["level"] == "P0")
 p1 = sum(1 for e in sentiment_events if e["level"] == "P1")
