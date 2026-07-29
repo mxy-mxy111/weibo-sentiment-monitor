@@ -13,9 +13,9 @@
     "platform_stats": {
       "weibo": {
         "total": 590,
-        "real_negative": 67,
-        "pos": 236,
-        "neu": 272
+        "real_negative": 42,
+        "pos": 259,
+        "neu": 271
       },
       "douban": {
         "total": 1,
@@ -31,9 +31,9 @@
       },
       "heimao": {
         "total": 21,
-        "real_negative": 19,
+        "real_negative": 21,
         "pos": 0,
-        "neu": 2
+        "neu": 0
       }
     },
     "schema_version": "1.1",
@@ -49,113 +49,37 @@
     },
     "in_window_total": 683,
     "total_raw": 615,
-    "real_negative": 89,
-    "pos": 236,
-    "neu": 274,
-    "neg": 89,
-    "sentiment_total": 599,
-    "non_sentiment": 2389,
+    "real_negative": 66,
+    "pos": 259,
+    "neu": 271,
+    "neg": 66,
+    "sentiment_total": 596,
+    "non_sentiment": 2392,
     "non_sentiment_breakdown": {
       "out_of_window": 2305,
       "duplicate": 61,
-      "competitor_irrelevant": 8,
+      "competitor_irrelevant": 11,
       "promo": 8
     },
     "p0": 0,
-    "p1": 5,
-    "p2": 5,
-    "conclusion": "本轮风险分级：P0 0 起（主要：无）；P1 5 起（主要：其他/监管竞品—其他分散负面、自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期、未成年人/误充退款遭拒）；P2 5 起（主要：《完美世界》造黄谣/下架风波、配音/原声争议（要求原声/拒配音）、剧集弃剧/观感差、抠图/滤镜/制作粗糙争议、播放卡顿/闪退/崩溃等故障）。"
+    "p1": 4,
+    "p2": 8,
+    "conclusion": "本轮风险分级：P0 0 起（主要：无）；P1 4 起（主要：自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期、未成年人/误充退款遭拒）；P2 8 起（主要：《完美世界》造黄谣/下架风波、配音/原声争议（要求原声/拒配音）、剧集弃剧/观感差、选角/进组争议（粉丝抵制/永拒）、草地场周边商品质量/售后争议、《砸锅卖铁去上学》AI短剧侵权/盗版争议、宣发物料敷衍/催更声讨、抠图/滤镜/制作粗糙争议）。"
   },
   "sentiment_events": [
-    {
-      "id": "EV-DYN-OTHER-OTHER-20260729",
-      "level": "P1",
-      "section": "其他/监管竞品",
-      "title": "其他/监管竞品—其他分散负面",
-      "summary": "本轮在微博 31条、黑猫投诉 1条共聚类出 32 条与「其他/监管竞品—其他分散负面」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：其他/监管竞品—其他分散负面。典型表述如：「#心动的信号9定档# 坦荡心动，爱意直行，#心动的信号# 第…」。建议结合工单/客服渠道核实处理时效。",
-      "summary_points": [
-        "本轮在微博 31条、黑猫投诉 1条，共聚类出 32 条与「其他/监管竞品—其他分散负面」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
-        "高频原因词：其他/监管竞品—其他分散负面。",
-        "典型表述如：「#心动的信号9定档# 坦荡心动，爱意直行，#心动的信号# 第…」。",
-        "建议结合工单/客服渠道核实处理时效。"
-      ],
-      "post_count": 32,
-      "evidence": [
-        {
-          "platform": "微博",
-          "author": "Crystal零星",
-          "followers": "65.5万",
-          "likes": 1572,
-          "reposts": 36,
-          "published_at": "2026-07-28T12:56:32",
-          "permalink": "https://m.weibo.cn/detail/5325638357745803",
-          "text": "被宋威龙给张婧仪拍照这里笑疯了。 。拍半天发现没放相纸，然后没开相机盖子，最后拍的还被机器挡住了，张婧仪反手就是一个差评哈哈哈张婧仪：我不太相信你，这个架势就不对。宋威龙：你怎么可以这样？人都说了要夸赞！张婧仪：你知道拍照的三要素是什么吗？"
-        },
-        {
-          "platform": "微博",
-          "author": "柠檬奶青泡",
-          "followers": "4.8万",
-          "likes": 149,
-          "reposts": 4,
-          "published_at": "2026-07-29T00:05:37",
-          "permalink": "https://m.weibo.cn/detail/5325806733630619",
-          "text": "大哥的婚礼确实是对慕容清峄来说很重要的人生转折点啊。从小缺爱的环境前期让他的爱恨更多寄托于女主一个人身上，对亲人更多的是没有高期待就不会有失望，但预告里所呈现的被迫需要承担的使命，会让个体的爱恨变得渺小，不管是早年留学归来做外科医生的经历，"
-        },
-        {
-          "platform": "微博",
-          "author": "妹喜鸳鸯谱",
-          "followers": "21.3万",
-          "likes": 46,
-          "reposts": 3,
-          "published_at": "2026-07-29T09:13:44",
-          "permalink": "https://m.weibo.cn/detail/5325944673797312",
-          "text": "29141【投稿】all梅文推荐第二弹，全部都在红白上， Cp已全都标明，自行避雷ps:博主只看甜文所以甜度是包的【贝夏梅】月亮陷阱【all梅】于黑夜中（是长篇，看到一半儿还没看完，哨向末世au）【vvd梅】入套(长篇，这个我要多说两句了，"
-        },
-        {
-          "platform": "微博",
-          "author": "蕴秣衡",
-          "followers": "117",
-          "likes": 16,
-          "reposts": 0,
-          "published_at": "2026-07-28T23:43:11",
-          "permalink": "https://m.weibo.cn/detail/5325801088357623",
-          "text": "砸锅卖铁去上学 大家不要和它们那群人吵，对面惯会胡搅蛮缠，就算你说的再有道理，它们也不会听的，大家需要善用举报与拉黑，碰到他们的视频以及AI短剧或者评论都可以用举报，举报的人多了大家懂的都懂，然后就是大家可以去隔壁砸锅卖铁去上学动画艾特@腾"
-        },
-        {
-          "platform": "微博",
-          "author": "徠来努力努力再努力",
-          "followers": "2.2万",
-          "likes": 12,
-          "reposts": 0,
-          "published_at": "2026-07-29T07:46:29",
-          "permalink": "https://m.weibo.cn/detail/5325922716615469",
-          "text": "#张凌赫这一秒过火红利#感觉张凌赫这次吃到《这一秒过火》的红利，还真不是凭空来的。我最开始看开播，网上争议还挺多慕容清峄这个角色太给他加分了，破碎又偏执，哭戏氛围感拉满，好多片段短视频到处传。再加上剧组的沉浸式宣发，角色梗玩得自然，没有那种"
-        },
-        {
-          "platform": "微博",
-          "author": "起名看运气",
-          "followers": "4",
-          "likes": 6,
-          "reposts": 1,
-          "published_at": "2026-07-29T09:16:29",
-          "permalink": "https://m.weibo.cn/detail/5325945364023657",
-          "text": "张凌赫 #这一秒过火# 写给喜欢凌赫的每一个朋友     新粉入坑第一年，实时追了两部剧，逐玉～瘦了5kg；这一秒过火又掉称2kg。神奇的“附加福利”。     要知道，我的体重十年如一日，稳如磐石。试过节食、运动，甚至生病经历两场手术，病"
-        }
-      ]
-    },
     {
       "id": "EV-DYN-MEMBER-AUTO_RENEW-20260729",
       "level": "P1",
       "section": "会员收费",
       "title": "自动续费/扣费未告知致退款诉求",
-      "summary": "本轮在微博 2条、小红书 2条、黑猫投诉 17条共聚类出 21 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：退款、扣费、自动续费。典型表述如：「腾讯视频于23年9月-24年8月在我不知情情况下扣我视频会员…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 1条、小红书 2条、黑猫投诉 19条共聚类出 22 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：退款、扣费、续费。典型表述如：「腾讯视频于23年9月-24年8月在我不知情情况下扣我视频会员…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 2条、小红书 2条、黑猫投诉 17条，共聚类出 21 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
-        "高频原因词：退款、扣费、自动续费。",
+        "本轮在微博 1条、小红书 2条、黑猫投诉 19条，共聚类出 22 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：退款、扣费、续费。",
         "典型表述如：「腾讯视频于23年9月-24年8月在我不知情情况下扣我视频会员…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 21,
+      "post_count": 22,
       "evidence": [
         {
           "platform": "微博",
@@ -166,16 +90,6 @@
           "published_at": "2026-07-28T14:52:48",
           "permalink": "https://m.weibo.cn/detail/5325667614065729",
           "text": "腾讯视频于23年9月-24年8月在我不知情情况下扣我视频会员费12个月和一个月Svip会员费，电话客服是打不通的，APP上客服是一直拖延的，几天了到现在没有回电，还让我去联系苹果客服退钱，在我联系完苹果客服后，腾讯视频客服还是拖延，这么大一"
-        },
-        {
-          "platform": "微博",
-          "author": "猕猴桃壹个重生",
-          "followers": "195",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-07-28T15:30:27",
-          "permalink": "https://m.weibo.cn/detail/5325677088736828",
-          "text": "感觉有种特别的爽呀...攻爱上了宠物人受，他一直觉得宠物就是宠物，这些低等生物吃也好草也好爱也好，想怎么用就怎么用。但是等他真的发现自己的爱以后，受已经没几年好活了，为了让宠物人保持完美的品相客户不要退款给差评，这些宠物人都被上过科技只能活"
         },
         {
           "platform": "小红书",
@@ -216,6 +130,16 @@
           "published_at": "2026-07-28 21:17:58",
           "permalink": "https://tousu.sina.com.cn/complaint/view/17400277753/?sld=71155b8cc98387aa1f825ebbb3492dc8",
           "text": "腾讯视频未提醒扣费，莫名开通会员，盼退全款 不知道怎么就开通了这个会员 而且期间我一直没有使用 也没有提醒我扣费的事情 一直在扣费 要求全部退款"
+        },
+        {
+          "platform": "黑猫投诉",
+          "author": "正义喵",
+          "followers": null,
+          "likes": 0,
+          "reposts": null,
+          "published_at": "2026-07-28 21:08:59",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400277537/?sld=420a87dd579401aa9ca71b9298db62cc",
+          "text": "腾讯视频VIP刚充值未使用任何权益，申请退款被客服拒绝 本人刚刚充值腾讯视频VIP，全程未使用任何会员权益，没有观看付费影片。联系腾讯视频人工客服申请退款，被以虚拟商品不予退款为由拒绝。平台单方面设置“充值后一律不退”属于不合理霸王条款，诉"
         }
       ]
     },
@@ -224,14 +148,14 @@
       "level": "P1",
       "section": "账号安全",
       "title": "微信账号批量封禁/风控误伤",
-      "summary": "本轮在微博 6条共聚类出 6 条与「微信账号批量封禁/风控误伤」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：封禁、封号、社交功能。典型表述如：「你好尊敬的微信团队，我的账号被永久封号，限制微信所有功能，跟…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 12条共聚类出 12 条与「微信账号批量封禁/风控误伤」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：封禁、解封、封号。典型表述如：「你好尊敬的微信团队，我的账号被永久封号，限制微信所有功能，跟…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 6条，共聚类出 6 条与「微信账号批量封禁/风控误伤」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
-        "高频原因词：封禁、封号、社交功能。",
+        "本轮在微博 12条，共聚类出 12 条与「微信账号批量封禁/风控误伤」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：封禁、解封、封号。",
         "典型表述如：「你好尊敬的微信团队，我的账号被永久封号，限制微信所有功能，跟…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 6,
+      "post_count": 12,
       "evidence": [
         {
           "platform": "微博",
@@ -255,6 +179,16 @@
         },
         {
           "platform": "微博",
+          "author": "腾讯微信你们看到了吗",
+          "followers": "2",
+          "likes": 1,
+          "reposts": 0,
+          "published_at": "2026-07-28T10:18:12",
+          "permalink": "https://m.weibo.cn/detail/5325598509242900",
+          "text": "腾讯官方 你们这个网络异常 就给我封了 我要用生活社交 联系了 没有客户电话 什么人工客户 感觉就是人机不理会 @腾讯客服 @微信团队 @微信安全中心 腾讯视频 "
+        },
+        {
+          "platform": "微博",
           "author": "用户8335520778",
           "followers": "1",
           "likes": 0,
@@ -275,23 +209,13 @@
         },
         {
           "platform": "微博",
-          "author": "途踬",
-          "followers": "35",
+          "author": "卡西莫多的小黑屋",
+          "followers": "11",
           "likes": 0,
           "reposts": 0,
-          "published_at": "2026-07-28T21:15:59",
-          "permalink": "https://m.weibo.cn/detail/5325764046096361",
-          "text": "我的账号被封号，限制微信所有功能，跟专属客服聊了很久不给解封。@腾讯客服 ！微信永久封禁怎么处理？找微信客服申诉，永远是“系统检测违规，无法解封”；问能不能给人工电话？直接说“电话客服与微信专属客服权限一样，有什么问题可以像微信专属客服反馈"
-        },
-        {
-          "platform": "微博",
-          "author": "机智簪花做雕刻",
-          "followers": "2",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-07-28T13:46:35",
-          "permalink": "https://m.weibo.cn/detail/5325650948785653",
-          "text": "微信腾讯腾讯人工已经上交承诺书，我的微信真的很着急用，而且我的历史违规记录三次当中有三次都是使用行为或设备，网络环境异常，影响账号安全，这一个点导致的封号怎么就最后一下子就给我永久封了呢？微信腾讯视频黑猫投诉 ...全文"
+          "published_at": "2026-07-28T22:19:31",
+          "permalink": "https://m.weibo.cn/detail/5325780033999379",
+          "text": "#微信 您好！我的微信账号被限制，自己已经明白了维护微信安全和谐的重要性，因自己的无知导致被限制，麻烦腾讯公司帮助我解封，给我一次写保证书的机会，此号对我来说很重要，也时刻要用到，我已经深刻的认识到了自己的错误，我保证以后会规范使用微信功能"
         }
       ]
     },
@@ -300,25 +224,15 @@
       "level": "P1",
       "section": "会员收费",
       "title": "SVIP/会员画质与权益不符预期",
-      "summary": "本轮在微博 1条、小红书 1条共聚类出 2 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：svip、vip、升级到svip。典型表述如：「腾讯视频会员svip共享 ➗腾讯SV周5两周6月9可以长期季…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在小红书 1条共聚类出 1 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：svip、vip、升级到svip。典型表述如：「腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 1条、小红书 1条，共聚类出 2 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "本轮在小红书 1条，共聚类出 1 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
         "高频原因词：svip、vip、升级到svip。",
-        "典型表述如：「腾讯视频会员svip共享 ➗腾讯SV周5两周6月9可以长期季…」。",
+        "典型表述如：「腾讯吃相太难看了 想看一部09年的电影，已经是vip，看不了…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 2,
+      "post_count": 1,
       "evidence": [
-        {
-          "platform": "微博",
-          "author": "月色很美y",
-          "followers": "554",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-07-28T10:26:00",
-          "permalink": "https://m.weibo.cn/detail/5325600470337991",
-          "text": "腾讯视频会员svip共享 ➗腾讯SV周5两周6月9可以长期季度半年等 不可投屏，仅可登一台设备vb不常看，主页➕v "
-        },
         {
           "platform": "小红书",
           "author": "匿名用户",
@@ -438,14 +352,14 @@
       "level": "P2",
       "section": "内容运营",
       "title": "配音/原声争议（要求原声/拒配音）",
-      "summary": "本轮在微博 8条共聚类出 8 条与「配音/原声争议（要求原声/拒配音）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：原声、配音。典型表述如：「@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 7条共聚类出 7 条与「配音/原声争议（要求原声/拒配音）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：原声、配音。典型表述如：「@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 8条，共聚类出 8 条与「配音/原声争议（要求原声/拒配音）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "本轮在微博 7条，共聚类出 7 条与「配音/原声争议（要求原声/拒配音）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
         "高频原因词：原声、配音。",
         "典型表述如：「@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 8,
+      "post_count": 7,
       "evidence": [
         {
           "platform": "微博",
@@ -456,16 +370,6 @@
           "published_at": "2026-07-28T23:02:41",
           "permalink": "https://m.weibo.cn/detail/5325790895938352",
           "text": "花开锦绣 @花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL 丁禹兮原声好评不断下沉出圈高赞数不胜数，赵凌作为精品剧集花开锦绣的核心灵魂人物理应用"
-        },
-        {
-          "platform": "微博",
-          "author": "凌凌琦-",
-          "followers": "2031",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-07-28T18:21:27",
-          "permalink": "https://m.weibo.cn/detail/5325720122559257",
-          "text": "🚫永拒打包配音！花开锦绣最新预告中赵凌配音与赵凌人物内核、性格设定、成长经历严重不符！请立刻改为丁禹兮本人原声❗丁禹兮原声好评不断出圈无数最适配赵凌❗赵凌必须用丁禹兮原声❗赵凌必须完整属于丁禹兮❗️@花开锦绣官微 @Miss莹颖 @Deni"
         },
         {
           "platform": "微博",
@@ -506,6 +410,16 @@
           "published_at": "2026-07-28T17:23:04",
           "permalink": "https://m.weibo.cn/detail/5325705429914732",
           "text": "我们强烈要求花开锦绣使用丁禹兮原声，丁禹兮本人声线优越，原声台词在各大平台出圈，观众对丁禹兮原声认可度高‼️配音无法共情角色，赵凌必须是丁禹兮原声‼️只要原声‼️‼️还我赵凌原声‼️‼️ @花开锦绣官微  @邓科导演 @腾讯视频 @腾讯电视"
+        },
+        {
+          "platform": "微博",
+          "author": "T管是横管_纵管是L管",
+          "followers": "184",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T17:21:12",
+          "permalink": "https://m.weibo.cn/detail/5325704961200191",
+          "text": "@花开锦绣官微 @Miss莹颖 @Denise是谁啦 @邓科导演 @腾讯视频 @腾讯电视剧 @耀客传媒 @张萌 @丁禹兮工作室_OFFICIAL 丁禹兮原声好评不断下沉出圈高赞数不胜数，赵凌作为精品剧集花开锦绣的核心灵魂人物理应用丁禹兮本人"
         }
       ]
     },
@@ -514,14 +428,14 @@
       "level": "P2",
       "section": "内容运营",
       "title": "剧集弃剧/观感差",
-      "summary": "本轮在微博 6条共聚类出 6 条与「剧集弃剧/观感差」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：弃剧。典型表述如：「《这一秒过火》的导演后悔极了 不是因为张凌赫的加入 也不是王…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 4条共聚类出 4 条与「剧集弃剧/观感差」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：弃剧。典型表述如：「《这一秒过火》的导演后悔极了 不是因为张凌赫的加入 也不是王…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 6条，共聚类出 6 条与「剧集弃剧/观感差」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "本轮在微博 4条，共聚类出 4 条与「剧集弃剧/观感差」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
         "高频原因词：弃剧。",
         "典型表述如：「《这一秒过火》的导演后悔极了 不是因为张凌赫的加入 也不是王…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 6,
+      "post_count": 4,
       "evidence": [
         {
           "platform": "微博",
@@ -555,26 +469,6 @@
         },
         {
           "platform": "微博",
-          "author": "奶酥本酥",
-          "followers": "7",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-07-28T21:07:33",
-          "permalink": "https://m.weibo.cn/detail/5325761921683628",
-          "text": "heart signal S5观后感：一句话点评，这季要没有我们大男主大女主双向旷世绝恋撑着我真的分分钟要弃剧了，剪辑槽点太多了说不完，hs系列刻意制造悬念把双向硬剪成大N角也是老问题了。那么以下还是依次点评各位嘉宾及感情线：女一金敏珠，我"
-        },
-        {
-          "platform": "微博",
-          "author": "一粒臆想的米",
-          "followers": "894",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-07-28T12:49:16",
-          "permalink": "https://m.weibo.cn/detail/5325636526410254",
-          "text": "这一秒过火。顶配的颜值也撑不住剧情拉胯，忍不了了，弃剧。 "
-        },
-        {
-          "platform": "微博",
           "author": "随便讲讲别当真",
           "followers": "119",
           "likes": 0,
@@ -586,18 +480,172 @@
       ]
     },
     {
+      "id": "EV-DYN-CONTENT-CASTING-20260729",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "选角/进组争议（粉丝抵制/永拒）",
+      "summary": "本轮在微博 3条共聚类出 3 条与「选角/进组争议（粉丝抵制/永拒）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：永拒、抵制、进组。典型表述如：「徐以若鲈鱼小厚脸皮赖着，但全网除了淑芬剧粉路人张凌赫粉丝永拒…」。建议结合工单/客服渠道核实处理时效。",
+      "summary_points": [
+        "本轮在微博 3条，共聚类出 3 条与「选角/进组争议（粉丝抵制/永拒）」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：永拒、抵制、进组。",
+        "典型表述如：「徐以若鲈鱼小厚脸皮赖着，但全网除了淑芬剧粉路人张凌赫粉丝永拒…」。",
+        "建议结合工单/客服渠道核实处理时效。"
+      ],
+      "post_count": 3,
+      "evidence": [
+        {
+          "platform": "微博",
+          "author": "甜兔驿站",
+          "followers": "2.1万",
+          "likes": 1452,
+          "reposts": 119,
+          "published_at": "2026-07-28T22:31:17",
+          "permalink": "https://m.weibo.cn/detail/5325782993868776",
+          "text": "徐以若鲈鱼小厚脸皮赖着，但全网除了淑芬剧粉路人张凌赫粉丝永拒外，更是连自己粉丝都抵制，@柠萌影视 @方晏之 听取网友呼声一定要帮所有人圆梦啊！！！@腾讯视频 求平台空降爱女大家都满意了 "
+        },
+        {
+          "platform": "微博",
+          "author": "凌凌琦-",
+          "followers": "2031",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T18:21:27",
+          "permalink": "https://m.weibo.cn/detail/5325720122559257",
+          "text": "🚫永拒打包配音！花开锦绣最新预告中赵凌配音与赵凌人物内核、性格设定、成长经历严重不符！请立刻改为丁禹兮本人原声❗丁禹兮原声好评不断出圈无数最适配赵凌❗赵凌必须用丁禹兮原声❗赵凌必须完整属于丁禹兮❗️@花开锦绣官微 @Miss莹颖 @Deni"
+        },
+        {
+          "platform": "微博",
+          "author": "就想当个钱串子",
+          "followers": "75",
+          "likes": 1,
+          "reposts": 0,
+          "published_at": "2026-07-28T16:12:19",
+          "permalink": "https://m.weibo.cn/detail/5325687625617743",
+          "text": "#永拒卢昱晓进张凌赫任何剧组#@柠萌影视 @腾讯视频  该女艺人经纪人与张凌赫粉丝有不可调和的矛盾，卢昱晓进组刺棠，这种使矛盾加剧的行为已经远远超越张凌赫粉丝的底线！！鲈鱼强硬进组《刺棠》，那粉丝必举报，必埋剧！！现在托举一部剧很难，但埋剧"
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-AFTERSALE-GOODS-20260729",
+      "level": "P2",
+      "section": "商品/售后",
+      "title": "草地场周边商品质量/售后争议",
+      "summary": "本轮在微博 1条、黑猫投诉 1条共聚类出 2 条与「草地场周边商品质量/售后争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：草地场、换货、棉花娃娃。典型表述如：「腾讯视频欺骗消费者腾讯草地场抽的贺思慕的棉花娃娃，头发上边都…」。建议结合工单/客服渠道核实处理时效。",
+      "summary_points": [
+        "本轮在微博 1条、黑猫投诉 1条，共聚类出 2 条与「草地场周边商品质量/售后争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：草地场、换货、棉花娃娃。",
+        "典型表述如：「腾讯视频欺骗消费者腾讯草地场抽的贺思慕的棉花娃娃，头发上边都…」。",
+        "建议结合工单/客服渠道核实处理时效。"
+      ],
+      "post_count": 2,
+      "evidence": [
+        {
+          "platform": "微博",
+          "author": "星落七七呀",
+          "followers": "114",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-28T19:49:20",
+          "permalink": "https://m.weibo.cn/detail/5325742238866253",
+          "text": "腾讯视频欺骗消费者腾讯草地场抽的贺思慕的棉花娃娃，头发上边都是胶水，根本弄不掉，因为巴巴的电视剧在草地场也买了很多东西了，质量真的不怎么样，不想换货了，不让退货，但是规则里面很明确的写着因为质量问题可以退换货，如果你不支持退货你可以不写，不"
+        },
+        {
+          "platform": "黑猫投诉",
+          "author": "机灵喵",
+          "followers": null,
+          "likes": 0,
+          "reposts": null,
+          "published_at": "2026-07-28 20:01:43",
+          "permalink": "https://tousu.sina.com.cn/complaint/view/17400275745/?sld=ae07620c6e52db59c07c0c972b6de588",
+          "text": "腾讯视频欺骗消费者，售后和商品简介写解决方法写的不一样 本人在3月28日于腾讯视频草地场下单抽取奖品，时隔数月在7月25日才签收实物，开箱查验发现商品存在明显破损瑕疵。\n该小程序在活动规则中白纸黑字标注，商品出现损坏、缺失等质量问题，消费者"
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-IP_INFRINGE-20260729",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "《砸锅卖铁去上学》AI短剧侵权/盗版争议",
+      "summary": "本轮在微博 2条共聚类出 2 条与「《砸锅卖铁去上学》AI短剧侵权/盗版争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：砸锅卖铁、AI短剧。典型表述如：「砸锅卖铁去上学动画 @腾讯视频动漫 @腾讯视频 加油维权期待…」。建议结合工单/客服渠道核实处理时效。",
+      "summary_points": [
+        "本轮在微博 2条，共聚类出 2 条与「《砸锅卖铁去上学》AI短剧侵权/盗版争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：砸锅卖铁、AI短剧。",
+        "典型表述如：「砸锅卖铁去上学动画 @腾讯视频动漫 @腾讯视频 加油维权期待…」。",
+        "建议结合工单/客服渠道核实处理时效。"
+      ],
+      "post_count": 2,
+      "evidence": [
+        {
+          "platform": "微博",
+          "author": "蕴秣衡",
+          "followers": "117",
+          "likes": 16,
+          "reposts": 0,
+          "published_at": "2026-07-28T23:43:11",
+          "permalink": "https://m.weibo.cn/detail/5325801088357623",
+          "text": "砸锅卖铁去上学 大家不要和它们那群人吵，对面惯会胡搅蛮缠，就算你说的再有道理，它们也不会听的，大家需要善用举报与拉黑，碰到他们的视频以及AI短剧或者评论都可以用举报，举报的人多了大家懂的都懂，然后就是大家可以去隔壁砸锅卖铁去上学动画艾特@腾"
+        },
+        {
+          "platform": "微博",
+          "author": "一个普通路人戊",
+          "followers": "26",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-07-29T00:10:57",
+          "permalink": "https://m.weibo.cn/detail/5325808077901347",
+          "text": "砸锅卖铁去上学动画 @腾讯视频动漫 @腾讯视频 加油维权期待动漫噢 "
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-CONTENT-PROMO_MATERIAL-20260729",
+      "level": "P2",
+      "section": "内容运营",
+      "title": "宣发物料敷衍/催更声讨",
+      "summary": "本轮在微博 2条共聚类出 2 条与「宣发物料敷衍/催更声讨」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：敷衍、物料、宣发。典型表述如：「#昀牵孟绕#“昀牵孟绕”CP粉因待播剧《尚公主》预约破350…」。建议结合工单/客服渠道核实处理时效。",
+      "summary_points": [
+        "本轮在微博 2条，共聚类出 2 条与「宣发物料敷衍/催更声讨」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：敷衍、物料、宣发。",
+        "典型表述如：「#昀牵孟绕#“昀牵孟绕”CP粉因待播剧《尚公主》预约破350…」。",
+        "建议结合工单/客服渠道核实处理时效。"
+      ],
+      "post_count": 2,
+      "evidence": [
+        {
+          "platform": "微博",
+          "author": "Cecily_JC-T",
+          "followers": "1488",
+          "likes": 3,
+          "reposts": 0,
+          "published_at": "2026-07-29T02:15:12",
+          "permalink": "https://m.weibo.cn/detail/5325839346434982",
+          "text": "#昀牵孟绕#“昀牵孟绕”CP粉因待播剧《尚公主》预约破350万却遭遇官方敷衍物料，正从集体催更向声讨剧方宣发升级。一、《尚公主》350万预约引爆宣发矛盾预约里程碑：《尚公主》腾讯视频与微博双端预约量于2026年7月28日突破350万，由孟子"
+        },
+        {
+          "platform": "微博",
+          "author": "Sugar-yyyir-",
+          "followers": "970",
+          "likes": 2,
+          "reposts": 0,
+          "published_at": "2026-07-29T01:31:48",
+          "permalink": "https://m.weibo.cn/detail/5325828424729991",
+          "text": "#昀牵孟绕#“昀牵孟绕”（李昀锐、孟子义的CP名）近期因三搭剧《尚公主》全平台预约突破350万热度爆棚，但粉丝对官方放出的“敷衍”物料不满发酵，让这对顶流CP再次站上风口浪尖。一、《尚公主》350万预约达成，粉丝怒斥官方敷衍预约里程碑：截至"
+        }
+      ]
+    },
+    {
       "id": "EV-DYN-CONTENT-PRODUCE-20260729",
       "level": "P2",
       "section": "内容运营",
       "title": "抠图/滤镜/制作粗糙争议",
-      "summary": "本轮在微博 2条共聚类出 2 条与「抠图/滤镜/制作粗糙争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：烂尾、抠图、滤镜。典型表述如：「9部没烂尾「从头好看到底」陆剧！第一部 《百花杀》孟子义×何…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 1条共聚类出 1 条与「抠图/滤镜/制作粗糙争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：抠图、滤镜。典型表述如：「《这一秒过火》，开播后网络吐槽声一片，有人说它把短剧拍成了长…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 2条，共聚类出 2 条与「抠图/滤镜/制作粗糙争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
-        "高频原因词：烂尾、抠图、滤镜。",
-        "典型表述如：「9部没烂尾「从头好看到底」陆剧！第一部 《百花杀》孟子义×何…」。",
+        "本轮在微博 1条，共聚类出 1 条与「抠图/滤镜/制作粗糙争议」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：抠图、滤镜。",
+        "典型表述如：「《这一秒过火》，开播后网络吐槽声一片，有人说它把短剧拍成了长…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 2,
+      "post_count": 1,
       "evidence": [
         {
           "platform": "微博",
@@ -608,42 +656,6 @@
           "published_at": "2026-07-28T14:55:40",
           "permalink": "https://m.weibo.cn/detail/5325668334437353",
           "text": "《这一秒过火》，开播后网络吐槽声一片，有人说它把短剧拍成了长剧，有人说它滤镜重、抠图生硬、光影廉价，也有人说张凌赫表情呆滞、#一分钟精选视频扶持计划# 高碧瑶的微博视频 "
-        },
-        {
-          "platform": "微博",
-          "author": "你很猫",
-          "followers": "2.3万",
-          "likes": 33,
-          "reposts": 1,
-          "published_at": "2026-07-29T09:00:00",
-          "permalink": "https://m.weibo.cn/detail/5325941216907972",
-          "text": "9部没烂尾「从头好看到底」陆剧！第一部 《百花杀》孟子义×何与第二部 《雀骨》侯明昊×艾米第三部 《星汉灿烂·月生沧海》吴磊×赵露思第四部 《锦月如歌》周也×丞磊第五部 《大生意人》陈晓×孙千第六部 《钢铁森林》井柏然×蔡文静第七部 《骄阳"
-        }
-      ]
-    },
-    {
-      "id": "EV-DYN-TECH-PLAYBACK-20260729",
-      "level": "P2",
-      "section": "技术功能",
-      "title": "播放卡顿/闪退/崩溃等故障",
-      "summary": "本轮在微博 1条共聚类出 1 条与「播放卡顿/闪退/崩溃等故障」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：崩溃。典型表述如：「#王大刀抽到公主裙天塌了# 挑选服装盲盒时@王大刀WangD…」。建议结合工单/客服渠道核实处理时效。",
-      "summary_points": [
-        "本轮在微博 1条，共聚类出 1 条与「播放卡顿/闪退/崩溃等故障」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
-        "高频原因词：崩溃。",
-        "典型表述如：「#王大刀抽到公主裙天塌了# 挑选服装盲盒时@王大刀WangD…」。",
-        "建议结合工单/客服渠道核实处理时效。"
-      ],
-      "post_count": 1,
-      "evidence": [
-        {
-          "platform": "微博",
-          "author": "脱口秀和Ta的朋友们",
-          "followers": "9.8万",
-          "likes": 1,
-          "reposts": 0,
-          "published_at": "2026-07-28T11:50:09",
-          "permalink": "https://m.weibo.cn/detail/5325621649475469",
-          "text": "#王大刀抽到公主裙天塌了# 挑选服装盲盒时@王大刀WangDD 抽中了与自己风格完全不同的公主裙直接崩溃地蹲在地上，@陈晓靖hahaha 笑称“这和杀了你有什么区别”大家立刻开启看热闹模式，大刀也是在脱友解锁新造型了每周五周六12点锁定@腾"
         }
       ]
     }
@@ -709,7 +721,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325956572775138",
@@ -1872,7 +1884,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325828487382645",
@@ -1912,7 +1924,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325817442730302",
@@ -2577,7 +2589,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325771892598444",
@@ -2661,7 +2673,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325760413047359",
@@ -3264,7 +3276,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325709601933069",
@@ -3364,7 +3376,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325705429914732",
@@ -3469,7 +3481,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325693533815592",
@@ -3877,7 +3889,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325616586689712",
@@ -3897,7 +3909,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325600470337991",
@@ -3917,7 +3929,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325598509242900",
@@ -4337,7 +4349,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325956028040242",
@@ -4697,7 +4709,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325952570626219",
@@ -4818,7 +4830,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325950730109817",
@@ -5079,7 +5091,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325948003816180",
@@ -5222,7 +5234,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325945549623014",
@@ -5263,7 +5275,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325944673797312",
@@ -5280,10 +5292,10 @@
         "哈哈哈哈哈 推荐"
       ],
       "permalink": "https://m.weibo.cn/detail/5325944673797312",
-      "filtered_as_noise": false,
-      "noise_category": "",
-      "noise_reason": null,
-      "sentiment": "neg"
+      "filtered_as_noise": true,
+      "noise_category": "hard",
+      "noise_reason": "竞品/无关内容",
+      "sentiment": "unclassified"
     },
     {
       "id": "5325944157636309",
@@ -5565,7 +5577,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325941187283831",
@@ -5825,7 +5837,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325937751364326",
@@ -6206,7 +6218,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325922716615469",
@@ -6226,7 +6238,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325922644266449",
@@ -6591,7 +6603,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325888566329653",
@@ -7392,7 +7404,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325822439459112",
@@ -7832,7 +7844,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325813861583983",
@@ -8112,7 +8124,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325806714750515",
@@ -8453,7 +8465,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325801696534470",
@@ -8694,7 +8706,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325792814825903",
@@ -8854,7 +8866,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325784921146000",
@@ -9094,7 +9106,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325776595720177",
@@ -9271,10 +9283,10 @@
         "京城奇探 更新"
       ],
       "permalink": "https://m.weibo.cn/detail/5325773192828450",
-      "filtered_as_noise": false,
-      "noise_category": "",
-      "noise_reason": null,
-      "sentiment": "neg"
+      "filtered_as_noise": true,
+      "noise_category": "hard",
+      "noise_reason": "竞品/无关内容",
+      "sentiment": "unclassified"
     },
     {
       "id": "5325772648355636",
@@ -9316,7 +9328,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325771793238989",
@@ -9599,7 +9611,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325764096690782",
@@ -9679,7 +9691,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325761738965933",
@@ -9799,7 +9811,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325758429660982",
@@ -9859,7 +9871,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "5325756881437476",
@@ -10279,7 +10291,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325748665846439",
@@ -11066,7 +11078,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325707370562968",
@@ -11126,7 +11138,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "pos"
     },
     {
       "id": "5325704816233629",
@@ -11346,7 +11358,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "pos"
+      "sentiment": "neu"
     },
     {
       "id": "5325695083348403",
@@ -11746,10 +11758,10 @@
         "哈哈哈哈哈 差评"
       ],
       "permalink": "https://m.weibo.cn/detail/5325677088736828",
-      "filtered_as_noise": false,
-      "noise_category": "",
-      "noise_reason": null,
-      "sentiment": "neg"
+      "filtered_as_noise": true,
+      "noise_category": "hard",
+      "noise_reason": "竞品/无关内容",
+      "sentiment": "unclassified"
     },
     {
       "id": "5325677042864870",
@@ -12149,7 +12161,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325637440768780",
@@ -12189,7 +12201,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325636526410254",
@@ -12209,7 +12221,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325632776181816",
@@ -12249,7 +12261,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325628943368621",
@@ -12269,7 +12281,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325627485849661",
@@ -12429,7 +12441,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "pos"
     },
     {
       "id": "5325611884875153",
@@ -12449,7 +12461,7 @@
       "filtered_as_noise": false,
       "noise_category": "",
       "noise_reason": null,
-      "sentiment": "neg"
+      "sentiment": "neu"
     },
     {
       "id": "5325607948780321",
@@ -12553,7 +12565,7 @@
       "sentiment": "pos"
     },
     {
-      "id": "douban_271376293",
+      "id": "douban_271439781",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -12893,7 +12905,7 @@
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400260850/?sld=593b7fbefb6643b912df4a94238136bd",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400260637",
@@ -12925,7 +12937,7 @@
       "permalink": "https://tousu.sina.com.cn/complaint/view/17400255426/?sld=f2eb0c60e4bd9db5924f0fb294418475",
       "filtered_as_noise": false,
       "noise_reason": null,
-      "sentiment": "neu"
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400255391",
@@ -13097,17 +13109,17 @@
     },
     {
       "date": "2026-07-29",
-      "slot": "10:33（每日自动整合）",
+      "slot": "09:59（每日自动整合）",
       "p0": 0,
-      "p1": 5,
-      "p2": 5,
-      "pos": 236,
-      "neu": 274,
-      "neg": 89,
-      "sentiment_total": 599,
-      "non_sentiment": 2389,
-      "total": 89,
-      "highlight": "本轮风险分级：P0 0 起（主要：无）；P1 5 起（主要：其他/监管竞品—其他分散负面、自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期、未成年人/误充退款遭拒）；P2 5 起（主要：《完美世界》造黄谣/下架风波、配音/原声争议（要求原声/拒配音）、剧集弃剧/观感差、抠图/滤镜/制作粗糙争议、播放卡顿/闪退/崩溃等故障）。"
+      "p1": 4,
+      "p2": 8,
+      "pos": 259,
+      "neu": 271,
+      "neg": 66,
+      "sentiment_total": 596,
+      "non_sentiment": 2392,
+      "total": 66,
+      "highlight": "本轮风险分级：P0 0 起（主要：无）；P1 4 起（主要：自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期、未成年人/误充退款遭拒）；P2 8 起（主要：《完美世界》造黄谣/下架风波、配音/原声争议（要求原声/拒配音）、剧集弃剧/观感差、选角/进组争议（粉丝抵制/永拒）、草地场周边商品质量/售后争议、《砸锅卖铁去上学》AI短剧侵权/盗版争议、宣发物料敷衍/催更声讨、抠图/滤镜/制作粗糙争议）。"
     }
   ]
 }

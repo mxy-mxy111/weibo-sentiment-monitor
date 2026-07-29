@@ -46,6 +46,27 @@ try:
     )
 except Exception:
     _STRONG_NEG, _SOFT_NEG, _DUBBING_NEG, _POS_W, _NEU_W = [], [], [], [], []
+try:
+    from keywords_config import (
+        AMBIGUOUS_NEG_WORDS as _AMBIG_NEG,
+        COMPLAINT_CONTEXT_WORDS as _CTX_W,
+    )
+except Exception:
+    _AMBIG_NEG, _CTX_W = [], []
+_AMBIG_SET = set(_AMBIG_NEG)
+_LAUGH_MARKS = ("哈哈", "笑疯", "笑死", "233")
+
+def _hit_wo_negation(t, w):
+    """词 w 在 t 中存在"未被前置否定"的命中（前4字符内无 不/没/无/零/非 才算数）。
+    解决"零差评/没烂尾/不搞拉扯套路"类误命中。"""
+    start = 0
+    while True:
+        i = t.find(w, start)
+        if i < 0:
+            return False
+        if not any(c in t[max(0, i - 4):i] for c in "不没无零非"):
+            return True
+        start = i + 1
 
 # ---- 情感三分类判定（pos / neu / neg）----
 # 规则（重构，解决"夸剧/中性被误判为 neg"问题）：
@@ -59,12 +80,23 @@ except Exception:
 #   黑猫投诉正文必含强负面词，自然归 neg。
 def classify_sentiment(text):
     t = text or ""
-    strong = sum(1 for w in _STRONG_NEG if w in t)
-    soft = sum(1 for w in _SOFT_NEG if w in t)
+    # 强负面拆两档：核心词(无歧义投诉/故障/收费/封禁) 与 歧义词(套路/差评/坑/骗等)。
+    # 歧义词仅在【投诉语境】下才定负——否则"入坑/零差评/反手一个差评哈哈哈/剧情诈骗"等
+    # 粉圈玩笑、书评、剧情简介会被误判为负面(2026-07-29 审核修复)。
+    strong_core = sum(1 for w in _STRONG_NEG if w not in _AMBIG_SET and w in t and _hit_wo_negation(t, w))
+    amb = sum(1 for w in _AMBIG_SET if w in t and _hit_wo_negation(t, w))
+    soft = sum(1 for w in _SOFT_NEG if w in t and _hit_wo_negation(t, w))
     dub = sum(1 for w in _DUBBING_NEG if w in t)
     pos = sum(1 for w in _POS_W if w in t)
-    if strong or dub:
+    ctx = any(c in t for c in _CTX_W)
+    laugh = any(m in t for m in _LAUGH_MARKS)
+    if strong_core or dub:
         return "neg"
+    if amb and ctx:
+        return "neg"
+    # 玩笑/段子语境（哈哈/笑死等）且无投诉语境：软负面不定负
+    if laugh and not ctx:
+        return "pos" if pos else "neu"
     if pos and not soft:
         return "pos"
     if pos and soft:
@@ -155,6 +187,8 @@ PROMO_PAT = [
 IRRELEVANT_PAT = [
     r"茶业博览|会展服务|展会",
     r"剪映",  # 剪映/爱奇艺套娃，非腾讯视频主体
+    # 同人文/CP文/小说投稿类（虚构情节常含"退款/差评/避雷"等词，与腾讯视频舆情无关）
+    r"甜文", r"lofter", r"【投稿】", r"宠物人受", r"同人文",
 ]
 # 会员买卖/代开/拼车/云包场帮抢/运营商卡等推广类广告（小红书高发）
 SALE_PAT = [
@@ -355,6 +389,9 @@ for e in heimao_raw:
 for _p in raw_posts:
     if _p.get("filtered_as_noise") or _p.get("noise_category") == "soft":
         _p["sentiment"] = "unclassified"
+    elif _p.get("platform") == "heimao":
+        # 红线：黑猫投诉平台上的帖子本身即投诉，一律归 neg，不依赖正文关键词命中
+        _p["sentiment"] = "neg"
     else:
         _p["sentiment"] = classify_sentiment(_p.get("text"))
 
@@ -417,10 +454,11 @@ THEME_DEFS = [
     ("member", "会员收费", "P1",
      ["自动续费", "退款", "退钱", "退费", "乱扣费", "乱收费", "重复扣费", "扣费",
       "套娃收费", "超前点播", "会员权益", "权益缩水", "权益不保", "svip", "vip",
-      "会员涨价", "未到账", "割韭菜", "霸王条款"], 1,
+      "会员涨价", "未到账", "没到账", "割韭菜", "霸王条款", "续费", "扣款", "充值"], 1,
      [
         ("auto_renew", "自动续费/扣费未告知致退款诉求",
-         ["自动续费", "扣费", "乱扣费", "未到账", "退款", "退钱", "退费"], 1),
+         ["自动续费", "扣费", "乱扣费", "未到账", "没到账", "退款", "退钱", "退费",
+          "续费", "扣款", "充值"], 1),
         ("svip_quality", "SVIP/会员画质与权益不符预期",
          ["svip", "vip", "画质", "清晰度", "臻彩", "1080p", "会员比免", "升级到svip", "升svip", "吃相难看"], 1),
         ("minor", "未成年人/误充退款遭拒",
@@ -429,10 +467,18 @@ THEME_DEFS = [
          ["云包场", "积分商城", "虚假宣传"], 1),
      ]),
     ("account", "账号安全", "P1",
-     ["封号", "封禁", "盗号", "风控", "涉嫌诈骗", "账号限制", "社交功能", "永久封停"], 1,
+     ["封号", "封禁", "盗号", "风控", "涉嫌诈骗", "账号限制", "社交功能", "永久封停",
+      "解封", "账号被限制", "账号被封", "给我封了", "重新注册账号"], 1,
      [
         ("wechat_ban", "微信账号批量封禁/风控误伤",
-         ["封号", "封禁", "永久封停", "社交功能", "账号限制", "风控", "涉嫌诈骗"], 1),
+         ["封号", "封禁", "永久封停", "社交功能", "账号限制", "风控", "涉嫌诈骗",
+          "解封", "账号被限制", "账号被封", "给我封了", "重新注册账号"], 1),
+     ]),
+    ("aftersale", "商品/售后", "P2",
+     ["草地场", "棉花娃娃", "周边", "破损", "瑕疵", "不让退货", "换货", "发货", "签收"], 1,
+     [
+        ("goods", "草地场周边商品质量/售后争议",
+         ["草地场", "棉花娃娃", "周边", "破损", "瑕疵", "不让退货", "换货", "发货", "签收"], 1),
      ]),
     ("extreme", "其他/监管竞品", "P0",
      ["抑郁", "想不开", "走投无路", "自伤", "自杀", "轻生", "活不下去", "逼到走投无路"], 1,
@@ -443,12 +489,19 @@ THEME_DEFS = [
     ("content", "内容运营", "P2",
      ["下架", "停更", "断更", "选角争议", "剪辑", "删减", "塌房", "价值观", "魔改",
       "抄袭", "烂尾", "悬浮", "抠图", "抵制", "辱女", "造黄谣", "黄谣", "弃剧", "弃坑", "难看",
-      "配音", "原声"], 2,
+      "配音", "原声", "永拒", "选角", "换角", "进组", "砸锅卖铁", "AI短剧", "侵权", "盗版",
+      "敷衍", "物料", "宣发", "催更"], 2,
      [
         ("wanglichuan", "《遇见王沥川》下架争议",
          ["遇见王沥川", "王沥川"], 1),
         ("perfect_world", "《完美世界》造黄谣/下架风波",
          ["完美世界"], 1),
+        ("ip_infringe", "《砸锅卖铁去上学》AI短剧侵权/盗版争议",
+         ["砸锅卖铁", "AI短剧", "侵权", "盗版"], 1),
+        ("casting", "选角/进组争议（粉丝抵制/永拒）",
+         ["永拒", "选角", "换角", "进组", "抵制"], 1),
+        ("promo_material", "宣发物料敷衍/催更声讨",
+         ["敷衍", "物料", "宣发", "催更"], 1),
         ("quit", "剧集弃剧/观感差",
          ["弃剧", "弃坑"], 1),
         ("produce", "抠图/滤镜/制作粗糙争议",
