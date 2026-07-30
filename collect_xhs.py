@@ -45,6 +45,11 @@ with sync_playwright() as p:
             if "登录后查看搜索结果" in body_text:
                 print(kw, "-> 需要登录，跳过")
                 continue
+            # 账号风控检测：300011 安全限制页会重定向到 website-login/error，
+            # 此时所有搜索都为空，继续跑没有意义，立即报错终止避免静默空跑
+            if "website-login/error" in page.url or "账号存在异常" in body_text or "安全限制" in body_text:
+                print(kw, "-> ACCOUNT_BLOCKED 账号被风控(300011)，终止采集")
+                raise SystemExit(2)
             for _ in range(3):
                 page.mouse.wheel(0, 2500)
                 page.wait_for_timeout(1000)

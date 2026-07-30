@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generated_at": "2026-07-30T11:02:32",
-    "period_start": "2026-07-29T11:02:32",
-    "period_end": "2026-07-30T11:02:32",
+    "generated_at": "2026-07-30T14:24:22",
+    "period_start": "2026-07-29T14:24:22",
+    "period_end": "2026-07-30T14:24:22",
     "sources": [
       "微博 m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)",
       "豆瓣小组 公开讨论搜索",
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮未纳入(登录态失效/风控)",
+    "xiaohongshu_status": "本轮去噪有效相关 3 条",
     "platform_stats": {
       "weibo": {
         "total": 616,
@@ -24,8 +24,8 @@
         "neu": 0
       },
       "xiaohongshu": {
-        "total": 0,
-        "real_negative": 0,
+        "total": 3,
+        "real_negative": 3,
         "pos": 0,
         "neu": 0
       },
@@ -40,23 +40,23 @@
     "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。"
   },
   "kpi": {
-    "total_collected": 2551,
+    "total_collected": 4790,
     "collected_by_platform": {
       "weibo": 2391,
       "douban": 40,
-      "xiaohongshu": 0,
+      "xiaohongshu": 2239,
       "heimao": 120
     },
-    "in_window_total": 681,
-    "total_raw": 634,
-    "real_negative": 62,
+    "in_window_total": 684,
+    "total_raw": 637,
+    "real_negative": 65,
     "pos": 248,
     "neu": 311,
-    "neg": 62,
-    "sentiment_total": 621,
-    "non_sentiment": 1930,
+    "neg": 65,
+    "sentiment_total": 624,
+    "non_sentiment": 4166,
     "non_sentiment_breakdown": {
-      "out_of_window": 1870,
+      "out_of_window": 4106,
       "duplicate": 40,
       "competitor_irrelevant": 8,
       "promo": 5
@@ -72,14 +72,14 @@
       "level": "P1",
       "section": "会员收费",
       "title": "自动续费/扣费未告知致退款诉求",
-      "summary": "本轮在微博 2条、黑猫投诉 15条共聚类出 17 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：续费、自动续费、退款。典型表述如：「【88】腾讯视频 SVIP连续包季卡 【首季优惠】腾讯视频S…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 2条、小红书 1条、黑猫投诉 15条共聚类出 18 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：续费、自动续费、退款。典型表述如：「【88】腾讯视频 SVIP连续包季卡 【首季优惠】腾讯视频S…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 2条、黑猫投诉 15条，共聚类出 17 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "本轮在微博 2条、小红书 1条、黑猫投诉 15条，共聚类出 18 条与「自动续费/扣费未告知致退款诉求」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
         "高频原因词：续费、自动续费、退款。",
         "典型表述如：「【88】腾讯视频 SVIP连续包季卡 【首季优惠】腾讯视频S…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 17,
+      "post_count": 18,
       "evidence": [
         {
           "platform": "微博",
@@ -112,6 +112,16 @@
           "text": "【88】腾讯视频 SVIP连续包季卡 【首季优惠】腾讯视频SVIP会员连包季卡 支持电视端 云视听极光电视TV会员 每季自动续费 可 "
         },
         {
+          "platform": "小红书",
+          "author": "匿名用户",
+          "followers": null,
+          "likes": null,
+          "reposts": null,
+          "published_at": "2026-07-29T14:24:22",
+          "permalink": "https://www.xiaohongshu.com/explore/6a699ccb000000000f0137c4?xsec_token=AB8RSEwTPd3u8YpwzWXQnHvYfr6p8L4excArZLyawvkNY=&xsec_source=",
+          "text": "腾讯吃相太难看了 已经是VIP了，结果没享受到什么服务，\n提前一天看到综艺得充值SVIP！？\n好吧，我充值了\n\t\n结果看大结局还要充钱！\n腾讯视频真的是够了\n\t\n上面不来管一管这些视频会员网站吗？\n多次重复恶意引导消费者付费\n真把消费者当冤"
+        },
+        {
           "platform": "黑猫投诉",
           "author": "正义喵",
           "followers": null,
@@ -130,16 +140,6 @@
           "published_at": "2026-07-30 09:06:28",
           "permalink": "https://tousu.sina.com.cn/complaint/view/17400319641/?sld=ad5b0339741a7511eefbebe397ca6d75",
           "text": "退钱 无缘无故扣我的钱，给他发消息也不回，你说这气不气，无缘无故就把我的19块钱给扣了给他发消息也不回也不看，就是一直推着"
-        },
-        {
-          "platform": "黑猫投诉",
-          "author": "勇敢喵",
-          "followers": null,
-          "likes": 0,
-          "reposts": null,
-          "published_at": "2026-07-30 08:54:15",
-          "permalink": "https://tousu.sina.com.cn/complaint/view/17400319420/?sld=e2e18bbfe394d743443582e83e21206d",
-          "text": "腾讯视频暗藏自动续费，退2026年2至6月费用 本人只在2025年11月份的时候开通了升级会员，当时并没有写明到期了自动续费一个月35元，在2026年7月29日看到扣款情况后，才发现每个月在自动续费！先要求退回2026年2月到2026年6月"
         }
       ]
     },
@@ -300,15 +300,25 @@
       "level": "P1",
       "section": "会员收费",
       "title": "SVIP/会员画质与权益不符预期",
-      "summary": "本轮在黑猫投诉 1条共聚类出 1 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：svip、vip。典型表述如：「腾讯视频付费遇问题，升级后点映礼包不让看还不给退 我在7月2…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在小红书 1条、黑猫投诉 1条共聚类出 2 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：吃相难看、svip、vip。典型表述如：「腾讯视频播放网剧《百花杀》吃相真难看！ 陪室友一起看网剧《百…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在黑猫投诉 1条，共聚类出 1 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
-        "高频原因词：svip、vip。",
-        "典型表述如：「腾讯视频付费遇问题，升级后点映礼包不让看还不给退 我在7月2…」。",
+        "本轮在小红书 1条、黑猫投诉 1条，共聚类出 2 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：吃相难看、svip、vip。",
+        "典型表述如：「腾讯视频播放网剧《百花杀》吃相真难看！ 陪室友一起看网剧《百…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 1,
+      "post_count": 2,
       "evidence": [
+        {
+          "platform": "小红书",
+          "author": "匿名用户",
+          "followers": null,
+          "likes": null,
+          "reposts": null,
+          "published_at": "2026-07-29T14:24:22",
+          "permalink": "https://www.xiaohongshu.com/explore/6a69f55e000000000f009c3b?xsec_token=AB8RSEwTPd3u8YpwzWXQnHvaRO0Yro-mafJOjxDJ9JD4E=&xsec_source=",
+          "text": "腾讯视频播放网剧《百花杀》吃相真难看！ 陪室友一起看网剧《百花杀》，已经购买了SVIP权益，结果周一周二周三没有更新剧集，这个SVIP 停在了观看32集，后续剧集一直要购买25元的大结局点映。\n\t\n这种套娃收费真的吃相难看，还能停更配合点映"
+        },
         {
           "platform": "黑猫投诉",
           "author": "正义喵",
@@ -458,14 +468,14 @@
       "level": "P2",
       "section": "内容运营",
       "title": "内容运营—其他分散负面",
-      "summary": "本轮在微博 3条共聚类出 3 条与「内容运营—其他分散负面」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：内容运营—其他分散负面。典型表述如：「单更好难熬！断更更别活了啊啊！更新更新更新更新更新我只是一个…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 3条、小红书 1条共聚类出 4 条与「内容运营—其他分散负面」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：内容运营—其他分散负面。典型表述如：「单更好难熬！断更更别活了啊啊！更新更新更新更新更新我只是一个…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 3条，共聚类出 3 条与「内容运营—其他分散负面」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "本轮在微博 3条、小红书 1条，共聚类出 4 条与「内容运营—其他分散负面」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
         "高频原因词：内容运营—其他分散负面。",
         "典型表述如：「单更好难熬！断更更别活了啊啊！更新更新更新更新更新我只是一个…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 3,
+      "post_count": 4,
       "evidence": [
         {
           "platform": "微博",
@@ -496,6 +506,16 @@
           "published_at": "2026-07-29T21:55:14",
           "permalink": "https://m.weibo.cn/detail/5326136310768582",
           "text": "@腾讯视频 怎么能下架唐顿庄园和信号呢？快上架 "
+        },
+        {
+          "platform": "小红书",
+          "author": "匿名用户",
+          "followers": null,
+          "likes": null,
+          "reposts": null,
+          "published_at": "2026-07-29T14:24:22",
+          "permalink": "https://www.xiaohongshu.com/explore/6a69b185000000000a03a60f?xsec_token=AB8RSEwTPd3u8YpwzWXQnHvWf70QVE6UbV-txSf5RIlK8=&xsec_source=",
+          "text": "腾讯你吃相真难看 #别搞我心态 #我没惹任何人 #腾讯视频 #腾讯视频会员"
         }
       ]
     },
@@ -12957,7 +12977,7 @@
       "sentiment": "neu"
     },
     {
-      "id": "douban_271845285",
+      "id": "douban_271711141",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -12972,6 +12992,60 @@
       "noise_category": "hard",
       "noise_reason": "未提及腾讯视频/无关组帖",
       "sentiment": "unclassified"
+    },
+    {
+      "id": "6a69f55e000000000f009c3b",
+      "platform": "xiaohongshu",
+      "author": null,
+      "followers": null,
+      "published_at": "2026-07-29T14:24:22",
+      "date_text": "编辑于 昨天 21:37 湖北",
+      "text": "腾讯视频播放网剧《百花杀》吃相真难看！ 陪室友一起看网剧《百花杀》，已经购买了SVIP权益，结果周一周二周三没有更新剧集，这个SVIP 停在了观看32集，后续剧集一直要购买25元的大结局点映。\n\t\n这种套娃收费真的吃相难看，还能停更配合点映收费的贱操作，也是第一次遇到这种情况，真是无耻啊！这个剧真没啥营养，腾讯也是能乱收费到可耻！决定不再购买腾讯后续会员！\n\t\n什么时候给这些平台也开个几十亿罚单，惩治以各种收费方式严重伤害消费者的观影感情、侵犯了我们的合理期待权的无耻行为！",
+      "reposts": null,
+      "comments": null,
+      "likes": null,
+      "keywords": "腾讯视频 绿屏",
+      "permalink": "https://www.xiaohongshu.com/explore/6a69f55e000000000f009c3b?xsec_token=AB8RSEwTPd3u8YpwzWXQnHvaRO0Yro-mafJOjxDJ9JD4E=&xsec_source=",
+      "filtered_as_noise": false,
+      "noise_category": "",
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "6a699ccb000000000f0137c4",
+      "platform": "xiaohongshu",
+      "author": null,
+      "followers": null,
+      "published_at": "2026-07-29T14:24:22",
+      "date_text": "昨天 14:25 陕西",
+      "text": "腾讯吃相太难看了 已经是VIP了，结果没享受到什么服务，\n提前一天看到综艺得充值SVIP！？\n好吧，我充值了\n\t\n结果看大结局还要充钱！\n腾讯视频真的是够了\n\t\n上面不来管一管这些视频会员网站吗？\n多次重复恶意引导消费者付费\n真把消费者当冤大头了\n\t\n#影视会员 #腾讯视频会员 #视频网站会员",
+      "reposts": null,
+      "comments": null,
+      "likes": null,
+      "keywords": "腾讯视频 没声音",
+      "permalink": "https://www.xiaohongshu.com/explore/6a699ccb000000000f0137c4?xsec_token=AB8RSEwTPd3u8YpwzWXQnHvYfr6p8L4excArZLyawvkNY=&xsec_source=",
+      "filtered_as_noise": false,
+      "noise_category": "",
+      "noise_reason": null,
+      "sentiment": "neg"
+    },
+    {
+      "id": "6a69b185000000000a03a60f",
+      "platform": "xiaohongshu",
+      "author": null,
+      "followers": null,
+      "published_at": "2026-07-29T14:24:22",
+      "date_text": "昨天 15:53 山东",
+      "text": "腾讯你吃相真难看 #别搞我心态 #我没惹任何人 #腾讯视频 #腾讯视频会员",
+      "reposts": null,
+      "comments": null,
+      "likes": null,
+      "keywords": "腾讯视频 没声音",
+      "permalink": "https://www.xiaohongshu.com/explore/6a69b185000000000a03a60f?xsec_token=AB8RSEwTPd3u8YpwzWXQnHvWf70QVE6UbV-txSf5RIlK8=&xsec_source=",
+      "filtered_as_noise": false,
+      "noise_category": "",
+      "noise_reason": null,
+      "sentiment": "neg"
     },
     {
       "id": "heimao_17400320164",
@@ -13397,17 +13471,17 @@
     },
     {
       "date": "2026-07-30",
-      "slot": "10:35（每日自动整合）",
+      "slot": "14:24（每日自动整合·小红书补采后终版）",
       "p0": 0,
       "p1": 4,
-      "p2": 3,
-      "pos": 249,
-      "neu": 307,
-      "neg": 60,
-      "sentiment_total": 616,
-      "non_sentiment": 1936,
-      "total": 60,
-      "highlight": "本轮风险分级：P0 0 起（主要：无）；P1 4 起（主要：自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、其他/监管竞品—其他分散负面、SVIP/会员画质与权益不符预期）；P2 3 起（主要：剧集弃剧/观感差、配音/原声争议（要求原声/拒配音）、《完美世界》造黄谣/下架风波）。"
+      "p2": 4,
+      "pos": 248,
+      "neu": 311,
+      "neg": 65,
+      "sentiment_total": 624,
+      "non_sentiment": 4166,
+      "total": 65,
+      "highlight": "本轮风险分级：P0 0 起（主要：无）；P1 4 起（主要：自动续费/扣费未告知致退款诉求、其他/监管竞品—其他分散负面、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期）；P2 4 起（主要：剧集弃剧/观感差、配音/原声争议（要求原声/拒配音）、内容运营—其他分散负面、《完美世界》造黄谣/下架风波）。"
     }
   ]
 }
