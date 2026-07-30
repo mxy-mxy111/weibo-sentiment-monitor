@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-07-30T10:35:54",
-    "period_start": "2026-07-29T10:35:54",
-    "period_end": "2026-07-30T10:35:54",
+    "generated_at": "2026-07-30T10:04:14",
+    "period_start": "2026-07-29T10:04:14",
+    "period_end": "2026-07-30T10:04:14",
     "sources": [
       "微博 m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)",
       "豆瓣小组 公开讨论搜索",
@@ -12750,7 +12750,7 @@
       "sentiment": "pos"
     },
     {
-      "id": "douban_271192997",
+      "id": "douban_273416101",
       "platform": "douban",
       "author": null,
       "followers": null,
