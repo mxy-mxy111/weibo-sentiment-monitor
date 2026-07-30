@@ -1,0 +1,101 @@
+[登录态] 使用 douban_login_data 登录态采集
+发现相关小组: 46
+   https://www.douban.com/group/710081/
+   https://www.douban.com/group/376291/
+   https://www.douban.com/group/746835/
+   https://www.douban.com/group/738147/
+   https://www.douban.com/group/609910/
+   https://www.douban.com/group/682411/
+   https://www.douban.com/group/343650/
+   https://www.douban.com/group/635121/
+   https://www.douban.com/group/763186/
+   https://www.douban.com/group/508496/
+   https://www.douban.com/group/187233/
+   https://www.douban.com/group/703147/
+   https://www.douban.com/group/751531/
+   https://www.douban.com/group/707727/
+   https://www.douban.com/group/754805/
+   https://www.douban.com/group/303333/
+   https://www.douban.com/group/762693/
+   https://www.douban.com/group/589918/
+   https://www.douban.com/group/751840/
+   https://www.douban.com/group/685462/
+   https://www.douban.com/group/763479/
+   https://www.douban.com/group/685857/
+   https://www.douban.com/group/739606/
+   https://www.douban.com/group/667558/
+   https://www.douban.com/group/688233/
+   https://www.douban.com/group/199976/
+   https://www.douban.com/group/699073/
+   https://www.douban.com/group/752208/
+   https://www.douban.com/group/638298/
+   https://www.douban.com/group/520492/
+   https://www.douban.com/group/498940/
+   https://www.douban.com/group/612746/
+   https://www.douban.com/group/620074/
+   https://www.douban.com/group/738830/
+   https://www.douban.com/group/345975/
+   https://www.douban.com/group/661890/
+   https://www.douban.com/group/759143/
+   https://www.douban.com/group/554165/
+   https://www.douban.com/group/683581/
+   https://www.douban.com/group/124748/
+   https://www.douban.com/group/752294/
+   https://www.douban.com/group/740196/
+   https://www.douban.com/group/479483/
+   https://www.douban.com/group/763514/
+   https://www.douban.com/group/642171/
+   https://www.douban.com/group/644798/
+[https://www.douban.com/group/710081/] 讨论帖 50 条 -> 负面候选 5
+[https://www.douban.com/group/376291/] 讨论帖 45 条 -> 负面候选 3
+[https://www.douban.com/group/746835/] 讨论帖 55 条 -> 负面候选 5
+[https://www.douban.com/group/738147/] 讨论帖 56 条 -> 负面候选 3
+[https://www.douban.com/group/609910/] 讨论帖 1 条 -> 负面候选 0
+[https://www.douban.com/group/682411/] 讨论帖 29 条 -> 负面候选 12
+[https://www.douban.com/group/343650/] 讨论帖 18 条 -> 负面候选 2
+[https://www.douban.com/group/635121/] 讨论帖 3 条 -> 负面候选 0
+[https://www.douban.com/group/763186/] 讨论帖 46 条 -> 负面候选 10
+[https://www.douban.com/group/508496/] 讨论帖 18 条 -> 负面候选 0
+[https://www.douban.com/group/187233/] 讨论帖 13 条 -> 负面候选 0
+[https://www.douban.com/group/703147/] 讨论帖 1 条 -> 负面候选 1
+核实 哈哈哈哈哈 第六季｜加更看完更想骂了 | time=2026-04-13T17:48:54
+核实 五哈的热度让你傲慢 | time=2026-06-27T11:30:11
+核实 意见/交流｜哈哈哈哈哈 第六季｜提名下一季去哪拍 | time=2026-06-23T17:25:28
+核实 哈哈哈哈哈 第六季｜🍠今天有一条官方发的切片评论 | time=2026-06-22T21:53:43
+核实 节目组已经完全对于我们专组摆烂了，就爱看那些好评 | time=2026-06-23T00:53:05
+核实 好想骂人！！！请尽情的笑窝吧哈哈哈！ | time=2013-01-23T15:23:49
+核实 绝了！哈哈哈哈 | time=2019-12-03T14:04:47
+核实 我为喜剧狂第三季第三期精彩大回顾 | time=2016-06-03T10:45:01
+核实 S3E2｜这期荒岛人气王感觉不错啊 | time=2026-07-12T12:35:42
+核实 看大王洞有感…我以为我喜欢的是脱口秀，原来我喜欢 | time=2026-07-29T10:54:56
+核实 脱口秀和Ta的朋友们 第三季｜喜欢王大刀、大国手 | time=2026-07-21T20:03:40
+核实 没人吐槽贾浩吗？ | time=2025-07-17T08:52:50
+核实 脱口秀和Ta的朋友们 第三季｜粽子打段子真的很棒 | time=2026-07-03T23:31:03
+核实 征“情”后续：网上哪来的真情？骗子倒是挺多 | time=2026-07-25T11:43:31
+核实 日常分享｜现在喝茶喜欢混搭 | time=2026-07-29T08:51:00
+核实 好喜欢已婚的姐姐啊 | time=2026-07-26T01:17:59
+核实 【免费】领取腾讯VIP，还有奈雪奶茶券 | time=2024-08-09T16:28:00
+核实 腾讯会员薅羊毛~~ | time=2024-06-05T16:54:31
+核实 腾讯视频会员有需要的不？ | time=2024-03-14T15:47:16
+核实 小程序新春活动来了，腾讯视频vip免费拿！ | time=2024-02-04T14:12:00
+核实 优酷年卡会员 | time=2023-07-14T17:01:30
+核实 各平台优惠视频会员｜走过路过不要错过 | time=2023-07-10T11:23:45
+核实 ➗腾讯会员一个月 | time=2023-06-18T10:14:49
+核实 腾讯爱奇艺优酷会员 | time=2021-01-16T18:06:57
+核实 芒果TV会员，免费薅 | time=2023-04-27T14:11:48
+核实 视频会员哪家强，看看我的咋样？ | time=2023-04-05T17:18:02
+核实 腾讯爱奇艺韩剧会员都能看 | time=2022-03-02T08:50:55
+核实 优酷腾讯芒果爱奇艺五折会员活动 | time=2020-01-29T18:13:44
+核实 我来挖个坑 | time=2011-05-19T17:43:05
+核实 组长喜欢穿中筒袜！！！然后她就喜欢叫别人“筒子们 | time=2011-05-18T21:56:08
+核实 质感不错啊 咋没什么人 | time=2026-07-07T01:04:05
+核实 很好笑，演技很细腻，好喜欢这种类型的，好久都没演 | time=2026-07-13T22:39:10
+核实 京城奇探超级好看，第二季速速抬上来！！！ | time=2026-07-21T17:07:40
+核实 希望热度能再火一点。 | time=2026-07-23T13:46:21
+核实 等口碑发酵 | time=2026-07-07T21:46:26
+核实 花絮里演员互动很有💊味 | time=2026-07-22T06:54:17
+核实 真的很好看！ | time=2026-07-21T17:22:36
+核实 越看越好看 | time=2026-07-14T15:19:27
+核实 翟子路宝藏演员。另一位主演也前途无量 | time=2026-07-19T22:41:21
+核实 真的很好看啊 | time=2026-07-18T19:14:50
+total douban candidates: 40
