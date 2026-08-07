@@ -1,6 +1,486 @@
 [
   {
     "main": {
+      "sn": "17400593484",
+      "title": "腾讯视频取消自动续费仍扣费，客服推诿，血汗钱遭黑手",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费",
+      "comment_id": "tousu_complaint_53389118",
+      "summary": "我购买的会员在上个月就取消了自动续费，然后这个月它又自动扣费了，然后打客服电话让转人工也不转，跟线上客服聊客服说我要去苹果支付里关闭，说什么钱是先到苹果那边，还是提前好几个小时扣款，，，我就纳闷了，这钱最后不是到腾讯一样，就这么坑老百姓的血汗钱吗？当吸血鬼？",
+      "status": 4,
+      "timestamp": "2026-08-07",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400593484/?sld=6028730629fd60c7d4f0de63b3fdcf72",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786067460"
+    },
+    "author": {
+      "title": "正义喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400578636",
+      "title": "自动续费",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费",
+      "comment_id": "tousu_complaint_53374270",
+      "summary": "我开通自动续费的是每月15元的，2021年之后他每月扣25元，在没经过我同意就每月多扣了10元！",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400578636/?sld=1234366a97ccd2615cfcb6131b9af10b",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786009672"
+    },
+    "author": {
+      "title": "机灵喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400587022",
+      "title": "腾讯视频遭投诉：会员续费忘关，到期未看体验差",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费",
+      "comment_id": "tousu_complaint_53382656",
+      "summary": "充值腾讯会员后续费忘记关闭，到期后没有观看",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400587022/?sld=41566ea1d58cdae9c9f9073610f81bae",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786027036"
+    },
+    "author": {
+      "title": "洞察喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400587494",
+      "title": "京东腾讯视频VIP会员旗舰店",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退货退款,赔偿",
+      "issue": "虚假发货,错发货",
+      "comment_id": "tousu_complaint_53383128",
+      "summary": "我于2026年2月14号购买的京东puls京典年卡腾讯视频，显示领取成功但截止目前未充值到我的腾讯视频会员账号，我询问京东腾讯视频客服，客服查询充值记录说充值的qq号码是446******，我并没有输入我的qq号码并领取，然后我告知客服，这不是我的账号，客服回答，依你填写的的账号进行充值。然后我于今天晚上给京东客服打电...",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400587494/?sld=8d0e79e849c66d792d33ff58dab364f1",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786028316"
+    },
+    "author": {
+      "title": "洞察喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400585576",
+      "title": "腾讯视频自动续费猫腻多，取消退款遇阻盼处理",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费",
+      "comment_id": "tousu_complaint_53381210",
+      "summary": "自动续费一年了，第二年要扣额外的费用我本人不知情要求退款并且取消自动续费，结果按照客服操作后并没有退款选项，在微信支付投诉无果",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400585576/?sld=558b7af56ee7447c83d82eee55ed0771",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786023423"
+    },
+    "author": {
+      "title": "友爱喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400586193",
+      "title": "腾讯视频未观看申请退款",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "申请退款/提现不到账",
+      "comment_id": "tousu_complaint_53381827",
+      "summary": "本人本人与2026年8月8月6号在腾在腾讯视频上面购买了VIP，订购单号订购单号是45000*********080***********，我购买我购买后发现。此 vip无法观看我要看的全集（需S VIP）,并且本人购买后并没有观看任何需要付费的内付费的内容，未产生会产生任何会产生任何消费行为。本人向腾讯视频申请退款，办客但客服却以虚拟商品虚...",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400586193/?sld=c88786553368fd960e1ef16c0a692ee9",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786024942"
+    },
+    "author": {
+      "title": "机灵喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400585967",
+      "title": "腾讯视频乱扣费，2025年9月到2026年4月求退钱",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费",
+      "comment_id": "tousu_complaint_53381601",
+      "summary": "2025年9月27日到2026年4月22日，自动扣费我的微信零钱，需要全额退款",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400585967/?sld=184f361aea9ce4e41dee90148b11b287",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786024365"
+    },
+    "author": {
+      "title": "洞察喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400584056",
+      "title": "腾讯视频",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "客服不处理/处理不当,申请退款/提现不到账",
+      "comment_id": "tousu_complaint_53379690",
+      "summary": "我手动充值30元腾讯视频SVIP会员，没有开通自动续费，充值后几乎没有使用会员权益。我申请会员退款，客服回避退款问题，没有实质性解决我的诉求。平台“一经售出概不退款”属于霸王条款，侵害消费者合法权益，现要求腾讯视频全额退还30元充值费用。",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400584056/?sld=622951fabe085b382a45d29a26ab1418",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786020001"
+    },
+    "author": {
+      "title": "洞察喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400582221",
+      "title": "自动扣费",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "扣费",
+      "comment_id": "tousu_complaint_53377855",
+      "summary": "我的腾讯视频，苹果一直在扣费，最近才发现，而且之前那个苹果账号早都不用了",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400582221/?sld=58d59361b818a08e14f4d1c48188aaf8",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786015852"
+    },
+    "author": {
+      "title": "勇敢喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400582923",
+      "title": "未提醒乱扣费",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费,乱收费",
+      "comment_id": "tousu_complaint_53378557",
+      "summary": "他于8月6号15:24自动扣费，然后它未明确提醒我要扣费就擅自扣费了",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400582923/?sld=3ff057aefd04ed9844675cfe6b38f915",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786017463"
+    },
+    "author": {
+      "title": "勇敢喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400580405",
+      "title": "腾讯体育视频",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费",
+      "comment_id": "tousu_complaint_53376039",
+      "summary": "自动续费申请退款，需要申请退款，麻烦帮忙申请 感谢",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400580405/?sld=e28c758be48d169aa79debe0a7840872",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786012516"
+    },
+    "author": {
+      "title": "正义喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400580470",
+      "title": "腾讯视频",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "霸王条款",
+      "comment_id": "tousu_complaint_53376104",
+      "summary": "本人于2026年8月6日在腾讯视频APP内购买《仙逆》剧场版会员时，因界面版本标识不够显著，导致误购买了去年的旧版本（实际想购买新版本）。核心诉求理由如下：\n1. 权益完全未使用： 购买后发现买错，我第一时间（几分钟内）就联系了客服申请退款。在此期间，我完全没有观看任何相关视频内容，也没有使用该版本的任何特权...",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400580470/?sld=cc717ea645d89044732b7d2a2a6cffb9",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786012606"
+    },
+    "author": {
+      "title": "友爱喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400574041",
+      "title": "腾讯视频号小店揽收阶段强行发货，平台误判驳回退款",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款,解释",
+      "issue": "不予退款,服务不到位",
+      "comment_id": "tousu_complaint_53369675",
+      "summary": "本人于8月2日在微信视频号小店下单火腿肠（订单号：37381*********69024），物流显示状态为揽收，我发起退款申请。商家拒绝退款，依旧强行发货。货物到达后我打算拒收，商家以保质期短为由，说一旦发出拒绝拦截拒绝拒签，我申请了平台介入，平台不看原因错误引用规则，以食品特殊性不支持7天无理由驳回。\n重点说明：我并...",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400574041/?sld=5dbdaecd8cc8cc9df244f38ce5cbb780",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786003652"
+    },
+    "author": {
+      "title": "机灵喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400578509",
+      "title": "腾讯视频购会员权益缺失，互相推诿，盼退16元全款",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "账号问题",
+      "comment_id": "tousu_complaint_53374143",
+      "summary": "我于2026年7月19日在苹果手机中的腾讯视频APP中购买了腾讯视频会员，付款后迟迟收不到腾讯视频的会员权益，联系腾讯视频客服，其反馈在苹果手机上购买订阅的会员付款是付给苹果公司的，需要找苹果官方客服处理，苹果官方查询到我的帐户中，确实有订阅的腾讯视频会员权益，腾讯视频，推诿扯皮不解决问题，今天已经2026年8...",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400578509/?sld=5dfa8fc1326e887c1480b64aa95299e3",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786009478"
+    },
+    "author": {
+      "title": "机灵喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400576773",
+      "title": "腾讯视频借苹果App多扣费用，开通SVIP后仍多扣除一项VIP自动扣费",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款,赔偿",
+      "issue": "乱收费,强迫收费",
+      "comment_id": "tousu_complaint_53372407",
+      "summary": "我于2023年5月1日用苹果手机开通了腾讯视频VIP服务，2024年1月份我不再使用苹果手机了，用华为手机开通了腾讯视频的SVIP服务，但是一直到2025年7月1日腾讯视频依旧通过苹果App对我进行VIP的自动扣费，SVIP不是VIP的胜升级吗？就这样额外多给我扣除了19个月的费用每个月20元，共计多扣除了380元的费用，联系腾讯视频退费...",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400576773/?sld=3fbddceb9558d2568bff8270fa8f52e0",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786007053"
+    },
+    "author": {
+      "title": "友爱喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400572367",
+      "title": "腾讯视频：已关自动续费仍扣费，年费会员退款诉求来",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费,强迫收费",
+      "comment_id": "tousu_complaint_53368001",
+      "summary": "2025年8月6日购买腾讯视频年费会员，当时已经点击了关闭自动续费通道，今年8月6日未得到提示就自动进行了扣费，现要求腾讯视频退款。",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400572367/?sld=cc8a58198ab20e5a0125a28b43a9af21",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1786001587"
+    },
+    "author": {
+      "title": "友爱喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400571022",
+      "title": "平台展示失效剧集诱导充值，拒绝退还会员费用 27元",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "客服不处理/处理不当,乱收费",
+      "comment_id": "tousu_complaint_53366656",
+      "summary": "本人于2026年08月06日14:27，在腾讯视频APP\n内充值「腾讯视频JUMP 学生卡连续包月」，支付金额15元，交易单号：45000*********080***********\n商户单号：product_SZ_202**************\n14:29:01，超级影视VIP，金额12元\n交易单号：45000*********080***********\n商户单号：product_SZ_202**************\n支付方式均为建...",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400571022/?sld=a134174a4b7701dad43d4fb0c9cdddeb",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1785999926"
+    },
+    "author": {
+      "title": "正义喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400509717",
+      "title": "腾讯视频擅自自动续费，30多个月，退款！",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款,赔偿,解释",
+      "issue": "霸王条款,自动续费,乱收费,强迫收费",
+      "comment_id": "tousu_complaint_53305351",
+      "summary": "腾讯视频不经过我的允许每个月自动续费，长达30多个月， 我要腾讯视频把钱退给我 他们自动续费 我根本不知道 也没人通知我就扣钱 我要求退款 欺骗我们消费者 我希望黑猫帮我解决 帮我要求商家退款",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400509717/?sld=9aa6b7232f4e82838a14f95e7ba91112",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1785843406"
+    },
+    "author": {
+      "title": "机灵喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400570004",
+      "title": "霸王条款，会员不退费",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款",
+      "issue": "自动续费,申请退款/提现不到账,霸王条款",
+      "comment_id": "tousu_complaint_53365638",
+      "summary": "没有享受权益，没有任何到期前提醒，扣费当天立马打客服电话，态度恶劣强硬，到现在不处理",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400570004/?sld=5a846380ff145917da4b706d43ee8264",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1785998586"
+    },
+    "author": {
+      "title": "友爱喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
+      "sn": "17400565856",
+      "title": "腾讯会员 乱收费 套路深 诱导消费",
+      "cotitle": "腾讯视频小助手",
+      "couid": "7850526767",
+      "appeal": "退款,赔偿,改善服务",
+      "issue": "自动续费,强迫收费,乱收费,服务不到位/态度差,虚假/误导宣传",
+      "comment_id": "tousu_complaint_53361490",
+      "summary": "自动扣费 不需要会员 申诉还给我驳回 霸王条款 强行收费",
+      "status": 4,
+      "timestamp": "2026-08-06",
+      "url": "https://tousu.sina.com.cn/complaint/view/17400565856/?sld=c3d0003a9c4d3f8d05a27ad4216aecb2",
+      "share_amount": 0,
+      "comment_amount": 0,
+      "upvote_amount": 0,
+      "is_upvote": false,
+      "created_at": "1785992409"
+    },
+    "author": {
+      "title": "勇敢喵",
+      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
+    }
+  },
+  {
+    "main": {
       "sn": "17400559664",
       "title": "腾讯视频自动扣费",
       "cotitle": "腾讯视频小助手",
@@ -204,7 +684,7 @@
       "status": 4,
       "timestamp": "2026-08-05",
       "url": "https://tousu.sina.com.cn/complaint/view/17400549062/?sld=6b5849fb159bac2521dba288c938e5c2",
-      "share_amount": 0,
+      "share_amount": 1,
       "comment_amount": 0,
       "upvote_amount": 0,
       "is_upvote": false,
@@ -1381,8 +1861,8 @@
       "timestamp": "2026-08-04",
       "url": "https://tousu.sina.com.cn/complaint/view/17400494861/?sld=1aa2489a2edc0979678c3c17b54339a8",
       "share_amount": 46,
-      "comment_amount": 8,
-      "upvote_amount": 62,
+      "comment_amount": 10,
+      "upvote_amount": 66,
       "is_upvote": false,
       "created_at": "1785822553"
     },
@@ -1569,7 +2049,7 @@
       "issue": "自动续费,联系不到客服",
       "comment_id": "tousu_complaint_53271488",
       "summary": "腾讯视频自动续费要求退款不回复，根据第十八条:\n网络交易经营者采取自动展期、自动续费等方式提供服务的，应当在消费者接受服务前和自动展期、自动续费等日期前五日，以显著方式提请消费者注意，由消费者自主选择；在服务期间内，应当为消费者提供显著、简便的随时取消或者变更的选项，并不得收取不合理费用。",
-      "status": 4,
+      "status": 7,
       "timestamp": "2026-08-03",
       "url": "https://tousu.sina.com.cn/complaint/view/17400475854/?sld=0be3262896dd85cfec2a11fc64aa8fa7",
       "share_amount": 0,
@@ -2157,486 +2637,6 @@
     "author": {
       "title": "勇敢喵",
       "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400441588",
-      "title": "退回部分金额",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "未成年充值",
-      "comment_id": "tousu_complaint_53237222",
-      "summary": "未成年你们公司为什么可以给他们充值至少你们公司要退回一部分",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400441588/?sld=345ead0f40967384a52e491f81e44c52",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785679783"
-    },
-    "author": {
-      "title": "洞察喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400442258",
-      "title": "腾讯视频联合京东，新账号不存在且无人处理",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "给我对应的会员权益",
-      "issue": "账号问题",
-      "comment_id": "tousu_complaint_53237892",
-      "summary": "腾讯开了联合会员，京东给了一个新的不存在的账号，没有人解决问题",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400442258/?sld=2c59b9f151f17288fd280065d65a718b",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785682072"
-    },
-    "author": {
-      "title": "友爱喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400441197",
-      "title": "腾讯视频关订仍扣话费，未享服务求退钱",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "自动续费",
-      "comment_id": "tousu_complaint_53236831",
-      "summary": "我已经在订阅设置关闭腾讯视频自动续费，但平台仍然每月从话费账户持续自动扣费，本人并未使用会员服务，多次关闭订阅依然产生扣款，损害消费者权益，请求把全部无故扣取的费用予以退还。",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400441197/?sld=ee468fa0939bfef9f13cd16e36202cef",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785678638"
-    },
-    "author": {
-      "title": "机灵喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400440206",
-      "title": "腾讯视频不处理退费，孩子误开会员申请久未回应",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "申请退款/提现不到账,联系不到客服,客服不处理/处理不当,服务不到位/态度差,孩子开通不给退",
-      "comment_id": "tousu_complaint_53235840",
-      "summary": "我于2026年8月1日晚把电话给孩子玩，孩子在看视频时开通会员，昨晚已提交退费但是一直不给处理",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400440206/?sld=93465447a271c46564148df2432a7973",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785675780"
-    },
-    "author": {
-      "title": "洞察喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400438718",
-      "title": "在视频号买到假货要求赔偿",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "赔偿,退款,道歉,作出处罚",
-      "issue": "虚假/误导宣传",
-      "comment_id": "tousu_complaint_53234352",
-      "summary": "在腾讯视频号买的衣服是假货 虚假宣传正品 提出赔偿处罚",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400438718/?sld=8d25fac0cedc646323e185d5ef6453fe",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785671704"
-    },
-    "author": {
-      "title": "机灵喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400435598",
-      "title": "腾讯视频会员开通不明，未用权益退款太少引不满",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款,改善服务",
-      "issue": "申请退款/提现不到账",
-      "comment_id": "tousu_complaint_53231232",
-      "summary": "腾讯视频会员不知情如何开通的 2021年开通 一直到今年 每笔微信零钱扣费  询问客服说续费有站内提醒 但手机上并没有下载腾讯视频APP 站内提醒收不到 每月扣费25 会员权益也没有使用 共计扣费约1350元     315投诉对方坚持只退款875元 申请退回未使用会员权益月所有费用 ",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400435598/?sld=8821e2d471b25573191251d29b91ea2b",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785664910"
-    },
-    "author": {
-      "title": "洞察喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400433942",
-      "title": "腾讯视频强制自动续费不退款",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "自动续费",
-      "comment_id": "tousu_complaint_53229576",
-      "summary": "我今天收到腾讯会员自动续费成功通知，完全没有使用并第一时间申请取消，但腾讯拒绝退款。我认为这是霸王条款，没有使用的产品为何不能退款。另外，我购买时是取消了自动续费的，但依旧给我自动续费！",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400433942/?sld=f2ce1f4b610bcb10c1f125ebfb26ca59",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785661985"
-    },
-    "author": {
-      "title": "勇敢喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400434017",
-      "title": "腾讯不出面解决乱扣费",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "自动续费,客服不处理/处理不当,联系不到客服",
-      "comment_id": "tousu_complaint_53229651",
-      "summary": "2026年8月2号，今天刚刚扣款，没有任何通知，直接给我扣了",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400434017/?sld=2e06aa5d0fac26741350c3f1c3ff5143",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785662109"
-    },
-    "author": {
-      "title": "正义喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400430981",
-      "title": "腾讯视频莫名扣费，21元何时退给咱？",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "自动续费",
-      "comment_id": "tousu_complaint_53226615",
-      "summary": "腾讯视频会员于2026年8月2号在没有通知的情况下自动扣了我21块钱，我需求是退还这笔费用",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400430981/?sld=461472e5bd2e43e6460be07b1787a6b0",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785656993"
-    },
-    "author": {
-      "title": "勇敢喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400430492",
-      "title": "腾讯视频取消svip续费选项不明，盼退下月费用",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "客服不处理/处理不当,联系不到客服,申请退款/提现不到账,自动续费,乱收费,强迫收费",
-      "comment_id": "tousu_complaint_53226126",
-      "summary": "腾讯svip续费找不到取消入口，取消选项不明显，下个月继续扣费，要求退款35元",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400430492/?sld=d0a75134d2abd77970ea9a3deb6a3e4b",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785656214"
-    },
-    "author": {
-      "title": "勇敢喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400431471",
-      "title": "腾讯视频不给误开通的套餐退还钱，霸王条款",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款,赔偿,作出处罚,道歉",
-      "issue": "霸王条款,服务不到位/态度差,申请退款/提现不到账,未履行合同",
-      "comment_id": "tousu_complaint_53227105",
-      "summary": "我于2026年8月2号误开通了早鸟套餐，没使用过权限。开通不到半小时不给退还，我都不知道这个套餐是干嘛的",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400431471/?sld=054f85d8c17a8b604af12916e549bec3",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785657779"
-    },
-    "author": {
-      "title": "正义喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400429674",
-      "title": "退款",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "乱收费",
-      "comment_id": "tousu_complaint_53225308",
-      "summary": "2026年8月1日腾讯视频胡乱扣除会员费用，我现在要求退款",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400429674/?sld=b0c6a3950b4dc08c9b904d9c7be31403",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785654917"
-    },
-    "author": {
-      "title": "洞察喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400428318",
-      "title": "腾讯视频SVIP已覆盖VIP仍重复扣费且承诺退款未兑现",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "霸王条款,自动续费",
-      "comment_id": "tousu_complaint_53223952",
-      "summary": "本人2025年12月起同时开通腾讯视频SVIP和学生卡VIP，SVIP已完整覆盖VIP权益，VIP属重复购买，且自动续费时平台未显著提醒（违反《网络交易监督管理办法》第十八条）。7月27日申请退款，客服拒绝后改口承诺退费，却仅退7月单月，后承诺3-5个工作日回复至今未收到相关回复内容。诉求：退还2026.12-2026.06的重复扣费，共计...",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400428318/?sld=a2801a2d5c634a5fb36e311e00ff189e",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785652717"
-    },
-    "author": {
-      "title": "勇敢喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400428416",
-      "title": "腾讯客服不处理问题",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "改善服务,退款,赔偿",
-      "issue": "客服不处理/处理不当,账号问题",
-      "comment_id": "tousu_complaint_53224050",
-      "summary": "本人的腾讯apo会员账号被绑错到另外一个账号上面，找客服不给处理，还各种找理由推脱不给处理，我自己试了很多方法都没用",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400428416/?sld=cd82fe6b9d20e33c2a67da011f93d046",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785652896"
-    },
-    "author": {
-      "title": "勇敢喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400426608",
-      "title": "没有任何提误费",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "申请退款/提现不到账",
-      "comment_id": "tousu_complaint_53222242",
-      "summary": "2026年8月2日腾讯视频VIP自动续费扣费35元。平台未在扣费前5日通过短信、弹窗进行显著续费提醒，仅APP站内推送消息，不符合《网络交易监督管理办法》第十八条规定。扣费至今未使用会员观影权益，第一时间联系腾讯人工客服申请退款被直接拒绝。平台以虚拟商品不予退款为由拒绝，该格式条款属于排除消费者权利的无效条款。...",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400426608/?sld=a355aa88c3ca36549fdaac20366ba270",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785649810"
-    },
-    "author": {
-      "title": "机灵喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400426557",
-      "title": "腾讯视频号在我不知情情况下私自扣费",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款,解释",
-      "issue": "乱收费,自动续费",
-      "comment_id": "tousu_complaint_53222191",
-      "summary": "我未购买任何视频号套餐，它以游客身份开支付。我并不知情！",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400426557/?sld=5d05d8923335e6471e3091bc593eae37",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785649714"
-    },
-    "author": {
-      "title": "勇敢喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400423820",
-      "title": "深圳市腾讯",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款,改善服务,解释",
-      "issue": "申请退款/提现不到账,客服不处理/处理不当,服务不到位/态度差,自动续费,联系不到客服",
-      "comment_id": "tousu_complaint_53219454",
-      "summary": "在进行无效沟通后客服在1个多小时的时间内再没有进行回复",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400423820/?sld=3a835678a6c9ba2a65970e620e19448d",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785644399"
-    },
-    "author": {
-      "title": "正义喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400423825",
-      "title": "腾讯视频自动扣35元续svip，多次投诉苹果未退款",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "不予退款",
-      "comment_id": "tousu_complaint_53219459",
-      "summary": "我于2026-07-29 19:10:01被腾讯视频自动扣款了35块钱。用于自动续费svip，且多次向苹果客服投诉退款之后不予退款。且没有通过任何方式通知到我根据国务院\n部门文件国家市场监督管理总局令第37号公布、20\n21年5月1日实施的《网络交易监督管理办法》第十\n八条明确规定自动续费应当在前五日以显著方式提\n醒消费者注意，但是...",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400423825/?sld=069436a23328eb9ded55f192042807fb",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785644411"
-    },
-    "author": {
-      "title": "正义喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/4.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400424510",
-      "title": "腾讯视频会员续费服务纠纷",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款",
-      "issue": "自动续费,未履行合同",
-      "comment_id": "tousu_complaint_53220144",
-      "summary": "我于2026年应该是六月份买了腾讯视频的会员，就在iPhone ID里面订阅了，但他连续两个月都扣了我25块钱说我没有取消续费，但是我iPhone ID里只有微信付款，他偏偏是在微信里扣的钱。我找他售后完全不理我，而且扣费钱没有任何的短信信息电话提示什么提示都没有，就直接扣了25块钱在我取消订阅的情况下。",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400424510/?sld=5a06c82966e1759be7f907dafd733ce5",
-      "share_amount": 0,
-      "comment_amount": 0,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785645678"
-    },
-    "author": {
-      "title": "友爱喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/1.png"
-    }
-  },
-  {
-    "main": {
-      "sn": "17400424826",
-      "title": "为何自动续费？",
-      "cotitle": "腾讯视频小助手",
-      "couid": "7850526767",
-      "appeal": "退款,赔偿,解释,作出处罚,道歉",
-      "issue": "客服不处理/处理不当,自动续费,联系不到客服",
-      "comment_id": "tousu_complaint_53220460",
-      "summary": "我每次开通完都会关闭，我之前就关闭自动续费了，为什么还会自动续费？而且到期以后才158元，我为啥要自动续费238元？客服也不理我",
-      "status": 4,
-      "timestamp": "2026-08-02",
-      "url": "https://tousu.sina.com.cn/complaint/view/17400424826/?sld=9003524f78243c357daaed28c8dd4e2b",
-      "share_amount": 0,
-      "comment_amount": 1,
-      "upvote_amount": 0,
-      "is_upvote": false,
-      "created_at": "1785646249"
-    },
-    "author": {
-      "title": "友爱喵",
-      "avatar": "https://n.sinaimg.cn/finance/235fa465/20230314/3.png"
     }
   }
 ]
