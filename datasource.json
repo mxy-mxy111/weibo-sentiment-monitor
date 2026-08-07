@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generated_at": "2026-08-07T10:20:01",
-    "period_start": "2026-08-06T10:20:01",
-    "period_end": "2026-08-07T10:20:01",
+    "generated_at": "2026-08-07T11:23:03",
+    "period_start": "2026-08-06T11:23:03",
+    "period_end": "2026-08-07T11:23:03",
     "sources": [
       "微博 m.weibo.cn 公开搜索(通用关键词 + 热播剧综专项)",
       "豆瓣小组 公开讨论搜索",
       "小红书 公开笔记搜索(登录态核实)",
       "黑猫投诉 tousu.sina.com.cn 公开投诉"
     ],
-    "xiaohongshu_status": "本轮去噪有效相关 4 条",
+    "xiaohongshu_status": "本轮未纳入(登录态失效/风控)",
     "platform_stats": {
       "weibo": {
         "total": 588,
@@ -24,8 +24,8 @@
         "neu": 0
       },
       "xiaohongshu": {
-        "total": 4,
-        "real_negative": 4,
+        "total": 0,
+        "real_negative": 0,
         "pos": 0,
         "neu": 0
       },
@@ -40,23 +40,23 @@
     "note": "本数据源每轮一并采集微博+豆瓣+小红书+黑猫投诉四平台并跨平台去重(重复内容删除)。raw_posts 为去重后的原始采集帖(含 platform 平台标记与 filtered_as_noise 噪音标记)；sentiment_events 为按看板过滤规则归并分级后的真实负面/风险事件；risk_history 为逐轮风险回顾全量历史。所有内容基于真实采集，不含编造数据。"
   },
   "kpi": {
-    "total_collected": 3073,
+    "total_collected": 2623,
     "collected_by_platform": {
       "weibo": 2473,
       "douban": 40,
-      "xiaohongshu": 450,
+      "xiaohongshu": 0,
       "heimao": 110
     },
-    "in_window_total": 674,
-    "total_raw": 614,
-    "real_negative": 79,
+    "in_window_total": 670,
+    "total_raw": 610,
+    "real_negative": 75,
     "pos": 231,
     "neu": 293,
-    "neg": 79,
-    "sentiment_total": 603,
-    "non_sentiment": 2470,
+    "neg": 75,
+    "sentiment_total": 599,
+    "non_sentiment": 2024,
     "non_sentiment_breakdown": {
-      "out_of_window": 2399,
+      "out_of_window": 1953,
       "duplicate": 52,
       "competitor_irrelevant": 7,
       "promo": 4
@@ -64,7 +64,7 @@
     "p0": 0,
     "p1": 3,
     "p2": 7,
-    "conclusion": "本轮风险分级：P0 0 起（主要：无）；P1 3 起（主要：自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期）；P2 7 起（主要：其他/监管竞品—其他分散负面、选角/进组争议（粉丝抵制/永拒）、播放卡顿/闪退/崩溃等故障、其他剧综负面（观感/排播/剧情吐槽）、剧集弃剧/观感差、《砸锅卖铁去上学》AI短剧侵权/盗版争议、抠图/滤镜/制作粗糙争议）。"
+    "conclusion": "本轮风险分级：P0 0 起（主要：无）；P1 3 起（主要：自动续费/扣费未告知致退款诉求、微信账号批量封禁/风控误伤、SVIP/会员画质与权益不符预期）；P2 7 起（主要：其他/监管竞品—其他分散负面、选角/进组争议（粉丝抵制/永拒）、其他剧综负面（观感/排播/剧情吐槽）、播放卡顿/闪退/崩溃等故障、剧集弃剧/观感差、《砸锅卖铁去上学》AI短剧侵权/盗版争议、抠图/滤镜/制作粗糙争议）。"
   },
   "sentiment_events": [
     {
@@ -224,14 +224,14 @@
       "level": "P1",
       "section": "会员收费",
       "title": "SVIP/会员画质与权益不符预期",
-      "summary": "本轮在微博 3条、小红书 1条共聚类出 4 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：vip、svip。典型表述如：「QQ被盗拿回来就被别人恶意绑定家庭，篡改了成年人信息改为未成…」。建议结合工单/客服渠道核实处理时效。",
+      "summary": "本轮在微博 3条共聚类出 3 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：vip、svip。典型表述如：「QQ被盗拿回来就被别人恶意绑定家庭，篡改了成年人信息改为未成…」。建议结合工单/客服渠道核实处理时效。",
       "summary_points": [
-        "本轮在微博 3条、小红书 1条，共聚类出 4 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "本轮在微博 3条，共聚类出 3 条与「SVIP/会员画质与权益不符预期」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
         "高频原因词：vip、svip。",
         "典型表述如：「QQ被盗拿回来就被别人恶意绑定家庭，篡改了成年人信息改为未成…」。",
         "建议结合工单/客服渠道核实处理时效。"
       ],
-      "post_count": 4,
+      "post_count": 3,
       "evidence": [
         {
           "platform": "微博",
@@ -262,16 +262,6 @@
           "published_at": "2026-08-07T10:01:33",
           "permalink": "https://m.weibo.cn/detail/5329218197261845",
           "text": "QQ被盗拿回来就被别人恶意绑定家庭，篡改了成年人信息改为未成年人信息，骗钱@腾讯客服 能不能赶快帮我解决@腾讯QQ账号客服 @腾讯账号安全客服 @腾讯视频超话 @腾讯客服转人工 @腾讯账号客服 @腾讯微信客服 @腾讯vip @腾讯新闻 @腾"
-        },
-        {
-          "platform": "小红书",
-          "author": "匿名用户",
-          "followers": null,
-          "likes": null,
-          "reposts": null,
-          "published_at": "2026-07-31T10:20:01",
-          "permalink": "https://www.xiaohongshu.com/explore/6a6b43ab0000000027023a02?xsec_token=AB0UHwcJzeK322rUssEso1xazGxd76dFxXTi5yrL8WocE=&xsec_source=",
-          "text": "腾讯视频吃相太难看 冲着宣传的可享10台设备累计播放、4台设备同时播放充了svip家庭年卡，可当你充了两天以后又一言不合的永久冻结了账号，没有任何提醒和告知，消费者的权益就这么被无情的践踏吗？\n#腾讯 #腾讯视频 #腾讯视频年卡"
         }
       ]
     },
@@ -428,82 +418,6 @@
       ]
     },
     {
-      "id": "EV-DYN-TECH-PLAYBACK-20260807",
-      "level": "P2",
-      "section": "技术功能",
-      "title": "播放卡顿/闪退/崩溃等故障",
-      "summary": "本轮在微博 4条、小红书 2条共聚类出 6 条与「播放卡顿/闪退/崩溃等故障」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：看不了、闪退、投屏。典型表述如：「太好笑了，我用腾讯视频重看《龙门镖局》，电视端不能播放，我还…」。建议结合工单/客服渠道核实处理时效。",
-      "summary_points": [
-        "本轮在微博 4条、小红书 2条，共聚类出 6 条与「播放卡顿/闪退/崩溃等故障」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
-        "高频原因词：看不了、闪退、投屏。",
-        "典型表述如：「太好笑了，我用腾讯视频重看《龙门镖局》，电视端不能播放，我还…」。",
-        "建议结合工单/客服渠道核实处理时效。"
-      ],
-      "post_count": 6,
-      "evidence": [
-        {
-          "platform": "微博",
-          "author": "我是陈塘关李靖",
-          "followers": "67.2万",
-          "likes": 12,
-          "reposts": 2,
-          "published_at": "2026-08-06T19:59:02",
-          "permalink": "https://m.weibo.cn/detail/5329006170740320",
-          "text": "太好笑了，我用腾讯视频重看《龙门镖局》，电视端不能播放，我还得用手机投屏到电视才能看...何意味o_O???关键我还是SVIP，本来能同时使用手机端和电视端的会员服务的，为啥现在移动端能看电视端看不了这有啥说法？ "
-        },
-        {
-          "platform": "微博",
-          "author": "锖青磁大神",
-          "followers": "65",
-          "likes": 1,
-          "reposts": 0,
-          "published_at": "2026-08-06T17:11:16",
-          "permalink": "https://m.weibo.cn/detail/5328963952185356",
-          "text": "柳周cp 大家看直播尽量从手机腾讯视频里面看吧，小红书直播会卡黑屏，啥也看不了 "
-        },
-        {
-          "platform": "微博",
-          "author": "panzilogan",
-          "followers": "1",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-08-06T15:09:41",
-          "permalink": "https://m.weibo.cn/detail/5328933356569045",
-          "text": "手机微信清完聊天记录后就闪退无法进入，人工客服电话也无法接通@腾讯公司 @腾讯视频 @腾讯微信团队 @腾讯客服 @腾讯微信账号客服 @腾讯账号安全客服 腾讯人工腾讯腾讯申诉人工腾讯申诉人工超话腾讯视频腾讯视频会员@腾讯视频SVIP @腾讯视"
-        },
-        {
-          "platform": "微博",
-          "author": "用户5750771365",
-          "followers": "1",
-          "likes": 0,
-          "reposts": 0,
-          "published_at": "2026-08-06T12:14:29",
-          "permalink": "https://m.weibo.cn/detail/5328889263951589",
-          "text": "这则视频深入解读了“百年人凡隔离契约”的本质及其对人类社会的深远影响。视频指出，这份契约是上天为人类设置的一段专属成长缓冲期，它通过屏蔽天地能量波动和延迟因果，为社会提供了一个看似安稳的物质发展环境。然而，这一时期也带来了严重的后遗症，即普"
-        },
-        {
-          "platform": "小红书",
-          "author": "匿名用户",
-          "followers": null,
-          "likes": null,
-          "reposts": null,
-          "published_at": "2026-08-06T10:20:01",
-          "permalink": "https://www.xiaohongshu.com/explore/6a7335d2000000002803286a?xsec_token=ABkqzZbNxVMJdknqad5pEZ3hswyK0Q5lw-Gs0wDGTfWbw=&xsec_source=",
-          "text": "腾讯视频登录不上🌚 有没有小伙伴知道为什么电脑上腾讯视频登录不上，一直是这个界面反应不过来\n\t\n#我的不完美料理 #影视会员 #win11 #腾讯视频"
-        },
-        {
-          "platform": "小红书",
-          "author": "匿名用户",
-          "followers": null,
-          "likes": null,
-          "reposts": null,
-          "published_at": "2026-08-03T10:20:01",
-          "permalink": "https://www.xiaohongshu.com/explore/6a6eed01000000000801014b?xsec_token=ABJ4Ko6J5cVAp2HZNdcOsMZYe7ZVJKgZIAFQ4zSDy7bUU=&xsec_source=",
-          "text": "腾讯视频闪退怎么办啊 一直闪退，一个脱口秀都闪退好几遍，HD版本的一直闪退，我没办法卸载了，装了普通版本的，结果还是闪退\n一个演员的段子都看不完整\n怎么办啊，有没有解决办法"
-        }
-      ]
-    },
-    {
       "id": "EV-DYN-CONTENT-DRAMA_OTHER-20260807",
       "level": "P2",
       "section": "内容运营",
@@ -566,6 +480,62 @@
           "published_at": "2026-08-06T10:20:48",
           "permalink": "https://m.weibo.cn/detail/5328860654863809",
           "text": "这对吗哈哈哈哈哈//@电影夏洛特烦恼:你们呼吁一下 让他们把号给我 哈哈哈哈 我以后就能一起切皮了//@喵汪教信徒:钢兰家族是出场费太贵了吗 怎么不来🥺//@电影夏洛特烦恼:夏洛从流行歌星变身中国大厨啦！🧑🍳欢迎来龙餐馆，周末去吃#电影欢迎"
+        }
+      ]
+    },
+    {
+      "id": "EV-DYN-TECH-PLAYBACK-20260807",
+      "level": "P2",
+      "section": "技术功能",
+      "title": "播放卡顿/闪退/崩溃等故障",
+      "summary": "本轮在微博 4条共聚类出 4 条与「播放卡顿/闪退/崩溃等故障」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。高频原因词：看不了、投屏、黑屏。典型表述如：「太好笑了，我用腾讯视频重看《龙门镖局》，电视端不能播放，我还…」。建议结合工单/客服渠道核实处理时效。",
+      "summary_points": [
+        "本轮在微博 4条，共聚类出 4 条与「播放卡顿/闪退/崩溃等故障」相关的真实负面反馈（动态聚类，按事件原因自动归并，不依赖固定模板）。",
+        "高频原因词：看不了、投屏、黑屏。",
+        "典型表述如：「太好笑了，我用腾讯视频重看《龙门镖局》，电视端不能播放，我还…」。",
+        "建议结合工单/客服渠道核实处理时效。"
+      ],
+      "post_count": 4,
+      "evidence": [
+        {
+          "platform": "微博",
+          "author": "我是陈塘关李靖",
+          "followers": "67.2万",
+          "likes": 12,
+          "reposts": 2,
+          "published_at": "2026-08-06T19:59:02",
+          "permalink": "https://m.weibo.cn/detail/5329006170740320",
+          "text": "太好笑了，我用腾讯视频重看《龙门镖局》，电视端不能播放，我还得用手机投屏到电视才能看...何意味o_O???关键我还是SVIP，本来能同时使用手机端和电视端的会员服务的，为啥现在移动端能看电视端看不了这有啥说法？ "
+        },
+        {
+          "platform": "微博",
+          "author": "锖青磁大神",
+          "followers": "65",
+          "likes": 1,
+          "reposts": 0,
+          "published_at": "2026-08-06T17:11:16",
+          "permalink": "https://m.weibo.cn/detail/5328963952185356",
+          "text": "柳周cp 大家看直播尽量从手机腾讯视频里面看吧，小红书直播会卡黑屏，啥也看不了 "
+        },
+        {
+          "platform": "微博",
+          "author": "panzilogan",
+          "followers": "1",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-08-06T15:09:41",
+          "permalink": "https://m.weibo.cn/detail/5328933356569045",
+          "text": "手机微信清完聊天记录后就闪退无法进入，人工客服电话也无法接通@腾讯公司 @腾讯视频 @腾讯微信团队 @腾讯客服 @腾讯微信账号客服 @腾讯账号安全客服 腾讯人工腾讯腾讯申诉人工腾讯申诉人工超话腾讯视频腾讯视频会员@腾讯视频SVIP @腾讯视"
+        },
+        {
+          "platform": "微博",
+          "author": "用户5750771365",
+          "followers": "1",
+          "likes": 0,
+          "reposts": 0,
+          "published_at": "2026-08-06T12:14:29",
+          "permalink": "https://m.weibo.cn/detail/5328889263951589",
+          "text": "这则视频深入解读了“百年人凡隔离契约”的本质及其对人类社会的深远影响。视频指出，这份契约是上天为人类设置的一段专属成长缓冲期，它通过屏蔽天地能量波动和延迟因果，为社会提供了一个看似安稳的物质发展环境。然而，这一时期也带来了严重的后遗症，即普"
         }
       ]
     },
@@ -12566,7 +12536,7 @@
       "sentiment": "neg"
     },
     {
-      "id": "douban_270969765",
+      "id": "douban_269593509",
       "platform": "douban",
       "author": null,
       "followers": null,
@@ -12581,78 +12551,6 @@
       "noise_category": "hard",
       "noise_reason": "未提及腾讯视频/无关组帖",
       "sentiment": "unclassified"
-    },
-    {
-      "id": "6a7335d2000000002803286a",
-      "platform": "xiaohongshu",
-      "author": null,
-      "followers": null,
-      "published_at": "2026-08-06T10:20:01",
-      "date_text": "1天前 河南",
-      "text": "腾讯视频登录不上🌚 有没有小伙伴知道为什么电脑上腾讯视频登录不上，一直是这个界面反应不过来\n\t\n#我的不完美料理 #影视会员 #win11 #腾讯视频",
-      "reposts": null,
-      "comments": null,
-      "likes": null,
-      "keywords": "腾讯视频 打不开",
-      "permalink": "https://www.xiaohongshu.com/explore/6a7335d2000000002803286a?xsec_token=ABkqzZbNxVMJdknqad5pEZ3hswyK0Q5lw-Gs0wDGTfWbw=&xsec_source=",
-      "filtered_as_noise": false,
-      "noise_category": "",
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "6a6eed01000000000801014b",
-      "platform": "xiaohongshu",
-      "author": null,
-      "followers": null,
-      "published_at": "2026-08-03T10:20:01",
-      "date_text": "4天前 安徽",
-      "text": "腾讯视频闪退怎么办啊 一直闪退，一个脱口秀都闪退好几遍，HD版本的一直闪退，我没办法卸载了，装了普通版本的，结果还是闪退\n一个演员的段子都看不完整\n怎么办啊，有没有解决办法",
-      "reposts": null,
-      "comments": null,
-      "likes": null,
-      "keywords": "腾讯视频 看不了",
-      "permalink": "https://www.xiaohongshu.com/explore/6a6eed01000000000801014b?xsec_token=ABJ4Ko6J5cVAp2HZNdcOsMZYe7ZVJKgZIAFQ4zSDy7bUU=&xsec_source=",
-      "filtered_as_noise": false,
-      "noise_category": "",
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "6a6ca5a400000000280069c5",
-      "platform": "xiaohongshu",
-      "author": null,
-      "followers": null,
-      "published_at": "2026-08-01T10:20:01",
-      "date_text": "编辑于 6天前 北京",
-      "text": "投诉腾讯草地地球超新鲜 避雷这个腾讯，在手机型号完全不足的情况下，毫无解决问题的办法，给与消费者重抽的权利就是选择不要不喜欢的，凭什么因为你们的问题去剥夺消费者的福利和权？？？！！！\n@腾讯视频 @腾讯 @腾讯草场地get好物 @腾讯视频GOODS @腾讯视频官方旗舰店 @腾讯娱乐 #请大家引以为戒 #看见的过来评评理吧 #腾讯视频#腾讯视频GOODS",
-      "reposts": null,
-      "comments": null,
-      "likes": null,
-      "keywords": "腾讯视频 绿屏",
-      "permalink": "https://www.xiaohongshu.com/explore/6a6ca5a400000000280069c5?xsec_token=ABpkTKuQ3c3hEBn6yH0OvSHt5whEnByemdbZL--2RmDyU=&xsec_source=",
-      "filtered_as_noise": false,
-      "noise_category": "",
-      "noise_reason": null,
-      "sentiment": "neg"
-    },
-    {
-      "id": "6a6b43ab0000000027023a02",
-      "platform": "xiaohongshu",
-      "author": null,
-      "followers": null,
-      "published_at": "2026-07-31T10:20:01",
-      "date_text": "7天前 四川",
-      "text": "腾讯视频吃相太难看 冲着宣传的可享10台设备累计播放、4台设备同时播放充了svip家庭年卡，可当你充了两天以后又一言不合的永久冻结了账号，没有任何提醒和告知，消费者的权益就这么被无情的践踏吗？\n#腾讯 #腾讯视频 #腾讯视频年卡",
-      "reposts": null,
-      "comments": null,
-      "likes": null,
-      "keywords": "腾讯视频 卡顿",
-      "permalink": "https://www.xiaohongshu.com/explore/6a6b43ab0000000027023a02?xsec_token=AB0UHwcJzeK322rUssEso1xazGxd76dFxXTi5yrL8WocE=&xsec_source=",
-      "filtered_as_noise": false,
-      "noise_category": "",
-      "noise_reason": null,
-      "sentiment": "neg"
     },
     {
       "id": "heimao_17400593484",

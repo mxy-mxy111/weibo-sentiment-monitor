@@ -3197,3 +3197,28 @@ desc:
 events P0/P1/P2: 0 3 7 | risk_history: 18
 written: /Users/xiaoma/CodeBuddy/20260714104056/weibo-sentiment-monitor/datasource.json
 [OK] [构建] build_datasource.py (returncode=0)
+
+----- 各步骤结果 -----
+  ✓ 采集-微博通用
+  ✓ 采集-微博剧综
+  ✓ 解析-微博通用
+  ✓ 解析-微博剧综
+  ✓ 采集-豆瓣
+  ✓ 解析-豆瓣
+  ✓ 采集-黑猫
+  ✓ 解析-黑猫
+  ✗ 采集-小红书
+  ✓ 筛选-小红书候选
+  ✓ 核实-小红书正文
+  ✓ 解析-小红书窗口
+
+===== [发布] 部署到 OA Pages 网站 =====
+[OA Pages] 更新成功: https://txvideo-sentiment.pages.woa.com
+
+===== [推送] 企业微信群通知 =====
+   企业微信推送成功 ✅
+
+===== [提交] git 提交本轮产物 =====
+    git push origin main 成功 ✅
+
+[完成] 数据已发布到 OA Pages 网站，并在企业微信推送通知。
